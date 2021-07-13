@@ -18,4 +18,6 @@ intro:
         Event 3
     - image: https://i.ytimg.com/vi/e9LEHdkAxAQ/maxresdefault.jpg
       text: Cats love coffee!
+    - image: /img/products-grid2.jpg
+      text: coffee
 ---
