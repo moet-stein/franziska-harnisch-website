@@ -28,7 +28,7 @@ export const LauraTestTemplate: React.FC<IndexProps> = ({
     <h2>{heading}</h2>
     <h3>{subheading}</h3>
     <p>{description}</p>
-    <img src={image} alt="test"/>
+    <img src={image} alt="test3"/>
   </div>
 );
 const LauraTest: React.FC<any> = ({ data }) => {
