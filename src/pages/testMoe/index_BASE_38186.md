@@ -1,6 +1,6 @@
 ---
-templateKey: testMoe-page
-path: /testMoe
+templateKey: test-moe
+path: /testmoe
 title: Test Moe
 image: /img/coffee.jpg
 heading: Just Test
