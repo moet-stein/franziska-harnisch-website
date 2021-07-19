@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { LauraTestTemplate } from '../../templates/lauraTest-page'
+import { LauraTestTemplate } from '../../templates/lauratest-page'
 
 const LauraTestPreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
