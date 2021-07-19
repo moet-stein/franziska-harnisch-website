@@ -13,14 +13,6 @@ import TestMoePagePreview from './preview-templates/TestMoePagePreview';
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
-<<<<<<< HEAD
-CMS.registerPreviewTemplate("index", IndexPagePreview);
-CMS.registerPreviewTemplate("about", AboutPagePreview);
-CMS.registerPreviewTemplate("products", ProductPagePreview);
-CMS.registerPreviewTemplate("blog", BlogPostPreview);
-CMS.registerPreviewTemplate("events", EventPagePreview);
-CMS.registerPreviewTemplate("lauraTest", LauraTestPreview);
-=======
 CMS.registerPreviewTemplate('index', IndexPagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('products', ProductPagePreview);
@@ -28,4 +20,3 @@ CMS.registerPreviewTemplate('blog', BlogPostPreview);
 CMS.registerPreviewTemplate('events', EventPagePreview);
 CMS.registerPreviewTemplate('lauratest', LauraTestPreview);
 CMS.registerPreviewTemplate('testMoe', TestMoePagePreview);
->>>>>>> c2bb8b55d2e7eeeb5f946163d8e2645904a5a429
