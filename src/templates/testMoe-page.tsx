@@ -36,7 +36,7 @@ const TestMoePage = ({ data }) => {
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <TestMoePageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
