@@ -7,6 +7,7 @@ import BlogPostPreview from "./preview-templates/BlogPostPreview";
 import ProductPagePreview from "./preview-templates/ProductPagePreview";
 import IndexPagePreview from "./preview-templates/IndexPagePreview";
 import EventPagePreview from "./preview-templates/EventPagePreview";
+import LauraTestPreview from "./preview-templates/LauraTestPreview";
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -16,4 +17,4 @@ CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("products", ProductPagePreview);
 CMS.registerPreviewTemplate("blog", BlogPostPreview);
 CMS.registerPreviewTemplate("events", EventPagePreview);
-CMS.registerPreviewTemplate("lauratest", LauraTestPreview);
+CMS.registerPreviewTemplate("lauraTest", LauraTestPreview);

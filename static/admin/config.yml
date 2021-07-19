@@ -265,7 +265,7 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-     - file: "src/pages/lauraTest/index.md"
+       - file: "src/pages/lauraTest/index.md"
         label: "LauraTest Page"
         name: "lauraTest"
         fields:

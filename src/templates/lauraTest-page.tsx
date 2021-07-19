@@ -24,8 +24,11 @@ export const LauraTestTemplate: React.FC<IndexProps> = ({
           flexDirection: 'column',
         }}
             >
-                <h1>{title}</h1>
-                <p>{description}</p>
+    <h1>{title}</h1>
+    <h2>{heading}</h2>
+    <h3>{subheading}</h3>
+    <p>{description}</p>
+    <img src={image} alt="test"/>
   </div>
 );
 const LauraTest: React.FC<any> = ({ data }) => {
@@ -41,6 +44,7 @@ const LauraTest: React.FC<any> = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+
       />
     </Layout>
   );
