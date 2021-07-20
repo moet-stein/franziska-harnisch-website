@@ -13,22 +13,21 @@ export const LauraTestTemplate: React.FC<IndexProps> = ({
   description,
   intro,
 }) => (
- 
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-            >
+  <div
+    style={{
+      display: 'flex',
+      height: '150px',
+      lineHeight: '1',
+      justifyContent: 'space-around',
+      alignItems: 'left',
+      flexDirection: 'column',
+    }}
+  >
     <h1>{title}</h1>
     <h2>{heading}</h2>
     <h3>{subheading}</h3>
     <p>{description}</p>
-    <img src={image} alt="test4"/>
+    <img src={image} alt="test4" />
   </div>
 );
 const LauraTest: React.FC<any> = ({ data }) => {
@@ -44,7 +43,6 @@ const LauraTest: React.FC<any> = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
-
       />
     </Layout>
   );
