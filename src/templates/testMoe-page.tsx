@@ -7,7 +7,7 @@ import Content, { HTMLContent } from '../components/Content';
 
 // works template 1
 
-export const TestMoePageTemplate = ({ title, intro }) => {
+export const TestMoePageTemplate = ({ title, intro, description }) => {
   console.log(title);
   console.log(intro.blurbs);
   return (
@@ -19,7 +19,7 @@ export const TestMoePageTemplate = ({ title, intro }) => {
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
-
+              <p>{description}</p>
               {intro.blurbs.map((i) => (
                 <img src={i.image.childImageSharp.fluid.src} />
               ))}
@@ -36,6 +36,7 @@ TestMoePageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  description: PropTypes.string,
 };
 
 const TestMoePage = ({ data }) => {
@@ -44,9 +45,8 @@ const TestMoePage = ({ data }) => {
   return (
     <Layout>
       <TestMoePageTemplate
-        // contentComponent={HTMLContent}
         title={frontmatter.title}
-        // content={post.html}
+        description={frontmatter.description}
         intro={frontmatter.intro}
       />
       <Display1 />
@@ -65,23 +65,32 @@ TestMoePage.propTypes = {
 export default TestMoePage;
 
 export const testMoePageQuery = graphql`
-  query TestMoePage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
+query TestMoePage($id: String!) {
+  markdownRemark(id: { eq: $id }) {
+    frontmatter {
+      title
+      image {
+        childImageSharp {
+          fluid(maxWidth: 2048, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      heading
+      description
+      intro {
+        blurbs {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
               }
             }
-            text
           }
+          text
         }
       }
     }
   }
+}
 `;
