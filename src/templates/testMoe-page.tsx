@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Display1 from '../components/Display1/Display1';
 import Content, { HTMLContent } from '../components/Content';
+
+// works template 1
 
 export const TestMoePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
@@ -41,6 +44,7 @@ const TestMoePage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
       />
+      <Display1 />
     </Layout>
   );
 };
