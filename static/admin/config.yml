@@ -1,22 +1,22 @@
-backend:
+  backend:
   name: git-gateway
   branch: main
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+  create: 'Create {{collection}} “{{slug}}”'
+  update: 'Update {{collection}} “{{slug}}”'
+  delete: 'Delete {{collection}} “{{slug}}”'
+  uploadMedia: '[skip ci] Upload “{{path}}”'
+  deleteMedia: '[skip ci] Delete “{{path}}”'
 
-media_folder: static/img
-public_folder: /img
-
+  media_folder: static/img
+  public_folder: /img
+---
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/pages/blog'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+         - name: 'blog'
+          label: 'Blog'
+          folder: 'src/pages/blog'
+          create: true
+           slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {
           label: 'Template Key',
@@ -32,9 +32,9 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
 
-  - name: 'pages'
-    label: 'Pages'
-    files:
+      - name: 'pages'
+       label: 'Pages'
+       files:
       - file: 'src/pages/index.md'
         label: 'Landing Page'
         name: 'index'
@@ -80,7 +80,7 @@ collections:
                   },
                 ],
             }
-          - {
+            - {
               label: Main,
               name: main,
               widget: object,
@@ -265,7 +265,7 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-       - file: "src/pages/lauraTest/index.md"
+     - file: "src/pages/lauraTest/index.md"
         label: "LauraTest Page"
         name: "lauraTest"
         fields:
