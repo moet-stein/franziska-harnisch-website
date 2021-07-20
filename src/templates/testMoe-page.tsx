@@ -7,9 +7,9 @@ import Content, { HTMLContent } from '../components/Content';
 
 // works template 1
 
-export const TestMoePageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content;
-
+export const TestMoePageTemplate = ({ title, intro }) => {
+  console.log(title);
+  console.log(intro.blurbs);
   return (
     <section className="section section--gradient">
       <div className="container">
@@ -19,7 +19,10 @@ export const TestMoePageTemplate = ({ title, content, contentComponent }) => {
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
-              <PageContent className="content" content={content} />
+
+              {intro.blurbs.map((i) => (
+                <img src={i.image.childImageSharp.fluid.src} />
+              ))}
             </div>
           </div>
         </div>
@@ -30,19 +33,21 @@ export const TestMoePageTemplate = ({ title, content, contentComponent }) => {
 
 TestMoePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
 };
 
 const TestMoePage = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <TestMoePageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        // contentComponent={HTMLContent}
+        title={frontmatter.title}
+        // content={post.html}
+        intro={frontmatter.intro}
       />
       <Display1 />
     </Layout>
@@ -50,7 +55,11 @@ const TestMoePage = ({ data }) => {
 };
 
 TestMoePage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default TestMoePage;
@@ -58,9 +67,20 @@ export default TestMoePage;
 export const testMoePageQuery = graphql`
   query TestMoePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
       frontmatter {
         title
+        intro {
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+          }
+        }
       }
     }
   }
