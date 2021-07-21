@@ -1,0 +1,21 @@
+.dispFlexRow {
+  display: flex;
+}
+.dfspacearound {
+  justify-content: space-around;
+}
+.dfjustifycenter {
+  display: flex;
+  justify-content: center;
+}
+.posFixed {
+  position: fixed;
+  z-index: 10;
+}
+.menu-list {
+  list-style: none;
+}
+.navbar-social-item {
+  text-decoration: none;
+  margin: 10px;
+}

@@ -1,9 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-
+import styled, { css, keyframes } from 'styled-components';
+import { fadeInRight } from 'react-animations';
+import LayoutHome from '../components/LayoutHome';
 import Layout from '../components/Layout';
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
 
+const FadeInRight = styled.div`
+  animation: 2s ${keyframes`${fadeInRight}`};
+`;
+const textAppear = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+const animation = () =>
+  css`
+    ${textAppear} 4s ;
+  `
+
+const TitleEffect = styled.h1`
+  animation: ${animation};
+`
 export const LauraTestTemplate: React.FC<IndexProps> = ({
   image,
   title,
@@ -11,10 +37,16 @@ export const LauraTestTemplate: React.FC<IndexProps> = ({
   subheading,
   mainpitch,
   description,
+  exposition,
+  dateLocation,
   intro,
 }) => (
+
+
+ 
   <div
     style={{
+      
       display: 'flex',
       height: '150px',
       lineHeight: '1',
@@ -23,18 +55,25 @@ export const LauraTestTemplate: React.FC<IndexProps> = ({
       flexDirection: 'column',
     }}
   >
-    <h1>{title}</h1>
-    <h2>{heading}</h2>
-    <h3>{subheading}</h3>
-    <p>{description}</p>
-    <img src={image} alt="test4" />
+    <div style={{ marginTop: 300, position: "relative" }}>   
+      <TitleEffect >{title}</TitleEffect>
+      <TitleEffect>
+       <FadeInRight style={{position:"relative", left:"50%"}}>
+        <p>{exposition}</p>
+        <p>{dateLocation}</p>
+      </FadeInRight>
+     </TitleEffect>
+      
+      
+      </div>
   </div>
 );
 const LauraTest: React.FC<any> = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
+
   return (
-    <Layout>
+    <LayoutHome>
       <LauraTestTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -42,9 +81,11 @@ const LauraTest: React.FC<any> = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
+        exposition={frontmatter.exposition}
+        dateLocation={frontmatter.dateLocation}
         intro={frontmatter.intro}
       />
-    </Layout>
+    </LayoutHome>
   );
 };
 export default LauraTest;
@@ -55,6 +96,9 @@ LauraTestTemplate.propTypes = {
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
+  exposition: PropTypes.string,
+  dateLocation: PropTypes.string,
+  
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
@@ -78,6 +122,8 @@ export const pageQuery = graphql`
           description
         }
         description
+        exposition
+        dateLocation
         intro {
           blurbs {
             image {

@@ -1,0 +1,23 @@
+.dispFlexRow {
+  display: flex;
+}
+.dfspacearound {
+  justify-content: space-around;
+}
+.posFixed {
+  position: fixed;
+  z-index: 10;
+}
+.navdimensions {
+  max-height: 78px;
+  margin-bottom: 20px;
+  width: 100vw;
+}
+.navbar-item {
+  margin: 15px;
+  text-decoration: none;
+}
+#navMenu {
+  align-items: center;
+  display: flex;
+}
