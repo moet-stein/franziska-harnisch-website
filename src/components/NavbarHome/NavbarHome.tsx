@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useRef, useState, useEffect} from "react";
 import { Link } from "gatsby";
+import ListIcon from '@material-ui/icons/List';
 import "./NavBarHomeStyle.css"
 //import github from "../img/github-icon.svg";
 //import logo from "../img/logo.svg";
 
-const NavbarHome = class extends React.Component {
-  constructor(props) {
+function NavbarHome() {
+   const dropdownRef = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+  const onClick = () => setIsActive(!isActive);
+  /* constructor(props) {
     super(props);
     this.state = {
       active: false,
@@ -32,8 +36,8 @@ const NavbarHome = class extends React.Component {
       }
     );
   };
-
-  render() {
+ */
+ // render() {
     return (
       <nav
         style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}
@@ -45,7 +49,7 @@ const NavbarHome = class extends React.Component {
           <div className="navbar-brand">
           
             {/* Hamburger menu */}
-            <div
+           {/*  <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
@@ -53,13 +57,13 @@ const NavbarHome = class extends React.Component {
               <span />
               <span />
               <span />
-            </div>
+            </div> */}
           </div>
           <div
             id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
+           // className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="dispflexrow dfspacearound" >
+            <div className="dispflexrow dfspacearound" style={{marginTop:50}} >
               <Link className="navbar-item" to="/about">
              About
               </Link>
@@ -75,10 +79,19 @@ const NavbarHome = class extends React.Component {
               <Link className="navbar-item" to="/contact/examples">
                 Links
               </Link>
-              <Link className="navbar-item" to="/register">
-                Impressum
-              </Link>
-              
+               <div className="menu-container">
+              <p onClick={onClick} className="menu-trigger" className="navbar-item" >
+              <ListIcon/>
+             
+              </p>
+              <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
+        <ul>
+          
+        <li><a href="">Impressum</a></li>
+      <li><a href="">Datenschutz</a></li>
+        </ul>
+              </nav>
+               </div>
             </div>
             <div className="navbar-end has-text-centered">
             {/*   <a
@@ -96,7 +109,7 @@ const NavbarHome = class extends React.Component {
         </div>
       </nav>
     );
-  }
+ // }
 };
 
 export default NavbarHome;
