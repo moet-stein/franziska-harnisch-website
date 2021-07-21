@@ -1,0 +1,14 @@
+.textEvent {
+  position: relative;
+  left: 50%;
+  display: inline-block;
+
+  margin: 0px;
+  max-width: 500px;
+}
+.fontSizeEvent {
+  font-size: 25px;
+}
+.fontSizeTitle {
+  font-size: 30px;
+}
