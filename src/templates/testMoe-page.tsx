@@ -10,7 +10,7 @@ import Img from 'gatsby-image'
 
 export const TestMoePageTemplate = ({ title, intro, description }) => {
   console.log(title);
-  console.log(intro.blurbs.map(i => i.image.childImageSharp));
+  console.log(intro.blurbs);
   return (
     <section className="section section--gradient">
       <div className="container">
@@ -22,7 +22,7 @@ export const TestMoePageTemplate = ({ title, intro, description }) => {
               </h2>
               <p>{description}</p>
               {intro.blurbs.map((i) => (
-                <Img fluid={i.image.childImageSharp.fluid} />
+                <Img key={i.text}  fluid={i.image.childImageSharp.fluid} />
               ))}
             </div>
           </div>
@@ -33,6 +33,7 @@ export const TestMoePageTemplate = ({ title, intro, description }) => {
 };
 
 TestMoePageTemplate.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string.isRequired,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
@@ -49,6 +50,7 @@ const TestMoePage = ({ data }) => {
         title={frontmatter.title}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        image={frontmatter.image}
       />
       <Display1 />
     </Layout>
