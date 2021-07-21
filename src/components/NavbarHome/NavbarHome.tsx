@@ -36,15 +36,14 @@ const NavbarHome = class extends React.Component {
   render() {
     return (
       <nav
+        style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}
             className="posFixed navdimensions"
             role="navigation"
         aria-label="main-navigation"
       >
         <div className="dispFlexRow dfspacearound">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-             <h1>Franziska Harnisch</h1>
-            </Link>
+          
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -60,7 +59,7 @@ const NavbarHome = class extends React.Component {
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="dispflexrow dfspacearound" style={{alignItems:"center"}}>
+            <div className="dispflexrow dfspacearound" >
               <Link className="navbar-item" to="/about">
              About
               </Link>
