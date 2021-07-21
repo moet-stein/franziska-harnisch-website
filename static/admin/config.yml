@@ -88,7 +88,9 @@ collections:
         label: 'TestMoe Page'
         name: 'testMoe'
         fields:
-          - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'about-page'}
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'testMoe-page'}
+          - {label: 'Title', name: 'title', widget: 'string' }
+          - {label: Image, name: image, widget: image}
+          - {label: Description, name: description, widget: string}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
     
