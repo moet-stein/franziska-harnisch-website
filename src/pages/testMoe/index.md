@@ -14,27 +14,27 @@ intro:
   blurbs:
     - image: /img/event.jpg
       text: Work1
-      blurbs: 
+      blurbs:
         - text: hashtag1
         - text: hashtag2
     - image: /img/event.jpg
       text: Exhibition2
-      blurbs: 
-        - text: hashtag3
+      blurbs:
+        - text: hashtag2
         - text: hashtag4
     - image: /img/event.jpg
       text: Exhibition3
-      blurbs: 
-        - text: hashtag5
+      blurbs:
+        - text: hashtag2
         - text: hashtag6
     - image: /img/event.jpg
       text: Work3
-      blurbs: 
+      blurbs:
         - text: hashtag7
-        - text: hashtag8
+        - text: hashtag2
     - image: /img/products-grid2.jpg
       text: Exhibition4
-      blurbs: 
+      blurbs:
         - text: hashtag9
-        - text: hashtag10
+        - text: hashtag2
 ---

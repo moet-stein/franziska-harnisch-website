@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import grey from '@material-ui/core/colors/grey';
+import { HashtagContext, HashtagProvider } from '../../Context/HashtagContext';
 
 const useStyles = makeStyles(() => ({
   image: {
@@ -49,30 +51,41 @@ const WorksImage = ({ imageInfo }) => {
   const classes = useStyles();
   const imageStyle = { borderRadius: '2px' };
   const { alt = '', childImageSharp, image, text } = imageInfo;
-  const [hashTags, setHashTags] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const { hashtag, setHashtag } = useContext(HashtagContext);
 
+  // const getHashtag = (h) => {
+  //   setHashtag(h);
+  //   console.log(hashtag);
+  // };
 
   if (!!image && !!image.childImageSharp) {
     return (
-      <div className={classes.container}>
-        <Img
-          style={imageStyle}
-          fluid={image.childImageSharp.fluid}
-          alt={alt}
-          className={classes.image}
-        />
-        <div className={classes.middle}>
-          <div className={classes.content}>{text}</div>
-          {imageInfo.blurbs ? 
-          <div className={classes.hashTags}>
-            {imageInfo.blurbs.map((i) => i.text).map((h) => (
-              <Typography variant="body2">#{h}</Typography>
-            ))}
+      <HashtagProvider>
+        <div className={classes.container}>
+          <Img
+            style={imageStyle}
+            fluid={image.childImageSharp.fluid}
+            alt={alt}
+            className={classes.image}
+          />
+          <div className={classes.middle}>
+            <div className={classes.content}>{text}</div>
+            {imageInfo.blurbs ? (
+              <div className={classes.hashTags}>
+                {imageInfo.blurbs
+                  .map((i) => i.text)
+                  .map((h) => (
+                    <Button key={h} onClick={() => setHashtag(h)}>
+                      <Typography variant="body2">#{h}</Typography>
+                    </Button>
+                  ))}
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
-          : <div></div>}
         </div>
-      </div>
+      </HashtagProvider>
     );
   }
 

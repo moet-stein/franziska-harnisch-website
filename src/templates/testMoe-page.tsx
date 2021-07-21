@@ -6,6 +6,7 @@ import Display1 from '../components/Display1/Display1';
 import Content, { HTMLContent } from '../components/Content';
 import Img from 'gatsby-image';
 import Works from '../components/Works/Works';
+import { HashtagContext, HashtagProvider } from '../Context/HashtagContext';
 
 // works template 1
 
@@ -27,7 +28,9 @@ export const TestMoePageTemplate = ({ title, intro, description }) => {
                 {title}
               </h2>
               <p>{description}</p>
-              <Works images={intro.blurbs} />
+              <HashtagProvider>
+                <Works images={intro.blurbs} />
+              </HashtagProvider>
             </div>
           </div>
         </div>
