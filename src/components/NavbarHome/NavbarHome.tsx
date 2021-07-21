@@ -40,12 +40,12 @@ function NavbarHome() {
  // render() {
     return (
       <nav
-        style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}
-            className="posFixed navdimensions"
+        
+            className="posFixed navdimensions nav-container"
             role="navigation"
         aria-label="main-navigation"
       >
-        <div className="dispFlexRow dfspacearound">
+        <div className="dispFlexRow dfspacearound navMenu">
           <div className="navbar-brand">
           
             {/* Hamburger menu */}
@@ -63,27 +63,28 @@ function NavbarHome() {
             id="navMenu"
            // className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="dispflexrow dfspacearound" style={{marginTop:50}} >
+            <div className="dispflexrow dfspacearound"  >
               <Link className="navbar-item" to="/about">
              About
               </Link>
-              <Link className="navbar-item" to="/products">
+              <Link className="navbar-item" to="/">
               Works
               </Link>
-              <Link className="navbar-item" to="/blog">
+              <Link className="navbar-item" to="/">
              Exibitions
               </Link>
-              <Link className="navbar-item" to="/contact">
+              <Link className="navbar-item" to="/">
                 Contact
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              <Link className="navbar-item" to="/">
                 Links
               </Link>
-               <div className="menu-container">
-              <p onClick={onClick} className="menu-trigger" className="navbar-item" >
+               <div className="menu-container" style={{display:"inline-block"}}>
+              <p onClick={onClick} className="menu-trigger navbar-item" >
               <ListIcon/>
              
-              </p>
+                </p>
+                </div>
               <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
         <ul>
           
@@ -92,7 +93,7 @@ function NavbarHome() {
         </ul>
               </nav>
                </div>
-            </div>
+            
             <div className="navbar-end has-text-centered">
             {/*   <a
                 className="navbar-item"
