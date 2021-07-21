@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Display1 from '../components/Display1/Display1';
 import Content, { HTMLContent } from '../components/Content';
-import Img from 'gatsby-image'
+import Img from 'gatsby-image';
+import Works from '../components/Works/Works';
 
 // works template 1
 
 export const TestMoePageTemplate = ({ title, intro, description }) => {
   console.log(title);
   console.log(intro.blurbs);
+
+  useEffect(() => {
+    console.log(intro.blurbs.filter((i) => i.image.childImageSharp));
+  }, []);
+
   return (
     <section className="section section--gradient">
       <div className="container">
@@ -21,9 +27,7 @@ export const TestMoePageTemplate = ({ title, intro, description }) => {
                 {title}
               </h2>
               <p>{description}</p>
-              {intro.blurbs.map((i) => (
-                <Img key={i.text}  fluid={i.image.childImageSharp.fluid} />
-              ))}
+              <Works images={intro.blurbs} />
             </div>
           </div>
         </div>
@@ -68,32 +72,32 @@ TestMoePage.propTypes = {
 export default TestMoePage;
 
 export const testMoePageQuery = graphql`
-query TestMoePage($id: String!) {
-  markdownRemark(id: { eq: $id }) {
-    frontmatter {
-      title
-      image {
-        childImageSharp {
-          fluid(maxWidth: 2048, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      heading
-      description
-      intro {
-        blurbs {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
+  query TestMoePage($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
             }
           }
-          text
+        }
+        heading
+        description
+        intro {
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+          }
         }
       }
     }
   }
-}
 `;
