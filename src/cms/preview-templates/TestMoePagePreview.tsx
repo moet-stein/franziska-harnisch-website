@@ -8,10 +8,10 @@ const TestMoePagePreview = ({ entry, getAsset }) => {
 
   return (
     <TestMoePageTemplate
-      image={getAsset(entry.getIn(['data', 'image']))}
       title={entry.getIn(['data', 'title'])}
       description={entry.getIn(['data', 'description'])}
       intro={{ blurbs }}
+      image={getAsset(entry.getIn(['data', 'image']))}
     />
   );
 };
