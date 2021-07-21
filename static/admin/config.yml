@@ -92,5 +92,5 @@ collections:
           - {label: 'Title', name: 'title', widget: 'string' }
           - {label: Image, name: image, widget: image}
           - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Text, name: text, widget: text}]}]}]}
     

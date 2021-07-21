@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import grey from '@material-ui/core/colors/grey';
 
 const useStyles = makeStyles(() => ({
@@ -48,6 +49,9 @@ const WorksImage = ({ imageInfo }) => {
   const classes = useStyles();
   const imageStyle = { borderRadius: '2px' };
   const { alt = '', childImageSharp, image, text } = imageInfo;
+  const [hashTags, setHashTags] = useState([]);
+  const [loading, setLoading] = useState(true)
+
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -60,7 +64,13 @@ const WorksImage = ({ imageInfo }) => {
         />
         <div className={classes.middle}>
           <div className={classes.content}>{text}</div>
-          <div className={classes.hashTags}>{text}</div>
+          {imageInfo.blurbs ? 
+          <div className={classes.hashTags}>
+            {imageInfo.blurbs.map((i) => i.text).map((h) => (
+              <Typography variant="body2">#{h}</Typography>
+            ))}
+          </div>
+          : <div></div>}
         </div>
       </div>
     );
