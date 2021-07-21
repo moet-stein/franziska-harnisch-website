@@ -13,16 +13,28 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 intro:
   blurbs:
     - image: /img/event.jpg
-      text: |
-        Event 1
+      text: Work1
+      blurbs: 
+        - text: hashtag1
+        - text: hashtag2
     - image: /img/event.jpg
-      text: |
-        Event 2
+      text: Exhibition2
+      blurbs: 
+        - text: hashtag3
+        - text: hashtag4
     - image: /img/event.jpg
-      text: |
-        Event 3
+      text: Exhibition3
+      blurbs: 
+        - text: hashtag5
+        - text: hashtag6
     - image: /img/event.jpg
-      text: Cats love coffee!
+      text: Work3
+      blurbs: 
+        - text: hashtag7
+        - text: hashtag8
     - image: /img/products-grid2.jpg
-      text: coffee
+      text: Exhibition4
+      blurbs: 
+        - text: hashtag9
+        - text: hashtag10
 ---

@@ -95,6 +95,9 @@ export const testMoePageQuery = graphql`
               }
             }
             text
+            blurbs {
+              text
+            }
           }
         }
       }
