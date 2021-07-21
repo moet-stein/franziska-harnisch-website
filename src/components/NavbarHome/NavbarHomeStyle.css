@@ -8,14 +8,24 @@
   position: fixed;
   z-index: 10;
 }
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 100px;
+}
 .navdimensions {
   height: 80px;
   margin-bottom: 20px;
   width: 100vw;
 }
+.navMenu {
+  margin-right: 50px;
+}
 .navbar-item {
   margin: 15px;
   text-decoration: none;
+  color: black;
 }
 #navMenu {
   align-items: center;
@@ -24,14 +34,15 @@
 /*Dropdown menu*/
 .menu-container {
   position: relative;
+  display: inline-block;
 }
 .menu {
   background: #ffffff;
   border-radius: 8px;
   position: absolute;
   top: 60px;
-  right: 0;
-  width: 300px;
+  right: 125px;
+  width: 130px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
