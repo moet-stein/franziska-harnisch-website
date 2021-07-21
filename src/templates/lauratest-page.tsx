@@ -4,17 +4,30 @@ import { Link, graphql } from 'gatsby';
 import styled, { css, keyframes } from 'styled-components';
 import { fadeInRight } from 'react-animations';
 import LayoutHome from '../components/LayoutHome';
+import { Grid } from '@material-ui/core'
+import EventsFrontPage from"../components/EventsFrontPage/EventsFrontPage"
 import Layout from '../components/Layout';
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
+  margin:0px;
 `;
 
 const FadeInRight = styled.div`
   animation: 2s ${keyframes`${fadeInRight}`};
+  
 `;
+
 const textAppear = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+const textAppear2 = keyframes`
   0% {
     opacity: 0;
   }
@@ -25,22 +38,31 @@ const textAppear = keyframes`
 const animation = () =>
   css`
     ${textAppear} 4s ;
+   
   `
-
+const animation2 = () => {
+   css`
+    ${textAppear2} 6s ;
+  
+  `
+}
 const TitleEffect = styled.h1`
   animation: ${animation};
 `
-export const LauraTestTemplate: React.FC<IndexProps> = ({
+const SubtitleEffect= styled.h4`
+animation: ${animation};
+`
+export const LauraTestTemplate = ({
   image,
   title,
   heading,
   subheading,
   mainpitch,
   description,
-  exposition,
-  dateLocation,
   intro,
-}) => (
+}) => {
+  console.log(intro)
+  return(
 
 
  
@@ -48,26 +70,30 @@ export const LauraTestTemplate: React.FC<IndexProps> = ({
     style={{
       
       display: 'flex',
-      height: '150px',
+      height: '100vh',
       lineHeight: '1',
       justifyContent: 'space-around',
       alignItems: 'left',
       flexDirection: 'column',
     }}
   >
-    <div style={{ marginTop: 300, position: "relative" }}>   
-      <TitleEffect >{title}</TitleEffect>
-      <TitleEffect>
-       <FadeInRight style={{position:"relative", left:"50%"}}>
-        <p>{exposition}</p>
-        <p>{dateLocation}</p>
-      </FadeInRight>
-     </TitleEffect>
-      
-      
-      </div>
+      <Grid container >
+        <Grid item   style={{marginLeft: 40 }}>
+        <TitleEffect  >
+         
+              <h2 style={{marginTop:0}}>{title}</h2>
+              </TitleEffect>
+            <SubtitleEffect>
+          <h4>{heading}</h4>
+            <h4>{subheading}</h4>  
+       </SubtitleEffect>
+        </Grid>
+        <Grid item>
+          <EventsFrontPage events={intro.blurbs} />
+          </Grid>
+      </Grid>
   </div>
-);
+)};
 const LauraTest: React.FC<any> = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
@@ -81,8 +107,9 @@ const LauraTest: React.FC<any> = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
+        /* futureExposition ={frontmatter.futureExposition}
         exposition={frontmatter.exposition}
-        dateLocation={frontmatter.dateLocation}
+        dateLocation={frontmatter.dateLocation} */
         intro={frontmatter.intro}
       />
     </LayoutHome>
@@ -96,8 +123,9 @@ LauraTestTemplate.propTypes = {
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
+/*   futureExposiiton: PropTypes.string,
   exposition: PropTypes.string,
-  dateLocation: PropTypes.string,
+  dateLocation: PropTypes.string, */
   
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
@@ -122,8 +150,7 @@ export const pageQuery = graphql`
           description
         }
         description
-        exposition
-        dateLocation
+       
         intro {
           blurbs {
             image {

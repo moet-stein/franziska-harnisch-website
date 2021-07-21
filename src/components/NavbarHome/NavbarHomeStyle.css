@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
+
 .dispFlexRow {
   display: flex;
 }
@@ -7,12 +9,14 @@
 .posFixed {
   position: fixed;
   z-index: 10;
+  top: 0;
 }
 .nav-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 100px;
+  background-color: white;
 }
 .navdimensions {
   height: 80px;
@@ -26,6 +30,7 @@
   margin: 15px;
   text-decoration: none;
   color: black;
+  font-family: "Source Sans Pro", sans-serif;
 }
 #navMenu {
   align-items: center;
