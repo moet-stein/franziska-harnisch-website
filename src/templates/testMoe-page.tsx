@@ -4,12 +4,13 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Display1 from '../components/Display1/Display1';
 import Content, { HTMLContent } from '../components/Content';
+import Img from 'gatsby-image'
 
 // works template 1
 
 export const TestMoePageTemplate = ({ title, intro, description }) => {
   console.log(title);
-  console.log(intro.blurbs);
+  console.log(intro.blurbs.map(i => i.image.childImageSharp));
   return (
     <section className="section section--gradient">
       <div className="container">
@@ -21,7 +22,7 @@ export const TestMoePageTemplate = ({ title, intro, description }) => {
               </h2>
               <p>{description}</p>
               {intro.blurbs.map((i) => (
-                <img src={i.image.childImageSharp.fluid.src} />
+                <Img fluid={i.image.childImageSharp.fluid} />
               ))}
             </div>
           </div>
