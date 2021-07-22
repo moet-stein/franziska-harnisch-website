@@ -19,7 +19,7 @@ export default function Works({ images }) {
       setLoading(false);
     } else {
       setFiltered(
-        images.filter((i) => i.blurbs.map((b) => b.text).includes(hashtag))
+        images.filter((i) => i.hashtags.includes(hashtag))
       );
       setLoading(false);
     }

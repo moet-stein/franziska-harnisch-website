@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 import grey from '@material-ui/core/colors/grey';
 import {
   HashtagContext,
@@ -35,6 +36,7 @@ const useStyles = makeStyles(() => ({
   },
   content: {
     backgroundColor: grey[600],
+    opacity: '0.7',
     borderRadius: '5px',
     color: 'white',
     fontSize: '16px',
@@ -42,11 +44,10 @@ const useStyles = makeStyles(() => ({
     marginBottom: '3px',
   },
   hashTags: {
-    backgroundColor: grey[600],
+    backgroundColor: grey[300],
+    opacity: '0.8',
     borderRadius: '5px',
-    color: 'white',
-    fontSize: '16px',
-    padding: '5px 10px',
+    width: '200px',
   },
 }));
 
@@ -56,6 +57,7 @@ const WorksImage = ({ imageInfo }) => {
   const { alt = '', childImageSharp, image, text } = imageInfo;
   const { hashtag, setHashtag } = useContext(HashtagContext);
 
+  console.log(imageInfo.hashtags);
   // const getHashtag = (h) => {
   //   setHashtag(h);
   //   console.log(hashtag);
@@ -73,16 +75,26 @@ const WorksImage = ({ imageInfo }) => {
           />
           <div className={classes.middle}>
             <div className={classes.content}>{text}</div>
-            {imageInfo.blurbs ? (
-              <div className={classes.hashTags}>
-                {imageInfo.blurbs
-                  .map((i) => i.text)
-                  .map((h) => (
-                    <Button key={h} onClick={() => setHashtag(h)}>
-                      <Typography variant="body2">#{h}</Typography>
-                    </Button>
-                  ))}
-              </div>
+            {imageInfo.hashtags ? (
+              <Box
+                className={classes.hashTags}
+                display="flex"
+                flexWrap="wrap"
+                justifyContent="center"
+                alignItems="center"
+              >
+                {imageInfo.hashtags.map((h) => (
+                  <Button
+                    key={h}
+                    onClick={() => setHashtag(h)}
+                    size="small"
+                    variant="text"
+                    style={{ textTransform: 'lowercase' }}
+                  >
+                    <Typography variant="body2">#{h}</Typography>
+                  </Button>
+                ))}
+              </Box>
             ) : (
               <div></div>
             )}
