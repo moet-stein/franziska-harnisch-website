@@ -67,7 +67,7 @@ function NavbarHome() {
               <Link className="navbar-item" to="/about">
              About
               </Link>
-              <Link className="navbar-item" to="/">
+              <Link className="navbar-item" to="/testMoe">
               Works
               </Link>
               <Link className="navbar-item" to="/">

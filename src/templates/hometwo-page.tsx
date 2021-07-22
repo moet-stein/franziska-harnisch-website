@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import styled, { css, keyframes } from 'styled-components';
 import { fadeInRight } from 'react-animations';
-import LayoutHome from '../components/LayoutHome';
+import LayoutHometwo from '../components/LayoutHometwo';
 import { Grid } from '@material-ui/core'
 import EventsFrontPage from "../components/EventsFrontPage/EventsFrontPage"
 import Layout from '../components/Layout';
-import "./../components/EventsFrontPage/EventsFrontPage.css"
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
@@ -53,7 +52,7 @@ const TitleEffect = styled.h1`
 const SubtitleEffect = styled.h4`
 animation: ${animation};
 `
-export const LauraTestTemplate = ({
+export const HometwoTemplate = ({
   image,
   title,
   heading,
@@ -82,11 +81,11 @@ export const LauraTestTemplate = ({
         <Grid item style={{ marginLeft: 40 }}>
           <TitleEffect  >
 
-            <h2 style={{ marginTop: 0 }} className="nametext">{title}</h2>
+            <h2 style={{ marginTop: 0 }}>{title}</h2>
           </TitleEffect>
           <SubtitleEffect>
-            <h3 style={{ fontSize: 22 }} className="nametext">{heading}</h3>
-            <h3 style={{ fontSize: 22 }} className="nametext">{subheading}</h3>
+            <h3 style={{ fontSize: 22 }}>{heading}</h3>
+            <h3 style={{ fontSize: 22 }}>{subheading}</h3>
           </SubtitleEffect>
         </Grid>
         <Grid item>
@@ -101,24 +100,22 @@ const LauraTest: React.FC<any> = ({ data }) => {
 
 
   return (
-    <LayoutHome>
-      <LauraTestTemplate
+    <LayoutHometwo>
+      <HometwoTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        /* futureExposition ={frontmatter.futureExposition}
-        exposition={frontmatter.exposition}
-        dateLocation={frontmatter.dateLocation} */
+
         intro={frontmatter.intro}
       />
-    </LayoutHome>
+    </LayoutHometwo>
   );
 };
 export default LauraTest;
-LauraTestTemplate.propTypes = {
+HometwoTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -134,8 +131,8 @@ LauraTestTemplate.propTypes = {
   }),
 };
 export const pageQuery = graphql`
-  query LauraTestTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "lauratest-page" } }) {
+  query HometwoTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "hometwo-page" } }) {
       frontmatter {
         title
         image {
