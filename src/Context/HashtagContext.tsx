@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 
 // 2. initialize the context
 const initHashtagContext = {
-  hashtag: null,
+  hashtag: '',
 };
 // 3. create context
 export const HashtagContext = createContext(initHashtagContext);

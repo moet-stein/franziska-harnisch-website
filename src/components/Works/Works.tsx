@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
 import WorksImage from '../WorksImage/WorksImage';
 import Box from '@material-ui/core/Box';
-import { HashtagContext, HashtagProvider } from '../../Context/HashtagContext';
+import {
+  HashtagContext,
+  HashtagProvider,
+} from '../../Context/HashtagContext.tsx';
 
 export default function Works({ images }) {
   const [filtered, setFiltered] = useState([]);

@@ -5,7 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import grey from '@material-ui/core/colors/grey';
-import { HashtagContext, HashtagProvider } from '../../Context/HashtagContext';
+import {
+  HashtagContext,
+  HashtagProvider,
+} from '../../Context/HashtagContext.tsx';
 
 const useStyles = makeStyles(() => ({
   image: {

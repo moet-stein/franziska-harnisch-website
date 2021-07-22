@@ -6,7 +6,7 @@ import Display1 from '../components/Display1/Display1';
 import Content, { HTMLContent } from '../components/Content';
 import Img from 'gatsby-image';
 import Works from '../components/Works/Works';
-import { HashtagContext, HashtagProvider } from '../Context/HashtagContext';
+import { HashtagContext, HashtagProvider } from '../Context/HashtagContext.tsx';
 
 // works template 1
 
