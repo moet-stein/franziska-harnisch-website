@@ -1,22 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Display1 from '../components/Display1/Display1';
 import Content, { HTMLContent } from '../components/Content';
 import Img from 'gatsby-image';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import Works from '../components/Works/Works';
 import { HashtagContext, HashtagProvider } from '../Context/HashtagContext.tsx';
 
 // works template 1
 
 export const TestMoePageTemplate = ({ title, intro, description }) => {
-  console.log(title);
-  console.log(intro.blurbs);
-
-  useEffect(() => {
-    console.log(intro.blurbs.filter((i) => i.image.childImageSharp));
-  }, []);
+  const { hashtag, setHashtag } = useContext(HashtagContext);
 
   return (
     <section className="section section--gradient">
@@ -28,9 +25,12 @@ export const TestMoePageTemplate = ({ title, intro, description }) => {
                 {title}
               </h2>
               <p>{description}</p>
-              <HashtagProvider>
-                <Works images={intro.blurbs} />
-              </HashtagProvider>
+              <Box>
+                <Button onClick={() => setHashtag('')}>#ALL</Button>
+              </Box>
+              {/* <HashtagProvider> */}
+              <Works images={intro.blurbs} />
+              {/* </HashtagProvider> */}
             </div>
           </div>
         </div>

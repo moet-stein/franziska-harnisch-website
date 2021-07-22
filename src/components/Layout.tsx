@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
+import { HashtagContext, HashtagProvider } from '../Context/HashtagContext.tsx';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -47,9 +48,11 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
+      <HashtagProvider>
+        <Navbar />
+        <div>{children}</div>
+        <Footer />
+      </HashtagProvider>
     </div>
   );
 };
