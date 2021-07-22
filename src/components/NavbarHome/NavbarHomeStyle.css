@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
 .dispFlexRow {
   display: flex;
 }
@@ -30,7 +30,9 @@
   margin: 15px;
   text-decoration: none;
   color: black;
-  font-family: "Source Sans Pro", sans-serif;
+ font-family: 'Josefin Sans', sans-serif;
+font-size: 20px;
+
 }
 #navMenu {
   align-items: center;
@@ -69,6 +71,7 @@
 
 .menu li {
   border-bottom: 1px solid #dddddd;
+   font-family: 'Josefin Sans', sans-serif;
 }
 
 .menu li a {
