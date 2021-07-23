@@ -54,17 +54,17 @@ export default function PictureHometwo({ pic }) {
         left: 170,
     }}>
         <Grid item style={{ position: "relative", top: 20 }}>
-            <img onMouseOver={() => setExit(prev => !prev)} className={exit ? classes.imageMask : classes.imageNoMask} src={pic[0].image.childImageSharp.fluid.src} />
+            <img style={{ borderRadius: 5 }} onMouseOver={() => setExit(prev => !prev)} className={exit ? classes.imageMask : classes.imageNoMask} src={pic[0].image.childImageSharp.fluid.src} />
             <p className={exit ? classes.animatedItem : classes.animatedItemExiting}
                 style={{ position: "absolute" }} >{pic[0].text}</p>
         </Grid>
-        <Grid item style={{ position: "relative", top: -50, left: 120 }}>
-            <img onMouseOver={() => setVisible(prev => !prev)} className={visible ? classes.imageMask : classes.imageNoMask} src={pic[1].image.childImageSharp.fluid.src} />
+        <Grid item style={{ position: "relative", top: -100, left: 120 }}>
+            <img style={{ borderRadius: 5 }} onMouseOver={() => setVisible(prev => !prev)} className={visible ? classes.imageMask : classes.imageNoMask} src={pic[1].image.childImageSharp.fluid.src} />
             <p style={{ position: "absolute" }} className={visible ? classes.animatedItem : classes.animatedItemExiting}>{pic[1].text}</p>
 
         </Grid>
-        <Grid item style={{ position: "relative", top: 120, left: 190 }}>
-            <img onMouseOver={() => setThirdPic(prev => !prev)} className={thirdPic ? classes.imageMask : classes.imageNoMask} src={pic[2].image.childImageSharp.fluid.src} />
+        <Grid item style={{ position: "relative", top: 80, left: 190 }}>
+            <img style={{ borderRadius: 5 }} onMouseOver={() => setThirdPic(prev => !prev)} className={thirdPic ? classes.imageMask : classes.imageNoMask} src={pic[2].image.childImageSharp.fluid.src} />
             <p style={{ position: "absolute" }} className={thirdPic ? classes.animatedItem : classes.animatedItemExiting}>{pic[2].text}</p>
 
         </Grid>
