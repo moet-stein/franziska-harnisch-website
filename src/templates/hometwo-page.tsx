@@ -4,8 +4,8 @@ import { Link, graphql } from 'gatsby';
 import styled, { css, keyframes } from 'styled-components';
 import { fadeInRight } from 'react-animations';
 import LayoutHometwo from '../components/LayoutHometwo';
-import { Grid } from '@material-ui/core'
-import EventsFrontPage from "../components/EventsFrontPage/EventsFrontPage"
+
+import PictureHometwo from "../components/PictureHometwo/pictureHometwo"
 import Layout from '../components/Layout';
 const Title = styled.h1`
   font-size: 1.5em;
@@ -68,7 +68,9 @@ export const HometwoTemplate = ({
 
     <div
       style={{
-
+        position: "relative",
+        left: 170,
+        top: "-100vh",
         display: 'flex',
         height: '100vh',
         lineHeight: '1',
@@ -77,21 +79,9 @@ export const HometwoTemplate = ({
         flexDirection: 'column',
       }}
     >
-      <Grid container >
-        <Grid item style={{ marginLeft: 40 }}>
-          <TitleEffect  >
 
-            <h2 style={{ marginTop: 0 }}>{title}</h2>
-          </TitleEffect>
-          <SubtitleEffect>
-            <h3 style={{ fontSize: 22 }}>{heading}</h3>
-            <h3 style={{ fontSize: 22 }}>{subheading}</h3>
-          </SubtitleEffect>
-        </Grid>
-        <Grid item>
-          <EventsFrontPage events={intro.blurbs} />
-        </Grid>
-      </Grid>
+      <PictureHometwo pic={intro.blurbs} />
+
     </div>
   )
 };
@@ -131,15 +121,15 @@ HometwoTemplate.propTypes = {
   }),
 };
 export const pageQuery = graphql`
-  query HometwoTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "hometwo-page" } }) {
-      frontmatter {
-        title
+        query HometwoTemplate {
+          markdownRemark(frontmatter: {templateKey: {eq: "hometwo-page" } }) {
+          frontmatter {
+          title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+          fluid(maxWidth: 2048, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
           }
         }
         heading
@@ -149,22 +139,22 @@ export const pageQuery = graphql`
           description
         }
         description
-       
+
         intro {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
+          image {
+          childImageSharp {
+          fluid(maxWidth: 240, quality: 64) {
+          ...GatsbyImageSharpFluid
+        }
               }
             }
-            text
+        text
           }
-          heading
-          description
+        heading
+        description
         }
       }
     }
   }
-`;
+        `;
