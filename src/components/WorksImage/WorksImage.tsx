@@ -36,7 +36,7 @@ const useStyles = makeStyles(() => ({
   },
   content: {
     backgroundColor: grey[600],
-    opacity: '0.7',
+    opacity: '0.9',
     borderRadius: '5px',
     color: 'white',
     fontSize: '16px',

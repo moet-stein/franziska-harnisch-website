@@ -18,9 +18,7 @@ export default function Works({ images }) {
       setFiltered(images);
       setLoading(false);
     } else {
-      setFiltered(
-        images.filter((i) => i.hashtags.includes(hashtag))
-      );
+      setFiltered(images.filter((i) => i.hashtags.includes(hashtag)));
       setLoading(false);
     }
   }, [hashtag]);
@@ -29,7 +27,12 @@ export default function Works({ images }) {
     // <HashtagProvider>
     <div className="columns is-multiline">
       {!loading && (
-        <Box display="flex" flexWrap="wrap">
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="center"
+          alignItems="center"
+        >
           {filtered.map((item) => (
             <Box key={item.text} m={1}>
               <div className="column is-6">

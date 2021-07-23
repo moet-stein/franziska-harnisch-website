@@ -6,6 +6,7 @@ import Display1 from '../components/Display1/Display1';
 import Content, { HTMLContent } from '../components/Content';
 import Img from 'gatsby-image';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Works from '../components/Works/Works';
 import { HashtagContext, HashtagProvider } from '../Context/HashtagContext.tsx';
@@ -20,18 +21,18 @@ export const TestMoePageTemplate = ({ title, intro, description }) => {
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <p>{description}</p>
-              <Box>
+            <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
+              <Box mt={3} display="flex" alignItems="center" justifyContent="center">
+                <Typography variant="h2">{title}</Typography>
+              </Box>
+              {/* <p>{description}</p> */}
+              <Box display="flex" justifyContent="flex-end" mt={3}>
                 <Button onClick={() => setHashtag('')}>#ALL</Button>
               </Box>
               {/* <HashtagProvider> */}
               <Works images={intro.blurbs} />
               {/* </HashtagProvider> */}
-            </div>
+            </Box>
           </div>
         </div>
       </div>

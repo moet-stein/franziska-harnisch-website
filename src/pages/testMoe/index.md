@@ -1,7 +1,7 @@
 ---
 templateKey: testMoe-page
 path: /testMoe
-title: Test Moe
+title: Works
 image: /img/og-image.jpg
 heading: Just Test
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
