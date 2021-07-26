@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import Layout1 from '../components/Layout1/Layout1'
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -23,6 +24,7 @@ export const WorksPageTemplate = ({ title }) => {
               <Box display="flex" justifyContent="flex-end" mt={3}>
                 {/* <Button onClick={() => setHashtag('')}>#ALL</Button> */}
               </Box>
+                <Layout1 />
             </Box>
           </div>
         </div>

@@ -26,7 +26,6 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-
   - name: "workdetails"
     label: "Workdetails"
     folder: "src/pages/workdetails"
@@ -38,14 +37,13 @@ collections:
       - {label: "Hashtags", name: "hashtags", widget: "list", fields: [{label: "Hashtag", name: "hashtag", widget: "string"}]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "SubTitle", name: "subTitle", widget: "string"}
-      - {label: "Links", name: "links", widget: "list", fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}] }
+      - {label: "Links", name: "links", widget: "list", fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "file"}, {label: "Image Title", name: "imageTitle", widget: "string"}]}
       - {label: "Featured Image", name: "featuredimage", widget: "file"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
       - {label: "PDFs", name: "pdfs", widget: "list", fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
-      
-
+  
   - name: "pages"
     label: "Pages"
     files:
@@ -121,7 +119,7 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Text, name: text, widget: text}]}]}]}
-       - file: 'src/pages/works/index.md'
+      - file: 'src/pages/works/index.md'
         label: 'Works Page'
         name: 'works'
         fields:
