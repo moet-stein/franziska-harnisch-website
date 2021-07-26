@@ -11,6 +11,8 @@ export const WorkdetailsPostTemplate = ({
   layoutType,
   links,
   hashtags,
+  images,
+  featuredimage,
 }) => {
   const workdetailsData = {
     description,
@@ -19,6 +21,8 @@ export const WorkdetailsPostTemplate = ({
     links,
     layoutType,
     hashtags,
+    images,
+    featuredimage,
   };
   console.log(workdetailsData);
   return (
@@ -53,6 +57,8 @@ WorkdetailsPostTemplate.propTypes = {
   layoutType: PropTypes.string,
   hashtags: PropTypes.array,
   links: PropTypes.array,
+  images: PropTypes.array,
+  featuredimage: PropTypes.object,
 };
 
 const WorkdetailsPost = ({ data }) => {
@@ -67,6 +73,8 @@ const WorkdetailsPost = ({ data }) => {
         layoutType={post.frontmatter.layoutType}
         hashtags={post.frontmatter.hashtags}
         links={post.frontmatter.links}
+        images={post.frontmatter.images}
+        featuredimage={post.frontmatter.featuredimage}
       />
     </Layout>
   );
@@ -97,8 +105,13 @@ export const pageQuery = graphql`
           hashtag
         }
         images {
+          imageTitle
           image {
-            id
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
           }
         }
         featuredimage {

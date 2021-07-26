@@ -77,8 +77,8 @@ export default () => (
                   hashtag
                 }
                 images {
+                  imageTitle
                   image {
-                    id
                     childImageSharp {
                       fluid {
                         src
