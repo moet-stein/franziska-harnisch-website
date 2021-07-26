@@ -36,13 +36,13 @@ collections:
       - {label: "Layout Type", name: "layoutType", widget: "select", options: ["Layout1", "Layout2", "Layout3"], align: "center"}
       - {label: "Hashtags", name: "hashtags", widget: "list", fields: [{label: "Hashtag", name: "hashtag", widget: "string"}]}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "SubTitle", name: "subTitle", widget: "string"}
-      - {label: "Links", name: "links", widget: "list", fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "file"}, {label: "Image Title", name: "imageTitle", widget: "string"}]}
+      - {label: "SubTitle", name: "subTitle", widget: "string", required: false}
+      - {label: "Links", name: "links", widget: "list", required: false, fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "file"}, {label: "Image Title", name: "imageTitle", widget: "string", required: false}]}
       - {label: "Featured Image", name: "featuredimage", widget: "file"}
-      - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
-      - {label: "PDFs", name: "pdfs", widget: "list", fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
+      - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
+      - {label: "PDFs", name: "pdfs", widget: "list", required: false, fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
   
   - name: "pages"
     label: "Pages"
