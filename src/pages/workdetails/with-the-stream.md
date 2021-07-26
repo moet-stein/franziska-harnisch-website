@@ -29,4 +29,5 @@ images:
   - image: /img/stream4.webp
   - image: /img/stream5.webp
 featuredimage: /img/stream6.png
+youtubeVideos: []
 ---
