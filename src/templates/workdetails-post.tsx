@@ -1,44 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
-import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
-import Content, { HTMLContent } from '../components/Content';
+import Layout1 from '../components/Layout1/Layout1';
 
 export const WorkdetailsPostTemplate = ({
-  content,
-  contentComponent,
   description,
-  tags,
   title,
-  helmet,
+  subTitle,
+  layoutType,
+  links,
+  hashtags,
 }) => {
-  const PostContent = contentComponent || Content;
-
+  const workdetailsData = {
+    description,
+    title,
+    subTitle,
+    links,
+    layoutType,
+    hashtags,
+  };
+  console.log(workdetailsData);
   return (
     <section className="section">
-      {helmet || ''}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+
+            {layoutType === 'Layout1' && (
+              <Layout1 workdetailsData={workdetailsData} />
+            )}
+            {layoutType === 'Layout2' && <p>layoutType2</p>}
+            {layoutType === 'Layout3' && <p>layoutType3</p>}
+            <h2>{subTitle}</h2>
+            {hashtags.map((h) => (
+              <p>{h.hashtag}</p>
+            ))}
           </div>
         </div>
       </div>
@@ -47,11 +47,12 @@ export const WorkdetailsPostTemplate = ({
 };
 
 WorkdetailsPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
+  subTitle: PropTypes.string,
+  layoutType: PropTypes.string,
+  hashtags: PropTypes.array,
+  links: PropTypes.array,
 };
 
 const WorkdetailsPost = ({ data }) => {
@@ -60,20 +61,12 @@ const WorkdetailsPost = ({ data }) => {
   return (
     <Layout>
       <WorkdetailsPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        subTitle={post.frontmatter.subTitle}
+        layoutType={post.frontmatter.layoutType}
+        hashtags={post.frontmatter.hashtags}
+        links={post.frontmatter.links}
       />
     </Layout>
   );
@@ -90,13 +83,32 @@ export default WorkdetailsPost;
 export const pageQuery = graphql`
   query WorkdetailsPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
-      html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
+        subTitle
         description
-        tags
+        links {
+          linkName
+          linkURL
+        }
+        layoutType
+        templateKey
+        hashtags {
+          hashtag
+        }
+        images {
+          image {
+            id
+          }
+        }
+        featuredimage {
+          id
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
       }
     }
   }
