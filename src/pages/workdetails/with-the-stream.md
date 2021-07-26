@@ -23,6 +23,7 @@ description: Die Performance fand während einer Vernissage der Circle1 Gallery
   Internet-Realität?
 images:
   - image: /img/stream1.png
+    imageTitle: stream1
   - image: /img/stream2.png
   - image: /img/stream3.webp
   - image: /img/stream4.webp
