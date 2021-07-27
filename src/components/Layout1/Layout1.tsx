@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Layout1({ workdetailsData }) {
   const classes = useStyles();
+  const [ftImg, setFtImg] = useState({});
   const {
     description,
     title,
@@ -62,6 +63,16 @@ export default function Layout1({ workdetailsData }) {
     images,
     featuredimage,
   } = workdetailsData;
+
+  useEffect(() => {
+    const ftObj = {
+      imageTitle: title,
+      image: featuredimage,
+    };
+    console.log(ftObj);
+    setFtImg(ftObj);
+  }, []);
+
   return (
     <>
       <Box className={classes.flexColumn}>
@@ -72,8 +83,8 @@ export default function Layout1({ workdetailsData }) {
           <Typography variant="h6">{subTitle}</Typography>
           {hashtags.length > 0 && (
             <Box className={classes.flexWrap}>
-              {hashtags.map((h) => (
-                <Box ml={2}>
+              {hashtags.map((h, index) => (
+                <Box kex={`${h}-${index}`} ml={2}>
                   <Typography className={classes.hashColor}>
                     #{h.hashtag}
                   </Typography>
@@ -85,10 +96,11 @@ export default function Layout1({ workdetailsData }) {
         <Box className={classes.topPart}>
           <Box>
             <Box>
-              <img
+              <LayImg img={ftImg} />
+              {/* <img
                 className={classes.imgWidth}
                 src={featuredimage.childImageSharp.fluid.src}
-              />
+              /> */}
             </Box>
           </Box>
           <Box className={classes.flexColumn}>
@@ -97,8 +109,8 @@ export default function Layout1({ workdetailsData }) {
             </Box>
             <Box className={classes.links}>
               {links.length > 0 &&
-                links.map((l) => (
-                  <Box ml={2}>
+                links.map((l, index) => (
+                  <Box key={`${l.linkName}-${index}`} ml={2}>
                     <Link href={l.linkURL}>
                       <Typography>{l.linkName}</Typography>
                     </Link>

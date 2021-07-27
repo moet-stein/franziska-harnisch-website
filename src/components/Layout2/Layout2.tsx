@@ -76,13 +76,13 @@ export default function Layout2({ workdetailsData }) {
           <Typography className={classes.h1Fontsize} variant="h1">
             {title}
           </Typography>
-          <Typography className={classes.width60} variant="h6">
-            {subTitle}
-          </Typography>
+          <Box className={classes.width60}>
+            <Typography variant="h6">{subTitle}</Typography>
+          </Box>
           {hashtags.length > 0 && (
             <Box className={classes.flexWrap} m={3}>
-              {hashtags.map((h) => (
-                <Box ml={2} key={h}>
+              {hashtags.map((h, index) => (
+                <Box ml={2} key={`${h}-${index}`}>
                   <Typography className={classes.hashColor}>
                     #{h.hashtag}
                   </Typography>
@@ -93,8 +93,8 @@ export default function Layout2({ workdetailsData }) {
         </Box>
         <Box className={classes.flexWrap}>
           {images.map((i, index) => (
-            <Box className={classes.marginPic}>
-              <LayImg key={index} img={i} />
+            <Box key={`image-${index}`} className={classes.marginPic}>
+              <LayImg img={i} />
             </Box>
           ))}
         </Box>
@@ -104,8 +104,8 @@ export default function Layout2({ workdetailsData }) {
           </Typography>
           <Box className={classes.links}>
             {links.length > 0 &&
-              links.map((l) => (
-                <Box ml={2}>
+              links.map((l, index) => (
+                <Box ml={2} key={`${l.linkName}-${index}`}>
                   <Link href={l.linkURL}>
                     <Typography>{l.linkName}</Typography>
                   </Link>

@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     imgWidth: {
       width: '200px',
     },
+    paper: {
+      height: '60%',
+    },
   },
 }));
 
