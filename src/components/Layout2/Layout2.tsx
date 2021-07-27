@@ -42,9 +42,15 @@ const useStyles = makeStyles((theme) => ({
   hashColor: {
     color: blueGrey[600],
   },
+  marginPic: {
+    marginLeft: theme.spacing(4),
+  },
+  descWidth: {
+    width: '70%',
+  },
   '@media only screen and (max-width: 600px)': {
-    topPart: {
-      flexDirection: 'column',
+    marginPic: {
+      marginLeft: theme.spacing(1),
     },
   },
 }));
@@ -87,8 +93,25 @@ export default function Layout2({ workdetailsData }) {
         </Box>
         <Box className={classes.flexWrap}>
           {images.map((i, index) => (
-            <LayImg key={index} img={i} />
+            <Box className={classes.marginPic}>
+              <LayImg key={index} img={i} />
+            </Box>
           ))}
+        </Box>
+        <Box m={5} className={classes.flexColumn}>
+          <Typography className={classes.descWidth} variant="body2">
+            {description}
+          </Typography>
+          <Box className={classes.links}>
+            {links.length > 0 &&
+              links.map((l) => (
+                <Box ml={2}>
+                  <Link href={l.linkURL}>
+                    <Typography>{l.linkName}</Typography>
+                  </Link>
+                </Box>
+              ))}
+          </Box>
         </Box>
       </Box>
     </>
