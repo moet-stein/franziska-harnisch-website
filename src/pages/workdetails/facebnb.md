@@ -15,7 +15,13 @@ hashtags:
 title: Facebnb
 subTitle: performative Auktion, Beamerpräsentation, Statisten, Morphmaske,
   Nutzungsvertrag und Zetifikat
-links: []
+links:
+  - linkName: Link1
+    linkURL: https://www.franziskaharnisch.de/facebnb
+  - linkName: Link2
+    linkURL: https://www.franziskaharnisch.de/facebnb
+  - linkName: Link3
+    linkURL: https://www.franziskaharnisch.de/facebnb
 description: >-
   Willkommen bei Facebnb! Hier sind Identitäten idiomatisch, Fremde Freunde und
   Namen Schall und Netz. Nehmen Sie sich 1 Woche Zeit für Ihr second life,
