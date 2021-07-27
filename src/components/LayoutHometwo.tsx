@@ -48,7 +48,7 @@ const TemplateWrapperHomeTwo = ({ children }) => {
         />
       </Helmet>
       <NavbarHometwo />
-      <div>{children}</div>
+      <div >{children}</div>
       <FooterHome />
     </div>
   );

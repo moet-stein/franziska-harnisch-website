@@ -9,34 +9,33 @@ function NavbarHome() {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
+  const [active, setActive] = useState(false)
+  const [navBarActiveClass, setNavBarActiveClass] = useState("")
   /* constructor(props) {
     super(props);
     this.state = {
       active: false,
       navBarActiveClass: "",
     };
+  }*/
+
+  const toggleHamburger = () => {
+    // toggle the active boolean in the state
+    setActive(prev => !prev)
+    hamburgerActiveClass()
+    // after state has been updated,
+
+
+  };
+  const hamburgerActiveClass = () => {
+
+    // set the class in state for the navbar accordingly
+    active
+      ? setNavBarActiveClass("is-active")
+      : setNavBarActiveClass("");
+
   }
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: "is-active",
-            })
-          : this.setState({
-              navBarActiveClass: "",
-            });
-      }
-    );
-  };
- */
   // render() {
   return (
     <nav
@@ -49,19 +48,19 @@ function NavbarHome() {
         <div className="navbar-brand">
 
           {/* Hamburger menu */}
-          {/*  <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div> */}
+          <div
+            className={`navbar-burger burger ${navBarActiveClass}`}
+            data-target="navMenu"
+            onClick={() => toggleHamburger()}
+          >
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
         <div
           id="navMenu"
-        // className={`navbar-menu ${this.state.navBarActiveClass}`}
+          className={`navbar-menu ${navBarActiveClass}`}
         >
           <div className="dispflexrow dfspacearound"  >
             <Link className="navbar-item" to="/hometwo">
@@ -95,7 +94,7 @@ function NavbarHome() {
           </div>
 
           <div className="navbar-end has-text-centered">
-            {/*   <a
+            {/*    /*   <a
                 className="navbar-item"
                 href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
                 target="_blank"
