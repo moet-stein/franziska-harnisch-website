@@ -6,8 +6,8 @@ import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
 
 export const WorkdetailsPostTemplate = ({
-  description,
   title,
+  description,
   subTitle,
   layoutType,
   links,
@@ -46,8 +46,8 @@ export const WorkdetailsPostTemplate = ({
 };
 
 WorkdetailsPostTemplate.propTypes = {
-  description: PropTypes.string,
   title: PropTypes.string,
+  description: PropTypes.string,
   subTitle: PropTypes.string,
   layoutType: PropTypes.string,
   hashtags: PropTypes.array,
@@ -62,8 +62,8 @@ const WorkdetailsPost = ({ data }) => {
   return (
     <Layout>
       <WorkdetailsPostTemplate
-        description={post.frontmatter.description}
         title={post.frontmatter.title}
+        description={post.frontmatter.description}
         subTitle={post.frontmatter.subTitle}
         layoutType={post.frontmatter.layoutType}
         hashtags={post.frontmatter.hashtags}
