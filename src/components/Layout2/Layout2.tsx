@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
@@ -51,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Layout2({ workdetailsData }) {
   const classes = useStyles();
-  const [imagesArr, setImagesArr] = useState([]);
   const {
     description,
     title,
@@ -62,11 +61,8 @@ export default function Layout2({ workdetailsData }) {
     images,
     featuredimage,
   } = workdetailsData;
+  console.log(workdetailsData)
 
-  useEffect(() => {
-    // const ftImage = {}
-    // setImagesArr.push()
-  }, []);
 
   return (
     <>
@@ -91,10 +87,6 @@ export default function Layout2({ workdetailsData }) {
           )}
         </Box>
         <Box className={classes.flexWrap}>
-          <img
-            className={classes.imgWidth}
-            src={featuredimage.childImageSharp.fluid.src}
-          />
           {images.map((i, index) => (
             <LayImg key={index} img={i} />
           ))}
