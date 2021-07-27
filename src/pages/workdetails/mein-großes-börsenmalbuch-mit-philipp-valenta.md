@@ -3,8 +3,8 @@ templateKey: workdetails-post
 layoutType: Layout3
 hashtags:
   - hashtag: collaboration
-title: Mein großes Börsenmalbuch mit Philipp Valenta
-subTitle: partizipatives Objekt, print on demand
+title: Mein großes Börsenmalbuch
+subTitle: " mit Philipp Valenta - partizipatives Objekt, print on demand"
 links:
   - linkName: Link1 test
     linkURL: https://www.franziskaharnisch.de/mein-grosses-boersenmalbuch
