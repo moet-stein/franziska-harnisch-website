@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Layout1 from '../components/Layout1/Layout1';
+import Layout2 from '../components/Layout2/Layout2';
 
 export const WorkdetailsPostTemplate = ({
   description,
@@ -33,7 +34,9 @@ export const WorkdetailsPostTemplate = ({
             {layoutType === 'Layout1' && (
               <Layout1 workdetailsData={workdetailsData} />
             )}
-            {layoutType === 'Layout2' && <p>layoutType2</p>}
+            {layoutType === 'Layout2' && (
+              <Layout2 workdetailsData={workdetailsData} />
+            )}
             {layoutType === 'Layout3' && <p>layoutType3</p>}
           </div>
         </div>
