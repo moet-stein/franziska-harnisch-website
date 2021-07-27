@@ -3,16 +3,19 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Layout1 from '../components/Layout1/Layout1';
+import Layout2 from '../components/Layout2/Layout2';
+import Layout3 from '../components/Layout3/Layout3';
 
 export const WorkdetailsPostTemplate = ({
-  description,
   title,
+  description,
   subTitle,
   layoutType,
   links,
   hashtags,
   images,
   featuredimage,
+  pdfs,
 }) => {
   const workdetailsData = {
     description,
@@ -23,6 +26,7 @@ export const WorkdetailsPostTemplate = ({
     hashtags,
     images,
     featuredimage,
+    pdfs,
   };
   console.log(workdetailsData);
   return (
@@ -33,8 +37,12 @@ export const WorkdetailsPostTemplate = ({
             {layoutType === 'Layout1' && (
               <Layout1 workdetailsData={workdetailsData} />
             )}
-            {layoutType === 'Layout2' && <p>layoutType2</p>}
-            {layoutType === 'Layout3' && <p>layoutType3</p>}
+            {layoutType === 'Layout2' && (
+              <Layout2 workdetailsData={workdetailsData} />
+            )}
+            {layoutType === 'Layout3' && (
+              <Layout3 workdetailsData={workdetailsData} />
+            )}
           </div>
         </div>
       </div>
@@ -43,14 +51,15 @@ export const WorkdetailsPostTemplate = ({
 };
 
 WorkdetailsPostTemplate.propTypes = {
-  description: PropTypes.string,
   title: PropTypes.string,
+  description: PropTypes.string,
   subTitle: PropTypes.string,
   layoutType: PropTypes.string,
   hashtags: PropTypes.array,
   links: PropTypes.array,
   images: PropTypes.array,
   featuredimage: PropTypes.object,
+  pdfs: PropTypes.array,
 };
 
 const WorkdetailsPost = ({ data }) => {
@@ -59,14 +68,15 @@ const WorkdetailsPost = ({ data }) => {
   return (
     <Layout>
       <WorkdetailsPostTemplate
-        description={post.frontmatter.description}
         title={post.frontmatter.title}
+        description={post.frontmatter.description}
         subTitle={post.frontmatter.subTitle}
         layoutType={post.frontmatter.layoutType}
         hashtags={post.frontmatter.hashtags}
         links={post.frontmatter.links}
         images={post.frontmatter.images}
         featuredimage={post.frontmatter.featuredimage}
+        pdfs={post.frontmatter.pdfs}
       />
     </Layout>
   );
@@ -113,6 +123,13 @@ export const pageQuery = graphql`
               src
             }
           }
+        }
+        pdfs {
+          pdf {
+            relativePath
+            publicURL
+          }
+          pdfTitle
         }
       }
     }

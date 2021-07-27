@@ -30,10 +30,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    height: '80%',
+  },
+  modalImg: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
   },
   '@media only screen and (max-width: 600px)': {
-    topPart: {
-      flexDirection: 'column',
+    imgWidth: {
+      width: '200px',
+    },
+    paper: {
+      height: '60%',
     },
   },
 }));
@@ -51,12 +60,14 @@ export default function LayImg({ img }) {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Box m={1} onClick={handleOpen}>
-        <img
-          className={classes.imgWidth}
-          src={img.image.childImageSharp.fluid.src}
-        />
+        {img.image && (
+          <img
+            className={classes.imgWidth}
+            src={img.image.childImageSharp.fluid.src}
+          />
+        )}
       </Box>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -72,13 +83,18 @@ export default function LayImg({ img }) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <img src={img.image.childImageSharp.fluid.src} />
+            {img.image && (
+              <img
+                className={classes.modalImg}
+                src={img.image.childImageSharp.fluid.src}
+              />
+            )}
             {img.imageTitle && (
               <Typography variant="h6">{img.imageTitle}</Typography>
             )}
           </div>
         </Fade>
       </Modal>
-    </>
+    </React.Fragment>
   );
 }
