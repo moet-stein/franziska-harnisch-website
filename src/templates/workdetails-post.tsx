@@ -30,19 +30,11 @@ export const WorkdetailsPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-
             {layoutType === 'Layout1' && (
               <Layout1 workdetailsData={workdetailsData} />
             )}
             {layoutType === 'Layout2' && <p>layoutType2</p>}
             {layoutType === 'Layout3' && <p>layoutType3</p>}
-            <h2>{subTitle}</h2>
-            {hashtags.map((h) => (
-              <p>{h.hashtag}</p>
-            ))}
           </div>
         </div>
       </div>
