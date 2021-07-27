@@ -61,8 +61,7 @@ export default function Layout2({ workdetailsData }) {
     images,
     featuredimage,
   } = workdetailsData;
-  console.log(workdetailsData)
-
+  console.log(workdetailsData);
 
   return (
     <>
@@ -77,7 +76,7 @@ export default function Layout2({ workdetailsData }) {
           {hashtags.length > 0 && (
             <Box className={classes.flexWrap} m={3}>
               {hashtags.map((h) => (
-                <Box ml={2}>
+                <Box ml={2} key={h}>
                   <Typography className={classes.hashColor}>
                     #{h.hashtag}
                   </Typography>
