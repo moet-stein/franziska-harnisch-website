@@ -2,37 +2,62 @@ import React from "react"
 import styled, { css, keyframes } from 'styled-components';
 import { fadeInRight } from 'react-animations';
 import "./EventsFrontPage.css"
-const FadeInRight = styled.div`
-  animation: 2s ${keyframes`${fadeInRight}`};
-`;
-const textAppear = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`
-const animation = () =>
-  css`
-    ${textAppear} 4s ;
-  `
+import { makeStyles } from "@material-ui/core/styles";
 
-const TitleEffect = styled.h1`
-  animation: ${animation};`
+const useStyles = makeStyles(theme => ({
+
+  animatedText: {
+    animation: `$textAppear 2000ms ${theme.transitions.easing.easeInOut}`,
+    fontFamily: 'Josefin Sans',
+    fontSize: 25,
+    maxWidth: 350,
+    margin: 10,
+    paddingLeft: 50,
+
+  },
+
+  "@keyframes textAppear": {
+    "0%": {
+      opacity: 0,
+      transform: " translateY(-200%)",
+    },
+    "100%": {
+      opacity: 1,
+      transform: " translateY(0)",
+
+
+    }
+  },
+  displayflexCont: {
+    display: "flex",
+    justifyContent: "flex-end",
+    marginTop: 30,
+    marginBottom: 30,
+    width: "fit-content",
+    marginRight: "auto",
+
+  },
+  columnDir: {
+    display: "flex",
+    flexDirection: "column"
+  }
+}));
+
+
+
 
 export default function EventsFrontPage({ events }) {
+  const classes = useStyles();
 
-  console.log()
-  return (<div style={{ marginTop: 30 }}>
-    <h3 className="textEvent fontSizeTitle ">Coming soon:</h3>
-    <TitleEffect>
-      <FadeInRight className="textEvent fontSizeEvent ">{events[0].text}</FadeInRight>
-    </TitleEffect>
-    <h3 className="textEvent fontSizeTitle">Latest Event:</h3>
-    <TitleEffect>
-      <FadeInRight className="textEvent fontSizeEvent ">{events[1].text}</FadeInRight>
-    </TitleEffect>
-    <p className="nametext" style={{ fontStyle: "italic", textAlign: "right", marginRight: -120 }}>See more...</p>
+  return (<div className={classes.displayflexCont}>
+    <div className={classes.columnDir}>
+      <h3 className="textEvent fontSizeTitle">{events.comingTitle}</h3>
+      <p className={classes.animatedText}>{events.futureEvent}</p>
+    </div>
+    <div className={classes.columnDir}>
+      <h3 className="textEvent fontSizeTitle">{events.lastTitle}</h3>
+      <p className={classes.animatedText}>{events.lastEvent}</p>
+    </div>
+
   </div>)
 }

@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import styled, { css, keyframes } from 'styled-components';
 import { fadeInRight } from 'react-animations';
 import LayoutHometwo from '../components/LayoutHometwo';
-
+import EventsFrontPage from "../components/EventsFrontPage/EventsFrontPage"
 import PictureHometwo from "../components/PictureHometwo/pictureHometwo"
 import Layout from '../components/Layout';
 const Title = styled.h1`
@@ -55,13 +55,10 @@ animation: ${animation};
 export const HometwoTemplate = ({
   image,
   title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
+  event,
   intro,
 }) => {
-  console.log(intro)
+  console.log(event)
   return (
 
 
@@ -69,17 +66,18 @@ export const HometwoTemplate = ({
     <div
       style={{
         position: "relative",
-        left: 170,
+        left: 300,
         top: "-100vh",
         display: 'flex',
         height: '100vh',
+        width: "fit-content",
         lineHeight: '1',
         justifyContent: 'space-around',
         alignItems: 'left',
         flexDirection: 'column',
       }}
     >
-
+      <EventsFrontPage events={event} />
       <PictureHometwo pic={intro.blurbs} />
 
     </div>
@@ -94,10 +92,7 @@ const LauraTest: React.FC<any> = ({ data }) => {
       <HometwoTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
+        event={frontmatter.event}
 
         intro={frontmatter.intro}
       />
@@ -108,14 +103,12 @@ export default LauraTest;
 HometwoTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  /*   futureExposiiton: PropTypes.string,
-    exposition: PropTypes.string,
-    dateLocation: PropTypes.string, */
-
+  event: PropTypes.shape({
+    comingTitle: PropTypes.string,
+    futureEvent: PropTypes.string,
+    lastTitle: PropTypes.string,
+    lastEvent: PropTypes.string,
+  }),
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
@@ -138,7 +131,12 @@ export const pageQuery = graphql`
           title
           description
         }
-        description
+        event{
+          comingTitle,
+          futureEvent,
+          lastTitle,
+          lastEvent
+        }
 
         intro {
           blurbs {
