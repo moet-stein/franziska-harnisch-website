@@ -120,6 +120,8 @@ images:
     image: /img/facebnb_performance07032020_franziskaharnisch_patricia-detmering_02.jpg
   - imageTitle: Facebnb_logo
     image: /img/facebnb_logo.jpg
+  - imageTitle: ""
+    image: /img/facebnb_profilbild.jpg
 featuredimage: /img/facebnb_profilbild.jpg
 youtubeVideos: []
 pdfs: []
