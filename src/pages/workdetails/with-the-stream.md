@@ -2,9 +2,13 @@
 templateKey: workdetails-post
 layoutType: Layout1
 hashtags:
-  - hashtag: germany
-  - hashtag: stream
-  - hashtag: hashtag1
+  - hashtag: Performance
+  - hashtag: site specific
+  - hashtag: webbased
+  - hashtag: public space
+  - hashtag: mobile work
+  - hashtag: surface
+  - hashtag: social media
 title: with the stream
 subTitle: Performance - 26.10.19 Circle1 Gallery
 links:
