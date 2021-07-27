@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
+import Layout3 from '../components/Layout3/Layout3';
 
 export const WorkdetailsPostTemplate = ({
   title,
@@ -14,6 +15,7 @@ export const WorkdetailsPostTemplate = ({
   hashtags,
   images,
   featuredimage,
+  pdfs,
 }) => {
   const workdetailsData = {
     description,
@@ -24,6 +26,7 @@ export const WorkdetailsPostTemplate = ({
     hashtags,
     images,
     featuredimage,
+    pdfs,
   };
   console.log(workdetailsData);
   return (
@@ -37,7 +40,9 @@ export const WorkdetailsPostTemplate = ({
             {layoutType === 'Layout2' && (
               <Layout2 workdetailsData={workdetailsData} />
             )}
-            {layoutType === 'Layout3' && <p>layoutType3</p>}
+            {layoutType === 'Layout3' && (
+              <Layout3 workdetailsData={workdetailsData} />
+            )}
           </div>
         </div>
       </div>
@@ -54,6 +59,7 @@ WorkdetailsPostTemplate.propTypes = {
   links: PropTypes.array,
   images: PropTypes.array,
   featuredimage: PropTypes.object,
+  pdfs: PropTypes.array,
 };
 
 const WorkdetailsPost = ({ data }) => {
@@ -70,6 +76,7 @@ const WorkdetailsPost = ({ data }) => {
         links={post.frontmatter.links}
         images={post.frontmatter.images}
         featuredimage={post.frontmatter.featuredimage}
+        pdfs={post.frontmatter.pdfs}
       />
     </Layout>
   );
@@ -116,6 +123,13 @@ export const pageQuery = graphql`
               src
             }
           }
+        }
+        pdfs {
+          pdf {
+            relativePath
+            publicURL
+          }
+          pdfTitle
         }
       }
     }

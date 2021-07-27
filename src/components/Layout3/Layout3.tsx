@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import { Document, Page } from 'react-pdf';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout2({ workdetailsData }) {
+export default function Layout3({ workdetailsData }) {
   const classes = useStyles();
   const {
     description,
@@ -66,8 +67,17 @@ export default function Layout2({ workdetailsData }) {
     hashtags,
     images,
     featuredimage,
+    pdfs,
   } = workdetailsData;
 
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
+
+  console.log(workdetailsData);
   return (
     <>
       <Box className={classes.flexColumn} mt={5}>
@@ -89,6 +99,17 @@ export default function Layout2({ workdetailsData }) {
               ))}
             </Box>
           )}
+        </Box>
+        <Box>
+          {pdfs.length > 0 &&
+            pdfs.map((p) => (
+              <embed
+                src={p.pdf.publicURL}
+                width="500"
+                height="600"
+                type="application/pdf"
+              />
+            ))}
         </Box>
         <Box className={classes.flexWrap}>
           {images.map((i, index) => (
