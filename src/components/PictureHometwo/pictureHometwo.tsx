@@ -49,10 +49,7 @@ export default function PictureHometwo({ pic }) {
     const [thirdPic, setThirdPic] = useState(false)
     console.log("exit", exit)
     console.log("visible", visible)
-    return (<Grid container style={{
-        position: "relative",
-        left: 170,
-    }}>
+    return (<Grid container >
         <Grid item style={{ position: "relative", top: 20 }}>
             <img style={{ borderRadius: 5 }} onMouseOver={() => setExit(prev => !prev)} className={exit ? classes.imageMask : classes.imageNoMask} src={pic[0].image.childImageSharp.fluid.src} />
             <p className={exit ? classes.animatedItem : classes.animatedItemExiting}
