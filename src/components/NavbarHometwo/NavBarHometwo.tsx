@@ -25,7 +25,7 @@ function NavbarHometwo() {
     }
 
     return (
-        <div>
+        <div style={{ position: "fixed" }} >
 
             <MenuIcon style={{ display: "inline-block" }} onClick={onClick} />
             <nav
