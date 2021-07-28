@@ -16,11 +16,7 @@ import WorksPagePreview from './preview-templates/WorksPagePreview'
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
-media_library:
-name: cloudinary
-config:
-cloud_name: "cloulau"
-api_key: 874444926961963
+
 
 CMS.registerPreviewTemplate('index', IndexPagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
