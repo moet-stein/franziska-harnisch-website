@@ -16,6 +16,7 @@ export default function Works({ posts }) {
           flexWrap="wrap"
           justifyContent="center"
           alignItems="center"
+          m={3}
         >
           {posts
             .map((p) => p.node)
