@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 // import { Document, Page } from 'react-pdf';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
@@ -70,13 +69,6 @@ export default function Layout3({ workdetailsData }) {
     pdfs,
   } = workdetailsData;
 
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
   console.log(workdetailsData);
   return (
     <>
@@ -104,6 +96,7 @@ export default function Layout3({ workdetailsData }) {
           {pdfs.length > 0 &&
             pdfs.map((p) => (
               <embed
+                key={p.pdf.publicURL}
                 src={p.pdf.publicURL}
                 width="500"
                 height="600"

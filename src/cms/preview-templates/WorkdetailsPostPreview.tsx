@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { WorkdetailsPostTemplate } from '../../templates/workdetails-post';
 
 const WorkdetailsPostPreview = ({ entry, widgetFor }) => {
+  console.log(entry);
   return (
-    <WorkdetailsPostTemplate
-      title={entry.getIn(['data', 'title'])}
-      description={entry.getIn(['data', 'description'])}
-    />
+    // <WorkdetailsPostTemplate
+    //   title={entry.getIn(['data', 'title'])}
+    //   description={entry.getIn(['data', 'description'])}
+    // />
+    <div>Hello</div>
   );
 };
 
