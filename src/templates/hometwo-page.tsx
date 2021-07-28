@@ -67,9 +67,7 @@ export const HometwoTemplate = ({
       style={{
         position: "relative",
         left: 300,
-        top: 0,
         display: 'flex',
-        height: '100vh',
         width: "fit-content",
         lineHeight: '1',
         justifyContent: 'space-around',
