@@ -1,45 +1,151 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
+import Works from '../Works/Works';
+import Chip from '@material-ui/core/Chip';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
-class WorkdetailsRoll extends React.Component {
-  render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
-    console.log(data);
+export function WorkdetailsRoll({ data }) {
+  // render() {
+  // const { data } = this.props;
+  const { edges: posts } = data.allMarkdownRemark;
+  const [hashtags, setHashtags] = useState([]);
+  const [selectedHash, setSelectedHash] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [allSelected, setAllSelected] = useState(true);
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
-    return (
-      <div className="columns is-multiline">
-        {posts &&
-          posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <header>
-                {post.frontmatter.featuredimage ? (
-                  <div className="featured-thumbnail"></div>
-                ) : null}
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                </p>
-              </header>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
-              </p>
-            </div>
+  const filHash = () => {
+    if (selectedHash.length == 0) {
+      const shuffled = shuffle(posts);
+      setFilteredPosts(shuffled);
+      setLoading(false);
+    } else {
+      const filtered = shuffle(
+        posts.filter((p) =>
+          p.node.frontmatter.hashtags
+            .map((h) => h.hashtag)
+            .includes(selectedHash)
+        )
+      );
+      setFilteredPosts(filtered);
+      setLoading(false);
+    }
+  };
+
+  const handleClick = (h) => {
+    setSelectedHash(h);
+    setAllSelected(false);
+  };
+
+  const handleAll = () => {
+    allSelected ? setAllSelected(false) : setAllSelected(true);
+    setSelectedHash('');
+  };
+
+  const handleSearch = (e) => {
+    if (e.target.value.length === 0) {
+      filHash();
+    } else {
+      const searchedArr = filteredPosts.filter((p) =>
+        p.node.frontmatter.title
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase())
+      );
+      setFilteredPosts(searchedArr);
+    }
+  };
+
+  const shuffle = (array) => {
+    var currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
+  };
+
+  useEffect(() => {
+    const allHash = posts
+      .map((p) => p.node.frontmatter.hashtags.map((h) => h.hashtag))
+      .flat();
+    setHashtags([...new Set(allHash)]);
+
+    filHash();
+  }, [selectedHash]);
+
+  return (
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Box m={3}>
+        <TextField
+          id="standard-basic"
+          label="Find Work"
+          onChange={(e) => handleSearch(e)}
+        />
+      </Box>
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box ml={1} mb={1}>
+          {allSelected ? (
+            <Chip
+              label={<Typography variant="body2"># ALL</Typography>}
+              onClick={handleAll}
+              clickable
+            />
+          ) : (
+            <Chip
+              label={<Typography variant="body2"># ALL</Typography>}
+              onClick={handleAll}
+              variant="outlined"
+            />
+          )}
+        </Box>
+        {!loading &&
+          hashtags.length > 0 &&
+          hashtags.map((h) => (
+            <Box ml={1} mb={1} key={`hashtag-${h}`}>
+              {selectedHash === h ? (
+                <Chip
+                  label={<Typography variant="body2"># {h}</Typography>}
+                  onClick={() => handleClick(h)}
+                  clickable
+                />
+              ) : (
+                <Chip
+                  label={<Typography variant="body2"># {h}</Typography>}
+                  onClick={() => handleClick(h)}
+                  variant="outlined"
+                />
+              )}
+            </Box>
           ))}
-      </div>
-    );
-  }
+      </Box>
+      {!loading && filteredPosts && <Works posts={filteredPosts} />}
+    </Box>
+  );
+  // }
 }
 
 WorkdetailsRoll.propTypes = {

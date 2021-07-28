@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/core/styles';
@@ -51,31 +52,32 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const WorksImage = ({ imageInfo }) => {
+const WorksImage = ({ imageInfo, title, slug }) => {
   const classes = useStyles();
   const imageStyle = { borderRadius: '2px' };
-  const { alt = '', childImageSharp, image, text } = imageInfo;
+  const { alt = '', childImageSharp, id } = imageInfo;
   const { hashtag, setHashtag } = useContext(HashtagContext);
+  console.log(imageInfo);
 
-  console.log(imageInfo.hashtags);
+  // console.log(imageInfo.hashtags);
   // const getHashtag = (h) => {
   //   setHashtag(h);
   //   console.log(hashtag);
   // };
 
-  if (!!image && !!image.childImageSharp) {
+  if (!!imageInfo && !!imageInfo.childImageSharp) {
     return (
       <HashtagProvider>
-        <div className={classes.container}>
-          <Img
-            style={imageStyle}
-            fluid={image.childImageSharp.fluid}
-            alt={alt}
-            className={classes.image}
-          />
-          <div className={classes.middle}>
-            <div className={classes.content}>{text}</div>
-            {imageInfo.hashtags ? (
+        <Link className="title has-text-primary is-size-4" to={slug}>
+          <div className={classes.container}>
+            <img
+              src={childImageSharp.fluid.src}
+              alt={alt}
+              className={classes.image}
+            />
+            <div className={classes.middle}>
+              <div className={classes.content}>{title}</div>
+              {/* {imageInfo.hashtags ? (
               <Box
                 className={classes.hashTags}
                 display="flex"
@@ -97,28 +99,19 @@ const WorksImage = ({ imageInfo }) => {
               </Box>
             ) : (
               <div></div>
-            )}
+            )} */}
+            </div>
           </div>
-        </div>
+        </Link>
       </HashtagProvider>
     );
   }
-
-  if (!!childImageSharp) {
-    return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />;
-  }
-
-  if (!!image && typeof image === 'string')
-    return <img style={imageStyle} src={image} alt={alt} />;
-
-  return null;
 };
 
 WorksImage.propTypes = {
   imageInfo: PropTypes.shape({
     alt: PropTypes.string,
     childImageSharp: PropTypes.object,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
     style: PropTypes.object,
   }).isRequired,
 };
