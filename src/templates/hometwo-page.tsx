@@ -58,7 +58,7 @@ export const HometwoTemplate = ({
   event,
   intro,
 }) => {
-  console.log(event)
+  console.log(intro.blurbs)
   return (
 
 
@@ -78,7 +78,9 @@ export const HometwoTemplate = ({
       }}
     >
       <EventsFrontPage events={event} />
+
       <PictureHometwo pic={intro.blurbs} />
+
 
     </div>
   )

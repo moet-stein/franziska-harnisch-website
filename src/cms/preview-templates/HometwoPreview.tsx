@@ -4,7 +4,8 @@ import { HometwoTemplate } from '../../templates/hometwo-page'
 
 const HometwoPreview = ({ entry, getAsset }) => {
     const data = entry.getIn(['data']).toJS()
-
+    console.log(getAsset)
+    console.log(data.intro)
     if (data) {
         return (
             <HometwoTemplate
@@ -13,6 +14,7 @@ const HometwoPreview = ({ entry, getAsset }) => {
                 heading={data.heading}
                 subheading={data.subheading}
                 description={data.description}
+                event={data.event}
                 intro={data.intro || { blurbs: [] }}
                 mainpitch={data.mainpitch || {}}
             />
