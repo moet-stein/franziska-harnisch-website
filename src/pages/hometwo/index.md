@@ -4,14 +4,13 @@ path: /hometwo
 title: Franziska Harnisch
 image: "/img/jumbotron.jpg"
 event:
-    comingTitle: | 
-            Coming soon
-    futureEvent: |  
+  comingTitle: Coming soon
+  futureEvent: |  
              Contemporary Opportunities Part IV
              2. - 4.7.2021 Alte Münze
-    lastTitle: |  
+  lastTitle: |  
             Lastest Event
-    lastEvent: |
+  lastEvent: |
         EMBARK - kuratiert von 129gallery
         18.6. - 25.7.2021 
 intro:
