@@ -58,7 +58,7 @@ export const HometwoTemplate = ({
   event,
   intro,
 }) => {
-  console.log(event)
+  console.log(intro.blurbs)
   return (
 
 
@@ -67,9 +67,7 @@ export const HometwoTemplate = ({
       style={{
         position: "relative",
         left: 300,
-        top: "-100vh",
         display: 'flex',
-        height: '100vh',
         width: "fit-content",
         lineHeight: '1',
         justifyContent: 'space-around',
@@ -78,7 +76,9 @@ export const HometwoTemplate = ({
       }}
     >
       <EventsFrontPage events={event} />
+
       <PictureHometwo pic={intro.blurbs} />
+
 
     </div>
   )
