@@ -2,56 +2,22 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import styled, { css, keyframes } from 'styled-components';
-import { fadeInRight } from 'react-animations';
+import { makeStyles } from "@material-ui/core/styles";
 import LayoutHometwo from '../components/LayoutHometwo';
 import EventsFrontPage from "../components/EventsFrontPage/EventsFrontPage"
 import PictureHometwo from "../components/PictureHometwo/pictureHometwo"
-import Layout from '../components/Layout';
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-  margin:0px;
-`;
 
-const FadeInRight = styled.div`
-  animation: 2s ${keyframes`${fadeInRight}`};
-  
-`;
 
-const textAppear = keyframes`
-  0% {
-    opacity: 0;
+
+const useStyles = makeStyles(theme => ({
+  mediaNav: {
+    [theme.breakpoints.up(780)]: {
+      display: "none"
+    }
   }
-  100% {
-    opacity: 1;
-  }
-`
-const textAppear2 = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`
-const animation = () =>
-  css`
-    ${textAppear} 4s ;
-   
-  `
-const animation2 = () => {
-  css`
-    ${textAppear2} 6s ;
-  
-  `
-}
-const TitleEffect = styled.h1`
-  animation: ${animation};
-`
-const SubtitleEffect = styled.h4`
-animation: ${animation};
-`
+}))
+
+
 export const HometwoTemplate = ({
   image,
   title,
@@ -85,7 +51,7 @@ export const HometwoTemplate = ({
 };
 const LauraTest: React.FC<any> = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
+  const classes = useStyles();
 
   return (
     <LayoutHometwo>

@@ -1,11 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "gatsby";
-import ListIcon from '@material-ui/icons/List';
+
 import MenuIcon from '@material-ui/icons/Menu';
+import { makeStyles } from "@material-ui/core/styles";
 import "./NavBarHometwo.css"
 
 
 function NavbarHometwo() {
+
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const onClick = () => setIsActive(!isActive);
@@ -22,6 +24,12 @@ function NavbarHometwo() {
     const fontJos = {
         fontFamily: "Josefin Sans",
         color: "black",
+    }
+    const drawerWidth = {
+        position: "fixed",
+        '@media (minWidth: 780px)': {
+            display: "none",
+        }
     }
 
     return (
