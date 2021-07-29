@@ -2,7 +2,7 @@ import React from 'react';
 import './NavbarHometwo/NavBarHometwo.css';
 import { Helmet } from 'react-helmet';
 import {
-  createMuiTheme,
+  createTheme,
   ThemeProvider,
   responsiveFontSizes,
 } from '@material-ui/core/styles';
@@ -13,7 +13,7 @@ import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import { HashtagContext, HashtagProvider } from '../Context/HashtagContext.tsx';
 
-let theme = createMuiTheme({
+let theme = createTheme({
   // palette: {
   //   primary: {
   //     main: teal[200],
