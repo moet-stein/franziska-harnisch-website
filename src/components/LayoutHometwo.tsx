@@ -2,10 +2,26 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import FooterHome from './FooterHome/FooterHome';
 import NavbarHometwo from './NavbarHometwo/NavBarHometwo';
+import NavbarHome from "./NavbarHome/NavbarHome"
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles(theme => ({
+  mediaNav: {
+    [theme.breakpoints.up(1200)]: {
+      display: "none"
+    }
+  }
+}))
+const drawerWidth = {
+
+  '@media (minWidth: 780px)': {
+    display: "none",
+  }
+}
 const TemplateWrapperHomeTwo = ({ children }) => {
+  const classes = useStyles();
   const { title, description } = useSiteMetadata();
   return (
     <div>
@@ -47,7 +63,7 @@ const TemplateWrapperHomeTwo = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <NavbarHometwo />
+      <NavbarHometwo style={drawerWidth} />
       <div >{children}</div>
       <FooterHome />
     </div>

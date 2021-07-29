@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import NavbarHometwo from './NavbarHometwo/NavBarHometwo';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import { HashtagContext, HashtagProvider } from '../Context/HashtagContext.tsx';
@@ -48,11 +49,11 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <HashtagProvider>
-        <Navbar />
-        <div>{children}</div>
-        <Footer />
-      </HashtagProvider>
+
+      <NavbarHometwo />
+      <div>{children}</div>
+      <Footer />
+
     </div>
   );
 };
