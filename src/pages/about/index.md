@@ -31,4 +31,24 @@ einzelaustellung:
             Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark, Berlin
             Arbeitstitel, 2OG, Alte Münze, Berlin (mit Philipp Valenta)
             f.a.r. - former analogue realities, The Balcony / Den Haag (NL)
+gruppenaustellung:
+    title: Gruppenausstellungen + Festivals (Auswahl)
+    texts: 
+      - text: 2021   Light Year, New York (USA)
+           mkv @ thewrong.tv - CLUSTERED MINDS
+            EMBARK, 129 gallery Berlin
+            HOT MESS, Neuzeit Ost
+      - text: 2020  Auf der Laube, Online-Ausstellung, Studio Huette
+           INTERWEAVING SPHERES, 8. Videokunstnacht, Kunstverein Kleinmachnow
+​      - text: 2019  A Place to be - 50 Jahre Verein Symposium Lindabrunn
+           114 über Marzahn, Berlin
+           International Festival of the Arts The Walls We Built, Kampala (UGA),
+           Hildesheim, Berlin
+projekte: 
+    title: Projekte und Projekträume
+    texts:
+      - text: Kunstauflösung / STAND
+      - text: raum on demand
+      - text: Vitrine01
+      - text: KUNSTRAUM 53
 ---
