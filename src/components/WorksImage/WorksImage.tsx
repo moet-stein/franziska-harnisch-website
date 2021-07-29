@@ -27,6 +27,7 @@ const useStyles = makeStyles(() => ({
     height: 'auto',
     transition: '.5s ease',
     backfaceVisibility: 'hidden',
+    borderRadius: '5px',
   },
   middle: {
     transition: '.5s ease',
