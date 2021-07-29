@@ -1,11 +1,145 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
+import { useLocation } from '@reach/router';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import grey from '@material-ui/core/colors/grey';
+import { makeStyles } from '@material-ui/core/styles';
+import WorksImage from '../WorksImage/WorksImage';
 
-export function RelatedImgs({ hashtags, data }) {
-  console.log(hashtags);
-  console.log(data);
-  return <div>RELATED IMAGE</div>;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100vw',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  scrollX: {
+    width: '800px',
+    height: '300px',
+    overflowX: 'auto',
+  },
+  grey: {
+    color: grey[700],
+  },
+  '@media only screen and (max-width: 800px)': {
+    scrollX: {
+      width: '500px',
+    },
+  },
+}));
+
+export function RelatedImgs({ data }) {
+  const classes = useStyles();
+  const allWorks = data.allMarkdownRemark.edges.map((w) => w.node);
+  const theWork = allWorks.filter(
+    (w) => w.fields.slug === decodeURI(useLocation().pathname)
+  );
+  const hashtags = theWork[0].frontmatter.hashtags.map((h) => h.hashtag);
+  const [matchedWorks, setMatchedWorks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const matched = (arr1, arr2) => {
+    for (let i = 0; i < arr1.length; i++) {
+      for (let j = 0; j < arr2.length; j++) {
+        if (arr1[i] === arr2[j]) return true;
+      }
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    const foundWorks = allWorks.filter(
+      (w) =>
+        matched(
+          hashtags,
+          w.frontmatter.hashtags.map((h) => h.hashtag)
+        ) && w !== theWork[0]
+    );
+    setMatchedWorks(foundWorks);
+    setLoading(false);
+  }, []);
+
+  return (
+    <Box className={classes.root} mt={20}>
+      {!loading && matchedWorks.length > 0 && (
+        <>
+          <Box>
+            <Typography className={classes.grey} variant="h4">
+              Related Works
+            </Typography>{' '}
+          </Box>
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            className={classes.scrollX}
+          >
+            {matchedWorks.map((w) => (
+              <Box m={2} key={w.frontmatter.title}>
+                <WorksImage
+                  imageInfo={w.frontmatter.featuredimage}
+                  title={w.frontmatter.title}
+                  slug={w.fields.slug}
+                />
+              </Box>
+              /* <Box m={2}>
+                  <WorksImage
+                    imageInfo={w.frontmatter.featuredimage}
+                    title={w.frontmatter.title}
+                    slug={w.fields.slug}
+                  />
+                </Box>
+                <Box m={2}>
+                  <WorksImage
+                    imageInfo={w.frontmatter.featuredimage}
+                    title={w.frontmatter.title}
+                    slug={w.fields.slug}
+                  />
+                </Box>
+                <Box m={2}>
+                  <WorksImage
+                    imageInfo={w.frontmatter.featuredimage}
+                    title={w.frontmatter.title}
+                    slug={w.fields.slug}
+                  />
+                </Box>
+                <Box m={2}>
+                  <WorksImage
+                    imageInfo={w.frontmatter.featuredimage}
+                    title={w.frontmatter.title}
+                    slug={w.fields.slug}
+                  />
+                </Box>
+                <Box m={2}>
+                  <WorksImage
+                    imageInfo={w.frontmatter.featuredimage}
+                    title={w.frontmatter.title}
+                    slug={w.fields.slug}
+                  />
+                </Box>
+                <Box m={2}>
+                  <WorksImage
+                    imageInfo={w.frontmatter.featuredimage}
+                    title={w.frontmatter.title}
+                    slug={w.fields.slug}
+                  />
+                </Box>
+                <Box m={2}>
+                  <WorksImage
+                    imageInfo={w.frontmatter.featuredimage}
+                    title={w.frontmatter.title}
+                    slug={w.fields.slug}
+                  />
+                </Box> */
+            ))}
+          </Box>
+        </>
+      )}
+    </Box>
+  );
 }
 
 RelatedImgs.propTypes = {

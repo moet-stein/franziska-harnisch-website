@@ -128,7 +128,7 @@ export default function Layout1({ workdetailsData }) {
         </Box>
 
         <Box>
-          <RelatedImgs hashtags={hashtags} />
+          <RelatedImgs />
         </Box>
       </Box>
     </>
