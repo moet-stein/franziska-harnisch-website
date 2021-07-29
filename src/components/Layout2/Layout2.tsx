@@ -19,7 +19,10 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80%',
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '80%',
+    },
   },
   h1Fontsize: {
     fontSize: '60px',

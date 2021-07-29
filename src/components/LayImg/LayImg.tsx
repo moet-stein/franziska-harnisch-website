@@ -50,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
 export default function LayImg({ img }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  console.log(img);
 
   const handleOpen = () => {
     setOpen(true);
