@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import RelatedImgs from '../RelatedImgs/RelatedImgs';
 
 const useStyles = makeStyles((theme) => ({
   flexColumn: {
@@ -19,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80%',
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '80%',
+    },
   },
   h1Fontsize: {
     fontSize: '60px',
@@ -111,6 +115,9 @@ export default function Layout2({ workdetailsData }) {
                 </Box>
               ))}
           </Box>
+        </Box>
+        <Box>
+          <RelatedImgs />
         </Box>
       </Box>
     </>

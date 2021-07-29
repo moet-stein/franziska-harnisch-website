@@ -7,12 +7,19 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import grey from '@material-ui/core/colors/grey';
+import { useLocation } from '@reach/router';
 import {
   HashtagContext,
   HashtagProvider,
 } from '../../Context/HashtagContext.tsx';
 
 const useStyles = makeStyles(() => ({
+  width: {
+    width: '180px',
+  },
+  widthWorks: {
+    width: '350px',
+  },
   image: {
     opacity: '1',
     display: 'block',
@@ -57,51 +64,39 @@ const WorksImage = ({ imageInfo, title, slug }) => {
   const imageStyle = { borderRadius: '2px' };
   const { alt = '', childImageSharp, id } = imageInfo;
   const { hashtag, setHashtag } = useContext(HashtagContext);
-  console.log(imageInfo);
-
-  // console.log(imageInfo.hashtags);
-  // const getHashtag = (h) => {
-  //   setHashtag(h);
-  //   console.log(hashtag);
-  // };
+  const location = useLocation().pathname;
+  console.log(location);
 
   if (!!imageInfo && !!imageInfo.childImageSharp) {
     return (
       <HashtagProvider>
         <Link className="title has-text-primary is-size-4" to={slug}>
-          <div className={classes.container}>
-            <img
-              src={childImageSharp.fluid.src}
-              alt={alt}
-              className={classes.image}
-            />
-            <div className={classes.middle}>
-              <div className={classes.content}>{title}</div>
-              {/* {imageInfo.hashtags ? (
-              <Box
-                className={classes.hashTags}
-                display="flex"
-                flexWrap="wrap"
-                justifyContent="center"
-                alignItems="center"
-              >
-                {imageInfo.hashtags.map((h) => (
-                  <Button
-                    key={h}
-                    onClick={() => setHashtag(h)}
-                    size="small"
-                    variant="text"
-                    style={{ textTransform: 'lowercase' }}
-                  >
-                    <Typography variant="body2">#{h}</Typography>
-                  </Button>
-                ))}
-              </Box>
-            ) : (
-              <div></div>
-            )} */}
+          {location === '/workdetails' && (
+            <div className={classes.container}>
+              <img
+                src={childImageSharp.fluid.src}
+                alt={alt}
+                className={classes.image}
+              />
+              <div className={classes.middle}>
+                <div className={classes.content}>{title}</div>
+              </div>
             </div>
-          </div>
+          )}
+          {location !== '/workdetails' && (
+            <Box className={classes.width}>
+              <div className={classes.container}>
+                <img
+                  src={childImageSharp.fluid.src}
+                  alt={alt}
+                  className={classes.image}
+                />
+                <div className={classes.middle}>
+                  <div className={classes.content}>{title}</div>
+                </div>
+              </div>
+            </Box>
+          )}
         </Link>
       </HashtagProvider>
     );

@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import RelatedImgs from '../RelatedImgs/RelatedImgs';
 
 const useStyles = makeStyles((theme) => ({
   flexColumn: {
@@ -84,7 +85,7 @@ export default function Layout1({ workdetailsData }) {
           {hashtags.length > 0 && (
             <Box className={classes.flexWrap}>
               {hashtags.map((h, index) => (
-                <Box kex={`${h}-${index}`} ml={2}>
+                <Box key={`${h}-${index}`} ml={2}>
                   <Typography className={classes.hashColor}>
                     #{h.hashtag}
                   </Typography>
@@ -127,7 +128,7 @@ export default function Layout1({ workdetailsData }) {
         </Box>
 
         <Box>
-          <p>Realted images</p>
+          <RelatedImgs />
         </Box>
       </Box>
     </>
