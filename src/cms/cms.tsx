@@ -26,3 +26,4 @@ CMS.registerPreviewTemplate('testMoe', TestMoePagePreview);
 CMS.registerPreviewTemplate('hometwo', HometwoPreview);
 CMS.registerPreviewTemplate('workdetails', WorkdetailsPostPreview);
 CMS.registerPreviewTemplate('works', WorksPagePreview);
+

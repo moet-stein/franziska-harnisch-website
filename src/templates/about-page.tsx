@@ -2,21 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import { makeStyles } from "@material-ui/core/styles";
+import AboutBlocks from "../components/AboutBlocks/AboutBlocks"
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate = ({ title, generalInfo, ausbildung, preise, einzelaustellung }) => {
+  console.log(generalInfo.name)
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+    <section >
+      <div >
+        <div >
+          <div >
+            <div>
+              <h2 >
                 {title}
               </h2>
-              <PageContent className="content" content={content} />
+              <AboutBlocks generalInfo={generalInfo} ausbildung={ausbildung} preise={preise} einzelaustellung={einzelaustellung} />
             </div>
           </div>
         </div>
@@ -26,20 +27,41 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 }
 
 AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
+  title: PropTypes.string,
+  generalInfo: PropTypes.shape({
+    name: PropTypes.string,
+    address: PropTypes.string,
+    website: PropTypes.string,
+    email: PropTypes.string,
+  }),
+  ausbildung: PropTypes.shape({
+    title: PropTypes.string,
+    texts: PropTypes.array,
+  }),
+  preise: PropTypes.shape({
+    title: PropTypes.string,
+    texts: PropTypes.array
+  }),
+  einzelaustellung: PropTypes.shape({
+    title: PropTypes.string,
+    texts: PropTypes.array
+  })
+
 }
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        title={frontmatter.title}
+        generalInfo={frontmatter.generalInfo}
+        ausbildung={frontmatter.ausbildung}
+        texts={frontmatter.texts}
+        preise={frontmatter.preise}
+        einzelaustellung={frontmatter.einzelaustellung}
       />
     </Layout>
   )
@@ -52,12 +74,36 @@ AboutPage.propTypes = {
 export default AboutPage
 
 export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
+      query AboutPageTemplate {
+        markdownRemark(frontmatter: {templateKey: {eq: "about-page" } }) {
+        frontmatter {
         title
+        generalInfo{
+        name
+          address
+      website
+      email
+        }
+      ausbildung{
+        title
+        texts{
+          text
+        } 
+        }
+        preise{
+          title
+          texts{
+            text
+          }
+        }
+        einzelaustellung{
+          title{
+            texts{
+              text
+            }
+          }
+        }
       }
     }
   }
-`
+      `
