@@ -54,10 +54,10 @@ function NavbarHometwo() {
                     >
                         <div className="directionNavbar"  >
                             <p style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</p>
-                            <Link className="navbar-item" to="/lauraTest">
+                            <Link className="navbar-item" to="/about">
                                 About
                             </Link>
-                            <Link className="navbar-item" to="/testMoe">
+                            <Link className="navbar-item" to="/workdetails">
                                 Works
                             </Link>
                             <Link className="navbar-item" to="/">
