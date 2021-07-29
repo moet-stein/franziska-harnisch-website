@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
 import Layout3 from '../components/Layout3/Layout3';
+import WorkDeTemplate from '../components/WorkDeTemplate/WorkDeTemplate';
 
 export const WorkdetailsPostTemplate = ({
   title,
@@ -34,6 +35,10 @@ export const WorkdetailsPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
+            {/* {!layoutType && (
+              <WorkDeTemplate workdetailsData={workdetailsData} />
+            )} */}
+
             {layoutType === 'Layout1' && (
               <Layout1 workdetailsData={workdetailsData} />
             )}
