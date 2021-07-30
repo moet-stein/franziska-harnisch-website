@@ -68,9 +68,10 @@ const WorksImage = ({ imageInfo, title, slug }) => {
   const location = useLocation().pathname;
   console.log(location);
 
-  if (!!imageInfo && !!imageInfo.childImageSharp) {
-    return (
-      <HashtagProvider>
+  // if (!!imageInfo && !!imageInfo.childImageSharp) {
+  return (
+    <HashtagProvider>
+      {!!imageInfo && !!imageInfo.childImageSharp && (
         <Link className="title has-text-primary is-size-4" to={slug}>
           {location === '/workdetails' && (
             <div className={classes.container}>
@@ -99,9 +100,10 @@ const WorksImage = ({ imageInfo, title, slug }) => {
             </Box>
           )}
         </Link>
-      </HashtagProvider>
-    );
-  }
+      )}
+    </HashtagProvider>
+  );
+  // }
 };
 
 WorksImage.propTypes = {
