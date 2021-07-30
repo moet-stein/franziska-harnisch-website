@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import { makeStyles } from "@material-ui/core/styles";
 import AboutBlocks from "../components/AboutBlocks/AboutBlocks"
 
-export const AboutPageTemplate = ({ title, generalInfo, ausbildung, preise, einzelaustellung }) => {
+export const AboutPageTemplate = ({ title, generalInfo, ausbildung, preise, einzelaustellung, gruppenaustellung, projekte }) => {
   console.log(generalInfo.name)
 
   return (
@@ -17,7 +17,7 @@ export const AboutPageTemplate = ({ title, generalInfo, ausbildung, preise, einz
               <h2 >
                 {title}
               </h2>
-              <AboutBlocks generalInfo={generalInfo} ausbildung={ausbildung} preise={preise} einzelaustellung={einzelaustellung} />
+              <AboutBlocks generalInfo={generalInfo} ausbildung={ausbildung} preise={preise} einzelaustellung={einzelaustellung} gruppenaustellung={gruppenaustellung} projekte={projekte} />
             </div>
           </div>
         </div>
@@ -45,7 +45,15 @@ AboutPageTemplate.propTypes = {
   einzelaustellung: PropTypes.shape({
     title: PropTypes.string,
     texts: PropTypes.array
-  })
+  }),
+  gruppenaustellung: PropTypes.shape({
+    title: PropTypes.string,
+    texts: PropTypes.array
+  }),
+  projekte: PropTypes.shape({
+    title: PropTypes.string,
+    texts: PropTypes.array
+  }),
 
 }
 
@@ -62,6 +70,8 @@ const AboutPage = ({ data }) => {
         texts={frontmatter.texts}
         preise={frontmatter.preise}
         einzelaustellung={frontmatter.einzelaustellung}
+        gruppenaustellung={frontmatter.gruppenaustellung}
+        projekte={frontmatter.projekte}
       />
     </Layout>
   )
@@ -97,11 +107,22 @@ export const aboutPageQuery = graphql`
           }
         }
         einzelaustellung{
-          title{
+          title
             texts{
               text
             }
-          }
+        }
+        gruppenaustellung{
+          title
+            texts{
+              text
+            }
+        }
+        projekte{
+          title
+            texts{
+              text
+            }
         }
       }
     }
