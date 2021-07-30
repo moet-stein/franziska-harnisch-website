@@ -32,8 +32,8 @@ upcomingExhibitions:
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex.
         links:
-          - linkURL: Link1
-            linkName: https://www.franziskaharnisch.de/
+          - linkURL: https://www.franziskaharnisch.de/
+            linkName: Link 1
         name: Upcoming 1
         image: /img/facebnb_performance07032020_franziskaharnisch_patricia-detmering_02.jpg
       - startDate: 2021-08-03T22:00:00.000Z
@@ -41,8 +41,8 @@ upcomingExhibitions:
         place: Neuzeit Ost
         description: ""
         links:
-          - linkURL: Link2
-            linkName: https://www.franziskaharnisch.de/
+          - linkURL: https://www.franziskaharnisch.de/
+            linkName: Link 2
         name: Upcoming 2
 exhibitions:
   years:
