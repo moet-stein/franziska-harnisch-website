@@ -3,15 +3,9 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 
-export const ExhibitionsPageTemplate = ({
-  title,
-}) => {
+export const ExhibitionsPageTemplate = ({ title }) => {
   console.log(`title`, title);
-  return (
-    <div className="content">
-     Exhibitions
-    </div>
-  );
+  return <div className="content">Exhibitions</div>;
 };
 
 ExhibitionsPageTemplate.propTypes = {
@@ -20,12 +14,11 @@ ExhibitionsPageTemplate.propTypes = {
 
 const ExhibitionsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  console.log(frontmatter)
 
   return (
     <Layout>
-      <ExhibitionsPageTemplate
-        title={frontmatter.title}
-      />
+      <ExhibitionsPageTemplate title={frontmatter.title} />
     </Layout>
   );
 };
@@ -45,6 +38,34 @@ export const exhibitionsPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        upcomoingExhibitions {
+          upcomings {
+            name
+            date
+            place
+            description
+            links {
+              linkName
+     
+            }
+          }
+        }
+        exhibitions {
+          years {
+            year
+            lOExhibitions {
+              date
+              place
+              description
+              links {
+                linkName
+                linkURL
+              }
+              name
+              workName
+            }
+          }
+        }
       }
     }
   }

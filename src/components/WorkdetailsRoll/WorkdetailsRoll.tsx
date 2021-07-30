@@ -8,9 +8,16 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(() => ({
+  goBack: {
+    zIndex: -1,
+  },
+}));
+
 export function WorkdetailsRoll({ data }) {
   // render() {
   // const { data } = this.props;
+  const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
   const [selectedHash, setSelectedHash] = useState('');
@@ -93,6 +100,7 @@ export function WorkdetailsRoll({ data }) {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      className={classes.goBack}
     >
       <Box m={3}>
         <TextField
