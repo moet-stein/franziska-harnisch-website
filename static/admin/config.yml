@@ -92,6 +92,14 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+      - file: "src/pages/exhibitions/index.md"
+        label: "Exhibitions Page"
+        name: "exhibitions"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "exhibitions-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Upcoming Exhibitions, name: upcomoingExhibitions, widget: list, fields: [{label: Upcomings, name: upcomings, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Date, name: date, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: link URL, widget: string, required: false}, {label: LinkName, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: file, required: false}]}]}
+          - {label: Exhibitions, name: exhibitions, widget: object, fields: [{label: Years, name: years, widget: list, fields: [{label: Year, name: year, widget: string}, {label: List of exhibitions, name: lOExhibitions, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Date, name: date, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: linkURL, widget: string, required: false}, {label: Link Name, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: file, required: false}, {label: Realted Work Name, name: workName, widget: string, required: false}]}]}]}
       - file: "src/pages/lauraTest/index.md"
         label: "LauraTest Page"
         name: "lauraTest"

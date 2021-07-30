@@ -1,10 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import grey from '@material-ui/core/colors/grey';
 import { useLocation } from '@reach/router';
@@ -66,8 +63,6 @@ const WorksImage = ({ imageInfo, title, slug }) => {
   const { alt = '', childImageSharp, id } = imageInfo;
   const { hashtag, setHashtag } = useContext(HashtagContext);
   const location = useLocation().pathname;
-  console.log(location);
-
   // if (!!imageInfo && !!imageInfo.childImageSharp) {
   return (
     <HashtagProvider>

@@ -12,6 +12,8 @@ import TestMoePagePreview from './preview-templates/TestMoePagePreview';
 import HometwoPreview from './preview-templates/HometwoPreview';
 import WorkdetailsPostPreview from './preview-templates/WorkdetailsPostPreview';
 import WorksPagePreview from './preview-templates/WorksPagePreview';
+import ExhibitionsPagePreview from './preview-templates/ExhibitionsPagePreview';
+
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -26,4 +28,4 @@ CMS.registerPreviewTemplate('testMoe', TestMoePagePreview);
 CMS.registerPreviewTemplate('hometwo', HometwoPreview);
 CMS.registerPreviewTemplate('workdetails', WorkdetailsPostPreview);
 CMS.registerPreviewTemplate('works', WorksPagePreview);
-
+CMS.registerPreviewTemplate('exhibitions', ExhibitionsPagePreview);
