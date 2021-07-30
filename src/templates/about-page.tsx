@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import { Link } from '@material-ui/core'
 import { makeStyles } from "@material-ui/core/styles";
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import AboutBlocks from "../components/AboutBlocks/AboutBlocks"
 
 export const AboutPageTemplate = ({ title, generalInfo, ausbildung, preise, einzelaustellung, gruppenaustellung, projekte }) => {
@@ -13,12 +15,13 @@ export const AboutPageTemplate = ({ title, generalInfo, ausbildung, preise, einz
       <div >
         <div >
           <div >
-            <div>
-              <h2 >
-                {title}
-              </h2>
-              <AboutBlocks generalInfo={generalInfo} ausbildung={ausbildung} preise={preise} einzelaustellung={einzelaustellung} gruppenaustellung={gruppenaustellung} projekte={projekte} />
+            <div >
+              
+              <AboutBlocks  generalInfo={generalInfo} ausbildung={ausbildung} preise={preise} einzelaustellung={einzelaustellung} gruppenaustellung={gruppenaustellung} projekte={projekte} />
+           <div style={{display:"flex", justifyContent:"center", coursor:"pointer"}}>
+              <a target="_blank" href="https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit">CV DE <ArrowDownwardIcon/></a>
             </div>
+              </div>
           </div>
         </div>
       </div>
