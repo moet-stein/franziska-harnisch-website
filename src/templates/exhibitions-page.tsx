@@ -23,9 +23,11 @@ const useStyles = makeStyles(() => ({
 
 export const ExhibitionsPageTemplate = ({
   title,
-  upcomoingExhibitions,
+  upcomingExhibitions,
   exhibitions,
 }) => {
+  console.log(upcomingExhibitions);
+  console.log(exhibitions);
   const classes = useStyles();
   return (
     <Box className={classes.flexColumn}>
@@ -34,7 +36,7 @@ export const ExhibitionsPageTemplate = ({
       </Box>
       <Box>
         <Exhibitions
-          upcomingExhibitions={upcomoingExhibitions[0].upcomings}
+          upcomingExhibitions={upcomingExhibitions[0].upcomings}
           exhibitions={exhibitions.years}
         />
       </Box>
@@ -44,7 +46,7 @@ export const ExhibitionsPageTemplate = ({
 
 ExhibitionsPageTemplate.propTypes = {
   title: PropTypes.string,
-  upcomoingExhibitions: PropTypes.array,
+  upcomingExhibitions: PropTypes.array,
   exhibitions: PropTypes.object,
 };
 
@@ -56,7 +58,7 @@ const ExhibitionsPage = ({ data }) => {
     <Layout>
       <ExhibitionsPageTemplate
         title={frontmatter.title}
-        upcomoingExhibitions={frontmatter.upcomoingExhibitions}
+        upcomingExhibitions={frontmatter.upcomingExhibitions}
         exhibitions={frontmatter.exhibitions}
       />
     </Layout>
@@ -78,14 +80,23 @@ export const exhibitionsPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        upcomoingExhibitions {
+        upcomingExhibitions {
           upcomings {
             name
-            date
+            startDate
+            endDate
             place
             description
             links {
               linkName
+              linkURL
+            }
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
             }
           }
         }
@@ -93,7 +104,8 @@ export const exhibitionsPageQuery = graphql`
           years {
             year
             lOExhibitions {
-              date
+              startDate
+              endDate
               place
               description
               links {
@@ -102,6 +114,13 @@ export const exhibitionsPageQuery = graphql`
               }
               name
               workName
+              image {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
             }
           }
         }
