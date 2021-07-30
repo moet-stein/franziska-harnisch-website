@@ -8,9 +8,16 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(() => ({
+  goBack: {
+    zIndex: -10,
+  },
+}));
+
 export function WorkdetailsRoll({ data }) {
   // render() {
   // const { data } = this.props;
+  const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
   const [selectedHash, setSelectedHash] = useState('');
@@ -107,7 +114,7 @@ export function WorkdetailsRoll({ data }) {
         justifyContent="center"
         alignItems="center"
       >
-        <Box ml={1} mb={1}>
+        <Box ml={1} mb={1} style={{ zIndex: -1251 }}>
           {allSelected ? (
             <Chip
               label={<Typography variant="body2"># ALL</Typography>}
@@ -125,7 +132,7 @@ export function WorkdetailsRoll({ data }) {
         {!loading &&
           hashtags.length > 0 &&
           hashtags.map((h) => (
-            <Box ml={1} mb={1} key={`hashtag-${h}`}>
+            <Box ml={1} mb={1} key={`hashtag-${h}`} style={{ zIndex: -1251 }}>
               {selectedHash === h ? (
                 <Chip
                   label={<Typography variant="body2"># {h}</Typography>}
@@ -142,7 +149,9 @@ export function WorkdetailsRoll({ data }) {
             </Box>
           ))}
       </Box>
-      {!loading && filteredPosts && <Works posts={filteredPosts} />}
+      <Box style={{ zIndex: -1251 }}>
+        {!loading && filteredPosts && <Works posts={filteredPosts} />}
+      </Box>
     </Box>
   );
   // }
