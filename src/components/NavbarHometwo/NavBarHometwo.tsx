@@ -53,7 +53,7 @@ function NavbarHometwo() {
 
                     >
                         <div className="directionNavbar"  >
-                            <p style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</p>
+                            <Link to='/hometwo' className="navbar-item" style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</Link>
                             <Link className="navbar-item" to="/about">
                                 About
                             </Link>

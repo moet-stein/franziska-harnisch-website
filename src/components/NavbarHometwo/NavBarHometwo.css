@@ -1,43 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
-.positionNavbar{
-    position: relative;
-    top:0;
-    left:0;
-    height:100vh;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
+.positionNavbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
 }
 
-.directionNavbar{
-display:flex;
-    flex-direction: column;
-    padding:15px;
-    background: #c5c4c4;
-    width:250px;
-    height:100vh;
-     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+.directionNavbar {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: #c5c4c4;
+  width: 250px;
+  height: 100vh;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 .navbar-item {
   margin: 15px;
   text-decoration: none;
   color: black;
- font-family: 'Josefin Sans', sans-serif;
-font-size: 20px;
-
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
 }
-.navbar-item:hover{
-    color:grey
+.navbar-item:hover {
+  color: grey;
 }
-.smallLink{
-    text-decoration: none;
-    margin: 15px;
+.smallLink {
   text-decoration: none;
-  color:black;
-;
- font-family: 'Josefin Sans', sans-serif;
- font-size:11px;
+  margin: 15px;
+  text-decoration: none;
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
 }
-.fontJos{
-    font-family: 'Josefin Sans', sans-serif;
-     color:black;
+.fontJos {
+  font-family: "Josefin Sans", sans-serif;
+  color: black;
 }
 
 /*DropDown */
@@ -53,21 +52,25 @@ font-size: 20px;
   top: 60px;
   left: 0px;
   width: 130px;
- 
+
   opacity: 0;
   visibility: hidden;
- /* transform: translateY(-20px); */
- /*  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s; */
-   clip-path: circle(100px at 90% -10%);
-    -webkit-clip-path: circle(100px at 90% -10%);
-    transition: all 1s ease-out;}
+  /* transform: translateY(-20px); */
+  /*  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s; */
+  clip-path: circle(100px at 90% -10%);
+  -webkit-clip-path: circle(100px at 90% -10%);
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
 
 .menu.active {
   opacity: 1;
- visibility: visible;
- /*   transform: translateY(0); */
-      clip-path: circle(1200px at 90% -10%);
-    -webkit-clip-path: circle(1200px at 90% -10%);
+  visibility: visible;
+  /*   transform: translateY(0); */
+  clip-path: circle(1200px at 90% -10%);
+  -webkit-clip-path: circle(1200px at 90% -10%);
+  pointer-events: all;
+  z-index: 100;
 }
 
 .menu ul {
@@ -78,11 +81,10 @@ font-size: 20px;
 
 .menu li {
   border-bottom: 1px solid #dddddd;
-   font-family: 'Josefin Sans', sans-serif;
- 
+  font-family: "Josefin Sans", sans-serif;
 }
-.menu li a:hover{
-    color:grey
+.menu li a:hover {
+  color: grey;
 }
 .menu li a {
   text-decoration: none;
