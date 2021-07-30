@@ -34,9 +34,12 @@ const useStyles = makeStyles((theme) => ({
 export function RelatedImgs({ data }) {
   const classes = useStyles();
   const allWorks = data.allMarkdownRemark.edges.map((w) => w.node);
+  console.log(useLocation().pathname.length);
   const theWork = allWorks.filter(
     (w) => w.fields.slug === decodeURI(useLocation().pathname)
   );
+  console.log(allWorks);
+  console.log(theWork);
   const hashtags = theWork[0].frontmatter.hashtags.map((h) => h.hashtag);
   const [matchedWorks, setMatchedWorks] = useState([]);
   const [loading, setLoading] = useState(true);

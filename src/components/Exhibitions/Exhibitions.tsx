@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Link1 from '@material-ui/core/Link';
 import { Link } from 'gatsby';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   greyColor: {
     color: grey[600],
   },
@@ -26,21 +26,25 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: theme.spacing(2),
   },
   upWidth: {
-    width: '400px',
+    width: '500px',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   imgWidth: {
-    width: '150px',
+    width: '180px',
     borderRadius: '5px',
   },
   greyFont: {
     color: grey[600],
     width: '250px',
+  },
+  greyFont2: {
+    color: grey[600],
+    width: '350px',
   },
 }));
 
@@ -48,6 +52,10 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
   const classes = useStyles();
   const [upcomingDate, setUpcomingDate] = useState('');
   console.log(upcomingExhibitions, exhibitions);
+
+  const toSlug = (str) => {
+    return decodeURI(str).split(' ').join('-');
+  };
 
   return (
     <>
@@ -113,12 +121,12 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
         )}
         {exhibitions.length > 0 &&
           exhibitions.map((e) => (
-            <Box key={e.year} alignSelf="flex-start" ml={4} mb={6}>
+            <Box key={e.year} alignSelf="flex-start" ml={7} mb={6}>
               <Typography variant="h4">{e.year}</Typography>
 
               <Box className={classes.flexColumn}>
                 {e.lOExhibitions.map((ex) => (
-                  <Box display="flex">
+                  <Box display="flex" ml={10}>
                     <Box m={2}>
                       <Box className={classes.flexColumnNoCenter}>
                         <Typography variant="h5">{ex.name}</Typography>
@@ -138,7 +146,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                         {ex.description && (
                           <Typography
                             variant="body2"
-                            className={classes.greyFont}
+                            className={classes.greyFont2}
                           >
                             {ex.description}
                           </Typography>
@@ -151,7 +159,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                           ))}
                         <Box m={2}>
                           {ex.workName && (
-                            <Link to={`/workdetails/${ex.workName}`}>
+                            <Link to={`/workdetails/${toSlug(ex.workName)}/`}>
                               <Button variant="outlined">
                                 <Typography variant="body1">
                                   See More

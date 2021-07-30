@@ -114,7 +114,7 @@ export function WorkdetailsRoll({ data }) {
         justifyContent="center"
         alignItems="center"
       >
-        <Box ml={1} mb={1} style={{ zIndex: -1251 }}>
+        <Box ml={1} mb={1}>
           {allSelected ? (
             <Chip
               label={<Typography variant="body2"># ALL</Typography>}
@@ -132,7 +132,7 @@ export function WorkdetailsRoll({ data }) {
         {!loading &&
           hashtags.length > 0 &&
           hashtags.map((h) => (
-            <Box ml={1} mb={1} key={`hashtag-${h}`} style={{ zIndex: -1251 }}>
+            <Box ml={1} mb={1} key={`hashtag-${h}`}>
               {selectedHash === h ? (
                 <Chip
                   label={<Typography variant="body2"># {h}</Typography>}
@@ -149,9 +149,7 @@ export function WorkdetailsRoll({ data }) {
             </Box>
           ))}
       </Box>
-      <Box style={{ zIndex: -1251 }}>
-        {!loading && filteredPosts && <Works posts={filteredPosts} />}
-      </Box>
+      <Box>{!loading && filteredPosts && <Works posts={filteredPosts} />}</Box>
     </Box>
   );
   // }
