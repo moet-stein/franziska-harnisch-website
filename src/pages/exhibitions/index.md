@@ -91,8 +91,8 @@ exhibitions:
           place: ""
           description: ""
           links:
-            - linkURL: Zum Stream
-              linkName: https://thewrong.tv/
+            - linkURL: https://thewrong.tv/
+              linkName: Zum Stream
           name: mkv x The Wrong TV  CLUSTERED MINDS
           workName: with the stream
 ---

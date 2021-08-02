@@ -147,4 +147,11 @@ collections:
           - {label: Address, name: address, widget: string}
           - {label: Website, name: website, widget: string}
           - {label: instagram, name: instagram, widget: string}
+      - file: "src/pages/links/index.md"
+        label: "Links Page"
+        name: "Links"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "links-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: "Links", name: "links", widget: list, fields: [{label: Url, name: url, widget: string}, {label: Text, name: text, widget: string}]}
         
