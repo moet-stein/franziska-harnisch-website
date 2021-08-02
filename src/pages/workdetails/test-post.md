@@ -11,7 +11,7 @@ links:
 images:
   - imageTitle: Nice sunny Pic
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627916672/pre8_h8frtk.jpg
-  - imageTitle: In Netherland
+  - imageTitle: Featured
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1611757624/e1l2tffm2fec8peobufw.jpg
 featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1611757624/e1l2tffm2fec8peobufw.jpg
 youtubeVideos: []
