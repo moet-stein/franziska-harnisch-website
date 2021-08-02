@@ -66,7 +66,7 @@ function NavbarHometwo() {
                             <Link className="navbar-item" to="/contactPage">
                                 Contact
                             </Link>
-                            <Link className="navbar-item" to="/">
+                            <Link className="navbar-item" to="/links">
                                 Links
                             </Link>
                             <Link className="smallLink " to="/">Impressum</Link>

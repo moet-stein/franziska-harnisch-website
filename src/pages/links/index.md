@@ -1,0 +1,11 @@
+---
+templateKey: links-page
+path: /links
+title: Links
+links:
+    - url: "https://www.medienkunstverein.com/"
+      text: medienkunstverein
+    - url: "http://www.projektraeume-berlin.net/"
+      text: Netzwerk Freier Berliner Projekträume und -initiativen 
+
+---   
