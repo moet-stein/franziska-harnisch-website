@@ -67,7 +67,11 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: generalInfo, name: generalInfo, widget: object, fields: [{label: Name, name: name, widget: string}, {label: Address, name: address, widget: string}, {label: website, name: website, widget: string}]}
-          - {label: "Ausbildung", name: "ausbildung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: text, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Ausbildung", name: "ausbildung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Preise", name: "preise", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Einzelaustellung", name: "einzelaustellung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Gruppenaustellung", name: "gruppenaustellung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Projekte", name: "projekte", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
@@ -133,3 +137,14 @@ collections:
         fields:
           - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'works-page'}
           - {label: 'Title', name: 'title', widget: 'string' }
+      - file: "src/pages/contactPage/index.md"
+        label: "contact Page"
+        name: "ContactPage"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Name, name: name, widget: string}
+          - {label: Address, name: address, widget: string}
+          - {label: Website, name: website, widget: string}
+          - {label: instagram, name: instagram, widget: string}
+        

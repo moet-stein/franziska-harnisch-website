@@ -11,8 +11,8 @@
   flex-direction: column;
   padding: 15px;
   background: #c5c4c4;
-  width: 250px;
-  height: 100vh;
+  width: 200px;
+  max-height: 100vh;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   z-index: 100;
 }

@@ -6,12 +6,16 @@ const AboutPagePreview = ({ entry, getAsset }) => {
 
   const data = entry.getIn(['data']).toJS();
   if (data) {
-    console.log(data)
+
     return (
       <AboutPageTemplate
         title={data.title}
         generalInfo={data.generalInfo}
         ausbildung={data.ausbildung}
+        preise={data.preise}
+        einzelaustellung={data.einzelaustellung}
+        gruppenaustellung={data.gruppenaustellung}
+        projekte={data.projekte}
 
 
 
