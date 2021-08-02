@@ -63,7 +63,7 @@ function NavbarHometwo() {
                             <Link className="navbar-item" to="/">
                                 Exibitions
                             </Link>
-                            <Link className="navbar-item" to="/">
+                            <Link className="navbar-item" to="/contactPage">
                                 Contact
                             </Link>
                             <Link className="navbar-item" to="/">
