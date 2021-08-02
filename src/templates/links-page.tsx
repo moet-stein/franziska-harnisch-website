@@ -11,7 +11,9 @@ export const LinksPageTemplate = ({ title, links }) => {
 
   return (
     <section >
+        
       <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginTop:70}} >
+      <p>{title}</p>
       {links.map(l =>{
           return <p key={l.text}><a target="_blank" href={l.url}>{l.text}</a></p>
       })}
@@ -22,11 +24,8 @@ export const LinksPageTemplate = ({ title, links }) => {
 
 LinksPageTemplate.propTypes = {
   title: PropTypes.string,
- links: PropTypes.shape({
-  url: PropTypes.string,
-  text: PropTypes.string,
-    
-  })}
+ links: PropTypes.array,
+  }
  
 const LinksPage = ({ data }) => {
 

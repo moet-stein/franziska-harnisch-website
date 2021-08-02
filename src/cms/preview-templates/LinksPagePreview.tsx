@@ -5,6 +5,7 @@ import { LinksPageTemplate } from '../../templates/links-page'
 const LinksPagePreview = ({ entry, getAsset }) => {
 
   const data = entry.getIn(['data']).toJS();
+  console.log("data", data)
   if (data) {
 
     return (
