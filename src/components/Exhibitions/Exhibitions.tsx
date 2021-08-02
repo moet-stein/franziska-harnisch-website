@@ -72,24 +72,27 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                 <Box>
                   <Typography variant="h5">{u.name}</Typography>
                   <Box display="flex">
-                    {u.startDate && (
+                    {u.startDate && u.startDate.length > 0 && (
                       <Typography variant="body1">
                         {u.startDate.slice(0, 10)}
                       </Typography>
                     )}{' '}
-                    {u.endDate && (
+                    {u.endDate && u.endDate.length > 0 && (
                       <Typography variant="body1">
                         - {u.endDate.slice(0, 10)}
                       </Typography>
                     )}
                   </Box>
-                  {u.place && <Typography>{u.place}</Typography>}
-                  {u.description && (
+                  {u.place && u.place.length > 0 && (
+                    <Typography>{u.place}</Typography>
+                  )}
+                  {u.description && u.description.length > 0 && (
                     <Typography variant="body2" className={classes.greyFont}>
                       {u.description}
                     </Typography>
                   )}
-                  {u.links.length > 0 &&
+                  {u.links &&
+                    u.links.length > 0 &&
                     u.links.map((l) => (
                       <Link1 key={l.linkURL} href={l.linkURL}>
                         <Typography>{l.linkName}</Typography>
@@ -104,11 +107,11 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                     />
                   </Box>
                 )}
-                {!u.image && (
+                {/* {!u.image && (
                   <Box m={2}>
                     <Paper className={classes.imgWidth} />
                   </Box>
-                )}
+                )} */}
               </Box>
             ))}
         </Box>
@@ -131,19 +134,21 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                       <Box className={classes.flexColumnNoCenter}>
                         <Typography variant="h5">{ex.name}</Typography>
                         <Box display="flex">
-                          {ex.startDate && (
+                          {ex.startDate && ex.startDate.length > 0 && (
                             <Typography variant="body1">
                               {ex.startDate.slice(0, 10)}
                             </Typography>
                           )}{' '}
-                          {ex.endDate && (
+                          {ex.endDate && ex.endDate.length > 0 && (
                             <Typography variant="body1">
                               - {ex.endDate.slice(0, 10)}
                             </Typography>
                           )}
                         </Box>
-                        {ex.place && <Typography>{ex.place}</Typography>}
-                        {ex.description && (
+                        {ex.place && ex.place.length > 0 && (
+                          <Typography>{ex.place}</Typography>
+                        )}
+                        {ex.description && ex.description.length > 0 && (
                           <Typography
                             variant="body2"
                             className={classes.greyFont2}
@@ -151,14 +156,15 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                             {ex.description}
                           </Typography>
                         )}
-                        {ex.links.length > 0 &&
+                        {ex.links &&
+                          ex.links.length > 0 &&
                           ex.links.map((l) => (
                             <Link key={l.linkURL} href={l.linkURL}>
                               <Typography>{l.linkName}</Typography>
                             </Link>
                           ))}
                         <Box m={2}>
-                          {ex.workName && (
+                          {ex.workName && ex.workName.length > 0 && (
                             <Link to={`/workdetails/${toSlug(ex.workName)}/`}>
                               <Button variant="outlined">
                                 <Typography variant="body1">
