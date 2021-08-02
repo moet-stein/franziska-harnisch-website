@@ -1,7 +1,7 @@
 ---
 templateKey: links-page
 path: /links
-title: Linkstest
+title: Linkstes
 links:
   - url: https://www.medienkunstverein.com/
     text: medienkunstverein
