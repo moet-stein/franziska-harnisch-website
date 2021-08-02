@@ -44,6 +44,14 @@ module.exports = {
             },
           },
           {
+            resolve: "gatsby-plugin-mailchimp",
+            options: {
+              endpoint:
+                "https://hotmail.us6.list-manage.com/subscribe/post?u=774c85e9631e751c554ea0fdd&amp;id=e7eff0f9c0", // string; add your MC list endpoint here; see instructions below
+              timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+            },
+          },
+          {
             resolve: "gatsby-remark-images",
             options: {
               // It's important to specify the maxWidth (in pixels) of
