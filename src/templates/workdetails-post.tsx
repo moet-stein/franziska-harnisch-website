@@ -6,6 +6,7 @@ import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
 import Layout3 from '../components/Layout3/Layout3';
 import WorkDeTemplate from '../components/WorkDeTemplate/WorkDeTemplate';
+import Content, { HTMLContent } from '../components/Content';
 
 export const WorkdetailsPostTemplate = ({
   title,
@@ -17,6 +18,9 @@ export const WorkdetailsPostTemplate = ({
   images,
   featuredimage,
   pdfs,
+  excerpt,
+  content,
+  contentComponent,
 }) => {
   const workdetailsData = {
     description,
@@ -28,8 +32,12 @@ export const WorkdetailsPostTemplate = ({
     images,
     featuredimage,
     pdfs,
+    excerpt,
+    content,
+    contentComponent,
   };
   console.log(workdetailsData);
+
   return (
     <section className="section">
       <div className="container content">
@@ -65,6 +73,9 @@ WorkdetailsPostTemplate.propTypes = {
   images: PropTypes.array,
   featuredimage: PropTypes.object,
   pdfs: PropTypes.array,
+  excerpt: PropTypes.string,
+  content: PropTypes.node.isRequired,
+  contentComponent: PropTypes.func,
 };
 
 const WorkdetailsPost = ({ data }) => {
@@ -82,6 +93,9 @@ const WorkdetailsPost = ({ data }) => {
         images={post.frontmatter.images}
         featuredimage={post.frontmatter.featuredimage}
         pdfs={post.frontmatter.pdfs}
+        excerpt={post.excerpt}
+        content={post.html}
+        contentComponent={HTMLContent}
       />
     </Layout>
   );
@@ -98,6 +112,8 @@ export default WorkdetailsPost;
 export const pageQuery = graphql`
   query WorkdetailsPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      excerpt
+      html
       frontmatter {
         title
         subTitle

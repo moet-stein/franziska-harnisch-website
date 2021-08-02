@@ -6,6 +6,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
+import Content, { HTMLContent } from '../Content';
 
 const useStyles = makeStyles((theme) => ({
   flexColumn: {
@@ -24,9 +25,8 @@ const useStyles = makeStyles((theme) => ({
   h1Fontsize: {
     fontSize: '60px',
   },
-  imgWidth: {
-    width: '300px',
-    borderRadius: '3px',
+  descWidth: {
+    width: '500px',
   },
   topPart: {
     display: 'flex',
@@ -48,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
     topPart: {
       flexDirection: 'column',
     },
+    descWidth: {
+      width: '300px',
+    },
   },
 }));
 
@@ -63,7 +66,11 @@ export default function Layout1({ workdetailsData }) {
     hashtags,
     images,
     featuredimage,
+    content,
+    contentComponent,
   } = workdetailsData;
+
+  const PostContent = contentComponent || Content;
 
   useEffect(() => {
     const ftObj = {
@@ -105,9 +112,14 @@ export default function Layout1({ workdetailsData }) {
             </Box>
           </Box>
           <Box className={classes.flexColumn}>
-            <Box className={classes.imgWidth} mt={6} ml={6}>
+            {/* <Box className={classes.imgWidth} mt={6} ml={6}>
               <Typography variant="body2">{description}</Typography>
-            </Box>
+            </Box> */}
+            {content && (
+              <Box className={classes.descWidth} ml={8}>
+                <PostContent content={content} />
+              </Box>
+            )}
             <Box className={classes.links}>
               {links.length > 0 &&
                 links.map((l, index) => (

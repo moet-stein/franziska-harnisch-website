@@ -1,19 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
 
 export const HTMLContent = ({ content, className }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
-)
+  <Typography
+    className={className}
+    dangerouslySetInnerHTML={{ __html: content }}
+  />
+);
 
 const Content = ({ content, className }) => (
-  <div className={className}>{content}</div>
-)
+  <Typography className={className}>{content}</Typography>
+);
 
 Content.propTypes = {
   content: PropTypes.node,
   className: PropTypes.string,
-}
+};
 
-HTMLContent.propTypes = Content.propTypes
+HTMLContent.propTypes = Content.propTypes;
 
-export default Content
+export default Content;

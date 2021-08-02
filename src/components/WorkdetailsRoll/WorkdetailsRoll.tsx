@@ -24,6 +24,7 @@ export function WorkdetailsRoll({ data }) {
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
+  console.log(posts);
 
   const filHash = () => {
     if (selectedHash.length == 0) {
@@ -173,6 +174,7 @@ export default () => (
           edges {
             node {
               id
+              excerpt
               fields {
                 slug
               }

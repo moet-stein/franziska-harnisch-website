@@ -7,6 +7,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
+import Content, { HTMLContent } from '../Content';
 
 const useStyles = makeStyles((theme) => ({
   flexColumn: {
@@ -70,7 +71,12 @@ export default function Layout2({ workdetailsData }) {
     hashtags,
     images,
     featuredimage,
+    excerpt,
+    content,
+    contentComponent,
   } = workdetailsData;
+
+  const PostContent = contentComponent || Content;
 
   return (
     <>
@@ -102,9 +108,14 @@ export default function Layout2({ workdetailsData }) {
           ))}
         </Box>
         <Box m={5} className={classes.flexColumn}>
-          <Typography className={classes.descWidth} variant="body2">
-            {description}
-          </Typography>
+          {/* <Typography className={classes.descWidth} variant="body2">
+            {excerpt && excerpt}
+          </Typography> */}
+          {content && (
+            <Box className={classes.descWidth}>
+              <PostContent content={content} />
+            </Box>
+          )}
           <Box className={classes.links}>
             {links.length > 0 &&
               links.map((l, index) => (
