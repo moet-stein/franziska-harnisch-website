@@ -69,7 +69,7 @@ export default function Layout1({ workdetailsData }) {
     content,
     contentComponent,
   } = workdetailsData;
-
+  console.log(workdetailsData)
   const PostContent = contentComponent || Content;
 
   useEffect(() => {

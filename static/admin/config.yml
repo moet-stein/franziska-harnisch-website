@@ -10,7 +10,6 @@ backend:
 
 media_library:
   name: cloudinary
-  use_transformations: true
   config:
     cloud_name: "dcyfdwhvk"
     api_key: "248651531746178"
@@ -51,8 +50,8 @@ collections:
       - {label: "SubTitle", name: "subTitle", widget: "string", required: false, default: ""}
       - {label: "Links", name: "links", widget: "list", required: false, default: [], fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
       - {label: "Description", name: "body", widget: "markdown", required: false, default: ""}
-      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "file"}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
-      - {label: "Featured Image", name: "featuredimage", widget: "file"}
+      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
+      - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
       - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
   
