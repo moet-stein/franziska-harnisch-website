@@ -137,3 +137,14 @@ collections:
         fields:
           - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'works-page'}
           - {label: 'Title', name: 'title', widget: 'string' }
+      - file: "src/pages/contactPage/index.md"
+        label: "contact Page"
+        name: "ContactPage"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Name, name: name, widget: string}
+          - {label: Address, name: address, widget: string}
+          - {label: Website, name: website, widget: string}
+          - {label: instagram, name: instagram, widget: string}
+        
