@@ -10,6 +10,7 @@ backend:
 
 media_library:
   name: cloudinary
+  use_transformations: true
   config:
     cloud_name: "dcyfdwhvk"
     api_key: "248651531746178"
@@ -18,7 +19,7 @@ media_library:
           width: 160
           quality: auto
           crop: scale
-
+          
 media_folder: static/img
 public_folder: /img
 
@@ -49,7 +50,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "SubTitle", name: "subTitle", widget: "string", required: false, default: ""}
       - {label: "Links", name: "links", widget: "list", required: false, default: [], fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
-      - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      - {label: "Description", name: "body", widget: "markdown", required: false, default: ""}
       - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "file"}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
       - {label: "Featured Image", name: "featuredimage", widget: "file"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
