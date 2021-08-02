@@ -9,4 +9,6 @@ links:
     text: Netzwerk Freier Berliner Projekträume und -initiativen
   - url: '"https://www.2og-website.com/"'
     text: 2OG
+  - url: https://www.danallon.com/
+    text: Dan Allon
 ---
