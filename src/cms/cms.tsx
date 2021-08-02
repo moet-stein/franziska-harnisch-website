@@ -13,8 +13,7 @@ import HometwoPreview from './preview-templates/HometwoPreview';
 import WorkdetailsPostPreview from './preview-templates/WorkdetailsPostPreview';
 import WorksPagePreview from './preview-templates/WorksPagePreview';
 import ExhibitionsPagePreview from './preview-templates/ExhibitionsPagePreview';
-import ContactPagePreview from "./preview-templates/ContactPagePreview"
-import LinksPagePreview from "./preview-templates/LinksPagePreview"
+import ContactPagePreview from './preview-templates/ContactPagePreview';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -31,4 +30,3 @@ CMS.registerPreviewTemplate('workdetails', WorkdetailsPostPreview);
 CMS.registerPreviewTemplate('works', WorksPagePreview);
 CMS.registerPreviewTemplate('exhibitions', ExhibitionsPagePreview);
 CMS.registerPreviewTemplate('contactPage', ContactPagePreview);
-CMS.registerPreviewTemplate('links', LinksPagePreview);
