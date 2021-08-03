@@ -91,13 +91,7 @@ export const exhibitionsPageQuery = graphql`
               linkName
               linkURL
             }
-            image {
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
-            }
+            image
           }
         }
         exhibitions {
@@ -114,17 +108,11 @@ export const exhibitionsPageQuery = graphql`
               }
               name
               workName
-              image {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
+              image
               }
             }
           }
         }
       }
     }
-  }
 `;
