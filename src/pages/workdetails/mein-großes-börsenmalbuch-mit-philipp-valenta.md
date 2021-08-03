@@ -4,23 +4,23 @@ layoutType: Layout3
 hashtags:
   - hashtag: collaboration
 title: Mein großes Börsenmalbuch
-subTitle: ' mit Philipp Valenta - partizipatives Objekt, print on demand'
+subTitle: " mit Philipp Valenta - partizipatives Objekt, print on demand"
 links:
   - linkName: Link1 test
     linkURL: https://www.franziskaharnisch.de/mein-grosses-boersenmalbuch
   - linkName: Link2 test
     linkURL: https://www.franziskaharnisch.de/mein-grosses-boersenmalbuch
-description: ''
 images:
-  - imageTitle: ''
-    image: /img/img_20190509_195448.jpg
-  - imageTitle: ''
-    image: /img/p4278991.jpg
-featuredimage: /img/p4278991.jpg
+  - imageTitle: color
+    image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987305/Franziska/IMG_20190509_195453_m1b0vv.jpg
+  - imageTitle: ""
+    image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987346/Franziska/P4279002_rpfbpe.jpg
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987346/Franziska/P4279002_rpfbpe.jpg
 youtubeVideos: []
 pdfs:
   - pdf: /img/mockup_jul23.pdf
     pdfTitle: test pdf
+description: ""
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
