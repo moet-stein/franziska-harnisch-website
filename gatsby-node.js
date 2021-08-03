@@ -1,6 +1,6 @@
 const _ = require("lodash");
 const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
+const { createFilePath, createRemoteFileNode } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 // require("ts-node").register({
 //   compilerOptions: {
@@ -77,12 +77,43 @@ exports.createPages = ({ actions, graphql }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions;
+//   fmImagesToRelative(node); // convert image paths for gatsby images
+
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const value = createFilePath({ node, getNode });
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     });
+//   }
+// };
+
+exports.onCreateNode = async ({ node,
+  actions,
+  store,
+  cache,
+  createNodeId, getNode}) => {
+  const { createNodeField, createNode } = actions;
   fmImagesToRelative(node); // convert image paths for gatsby images
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `MarkdownRemark` &&
+  node.frontmatter.featuredimage !== null) {
     const value = createFilePath({ node, getNode });
+    let fileNode = await createRemoteFileNode({
+      url: node.frontmatter.featuredimage, // string that points to the URL of the image
+      parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+      createNode, // helper function in gatsby-node to generate the node
+      createNodeId, // helper function in gatsby-node to generate the node id
+      cache, // Gatsby's cache
+      store, // Gatsby's Redux store
+    })
+    // if the file was created, attach the new node to the parent node
+    if (fileNode) {
+      node.featuredimage___NODE = fileNode.id
+    }
     createNodeField({
       name: `slug`,
       node,

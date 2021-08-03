@@ -137,14 +137,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        featuredimage {
-          id
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
-        }
+        featuredimage
         pdfs {
           pdf {
             relativePath
