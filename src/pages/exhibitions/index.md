@@ -2,6 +2,19 @@
 templateKey: exhibitions-page
 path: /exhibitions
 title: Exhibitions List
+upcomingExhibitions:
+  upcomings:
+    - startDate: 2021-08-08T22:00:00.000Z
+      endDate: 2021-08-16T22:00:00.000Z
+      place: Berlin Mitte
+      description: Contrary to popular belief, Lorem Ipsum is not simply random text.
+        It has roots in a piece of classical Latin literature from 45 BC, making
+        it over 2000 years old
+      links:
+        - linkURL: https://www.netlifycms.org/docs/cloudinary/
+          linkName: Netlify URL
+      name: Upcoming1
+      image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627995335/homepage1Grey_thhad0.jpg
 exhibitions:
   years:
     - year: "2021"
