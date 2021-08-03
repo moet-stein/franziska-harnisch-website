@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import grey from '@material-ui/core/colors/grey';
 import { makeStyles } from '@material-ui/core/styles';
 import Link1 from '@material-ui/core/Link';
@@ -33,10 +32,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    boxShadow:
+      'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset',
+    padding: '10px',
   },
   imgWidth: {
     width: '180px',
     borderRadius: '5px',
+    boxShadow: '6px 6px 2px 1px rgba(0, 0, 0, .2)',
+  },
+  boxEx: {
+    boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 50px',
+    marginBottom: theme.spacing(3),
+    borderRadius: '3px',
   },
   greyFont: {
     color: grey[600],
@@ -50,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
   const classes = useStyles();
-  const [upcomingDate, setUpcomingDate] = useState('');
   console.log(upcomingExhibitions, exhibitions);
 
   const toSlug = (str) => {
@@ -101,10 +108,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                 </Box>
                 {u.image && (
                   <Box m={2}>
-                    <img
-                      className={classes.imgWidth}
-                      src={u.image}
-                    />
+                    <img className={classes.imgWidth} src={u.image} />
                   </Box>
                 )}
                 {/* {!u.image && (
@@ -129,7 +133,12 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
 
               <Box className={classes.flexColumn}>
                 {e.lOExhibitions.map((ex) => (
-                  <Box display="flex" ml={10}>
+                  <Box
+                    key={ex.name}
+                    display="flex"
+                    ml={10}
+                    className={classes.boxEx}
+                  >
                     <Box m={2}>
                       <Box className={classes.flexColumnNoCenter}>
                         <Typography variant="h5">{ex.name}</Typography>
@@ -165,7 +174,10 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                           ))}
                         <Box m={2}>
                           {ex.workName && ex.workName.length > 0 && (
-                            <Link to={`/workdetails/${toSlug(ex.workName)}/`}>
+                            <Link
+                              to={`/workdetails/${toSlug(ex.workName)}/`}
+                              style={{ textDecoration: 'none' }}
+                            >
                               <Button variant="outlined">
                                 <Typography variant="body1">
                                   See More
@@ -178,10 +190,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                     </Box>
                     <Box m={4}>
                       {ex.image && (
-                        <img
-                          className={classes.imgWidth}
-                          src={ex.image}
-                        />
+                        <img className={classes.imgWidth} src={ex.image} />
                       )}
                     </Box>
                   </Box>
