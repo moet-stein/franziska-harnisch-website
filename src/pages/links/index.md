@@ -30,5 +30,5 @@ links:
   - text: Christine Schmerse & Ulrich Puritz
     url: https://www.bei-schmitz.de/
   - text: Bertram Schiel
-    url: '""'
+    url: ""
 ---
