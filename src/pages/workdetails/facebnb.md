@@ -22,19 +22,19 @@ links:
     linkURL: https://www.franziskaharnisch.de/facebnb
   - linkName: Link3
     linkURL: https://www.franziskaharnisch.de/facebnb
-description: ""
 images:
   - imageTitle: ""
-    image: /img/facebnb_performance07032020_franziskaharnisch_patricia-detmering_04.jpg
+    image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987073/homepage1Grey_x9vdrp.jpg
   - imageTitle: ""
-    image: /img/facebnb_performance07032020_franziskaharnisch_patricia-detmering_02.jpg
+    image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987164/Facebnb_Logo_bemouq.jpg
   - imageTitle: Facebnb_logo
-    image: /img/facebnb_logo.jpg
+    image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987164/Facebnb_Logo_bemouq.jpg
   - imageTitle: ""
-    image: /img/facebnb_profilbild.jpg
-featuredimage: /img/facebnb_profilbild.jpg
+    image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987224/Franziska/stream6_gi2dwi.png
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987164/Facebnb_Logo_bemouq.jpg
 youtubeVideos: []
 pdfs: []
+description: ""
 ---
   Willkommen bei Facebnb! Hier sind Identitäten idiomatisch, Fremde Freunde und
   Namen Schall und Netz. Nehmen Sie sich 1 Woche Zeit für Ihr second life,

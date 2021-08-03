@@ -16,16 +16,16 @@ links:
     linkURL: https://www.franziskaharnisch.de/with-the-stream
   - linkName: Link 2 test
     linkURL: https://www.franziskaharnisch.de/with-the-stream
-description: ''
 images:
-  - image: /img/stream1.png
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987409/Franziska/51ca8d_4b85df2b81c344c2b91ce0120d842e9c_mv2_hhayyq.webp
     imageTitle: stream1
-  - image: /img/stream2.png
-  - image: /img/stream3.webp
-  - image: /img/stream4.webp
-  - image: /img/stream5.webp
-featuredimage: /img/stream6.png
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987426/Franziska/51ca8d_7b0fad85309a42648991586eff093bf6_mv2_y8j0bm.webp
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987440/Franziska/51ca8d_61fa7bd9126a4c9db6a729e61b3af426_mv2_dixkku.webp
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987455/Franziska/51ca8d_aadc4182ac424d27af58ab4b6e15822e_mv2_yzlte1.webp
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987472/Franziska/51ca8d_b393a63225e1431db9cebd0f3268acb3_mv2_w9axbl.webp
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987426/Franziska/51ca8d_7b0fad85309a42648991586eff093bf6_mv2_y8j0bm.webp
 youtubeVideos: []
+description: ""
 ---
 
 Die Performance fand während einer Vernissage der Circle1 Gallery statt.
