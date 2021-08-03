@@ -14,7 +14,7 @@ upcomingExhibitions:
         - linkURL: https://www.netlifycms.org/docs/cloudinary/
           linkName: Netlify URL
       name: Upcoming1
-      image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627995335/homepage1Grey_thhad0.jpg
+      image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627998242/Franziska/51ca8d_4b85df2b81c344c2b91ce0120d842e9c_mv2_xjii7p.webp
 exhibitions:
   years:
     - year: "2021"
@@ -27,7 +27,7 @@ exhibitions:
           links:
             - linkName: Link 1
               linkURL: https://www.franziskaharnisch.de/mein-grosses-boersenmalbuch
-          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627995777/Franziska/P4278990_yg8xvf.jpg
+          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627998331/Franziska/P4278991_sja2al.jpg
           workName: with the stream
           description: This one was held in Berlin Mitte. Test description.
         - place: Halle Saale in Germany
@@ -36,7 +36,7 @@ exhibitions:
           date: ""
           startDate: ""
           links: []
-          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627987472/Franziska/51ca8d_b393a63225e1431db9cebd0f3268acb3_mv2_w9axbl.webp
+          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627987472/Franziska/51ca8d_b393a63225e1431db9cebd0f3268acb3_mv2_w9axbl.webp
           workName: facebnb
           description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -51,7 +51,7 @@ exhibitions:
           links:
             - linkName: Link3
               linkURL: https://www.franziskaharnisch.de/2019
-          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627995816/Franziska/stream3_pqdcmf.webp
+          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627987440/Franziska/51ca8d_61fa7bd9126a4c9db6a729e61b3af426_mv2_dixkku.webp
           workName: Mein großes Börsenmalbuch  mit Philipp Valenta
           description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
