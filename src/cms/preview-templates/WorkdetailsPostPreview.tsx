@@ -32,6 +32,8 @@ const WorkdetailsPostPreview = ({ entry }) => {
     },
   };
 
+  console.log(images.toJS().map((i) => imgObj(i)))
+
   return (
     <WorkdetailsPostTemplate
       title={entry.getIn(['data', 'title'])}
