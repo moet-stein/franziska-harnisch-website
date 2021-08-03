@@ -27,7 +27,7 @@ exhibitions:
           links:
             - linkName: Link 1
               linkURL: https://www.franziskaharnisch.de/mein-grosses-boersenmalbuch
-          image: /img/stream4.webp
+          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627995777/Franziska/P4278990_yg8xvf.jpg
           workName: with the stream
           description: This one was held in Berlin Mitte. Test description.
         - place: Halle Saale in Germany
@@ -36,25 +36,26 @@ exhibitions:
           date: ""
           startDate: ""
           links: []
-          image: /img/stream5.webp
+          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627987472/Franziska/51ca8d_b393a63225e1431db9cebd0f3268acb3_mv2_w9axbl.webp
           workName: facebnb
           description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam
     - year: "2020"
       lOExhibitions:
-        - date: 2020-06-17T22:00:00.000Z
-          place: Paris, France
-          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
+        - place: Paris, France
+          endDate: ""
+          name: Exhibition 3
+          date: 2020-06-17T22:00:00.000Z
+          startDate: ""
           links:
             - linkName: Link3
               linkURL: https://www.franziskaharnisch.de/2019
-          name: Exhibition 3
+          image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_80,w_160/v1627995816/Franziska/stream3_pqdcmf.webp
           workName: Mein großes Börsenmalbuch  mit Philipp Valenta
-          startDate: ""
-          endDate: ""
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
     - year: "2019"
       lOExhibitions:
         - startDate: 2019-03-12T23:00:00.000Z
