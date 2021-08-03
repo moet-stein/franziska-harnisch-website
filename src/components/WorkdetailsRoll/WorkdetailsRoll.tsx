@@ -193,22 +193,9 @@ export default () => (
                 }
                 images {
                   imageTitle
-                  image {
-                    childImageSharp {
-                      fluid {
-                        src
-                      }
-                    }
-                  }
+                  image
                 }
-                featuredimage {
-                  id
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
+                featuredimage
               }
             }
           }

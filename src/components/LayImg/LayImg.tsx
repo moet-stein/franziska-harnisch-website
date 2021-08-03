@@ -58,14 +58,15 @@ export default function LayImg({ img }) {
   const handleClose = () => {
     setOpen(false);
   };
+  console.log(img)
 
   return (
     <React.Fragment>
       <Box m={1} onClick={handleOpen}>
-        {img.image && img.image.childImageSharp && (
+        {img && (
           <img
             className={classes.imgWidth}
-            src={img.image.childImageSharp.fluid.src}
+            src={img.image}
           />
         )}
       </Box>
@@ -83,10 +84,10 @@ export default function LayImg({ img }) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            {img.image && img.image.childImageSharp && (
+            {img && (
               <img
                 className={classes.modalImg}
-                src={img.image.childImageSharp.fluid.src}
+                src={img.image}
               />
             )}
             {img.imageTitle && (

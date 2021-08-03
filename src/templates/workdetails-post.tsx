@@ -71,7 +71,7 @@ WorkdetailsPostTemplate.propTypes = {
   hashtags: PropTypes.array,
   links: PropTypes.array,
   images: PropTypes.array,
-  featuredimage: PropTypes.object,
+  featuredimage: PropTypes.string,
   pdfs: PropTypes.array,
   excerpt: PropTypes.string,
   content: PropTypes.node.isRequired,
@@ -129,13 +129,7 @@ export const pageQuery = graphql`
         }
         images {
           imageTitle
-          image {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
+          image
         }
         featuredimage
         pdfs {

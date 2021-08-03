@@ -58,22 +58,18 @@ const useStyles = makeStyles(() => ({
 }));
 
 const WorksImage = ({ imageInfo, title, slug }) => {
-  console.log(imageInfo)
+  console.log(slug)
   const classes = useStyles();
-  const imageStyle = { borderRadius: '2px' };
-  const { alt = '', childImageSharp, id } = imageInfo;
-  const { hashtag, setHashtag } = useContext(HashtagContext);
   const location = useLocation().pathname;
-  // if (!!imageInfo && !!imageInfo.childImageSharp) {
+  
   return (
     <HashtagProvider>
-      {!!imageInfo && !!imageInfo.childImageSharp && (
+      {!!imageInfo && (
         <Link className="title has-text-primary is-size-4" to={slug}>
           {location === '/workdetails' && (
             <div className={classes.container}>
               <img
-                src={childImageSharp.fluid.src}
-                alt={alt}
+                src={imageInfo}
                 className={classes.image}
               />
               <div className={classes.middle}>
@@ -85,8 +81,7 @@ const WorksImage = ({ imageInfo, title, slug }) => {
             <Box className={classes.width}>
               <div className={classes.container}>
                 <img
-                  src={childImageSharp.fluid.src}
-                  alt={alt}
+                  src={imageInfo}
                   className={classes.image}
                 />
                 <div className={classes.middle}>
@@ -103,11 +98,7 @@ const WorksImage = ({ imageInfo, title, slug }) => {
 };
 
 WorksImage.propTypes = {
-  imageInfo: PropTypes.shape({
-    alt: PropTypes.string,
-    childImageSharp: PropTypes.object,
-    style: PropTypes.object,
-  }).isRequired,
+  imageInfo: PropTypes.string
 };
 
 export default WorksImage;

@@ -8,7 +8,7 @@ import {
 } from '../../Context/HashtagContext.tsx';
 
 export default function Works({ posts }) {
-
+console.log(posts)
   return (
     <div className="columns is-multiline">
       {posts && (

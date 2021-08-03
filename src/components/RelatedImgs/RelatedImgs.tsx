@@ -170,14 +170,7 @@ export default () => (
                 hashtags {
                   hashtag
                 }
-                featuredimage {
-                  id
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
+                featuredimage 
               }
             }
           }

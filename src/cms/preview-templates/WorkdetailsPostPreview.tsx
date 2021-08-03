@@ -11,28 +11,28 @@ const WorkdetailsPostPreview = ({ entry }) => {
 
   console.log(images.toJS())
 
-  const imgObj = (i) => {
-    const obj = {
-      image: {
-        childImageSharp: {
-          fluid: {
-            src: i.image,
-          },
-        },
-      },
-      imageTitle: i.imageTitle,
-    };
-    return obj;
-  };
-  const ftImgObj = {
-    childImageSharp: {
-      fluid: {
-        src: featuredimage,
-      },
-    },
-  };
+  // const imgObj = (i) => {
+  //   const obj = {
+  //     image: {
+  //       childImageSharp: {
+  //         fluid: {
+  //           src: i.image,
+  //         },
+  //       },
+  //     },
+  //     imageTitle: i.imageTitle,
+  //   };
+  //   return obj;
+  // };
+  // const ftImgObj = {
+  //   childImageSharp: {
+  //     fluid: {
+  //       src: featuredimage,
+  //     },
+  //   },
+  // };
 
-  console.log(images.toJS().map((i) => imgObj(i)))
+  // console.log(images.toJS().map((i) => imgObj(i)))
 
   return (
     <WorkdetailsPostTemplate
@@ -41,8 +41,8 @@ const WorkdetailsPostPreview = ({ entry }) => {
       description={entry.getIn(['data', 'description'])}
       layoutType={entry.getIn(['data', 'layoutType'])}
       hashtags={hashtags.toJS()}
-      featuredimage={ftImgObj}
-      images={images && images.toJS().map((i) => imgObj(i))}
+      featuredimage={featuredimage}
+      images={images && images.toJS()}
       links={links && links.toJS()}
       pdfs={pdfs && pdfs.toJS()}
     />
