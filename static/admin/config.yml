@@ -153,5 +153,5 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "links-page"}
           - {label: Title, name: title, widget: string}
-          - {label: "Links", name: "links", widget: list, fields: [{label: Url, name: url, widget: string, default: ""}, {label: Text, name: text, widget: string}]}
+          - {label: "Links", name: "links", widget: list, fields: [{label: Url, name: url, widget: string, required: false, default: ""}, {label: Text, name: text, widget: string}]}
         
