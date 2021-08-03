@@ -17,7 +17,7 @@ links:
   - linkName: Link 2 test
     linkURL: https://www.franziskaharnisch.de/with-the-stream
 images:
-  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627998242/Franziska/51ca8d_4b85df2b81c344c2b91ce0120d842e9c_mv2_xjii7p.webp
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2000/v1628003943/Franziska/51ca8d_4b85df2b81c344c2b91ce0120d842e9c_mv2_wfdi6k.webp
     imageTitle: stream1
   - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_99/c_scale,f_auto,w_300/v1627987426/Franziska/51ca8d_7b0fad85309a42648991586eff093bf6_mv2_y8j0bm.webp
   - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627995816/Franziska/stream3_pqdcmf.webp
