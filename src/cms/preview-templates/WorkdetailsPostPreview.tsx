@@ -9,6 +9,8 @@ const WorkdetailsPostPreview = ({ entry }) => {
   const links = entry.getIn(['data', 'links']);
   const pdfs = entry.getIn(['data', 'pdfs']);
 
+  console.log(images.toJS())
+
   const imgObj = (i) => {
     const obj = {
       image: {

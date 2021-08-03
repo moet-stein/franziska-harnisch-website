@@ -16,13 +16,7 @@ images:
 featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1611757624/e1l2tffm2fec8peobufw.jpg
 youtubeVideos: []
 pdfs: []
-description: >-
-  **This is a test pot for workdetails checking if the cloudinary is working.
-  Let's update here for photos and see if this thing will be transformed to url
-  and if it..**
-
-
-  *This is a test pot for workdetails checking if the cloudinary is working. Let's update here for photos and see if this thing will be transformed to url and if it..*
+description: ""
 ---
 ##### **This is a test for cloudinary :) Let's see how it goes!**
 

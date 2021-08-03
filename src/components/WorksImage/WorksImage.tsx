@@ -58,6 +58,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const WorksImage = ({ imageInfo, title, slug }) => {
+  console.log(imageInfo)
   const classes = useStyles();
   const imageStyle = { borderRadius: '2px' };
   const { alt = '', childImageSharp, id } = imageInfo;
