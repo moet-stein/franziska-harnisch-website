@@ -5,14 +5,12 @@ title: Franziska Harnisch
 image: /img/jumbotron.jpg
 event:
   comingTitle: Coming soon
-  futureEvent: Contemporary Opportunities Part IV
-    2. - 4.7.2021 Alte Münze
+  futureEvent: Contemporary Opportunities Part IV 2. - 4.7.2021 Alte Münze
   lastTitle: Lastest Event
-  lastEvent: EMBARK - kuratiert von 129gallery
-    18.6. - 25.7.2021 
+  lastEvent: EMBARK - kuratiert von 129gallery 18.6. - 25.7.2021
 intro:
   blurbs:
-    - image: /img/furniture.jpg
+    - image: /img/rabbit.jpg
       text: rem Ipsum has been the industry's standard dummy text ever since the
         1500s, when an unknown printer took a galley of type and scrambled it to
         make a type specimen book.
