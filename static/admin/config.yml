@@ -15,8 +15,8 @@ media_library:
     api_key: "248651531746178"
     default_transformations:
       - - fetch_format: auto
-          width: 160
-          quality: 80
+          width: 300
+          quality: 100
           crop: scale
           
 media_folder: static/img
