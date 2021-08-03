@@ -36,7 +36,7 @@ export const ExhibitionsPageTemplate = ({
       </Box>
       <Box>
         <Exhibitions
-          upcomingExhibitions={upcomingExhibitions[0].upcomings}
+          upcomingExhibitions={upcomingExhibitions.upcomings}
           exhibitions={exhibitions.years}
         />
       </Box>

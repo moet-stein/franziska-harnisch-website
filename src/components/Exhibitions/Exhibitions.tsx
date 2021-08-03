@@ -103,7 +103,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                   <Box m={2}>
                     <img
                       className={classes.imgWidth}
-                      src={u.image.childImageSharp.fluid.src}
+                      src={u.image}
                     />
                   </Box>
                 )}
@@ -180,7 +180,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                       {ex.image && (
                         <img
                           className={classes.imgWidth}
-                          src={ex.image.childImageSharp.fluid.src}
+                          src={ex.image}
                         />
                       )}
                     </Box>
