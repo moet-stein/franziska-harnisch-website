@@ -23,7 +23,7 @@ images:
   - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628063872/Franziska/51ca8d_61fa7bd9126a4c9db6a729e61b3af426_mv2_riooyy.webp
   - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,q_100,w_2400/v1627987455/Franziska/51ca8d_aadc4182ac424d27af58ab4b6e15822e_mv2_yzlte1.webp
   - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,q_100,w_2400/v1627987224/Franziska/stream6_gi2dwi.png
-featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,q_100,w_2400/v1627987224/Franziska/stream6_gi2dwi.png
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1627987224/Franziska/stream6_gi2dwi.png
 youtubeVideos: []
 description: ""
 ---
