@@ -31,7 +31,7 @@ images:
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987164/Facebnb_Logo_bemouq.jpg
   - imageTitle: ""
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987224/Franziska/stream6_gi2dwi.png
-featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987164/Facebnb_Logo_bemouq.jpg
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/v1627987164/Facebnb_Logo_bemouq.jpg
 youtubeVideos: []
 pdfs: []
 description: ""
