@@ -15,7 +15,7 @@ images:
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987305/Franziska/IMG_20190509_195453_m1b0vv.jpg
   - imageTitle: ""
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987346/Franziska/P4279002_rpfbpe.jpg
-featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1627987346/Franziska/P4279002_rpfbpe.jpg
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1627998331/Franziska/P4278991_sja2al.jpg
 youtubeVideos: []
 pdfs:
   - pdf: /img/mockup_jul23.pdf
