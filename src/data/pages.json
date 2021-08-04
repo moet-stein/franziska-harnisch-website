@@ -1,0 +1,30 @@
+{
+    "domain": "http://localhost:8000",
+    "instagram": "https://www.instagram.com/",
+    "pages": [
+    {
+    "name": "About",
+    "to": "about",
+    "i8n": true
+    },
+    {
+    "name": "works",
+    "to": "workdetails",
+    "i8n": true
+    },
+    {
+    "name": "Exhibitions",
+    "to": "exhibitions",
+    "i8n": true
+    },
+    {
+    "name": "Contact",
+    "to": "contactPage",
+    "i8n": true
+    },
+    {
+    "name": "Links",
+    "to": "links",
+    "i8n": false
+    }
+    ]}

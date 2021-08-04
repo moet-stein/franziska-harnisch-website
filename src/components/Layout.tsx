@@ -1,7 +1,9 @@
 import React from 'react';
 import './NavbarHometwo/NavBarHometwo.css';
 import { Helmet } from 'react-helmet';
+import { FormattedMessage } from "react-intl";
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import { IntlProvider } from "react-intl";
 import {
   createTheme,
   ThemeProvider,
@@ -40,8 +42,20 @@ const TemplateWrapper = ({ children }) => {
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   console.log('langKey', langKey);
   console.log('langs', langs);
+  const homeLink = `/${langKey}/`;
+  console.log("homeLink", homeLink)
+
+  const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(
+    (item) => ({
+      ...item,
+      link: item.link.replace(`/${defaultLangKey}/`, "/"),
+    })
+  );
+  console.log("langsmenu", langsMenu)
   return (
+    
     <div>
+      <IntlProvider locale={langKey} >
       <ThemeProvider theme={theme}>
         <Helmet>
           <html lang="en" />
@@ -82,11 +96,13 @@ const TemplateWrapper = ({ children }) => {
           />
         </Helmet>
 
-        <NavbarHometwo />
+        <NavbarHometwo langs={langsMenu} langKey={langKey} url={url}  />
         <div>{children}</div>
         <Footer />
-      </ThemeProvider>
-    </div>
+        </ThemeProvider>
+              </IntlProvider>
+      </div>
+
   );
 };
 

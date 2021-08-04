@@ -45,6 +45,7 @@
     "react-animations": "^1.0.0",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
+    "react-intl": "^5.20.6",
     "styled-components": "^5.3.0",
     "uuid": "^7.0.0"
   },

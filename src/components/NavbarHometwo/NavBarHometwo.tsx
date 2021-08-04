@@ -1,12 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "gatsby";
-
+import Button from "@material-ui/core/Button";
+import MenuItem from "@material-ui/core/MenuItem";
+import SelectLanguage from "../SelectLanguage.tsx"
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from "@material-ui/core/styles";
+import { pages } from "../../data/pages.json";
+import { FormattedMessage } from "react-intl";
 import "./NavBarHometwo.css"
 
 
-function NavbarHometwo() {
+function NavbarHometwo({langs, url, langKey}) {
 
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useState(false);
@@ -31,7 +35,7 @@ function NavbarHometwo() {
             display: "none",
         }
     }
-
+    const homeLink = langKey === "en" ? "/" : `/${langKey}/`;
     return (
         <div style={{ position: "fixed" }} >
 
@@ -53,15 +57,36 @@ function NavbarHometwo() {
 
                     >
                         <div className="directionNavbar"  >
-                            <Link to='/hometwo' className="navbar-item" style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</Link>
+                        {pages.map((page) => (
+              <React.Fragment key={page.name}>
+                <FormattedMessage id={page.to}>
+                  {(txt) => (
+                    <Button
+                      id={page.to}
+                      component={Link}
+                      to={page.i8n ? `/${langKey}/${page.to}` : `/${page.to}`}
+                     // className={classes.button}
+                     className="navbar-item"
+                    >
+                      {`/${langKey}/${page.to}` === url ? (
+                        <span >{txt}</span>
+                      ) : (
+                        txt
+                      )}
+                    </Button>
+                  )}
+                </FormattedMessage>
+              </React.Fragment>
+            ))}
+                           {/*  <Link to='/' className="navbar-item" style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</Link>
                             <Link className="navbar-item" to="/about">
                                 About
                             </Link>
                             <Link className="navbar-item" to="/workdetails">
                                 Works
                             </Link>
-                            <Link className="navbar-item" to="/">
-                                Exibitions
+                            <Link className="navbar-item" to="/exhibitions">
+                                Exhibitions
                             </Link>
                             <Link className="navbar-item" to="/contactPage">
                                 Contact
@@ -70,8 +95,8 @@ function NavbarHometwo() {
                                 Links
                             </Link>
                             <Link className="smallLink " to="/">Impressum</Link>
-                            <Link className="smallLink " to="/">Datenschutz</Link>
-
+                            <Link className="smallLink " to="/">Datenschutz</Link> */}
+<SelectLanguage langs={langs}/>
                         </div>
 
                     </div>
