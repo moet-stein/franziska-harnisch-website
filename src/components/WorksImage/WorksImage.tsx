@@ -5,10 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import grey from '@material-ui/core/colors/grey';
 import { useLocation } from '@reach/router';
-import {
-  HashtagContext,
-  HashtagProvider,
-} from '../../Context/HashtagContext.tsx';
 
 const useStyles = makeStyles(() => ({
   width: {
@@ -58,20 +54,17 @@ const useStyles = makeStyles(() => ({
 }));
 
 const WorksImage = ({ imageInfo, title, slug }) => {
-  console.log(slug)
+  console.log(slug);
   const classes = useStyles();
   const location = useLocation().pathname;
-  
+
   return (
-    <HashtagProvider>
+    <div>
       {!!imageInfo && (
         <Link className="title has-text-primary is-size-4" to={slug}>
           {location === '/workdetails' && (
             <div className={classes.container}>
-              <img
-                src={imageInfo}
-                className={classes.image}
-              />
+              <img src={imageInfo} className={classes.image} />
               <div className={classes.middle}>
                 <div className={classes.content}>{title}</div>
               </div>
@@ -80,10 +73,7 @@ const WorksImage = ({ imageInfo, title, slug }) => {
           {location !== '/workdetails' && (
             <Box className={classes.width}>
               <div className={classes.container}>
-                <img
-                  src={imageInfo}
-                  className={classes.image}
-                />
+                <img src={imageInfo} className={classes.image} />
                 <div className={classes.middle}>
                   <div className={classes.content}>{title}</div>
                 </div>
@@ -92,13 +82,13 @@ const WorksImage = ({ imageInfo, title, slug }) => {
           )}
         </Link>
       )}
-    </HashtagProvider>
+    </div>
   );
   // }
 };
 
 WorksImage.propTypes = {
-  imageInfo: PropTypes.string
+  imageInfo: PropTypes.string,
 };
 
 export default WorksImage;

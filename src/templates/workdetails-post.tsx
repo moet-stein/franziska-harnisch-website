@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
 import Layout3 from '../components/Layout3/Layout3';
-import WorkDeTemplate from '../components/WorkDeTemplate/WorkDeTemplate';
 import Content, { HTMLContent } from '../components/Content';
 
 export const WorkdetailsPostTemplate = ({
