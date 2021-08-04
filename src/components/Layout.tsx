@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavbarHometwo/NavBarHometwo.css';
 import { Helmet } from 'react-helmet';
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n'
+import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import {
   createTheme,
   ThemeProvider,
@@ -12,7 +12,6 @@ import Navbar from './Navbar';
 import NavbarHometwo from './NavbarHometwo/NavBarHometwo';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
-import { HashtagContext, HashtagProvider } from '../Context/HashtagContext.tsx';
 
 let theme = createTheme({
   // palette: {
@@ -36,11 +35,11 @@ theme = responsiveFontSizes(theme);
 const TemplateWrapper = ({ children }) => {
   const { title, description, languages } = useSiteMetadata();
   const url = location.pathname;
-  console.log("url", url)
+  console.log('url', url);
   const { langs, defaultLangKey } = languages;
-  const langKey = getCurrentLangKey(langs, defaultLangKey,url);
-  console.log("langKey", langKey)
-  console.log("langs", langs)
+  const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+  console.log('langKey', langKey);
+  console.log('langs', langs);
   return (
     <div>
       <ThemeProvider theme={theme}>

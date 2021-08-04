@@ -23,20 +23,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
   - name: "workdetails"
     label: "Workdetails"
     folder: "src/pages/workdetails"
@@ -58,19 +44,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: mage1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -83,30 +56,6 @@ collections:
           - {label: "Einzelaustellung", name: "einzelaustellung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
           - {label: "Gruppenaustellung", name: "gruppenaustellung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
           - {label: "Projekte", name: "projekte", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-      - file: "src/pages/events/index.md"
-        label: "Events Page"
-        name: "events"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
       - file: "src/pages/exhibitions/index.md"
         label: "Exhibitions Page"
         name: "exhibitions"
@@ -116,25 +65,6 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Upcoming Exhibitions, name: upcomingExhibitions, widget: object, fields: [{label: Upcomings, name: upcomings, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Start Date, name: startDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: End Date, name: endDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""} ,{label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: linkURL, widget: string, required: false}, {label: LinkName, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: image, required: false}]}]}
           - {label: Exhibitions, name: exhibitions, widget: object, fields: [{label: Years, name: years, widget: list, fields: [{label: Year, name: year, widget: string}, {label: List of exhibitions, name: lOExhibitions, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Start Date, name: startDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: End Date, name: endDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""} ,{label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: linkURL, widget: string, required: false}, {label: Link Name, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: image, required: false}, {label: Realted Work Name, name: workName, widget: string, required: false}]}]}]}
-      - file: "src/pages/lauraTest/index.md"
-        label: "LauraTest Page"
-        name: "lauraTest"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-      - file: 'src/pages/testMoe/index.md'
-        label: 'TestMoe Page'
-        name: 'testMoe'
-        fields:
-          - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'testMoe-page'}
-          - {label: 'Title', name: 'title', widget: 'string' }
-          - {label: Image, name: image, widget: image}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Hashtags, name: hashtags, widget: list, fields: [{label: Hashtag, name: hashtag, widget: "string"}]}]}]}
       - file: 'src/pages/hometwo/index.md'
         label: 'Hometwo Page'
         name: 'hometwo'
@@ -143,12 +73,6 @@ collections:
           - {label: 'Title', name: 'title', widget: 'string' }
           - {label: Events, name: event, widget: object, fields: [{label: Coming Event Label, name: comingTitle, widget: string}, {label: Future Event, name: futureEvent, widget: text}, {label: Last Event Label, name: lastTitle, widget: text}, {label: LastEvent, name: lastEvent, widget: text}]}
           - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-      - file: 'src/pages/works/index.md'
-        label: 'Works Page'
-        name: 'works'
-        fields:
-          - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'works-page'}
-          - {label: 'Title', name: 'title', widget: 'string' }
       - file: "src/pages/contactPage/index.md"
         label: "contact Page"
         name: "ContactPage"
