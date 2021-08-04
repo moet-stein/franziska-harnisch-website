@@ -15,7 +15,7 @@ images:
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1611757624/e1l2tffm2fec8peobufw.jpg
   - imageTitle: flower
     image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1611746961/sample.jpg
-featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_auto,w_160/v1611757624/e1l2tffm2fec8peobufw.jpg
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628063872/Franziska/51ca8d_61fa7bd9126a4c9db6a729e61b3af426_mv2_riooyy.webp
 youtubeVideos: []
 pdfs: []
 description: ""
