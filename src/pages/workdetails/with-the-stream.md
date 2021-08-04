@@ -19,11 +19,11 @@ links:
 images:
   - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2000/v1628003943/Franziska/51ca8d_4b85df2b81c344c2b91ce0120d842e9c_mv2_wfdi6k.webp
     imageTitle: stream1
-  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_99/c_scale,f_auto,w_300/v1627987426/Franziska/51ca8d_7b0fad85309a42648991586eff093bf6_mv2_y8j0bm.webp
-  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627995816/Franziska/stream3_pqdcmf.webp
-  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627987455/Franziska/51ca8d_aadc4182ac424d27af58ab4b6e15822e_mv2_yzlte1.webp
-  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627987224/Franziska/stream6_gi2dwi.png
-featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627987224/Franziska/stream6_gi2dwi.png
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1627987426/Franziska/51ca8d_7b0fad85309a42648991586eff093bf6_mv2_y8j0bm.webp
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628063872/Franziska/51ca8d_61fa7bd9126a4c9db6a729e61b3af426_mv2_riooyy.webp
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,q_100,w_2400/v1627987455/Franziska/51ca8d_aadc4182ac424d27af58ab4b6e15822e_mv2_yzlte1.webp
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,q_100,w_2400/v1627987224/Franziska/stream6_gi2dwi.png
+featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,q_100,w_2400/v1627987224/Franziska/stream6_gi2dwi.png
 youtubeVideos: []
 description: ""
 ---
