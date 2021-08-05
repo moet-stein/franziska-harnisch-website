@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { navigate } from "gatsby";
+import { pages } from "../../data/pages.json";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -15,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const SelectLanguage = ({ langs }) => {
-  const classes = useStyles();
+    const classes = useStyles();
+    console.log("langsSele", langs)
   return (
     <List component="ul" aria-label="languages" style={{ display: "flex" }}>
       {langs.map((lang) => (
@@ -28,8 +30,11 @@ const SelectLanguage = ({ langs }) => {
             const { langKey } = lang;
             if (lang.link === "/") navigate(`/`);
             else if (!lang.link.includes("/de/")) {
-              navigate(`${langKey}/${lang.link}`);
-            } else navigate(`${lang.link}`);
+              navigate(`${langkey}/${lang.link}`);
+            } else if (lang.link.includes("/de/")) {
+              navigate(`${lang.link}`);
+            }
+              
           }}
           selected={lang.selected}
         >
