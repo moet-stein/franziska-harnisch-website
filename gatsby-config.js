@@ -52,6 +52,23 @@ module.exports = {
               langKeyDefault: "de",
               useLangKeyLayout: false,
               prefixDefault: false,
+              markdownRemark: {
+                postPage: "src/templates/workdetails-post.tsx",
+                query: `
+          {
+            allMarkdownRemark {
+              edges {
+                node {
+                  fields {
+                    slug,
+                    langKey
+                  }
+                }
+              }
+            }
+          }
+        `,
+              },
             },
           },
           {
