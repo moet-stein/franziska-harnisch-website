@@ -19,7 +19,7 @@
     },
     {
     "name": "Contact",
-    "to": "contactPage",
+    "to": "contact",
     "i8n": true
     },
     {

@@ -1,6 +1,6 @@
 ---
 templateKey: contact-page
-path: /contactPage
+path: /contact
 title: Contact
 name: Franziska Harnisch
 address: Atelier 2OG, Am Krögel 2, 10179 Berlin
