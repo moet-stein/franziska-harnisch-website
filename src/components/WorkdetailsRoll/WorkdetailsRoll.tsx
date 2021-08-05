@@ -46,11 +46,13 @@ export function WorkdetailsRoll({ data }) {
 
   const handleClick = (h) => {
     if (selectedHash.includes(h)) {
-      const index = selectedHash.indexOf(h);
-      const newArr = selectedHash.splice(index, 1);
+      const newArr = selectedHash.filter((i) => i !== h);
+
       setSelectedHash(newArr);
+      console.log(newArr);
     } else {
       setSelectedHash((prevArray) => [...prevArray, h]);
+      console.log(h);
     }
 
     setAllSelected(false);
