@@ -8,7 +8,7 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import AboutBlocks from "../components/AboutBlocks/AboutBlocks"
 
 export const AboutPageTemplate = ({ title, generalInfo, ausbildung, preise, einzelaustellung, gruppenaustellung, projekte }) => {
-  console.log(generalInfo.name)
+ 
 
   return (
     <section >
@@ -60,12 +60,13 @@ AboutPageTemplate.propTypes = {
 
 }
 
-const AboutPage = ({ data }) => {
+const AboutPage = ({ data, location }) => {
+  
 
   const { frontmatter } = data.markdownRemark;
-
+console.log("info",frontmatter.generalInfo)
   return (
-    <Layout>
+    <Layout >
       <AboutPageTemplate
         title={frontmatter.title}
         generalInfo={frontmatter.generalInfo}

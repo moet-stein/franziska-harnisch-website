@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from "react-intl";
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from "react-intl";
+import messages_de from "../data/de.json";
+import messages_en from "../data/en.json";
 import {
   createTheme,
   ThemeProvider,
@@ -14,6 +16,11 @@ import Navbar from './Navbar';
 import NavbarHometwo from './NavbarHometwo/NavBarHometwo';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
+
+const messages = {
+  de: messages_de,
+  en: messages_en,
+};
 
 let theme = createTheme({
   // palette: {
@@ -34,7 +41,8 @@ let theme = createTheme({
 });
 theme = responsiveFontSizes(theme);
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({children}) => {
+
   const { title, description, languages } = useSiteMetadata();
   const url = location.pathname;
   console.log('url', url);
