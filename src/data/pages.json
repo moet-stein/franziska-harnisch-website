@@ -2,6 +2,11 @@
     "domain": "http://localhost:8000",
     "instagram": "https://www.instagram.com/",
     "pages": [
+        {
+            "name": "/",
+            "to": "Franziska Harnisch",
+            "i8n": true
+            },
     {
     "name": "About",
     "to": "about",

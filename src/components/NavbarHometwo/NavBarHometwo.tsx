@@ -37,7 +37,7 @@ function NavbarHometwo({ langs, url, langKey }) {
   };
   const homeLink = langKey === 'en' ? '/' : `/${langKey}/`;
   return (
-    <div style={{ position: 'fixed' }}>
+    <div style={{ position: 'fixed', top: 15 }}>
       <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
       <nav
         ref={dropdownRef}
@@ -49,12 +49,12 @@ function NavbarHometwo({ langs, url, langKey }) {
         <div className="">
           <div className="navbar-brand"></div>
           <div id="">
-            <div className="directionNavbar">
+            <div className="directionNavbar positionNavbar">
               {pages.map((page) => (
                 <React.Fragment>
                   <FormattedMessage id={page.to}>
                     {(txt) => (
-                      <Button
+                            <Button
                         id={page.to}
                         component={Link}
                         to={
