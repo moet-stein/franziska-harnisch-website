@@ -51,6 +51,7 @@ function NavbarHometwo({ langs, url, langKey }) {
           <div id="">
             <div className="directionNavbar">
               {pages.map((page) => (
+                  console.log("page",page)
                 <React.Fragment key={page.name}>
                   <FormattedMessage id={page.to}>
                     {(txt) => (
