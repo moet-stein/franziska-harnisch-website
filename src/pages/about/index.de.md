@@ -6,7 +6,7 @@ templateKey: about-page
   Kampala (UGA), Hildesheim, Berlin
 title: About
 generalInfo:
-  name: Franziska Harnisch (1986 in Berlin)
+  name: Franziska Harnisch (1986 in Berlin, DE)
   address: Atelier 2OG / Alte Münze, Am Krögel 2, 10179 Berlin
   website: www.franziskaharnisch.de
   email: franziska.harnisch@gmail.com

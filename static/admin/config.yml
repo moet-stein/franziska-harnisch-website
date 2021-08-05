@@ -44,9 +44,21 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "src/pages/about/index.de.md"
+        label: "About De"
+        name: "aboutde"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: generalInfo, name: generalInfo, widget: object, fields: [{label: Name, name: name, widget: string}, {label: Address, name: address, widget: string}, {label: website, name: website, widget: string}]}
+          - {label: "Ausbildung", name: "ausbildung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Preise", name: "preise", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Einzelaustellung", name: "einzelaustellung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Gruppenaustellung", name: "gruppenaustellung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+          - {label: "Projekte", name: "projekte", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
+      - file: "src/pages/about/index.en.md"
+        label: "About EN"
+        name: "abouten"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}

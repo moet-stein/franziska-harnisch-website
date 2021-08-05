@@ -12,7 +12,8 @@ import LinksPagePreview from './preview-templates/LinksPagePreview'
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
-CMS.registerPreviewTemplate('about', AboutPagePreview);
+CMS.registerPreviewTemplate('aboutde', AboutPagePreview);
+CMS.registerPreviewTemplate('abouten', AboutPagePreview);
 CMS.registerPreviewTemplate('hometwo', HometwoPreview);
 CMS.registerPreviewTemplate('workdetails', WorkdetailsPostPreview);
 CMS.registerPreviewTemplate('exhibitions', ExhibitionsPagePreview);
