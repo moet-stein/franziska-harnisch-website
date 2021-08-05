@@ -20,7 +20,7 @@ export function WorkdetailsRoll({ data }) {
   const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
-  const [selectedHash, setSelectedHash] = useState('');
+  const [selectedHash, setSelectedHash] = useState([]);
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -36,7 +36,7 @@ export function WorkdetailsRoll({ data }) {
         posts.filter((p) =>
           p.node.frontmatter.hashtags
             .map((h) => h.hashtag)
-            .includes(selectedHash)
+            .some((i) => selectedHash.includes(i))
         )
       );
       setFilteredPosts(filtered);
@@ -45,13 +45,22 @@ export function WorkdetailsRoll({ data }) {
   };
 
   const handleClick = (h) => {
-    setSelectedHash(h);
+    if (selectedHash.includes(h)) {
+      const newArr = selectedHash.filter((i) => i !== h);
+
+      setSelectedHash(newArr);
+      console.log(newArr);
+    } else {
+      setSelectedHash((prevArray) => [...prevArray, h]);
+      console.log(h);
+    }
+
     setAllSelected(false);
   };
 
   const handleAll = () => {
     allSelected ? setAllSelected(false) : setAllSelected(true);
-    setSelectedHash('');
+    setSelectedHash([]);
   };
 
   const handleSearch = (e) => {
@@ -134,7 +143,7 @@ export function WorkdetailsRoll({ data }) {
           hashtags.length > 0 &&
           hashtags.map((h) => (
             <Box ml={1} mb={1} key={`hashtag-${h}`}>
-              {selectedHash === h ? (
+              {selectedHash.includes(h) ? (
                 <Chip
                   label={<Typography variant="body2"># {h}</Typography>}
                   onClick={() => handleClick(h)}
