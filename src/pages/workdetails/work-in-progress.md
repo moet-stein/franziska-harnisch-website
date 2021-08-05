@@ -5,7 +5,7 @@ hashtags:
   - hashtag: test
   - hashtag: webbased
   - hashtag: work in progress
-title: Work in Progress
+title: Work in Progress2
 subTitle: Test how internationalization for workdetails work after config.js was edited
 links:
   - linkName: Hello World
