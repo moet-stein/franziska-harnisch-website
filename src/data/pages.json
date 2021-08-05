@@ -25,6 +25,6 @@
     {
     "name": "Links",
     "to": "links",
-    "i8n": false
+    "i8n": true
     }
     ]}
