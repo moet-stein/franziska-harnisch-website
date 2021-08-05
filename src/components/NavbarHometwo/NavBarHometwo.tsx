@@ -13,7 +13,7 @@ function NavbarHometwo({ langs, url, langKey }) {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
-  console.log(pages);
+  console.log("pages", pages);
   console.log(langKey);
 
   //style
@@ -51,7 +51,7 @@ function NavbarHometwo({ langs, url, langKey }) {
           <div id="">
             <div className="directionNavbar">
               {pages.map((page) => (
-                  console.log("page",page)
+                
                 <React.Fragment key={page.name}>
                   <FormattedMessage id={page.to}>
                     {(txt) => (

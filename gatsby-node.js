@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const path = require('path');
+
 const {
   createFilePath,
   createRemoteFileNode,
@@ -35,7 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
       result.errors.forEach((e) => console.error(e.toString()));
       return Promise.reject(result.errors);
     }
-
+   
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((edge) => {
