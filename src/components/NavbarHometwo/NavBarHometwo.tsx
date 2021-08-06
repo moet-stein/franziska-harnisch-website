@@ -68,6 +68,8 @@ function NavbarHometwo({ langs, url, langKey }) {
   const homeLink = langKey === 'en' ? `/${langKey}/` : '/';
   const impressumLink = langKey === 'en' ? `/${langKey}/impressum`  : '/impressum'
  const impressumText = langKey === 'en' ? "Imprint"  : "Impressum"
+ const datenschutzLink = langKey === 'en' ? `/${langKey}/datenschutzverordnung`  : '/datenschutzverordnung'
+ const datenschutzText = langKey === 'en' ? "Date protection regulation"  : "Datenschutzverordnung"
   return (
     <div style={{ position: 'fixed', top: 15 }}>
       <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
@@ -120,6 +122,9 @@ function NavbarHometwo({ langs, url, langKey }) {
           
                <Button to={impressumLink} component={Link} style={{textTransform:"capitalize"}}>
               {impressumText}
+            </Button>
+            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize"}}>
+              {datenschutzText}
             </Button>
               {/*  <Link to='/' className="navbar-item" style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</Link>
                             <Link className="navbar-item" to="/about">
