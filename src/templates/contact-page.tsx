@@ -6,11 +6,32 @@ import { Link } from '@material-ui/core'
 import { makeStyles } from "@material-ui/core/styles";
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
+const useStyles = makeStyles((theme) => ({
+  container:{
+    marginTop:50, 
+    display: "flex", 
+    flexDirection: "column",  
+    height:"100vh", 
+    marginRight:50,
+    alignItems:"flex-end"
+  },
+  textContainer:{
+    fontFamily:"Josefin Sans", 
+    background: "linear-gradient(90deg, rgba(250,248,245,1) 2%, rgba(251,250,249,1) 44%, rgba(142,142,143,1) 100%)",
+     padding:60,
+     borderRadius:10,
+  },
+  websiteLink:{
+    display:"block", 
+    coursor:"pointer", 
+    marginBottom:10,
+  }
+}))
 
 export const ContactPageTemplate = ({title, name, address,email, website, instagram}) => {
   const [userEmail, setUserEmail] = useState("")
   const [emailError, setEmailError] = useState("")
-  
+ const classes = useStyles();
   const handleChange = (e) => {
     e.preventDefault();
     setUserEmail(e.target.value)
@@ -41,14 +62,13 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
 
   return (
     <section >
-          <div style={{ marginTop:50, 
-              display: "flex", flexDirection: "column",  height:"100vh", marginRight:50}} >
+          <div className={classes.container} >
             <div style={{alignItems:"center", textAlign:"right"}}>
         
-              <div style={{ background: "linear-gradient(90deg, rgba(250,248,245,1) 2%, rgba(251,250,249,1) 44%, rgba(142,142,143,1) 100%)", padding:30}}>
-              <h3 style={{fontFamily:"Josefin-Sans",}}>{name}</h3>
+              <div className={classes.textContainer}>
+              <h3>{name}</h3>
               <p> {address}</p>
-              <a style={{display:"block", coursor:"pointer", marginBottom:10}} href="https://www.franziskaharnisch.de/">{website}</a>
+              <a className={classes.websiteLink} href="https://www.franziskaharnisch.de/">{website}</a>
           <a  style={{coursor:"pointer"}}  href="mailto:lauratronchin@hotmail.it?body=My custom mail body">{email}</a>
            <form>
               <p >Join the newsletter</p>
