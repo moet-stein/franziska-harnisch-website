@@ -24,6 +24,7 @@ function NavbarHometwo({ langs, url, langKey }) {
     height: '100vh',
     fontFamily: 'Josefin Sans',
     color: 'black',
+    
   };
   const fontJos = {
     fontFamily: 'Josefin Sans',
