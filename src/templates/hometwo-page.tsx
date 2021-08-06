@@ -66,8 +66,8 @@ HometwoTemplate.propTypes = {
   }),
 };
 export const pageQuery = graphql`
-  query HometwoTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "hometwo-page" } }) {
+  query HometwoTemplate ($id: String!)  {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         image {

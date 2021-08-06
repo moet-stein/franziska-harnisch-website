@@ -48,8 +48,8 @@ LinksPage.propTypes = {
 export default LinksPage
 
 export const linksPageQuery = graphql`
-      query LinksPageTemplate {
-        markdownRemark(frontmatter: {templateKey: {eq: "links-page" } }) {
+      query LinksPageTemplate($id: String!) {
+        markdownRemark(id: { eq: $id })  {
         frontmatter {
         title
         links{
