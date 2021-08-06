@@ -1,13 +1,12 @@
 {
-    "selectLanguage": "German",
-    "siteName": "Franziska Harnisch Website",
-    "home" : "Franziska Harnisch",
-    "about": "Uber",
-    "exhibitions": "Austellungen",
-    "worksdetails": "Arbeiten",
-    "links": "Links",
-    "datenschutz": "Datenschutzverordnung",
-    "impressum": "Impressum",
-    "contact": "Kontakte"
-
+  "selectLanguage": "German",
+  "siteName": "Franziska Harnisch Website",
+  "home": "Franziska Harnisch",
+  "about": "Uber",
+  "exhibitions": "Austellungen",
+  "workdetails": "Arbeiten",
+  "links": "Links",
+  "datenschutz": "Datenschutzverordnung",
+  "impressum": "Impressum",
+  "contact": "Kontakte"
 }

@@ -27,7 +27,7 @@ export const ExhibitionsPageTemplate = ({
   exhibitions,
 }) => {
   console.log(upcomingExhibitions);
-  console.log(exhibitions);
+  console.log(title);
   const classes = useStyles();
   return (
     <Box className={classes.flexColumn}>

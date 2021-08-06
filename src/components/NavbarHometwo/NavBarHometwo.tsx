@@ -13,7 +13,7 @@ function NavbarHometwo({ langs, url, langKey }) {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
-  console.log("pages", pages);
+  console.log('pages', pages);
   console.log(langKey);
 
   //style
@@ -35,7 +35,7 @@ function NavbarHometwo({ langs, url, langKey }) {
       display: 'none',
     },
   };
-  const homeLink = langKey === 'en' ? '/' : `/${langKey}/`;
+  const homeLink = langKey === 'en' ? `/${langKey}/` : '/';
   return (
     <div style={{ position: 'fixed' }}>
       <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
@@ -50,31 +50,37 @@ function NavbarHometwo({ langs, url, langKey }) {
           <div className="navbar-brand"></div>
           <div id="">
             <div className="directionNavbar">
-              {pages.map((page) => (
-                <React.Fragment>
-                  <FormattedMessage id={page.to}>
-                    {(txt) => (
-                      <Button
-                        id={page.to}
-                        component={Link}
-                        to={
-                          langKey !== 'de'
-                            ? `/${langKey}/${page.to}`
-                            : `/${page.to}`
-                        }
-                        // className={classes.button}
-                        className="navbar-item"
-                      >
-                        {`/${langKey}/${page.to}` === url ? (
-                          <span>{txt}</span>
-                        ) : (
-                          txt
-                        )}
-                      </Button>
-                    )}
-                  </FormattedMessage>
-                </React.Fragment>
-              ))}
+              {pages.map((page) => {
+                console.log(page);
+                return (
+                  <React.Fragment>
+                    <Button to={homeLink} component={Link}>
+                      FH
+                    </Button>
+                    <FormattedMessage id={page.to}>
+                      {(txt) => (
+                        <Button
+                          id={page.to}
+                          component={Link}
+                          to={
+                            langKey !== 'de'
+                              ? `/${langKey}/${page.to}`
+                              : `/${page.to}`
+                          }
+                          // className={classes.button}
+                          className="navbar-item"
+                        >
+                          {`/${langKey}/${page.to}` === url ? (
+                            <span>{txt}</span>
+                          ) : (
+                            txt
+                          )}
+                        </Button>
+                      )}
+                    </FormattedMessage>
+                  </React.Fragment>
+                );
+              })}
               {/*  <Link to='/' className="navbar-item" style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</Link>
                             <Link className="navbar-item" to="/about">
                                 About
