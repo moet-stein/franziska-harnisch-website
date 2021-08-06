@@ -14,9 +14,14 @@ CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate('aboutde', AboutPagePreview);
 CMS.registerPreviewTemplate('abouten', AboutPagePreview);
-CMS.registerPreviewTemplate('hometwo', HometwoPreview);
-CMS.registerPreviewTemplate('workdetails', WorkdetailsPostPreview);
-CMS.registerPreviewTemplate('exhibitions', ExhibitionsPagePreview);
-CMS.registerPreviewTemplate('contactPage', ContactPagePreview);
-CMS.registerPreviewTemplate('links', LinksPagePreview);
+CMS.registerPreviewTemplate('hometwode', HometwoPreview);
+CMS.registerPreviewTemplate('hometwoen', HometwoPreview);
+CMS.registerPreviewTemplate('workdetailsde', WorkdetailsPostPreview);
+CMS.registerPreviewTemplate('workdetailsen', WorkdetailsPostPreview);
+CMS.registerPreviewTemplate('exhibitionsde', ExhibitionsPagePreview);
+CMS.registerPreviewTemplate('exhibitionsen', ExhibitionsPagePreview);
+CMS.registerPreviewTemplate('contactPagede', ContactPagePreview);
+CMS.registerPreviewTemplate('contactPageen', ContactPagePreview);
+CMS.registerPreviewTemplate('linksde', LinksPagePreview);
+CMS.registerPreviewTemplate('linksen', LinksPagePreview);
 
