@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   h1Fontsize: {
     fontSize: '60px',
+    color: blueGrey[700],
   },
   descWidth: {
     width: '500px',
@@ -69,8 +70,7 @@ export default function Layout1({ workdetailsData }) {
     content,
     contentComponent,
   } = workdetailsData;
-  console.log(images,
-    featuredimage,)
+  console.log(images, featuredimage);
   const PostContent = contentComponent || Content;
 
   useEffect(() => {
@@ -102,7 +102,7 @@ export default function Layout1({ workdetailsData }) {
             </Box>
           )}
         </Box>
-        <Box className={classes.topPart}>
+        <Box className={classes.topPart} m={4}>
           <Box>
             <Box>
               <LayImg img={ftImg} />
