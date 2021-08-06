@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     width: '800px',
     height: '300px',
     overflowX: 'auto',
+    display: 'inline-flex',
   },
   grey: {
     color: grey[700],
@@ -75,7 +76,7 @@ export function RelatedImgs({ data }) {
           </Box>
           <Box
             display="flex"
-            justifyContent="center"
+            // justifyContent="center"
             alignItems="center"
             className={classes.scrollX}
           >
@@ -87,55 +88,6 @@ export function RelatedImgs({ data }) {
                   slug={w.fields.slug}
                 />
               </Box>
-              /* <Box m={2}>
-                  <WorksImage
-                    imageInfo={w.frontmatter.featuredimage}
-                    title={w.frontmatter.title}
-                    slug={w.fields.slug}
-                  />
-                </Box>
-                <Box m={2}>
-                  <WorksImage
-                    imageInfo={w.frontmatter.featuredimage}
-                    title={w.frontmatter.title}
-                    slug={w.fields.slug}
-                  />
-                </Box>
-                <Box m={2}>
-                  <WorksImage
-                    imageInfo={w.frontmatter.featuredimage}
-                    title={w.frontmatter.title}
-                    slug={w.fields.slug}
-                  />
-                </Box>
-                <Box m={2}>
-                  <WorksImage
-                    imageInfo={w.frontmatter.featuredimage}
-                    title={w.frontmatter.title}
-                    slug={w.fields.slug}
-                  />
-                </Box>
-                <Box m={2}>
-                  <WorksImage
-                    imageInfo={w.frontmatter.featuredimage}
-                    title={w.frontmatter.title}
-                    slug={w.fields.slug}
-                  />
-                </Box>
-                <Box m={2}>
-                  <WorksImage
-                    imageInfo={w.frontmatter.featuredimage}
-                    title={w.frontmatter.title}
-                    slug={w.fields.slug}
-                  />
-                </Box>
-                <Box m={2}>
-                  <WorksImage
-                    imageInfo={w.frontmatter.featuredimage}
-                    title={w.frontmatter.title}
-                    slug={w.fields.slug}
-                  />
-                </Box> */
             ))}
           </Box>
         </>
@@ -170,7 +122,7 @@ export default () => (
                 hashtags {
                   hashtag
                 }
-                featuredimage 
+                featuredimage
               }
             }
           }
