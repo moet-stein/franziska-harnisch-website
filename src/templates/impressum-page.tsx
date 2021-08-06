@@ -4,20 +4,20 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { HTMLContent } from '../components/Content';
+
 
 
 export const ImpressumPageTemplate = ({
   title,
-  text,
- name,
- location,
- email
+   html,
 }) => {
-  console.log(title);
+    
   return (
-    <section>
+    <section style={{margin:"50px 40px 30px 80px" }} >
       <div>
-     {title}
+    
+     <HTMLContent content={html}  />
       </div>
     </section>
   );
@@ -25,24 +25,19 @@ export const ImpressumPageTemplate = ({
 
 ImpressumPageTemplate.propTypes = {
   title: PropTypes.string,
-  text: PropTypes.string,
-    name: PropTypes.string,
-    location: PropTypes.string,
-    email: PropTypes.string,
+ 
 
 };
 
-const ImpressumPage = ({ data, location }) => {
-  const { frontmatter } = data.markdownRemark;
-  console.log('info', frontmatter.generalInfo);
+const ImpressumPage = ({ data }) => {
+  const { frontmatter, html } = data.markdownRemark;
+console.log("data", data)
   return (
     <Layout>
       <ImpressumPageTemplate
         title={frontmatter.title}
-        name={frontmatter.name}
-        text={frontmatter.text}
-        location={frontmatter.location}
-        email={frontmatter.email}
+
+       html={html}
 
        
       />
@@ -61,13 +56,10 @@ export const impressumPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        text
-        name
-        location
-        email
-        
+          
         
       }
+      html
     }
   }
 `;
