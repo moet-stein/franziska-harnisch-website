@@ -1,32 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
-.positionNavbar {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 100vh;
-}
 
-.directionNavbar {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  background: #c5c4c4;
-  width: 200px;
-  max-height: 100vh;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  padding-top:50px;
-}
-.navbar-item {
-  margin: 15px;
-  text-decoration: none;
-  color: black;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 20px;
-}
-.navbar-item:hover {
-  color: grey;
-}
 .smallLink {
   text-decoration: none;
   margin: 15px;
