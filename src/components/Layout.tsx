@@ -63,7 +63,7 @@ const TemplateWrapper = ({children}) => {
   return (
     
     <div>
-      <IntlProvider locale={langKey} >
+      <IntlProvider locale={langKey} messages={messages[langKey]}>
       <ThemeProvider theme={theme}>
         <Helmet>
           <html lang="en" />

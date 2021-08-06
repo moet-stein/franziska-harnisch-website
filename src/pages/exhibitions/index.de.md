@@ -1,7 +1,7 @@
 ---
 templateKey: exhibitions-page
 path: /exhibitions
-title: Exhibitions List
+title: Exhibitions List DE
 upcomingExhibitions:
   upcomings:
     - startDate: 2021-08-08T22:00:00.000Z
