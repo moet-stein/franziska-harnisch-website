@@ -4,12 +4,22 @@ import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import SelectLanguage from '../SelectLanguage.tsx';
 import MenuIcon from '@material-ui/icons/Menu';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { pages } from '../../data/pages.json';
 import { FormattedMessage } from 'react-intl';
 import './NavBarHometwo.css';
 
+const useStyles = makeStyles((theme) => ({
+  test:{
+    color: "red",
+    [theme.breakpoints.up("sm")]: {
+     color:"blue",
+    },
+  }
+}))
+
 function NavbarHometwo({ langs, url, langKey }) {
+  const classes = useStyles();
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
@@ -17,6 +27,7 @@ function NavbarHometwo({ langs, url, langKey }) {
   console.log(langKey);
 
   //style
+
   const positionNavbar = {
     position: 'relative',
     top: 0,
@@ -24,6 +35,7 @@ function NavbarHometwo({ langs, url, langKey }) {
     height: '100vh',
     fontFamily: 'Josefin Sans',
     color: 'black',
+   
   };
   const fontJos = {
     fontFamily: 'Josefin Sans',
@@ -37,7 +49,7 @@ function NavbarHometwo({ langs, url, langKey }) {
   };
   const homeLink = langKey === 'en' ? `/${langKey}/` : '/';
   return (
-    <div style={{ position: 'fixed' }}>
+    <div style={{ position: 'fixed', top: 15 }}>
       <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
       <nav
         ref={dropdownRef}
