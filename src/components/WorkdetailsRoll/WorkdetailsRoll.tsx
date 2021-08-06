@@ -190,7 +190,6 @@ export default () => (
               frontmatter {
                 title
                 subTitle
-                description
                 links {
                   linkName
                   linkURL
