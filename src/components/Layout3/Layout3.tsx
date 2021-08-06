@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   h1Fontsize: {
     fontSize: '60px',
+    color: blueGrey[700],
   },
   imgWidth: {
     width: '300px',

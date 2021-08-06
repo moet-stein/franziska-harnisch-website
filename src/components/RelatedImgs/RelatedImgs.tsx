@@ -4,7 +4,7 @@ import { Link, graphql, StaticQuery } from 'gatsby';
 import { useLocation } from '@reach/router';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import grey from '@material-ui/core/colors/grey';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import WorksImage from '../WorksImage/WorksImage';
 
@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
     overflowX: 'auto',
     display: 'inline-flex',
   },
-  grey: {
-    color: grey[700],
+  blueGrey: {
+    color: blueGrey[600],
   },
   '@media only screen and (max-width: 800px)': {
     scrollX: {
@@ -77,7 +77,7 @@ export function RelatedImgs({ data }) {
           <Box
             display="flex"
             // justifyContent="center"
-            alignItems="center"
+            // alignItems="center"
             className={classes.scrollX}
           >
             {matchedWorks.map((w) => (
