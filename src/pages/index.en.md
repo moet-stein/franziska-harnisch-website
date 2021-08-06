@@ -1,6 +1,6 @@
 ---
 templateKey: hometwo-page
-path: /
+path: /en/
 title: Franziska Harnisch
 image: /img/jumbotron.jpg
 event:
