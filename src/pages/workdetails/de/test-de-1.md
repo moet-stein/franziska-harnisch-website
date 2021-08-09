@@ -5,7 +5,7 @@ layoutType: Layout1
 hashtags:
   - hashtag: test
   - hashtag: collaboration
-title: Test DE 1
+title: Test 1
 subTitle: This is a test post
 links:
   - linkName: Link1

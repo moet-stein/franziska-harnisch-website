@@ -64,15 +64,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Layout2({ workdetailsData }) {
   const classes = useStyles();
   const {
-    description,
     title,
     subTitle,
     links,
-    layoutType,
     hashtags,
     images,
-    featuredimage,
-    excerpt,
     content,
     contentComponent,
   } = workdetailsData;

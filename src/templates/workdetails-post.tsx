@@ -9,7 +9,6 @@ import Content, { HTMLContent } from '../components/Content';
 
 export const WorkdetailsPostTemplate = ({
   title,
-  description,
   subTitle,
   layoutType,
   links,
@@ -22,7 +21,6 @@ export const WorkdetailsPostTemplate = ({
   contentComponent,
 }) => {
   const workdetailsData = {
-    description,
     title,
     subTitle,
     links,
@@ -64,7 +62,6 @@ export const WorkdetailsPostTemplate = ({
 
 WorkdetailsPostTemplate.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string,
   subTitle: PropTypes.string,
   layoutType: PropTypes.string,
   hashtags: PropTypes.array,
@@ -84,7 +81,6 @@ const WorkdetailsPost = ({ data }) => {
     <Layout>
       <WorkdetailsPostTemplate
         title={post.frontmatter.title}
-        description={post.frontmatter.description}
         subTitle={post.frontmatter.subTitle}
         layoutType={post.frontmatter.layoutType}
         hashtags={post.frontmatter.hashtags}
@@ -116,7 +112,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subTitle
-        description
         links {
           linkName
           linkURL
@@ -132,10 +127,7 @@ export const pageQuery = graphql`
         }
         featuredimage
         pdfs {
-          pdf {
-            relativePath
-            publicURL
-          }
+          pdf
           pdfTitle
         }
       }

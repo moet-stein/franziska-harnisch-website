@@ -59,7 +59,6 @@ export default function Layout1({ workdetailsData }) {
   const classes = useStyles();
   const [ftImg, setFtImg] = useState({});
   const {
-    description,
     title,
     subTitle,
     links,
@@ -106,16 +105,11 @@ export default function Layout1({ workdetailsData }) {
           <Box>
             <Box>
               <LayImg img={ftImg} />
-              {/* <img
-                className={classes.imgWidth}
-                src={featuredimage.childImageSharp.fluid.src}
-              /> */}
+              
             </Box>
           </Box>
           <Box className={classes.flexColumn}>
-            {/* <Box className={classes.imgWidth} mt={6} ml={6}>
-              <Typography variant="body2">{description}</Typography>
-            </Box> */}
+            
             {content && (
               <Box className={classes.descWidth} ml={8}>
                 <PostContent content={content} />
