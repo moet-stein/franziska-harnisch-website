@@ -29,6 +29,7 @@ collections:
     create: true
     filter: {field: "language", value: "de"}
     extension: 'de.md'
+    format: frontmatter
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workdetails-post"}
@@ -50,6 +51,7 @@ collections:
     create: true
     filter: {field: "language", value: "en"}
     extension: 'en.md'
+    format: frontmatter
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workdetails-post"}
