@@ -19,8 +19,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 export function WorkdetailsRoll({ data }) {
+  console.log("data", data)
   // render() {
   // const { data } = this.props;
+
   const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
@@ -28,10 +30,7 @@ export function WorkdetailsRoll({ data }) {
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
-  // const { title, description, languages } = useSiteMetadata();
-  // const { langs, defaultLangKey } = languages;
-  // const url = location.pathname;
-  // langKey = getCurrentLangKey(langs, defaultLangKey, url);
+
 
   const filHash = () => {
     if (selectedHash.length == 0) {
@@ -41,9 +40,9 @@ export function WorkdetailsRoll({ data }) {
     } else {
       const filtered = shuffle(
         posts.filter((p) =>
-          p.node.frontmatter.hashtags
+          p.node.frontmatter.hashtags 
             .map((h) => h.hashtag)
-            .some((i) => selectedHash.includes(i))
+            .some((i) => selectedHash.includes(i) ) 
         )
       );
       setFilteredPosts(filtered);
