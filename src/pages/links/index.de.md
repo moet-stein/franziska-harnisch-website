@@ -2,6 +2,7 @@
 templateKey: links-page
 path: /links
 title: Artists and cultural istituitions
+language: de
 links:
   - url: https://www.medienkunstverein.com/
     text: medienkunstverein

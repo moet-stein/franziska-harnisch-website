@@ -5,6 +5,7 @@ templateKey: about-page
   über Marzahn, Berlin International Festival of the Arts The Walls We Built,
   Kampala (UGA), Hildesheim, Berlin
 title: About DE
+language: de
 generalInfo:
   name: Franziska Harnisch (1986 in Berlin, De)
   address: Atelier 2OG / Alte Münze, Am Krögel 2, 10179 Berlin

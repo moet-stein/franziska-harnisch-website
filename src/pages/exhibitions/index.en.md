@@ -2,6 +2,7 @@
 templateKey: exhibitions-page
 path: /en/exhibitions
 title: Exhibitions List EN
+language: en
 upcomingExhibitions:
   upcomings:
     - startDate: 2021-08-08T22:00:00.000Z
