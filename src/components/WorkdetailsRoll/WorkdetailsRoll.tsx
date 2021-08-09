@@ -8,8 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { useLocation } from '@reach/router';
-// import useSiteMetadata from '../SiteMetadata';
-// import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import useSiteMetadata from '../SiteMetadata';
+import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 // let langKey;
 
 const useStyles = makeStyles(() => ({
@@ -21,7 +21,6 @@ const useStyles = makeStyles(() => ({
 export function WorkdetailsRoll({ data }) {
   console.log("data", data)
   // render() {
-  // const { data } = this.props;
 
   const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
@@ -30,19 +29,29 @@ export function WorkdetailsRoll({ data }) {
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
-
+  const { title, description, languages } = useSiteMetadata();
+  const { langs, defaultLangKey } = languages;
+  const url = location.pathname;
+  const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+  console.log(langKey);
 
   const filHash = () => {
     if (selectedHash.length == 0) {
-      const shuffled = shuffle(posts);
-      setFilteredPosts(shuffled);
+      const filtered = shuffle(
+        posts.filter((p) => p.node.frontmatter.language === langKey)
+      );
+      console.log(posts.map((p) => p.node.frontmatter));
+      setFilteredPosts(filtered);
+
       setLoading(false);
     } else {
       const filtered = shuffle(
-        posts.filter((p) =>
-          p.node.frontmatter.hashtags 
-            .map((h) => h.hashtag)
-            .some((i) => selectedHash.includes(i) ) 
+        posts.filter(
+          (p) =>
+            p.node.frontmatter.hashtags
+              .map((h) => h.hashtag)
+              .some((i) => selectedHash.includes(i)) &&
+            p.node.frontmatter.language === langKey
         )
       );
       setFilteredPosts(filtered);
@@ -184,10 +193,7 @@ export default () => (
     query={graphql`
       query WorkdetailsRollQuery {
         allMarkdownRemark(
-          filter: {
-            frontmatter: { templateKey: { eq: "workdetails-post" } }
-            fields: { langKey: { eq: "en" } }
-          }
+          filter: { frontmatter: { templateKey: { eq: "workdetails-post" } } }
         ) {
           edges {
             node {
@@ -198,6 +204,7 @@ export default () => (
               }
               frontmatter {
                 title
+                language
                 subTitle
                 links {
                   linkName

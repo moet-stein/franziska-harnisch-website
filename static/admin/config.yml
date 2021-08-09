@@ -28,6 +28,8 @@ collections:
     folder: "src/pages/workdetails/de"
     create: true
     filter: {field: "language", value: "de"}
+    extension: 'de.md'
+    format: frontmatter
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workdetails-post"}
@@ -48,6 +50,8 @@ collections:
     folder: "src/pages/workdetails/en"
     create: true
     filter: {field: "language", value: "en"}
+    extension: 'en.md'
+    format: frontmatter
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workdetails-post"}

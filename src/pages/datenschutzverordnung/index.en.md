@@ -2,6 +2,7 @@
 templateKey: datenschutzverordnung-page
 path: /en/datenschutzverordnung
 title: Datenschutz
+language: en
 
 ---
 ###Datenschutzerklärung

@@ -26,6 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               templateKey
+              language
             }
           }
         }
@@ -36,11 +37,13 @@ exports.createPages = ({ actions, graphql }) => {
       result.errors.forEach((e) => console.error(e.toString()));
       return Promise.reject(result.errors);
     }
-   
+
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((edge) => {
+      console.log(edge)
       const id = edge.node.id;
+      const pageLanguage = edge.node.frontmatter.language;
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(
@@ -48,6 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
         ),
         // additional data can be passed via context
         context: {
+          pageLanguage,
           id,
         },
       });
@@ -104,7 +108,10 @@ exports.onCreateNode = async ({
   const { createNodeField, createNode } = actions;
   fmImagesToRelative(node); // convert image paths for gatsby images
 
-  if (node.internal.type === `MarkdownRemark` && node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n') {
+  if (
+    node.internal.type === `MarkdownRemark` &&
+    node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n'
+  ) {
     const value = createFilePath({ node, getNode });
 
     createNodeField({

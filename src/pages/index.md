@@ -2,6 +2,7 @@
 templateKey: hometwo-page
 path: /
 title: Franziska Harnisch
+language: de
 image: /img/jumbotron.jpg
 event:
   comingTitle: Coming soon
