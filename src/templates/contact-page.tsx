@@ -6,11 +6,45 @@ import { Link } from '@material-ui/core'
 import { makeStyles } from "@material-ui/core/styles";
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
+const useStyles = makeStyles((theme) => ({
+  container:{
+    marginTop:50, 
+    display: "flex", 
+    flexDirection: "column",  
+    height:"100vh", 
+    marginRight:50,
+    alignItems:"flex-end"
+  },
+  textContainer:{
+    fontFamily:"Josefin Sans", 
+    background: "linear-gradient(90deg, rgba(250,248,245,1) 2%, rgba(251,250,249,1) 44%, rgba(142,142,143,1) 100%)",
+     padding:60,
+     borderRadius:10,
+  },
+  websiteLink:{
+    display:"block", 
+    coursor:"pointer", 
+    marginBottom:10,
+  },
+  submitButton:{
+    padding:5,
+    marginLeft:5,
+    fontFamily: "Josefin Sans",
+    backgroundColor: "green,"
+  },
+  instagramLink :{
+    coursor:"pointer",
+    display:"block",
+    color:"black",
+    marginTop: 5
+  }
+}))
 
-export const ContactPageTemplate = ({title, name, address,email, website, instagram}) => {
+export const ContactPageTemplate = ({title, name, address,email, website, instagram, input, button, confirmation, errorMessage}) => {
   const [userEmail, setUserEmail] = useState("")
   const [emailError, setEmailError] = useState("")
-  
+  console.log("insta", instagram)
+ const classes = useStyles();
   const handleChange = (e) => {
     e.preventDefault();
     setUserEmail(e.target.value)
@@ -23,11 +57,11 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
     if ( re.test(userEmail) ) {
         // this is a valid email address
        addToMailchimp(userEmail)
-     setEmailError("Thank you for submitting our newsletter")
+     setEmailError(`${confirmation}`)
     }
     else {
         // invalid email, maybe show an error to the user.
-      setEmailError("Please add a valid email address")
+      setEmailError(`${errorMessage}`)
     }
 
   }
@@ -41,20 +75,19 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
 
   return (
     <section >
-          <div style={{ marginTop:50, 
-              display: "flex", flexDirection: "column",  height:"100vh", marginRight:50}} >
+          <div className={classes.container} >
             <div style={{alignItems:"center", textAlign:"right"}}>
         
-              <div style={{ background: "linear-gradient(90deg, rgba(250,248,245,1) 2%, rgba(251,250,249,1) 44%, rgba(142,142,143,1) 100%)", padding:30}}>
-              <h3 style={{fontFamily:"Josefin-Sans",}}>{name}</h3>
+              <div className={classes.textContainer}>
+              <h3>{name}</h3>
               <p> {address}</p>
-              <a style={{display:"block", coursor:"pointer", marginBottom:10}} href="https://www.franziskaharnisch.de/">{website}</a>
+              <a className={classes.websiteLink} href="https://www.franziskaharnisch.de/">{website}</a>
           <a  style={{coursor:"pointer"}}  href="mailto:lauratronchin@hotmail.it?body=My custom mail body">{email}</a>
-           <form>
-              <p >Join the newsletter</p>
+          <a className={classes.instagramLink} href={instagram[0].link}>{instagram[0].text}</a>
+           <form> 
               <p>{emailError}</p>
-              <input type="email" id="email" name="email" value={userEmail} onChange={handleChange} />
-              <button  onClick={handleSubmit} >Submit</button>
+              <input style={{width:300, height:30, paddingLeft:5}} type="email" id="email" name="email" value={userEmail} onChange={handleChange} placeholder={input} />
+              <button  onClick={handleSubmit} className={classes.submitButton} >{button}</button>
                   </form>
                   </div>
               </div>
@@ -68,7 +101,13 @@ ContactPageTemplate.propTypes = {
     address: PropTypes.string,
     website: PropTypes.string,
     email: PropTypes.string,
-      instagram: PropTypes.string,
+   instagram: PropTypes.shape({
+     text: PropTypes.string,
+     link: PropTypes.string,}),
+     input: PropTypes.string,
+     button: PropTypes.string,
+     confirmation: PropTypes.string,
+     errorMessage: PropTypes.string,
 }
 
 const ContactPage = ({ data }) => {
@@ -84,6 +123,10 @@ const ContactPage = ({ data }) => {
     email={frontmatter.email}
      website={frontmatter.website}
        instagram={frontmatter.instagram}
+       button={frontmatter.button}
+       input={frontmatter.input}
+       confirmation={frontmatter.confirmation}
+       errorMessage={frontmatter.errorMessage}
       
       />
     </Layout>
@@ -105,8 +148,14 @@ export const contactPageQuery = graphql`
         address
         email
         website
-        instagram
-    
+        instagram{
+          text
+          link
+        }
+        input
+        button
+        confirmation
+        errorMessage
        
       }
     }

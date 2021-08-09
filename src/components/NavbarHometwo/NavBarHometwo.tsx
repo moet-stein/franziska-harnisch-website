@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 15,
       background: "#c5c4c4",
       width: 200,
-      maxHeight: "100vh",
+      height: "100vh",
       boxShadow: "0 1px 8px rgba(0, 0, 0, 0.3)",
       zIndex: 100,
       paddingTop:50,
