@@ -7,7 +7,7 @@ address: Atelier 2OG, Am Krögel 2, 10179 Berlin
 website: www.franziskaharnisch.de
 email: Email
 instagram: 
-    - text: instagram
+    - text: Instagram
       link: https://www.instagram.com/franziska.harnisch/
 input: für den Newsletter hier E-Mail eintragen
 button: anmelden
