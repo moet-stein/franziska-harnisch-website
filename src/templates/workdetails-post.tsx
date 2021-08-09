@@ -127,10 +127,7 @@ export const pageQuery = graphql`
         }
         featuredimage
         pdfs {
-          pdf {
-            relativePath
-            publicURL
-          }
+          pdf
           pdfTitle
         }
       }

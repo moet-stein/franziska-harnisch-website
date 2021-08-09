@@ -7,6 +7,10 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import { useLocation } from '@reach/router';
+// import useSiteMetadata from '../SiteMetadata';
+// import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+// let langKey;
 
 const useStyles = makeStyles(() => ({
   goBack: {
@@ -24,7 +28,10 @@ export function WorkdetailsRoll({ data }) {
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
-  console.log(posts);
+  // const { title, description, languages } = useSiteMetadata();
+  // const { langs, defaultLangKey } = languages;
+  // const url = location.pathname;
+  // langKey = getCurrentLangKey(langs, defaultLangKey, url);
 
   const filHash = () => {
     if (selectedHash.length == 0) {
@@ -178,7 +185,10 @@ export default () => (
     query={graphql`
       query WorkdetailsRollQuery {
         allMarkdownRemark(
-          filter: { frontmatter: { templateKey: { eq: "workdetails-post" } } }
+          filter: {
+            frontmatter: { templateKey: { eq: "workdetails-post" } }
+            fields: { langKey: { eq: "en" } }
+          }
         ) {
           edges {
             node {

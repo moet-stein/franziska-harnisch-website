@@ -61,14 +61,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Layout3({ workdetailsData }) {
   const classes = useStyles();
   const {
-    description,
     title,
     subTitle,
     links,
-    layoutType,
     hashtags,
     images,
-    featuredimage,
     pdfs,
     content,
     contentComponent,
@@ -103,8 +100,8 @@ export default function Layout3({ workdetailsData }) {
           {pdfs.length > 0 &&
             pdfs.map((p) => (
               <embed
-                key={p.pdf.publicURL}
-                src={p.pdf.publicURL}
+                key={p.pdf}
+                src={p.pdf}
                 width="500"
                 height="600"
                 type="application/pdf"
