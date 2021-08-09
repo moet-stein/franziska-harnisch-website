@@ -84,8 +84,7 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
               <a className={classes.websiteLink} href="https://www.franziskaharnisch.de/">{website}</a>
           <a  style={{coursor:"pointer"}}  href="mailto:lauratronchin@hotmail.it?body=My custom mail body">{email}</a>
           <a className={classes.instagramLink} href={instagram[0].link}>{instagram[0].text}</a>
-           <form>
-              
+           <form> 
               <p>{emailError}</p>
               <input style={{width:300, height:30, paddingLeft:5}} type="email" id="email" name="email" value={userEmail} onChange={handleChange} placeholder={input} />
               <button  onClick={handleSubmit} className={classes.submitButton} >{button}</button>
