@@ -111,7 +111,11 @@ collections:
           - {label: Name, name: name, widget: string}
           - {label: Address, name: address, widget: string}
           - {label: Website, name: website, widget: string}
-          - {label: instagram, name: instagram, widget: string}
+          - {label: instagram, name: instagram, widget: object, fields: [{label: Text, name: text, widget: string}, {label: Link, name: link, widget: string}]}
+          - {label: Knopf, name: button, widget: string}  
+          - {label: Input, name: input, widget: string}
+          - {label: Bestaetigung, name: confirmation, widget: string}
+          - {label: Fehler Text, name: errorMessage, widget: string}   
       - file: "src/pages/contact/index.en.md"
         label: "Contact Page EN"
         name: "contactPageen"
@@ -121,7 +125,11 @@ collections:
           - {label: Name, name: name, widget: string}
           - {label: Address, name: address, widget: string}
           - {label: Website, name: website, widget: string}
-          - {label: instagram, name: instagram, widget: string}    
+          - {label: instagram, name: instagram, widget: object, fields: [{label: Text, name: text, widget: string}, {label: Link, name: link, widget: string}]}
+          - {label: Knopf, name: button, widget: string}  
+          - {label: Input, name: input, widget: string}
+          - {label: Bestaetigung, name: confirmation, widget: string}
+          - {label: Fehler Text, name: errorMessage, widget: string}    
       - file: "src/pages/links/index.de.md"
         label: "Links Page DE"
         name: "linksde"
