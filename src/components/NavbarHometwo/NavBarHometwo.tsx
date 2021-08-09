@@ -70,6 +70,7 @@ function NavbarHometwo({ langs, url, langKey }) {
  const impressumText = langKey === 'en' ? "Imprint"  : "Impressum"
  const datenschutzLink = langKey === 'en' ? `/${langKey}/datenschutzverordnung`  : '/datenschutzverordnung'
  const datenschutzText = langKey === 'en' ? "Date protection regulation"  : "Datenschutzverordnung"
+ 
   return (
     <div style={{ position: 'fixed', top: 15 }}>
       <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
@@ -87,6 +88,7 @@ function NavbarHometwo({ langs, url, langKey }) {
             <Button to={homeLink} component={Link} style={{textTransform:"capitalize", fontWeight:"bold", fontSize:20}}>
                       Franziska Harnisch
                     </Button>
+                    
               {pages.map((page) => {
                 console.log(page);
                 return (
@@ -95,7 +97,7 @@ function NavbarHometwo({ langs, url, langKey }) {
                     <FormattedMessage id={page.to}>
                       {(txt) => (
                         <Button
-                        className={`${classes.fontJos} ${classes.navbarItem}}`}
+                        className={`${classes.fontJos}`}
                           id={page.to}
                           component={Link}
                           to={
