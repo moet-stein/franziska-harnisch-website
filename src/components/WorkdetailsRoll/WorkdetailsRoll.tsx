@@ -185,10 +185,7 @@ export default () => (
     query={graphql`
       query WorkdetailsRollQuery {
         allMarkdownRemark(
-          filter: {
-            frontmatter: { templateKey: { eq: "workdetails-post" } }
-            fields: { langKey: { eq: "en" } }
-          }
+          filter: { frontmatter: { templateKey: { eq: "workdetails-post" } } }
         ) {
           edges {
             node {
