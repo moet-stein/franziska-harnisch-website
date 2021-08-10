@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme) => ({
        }},
        nameMob:{
         display:"none",
-
-        [theme.breakpoints.down("lg")]: {
+        [theme.breakpoints.down("md")]: {
           display:"block",
           position:"absolute",
           width: 300,
