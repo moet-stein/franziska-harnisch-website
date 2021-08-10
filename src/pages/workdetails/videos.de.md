@@ -6,6 +6,7 @@ hashtags:
   - hashtag: videos
   - hashtag: test
 title: Videos
+titleToShow: das Video
 subTitle: video video video
 links:
   - linkURL: https://www.codeacademyberlin.com/
