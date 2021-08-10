@@ -20,6 +20,25 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down("lg")]: {
         display:"block",
        }},
+       nameMob:{
+        display:"none",
+
+        [theme.breakpoints.down("lg")]: {
+          display:"block",
+          position:"absolute",
+          width: 300,
+          top:10,
+          left:"60%",
+          marginLeft:70,
+          marginTop: 0,
+          color:"grey",
+          fontFamily:"Josefin Sans",
+          fontWeight: 700,
+          fontSize: 25,
+          padding:2,
+          
+         
+         }},
     fontJos :{
       fontFamily: 'Josefin Sans',
       color: 'black',
@@ -86,8 +105,10 @@ function NavbarHometwo({ langs, url, langKey }) {
  
   return (
     <div>
+      <p className={classes.nameMob}>Franziska Harnisch</p>
     <div style={{ position: 'fixed', top: 15 }} className={classes.navbarMob}>
-      <MenuIcon style={{ display: 'inline-block'}} onClick={onClick} />
+      <MenuIcon style={{ display: 'inline-block'}} onClick={onClick} />     
+    
       <nav
         ref={dropdownRef}
         className={`menu ${isActive ? 'active' : 'inactive'}`}
