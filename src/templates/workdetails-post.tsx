@@ -16,6 +16,7 @@ export const WorkdetailsPostTemplate = ({
   images,
   featuredimage,
   pdfs,
+  youtubeVideos,
   excerpt,
   content,
   contentComponent,
@@ -30,6 +31,7 @@ export const WorkdetailsPostTemplate = ({
     featuredimage,
     pdfs,
     excerpt,
+    youtubeVideos,
     content,
     contentComponent,
   };
@@ -70,6 +72,7 @@ WorkdetailsPostTemplate.propTypes = {
   featuredimage: PropTypes.string,
   pdfs: PropTypes.array,
   excerpt: PropTypes.string,
+  youtubeVideos: PropTypes.array,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
 };
@@ -89,6 +92,7 @@ const WorkdetailsPost = ({ data }) => {
         featuredimage={post.frontmatter.featuredimage}
         pdfs={post.frontmatter.pdfs}
         excerpt={post.excerpt}
+        youtubeVideos={post.frontmatter.youtubeVideos}
         content={post.html}
         contentComponent={HTMLContent}
       />
@@ -124,6 +128,10 @@ export const pageQuery = graphql`
         images {
           imageTitle
           image
+        }
+        youtubeVideos {
+          videoTitle
+          videoURL
         }
         featuredimage
         pdfs {
