@@ -18,7 +18,7 @@ export const AboutPageTemplate = ({
 }) => {
   console.log(title);
   return (
-    <section>
+    <section style={{marginBottom:"15vh"}}>
       <div>
         <div>
           <div>
