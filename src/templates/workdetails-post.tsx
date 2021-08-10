@@ -6,6 +6,7 @@ import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
 import Layout3 from '../components/Layout3/Layout3';
 import Content, { HTMLContent } from '../components/Content';
+import PageContainer from "../components/PageContainer"
 
 export const WorkdetailsPostTemplate = ({
   title,
@@ -40,7 +41,7 @@ export const WorkdetailsPostTemplate = ({
   console.log(workdetailsData);
 
   return (
-    <section className="section">
+    <PageContainer className="section">
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -60,7 +61,7 @@ export const WorkdetailsPostTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </PageContainer>
   );
 };
 

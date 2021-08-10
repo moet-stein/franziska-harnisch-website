@@ -6,6 +6,7 @@ import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import AboutBlocks from '../components/AboutBlocks/AboutBlocks';
+import PageContainer from "../components/PageContainer"
 
 export const AboutPageTemplate = ({
   title,
@@ -18,7 +19,7 @@ export const AboutPageTemplate = ({
 }) => {
   console.log(title);
   return (
-    <section style={{marginBottom:"15vh"}}>
+    <PageContainer title={title}>
       <div>
         <div>
           <div>
@@ -49,7 +50,7 @@ export const AboutPageTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </PageContainer>
   );
 };
 

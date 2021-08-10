@@ -8,6 +8,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import PageContainer from "../components/PageContainer"
 
 const useStyles = makeStyles((theme) => ({
   linkWidth: { width: '30%' },
@@ -27,7 +28,7 @@ export const LinksPageTemplate = ({ title, links }) => {
   const classes = useStyles();
 
   return (
-    <section>
+    <PageContainer>
       <div
         style={{
           display: 'flex',
@@ -70,7 +71,7 @@ export const LinksPageTemplate = ({ title, links }) => {
           })}
         </Box>
       </div>
-    </section>
+    </PageContainer>
   );
 };
 

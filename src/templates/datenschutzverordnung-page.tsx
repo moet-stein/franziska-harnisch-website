@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { HTMLContent } from '../components/Content';
+import PageContainer from "../components/PageContainer"
 
 export const DatenschutzPageTemplate = ({
   title,
@@ -13,12 +14,12 @@ export const DatenschutzPageTemplate = ({
  
   return (
     
-     <section style={{margin:"50px 40px 30px 80px" }} >
+     <PageContainer style={{margin:"50px 40px 30px 80px" }} >
       <div>
     
      <HTMLContent content={html}  />
       </div>
-    </section>
+    </PageContainer>
   );
 };
 
