@@ -73,6 +73,7 @@ export default function Layout2({ workdetailsData }) {
     youtubeVideos,
     content,
     contentComponent,
+    titleToShow,
   } = workdetailsData;
 
   console.log(youtubeVideos);
@@ -83,7 +84,7 @@ export default function Layout2({ workdetailsData }) {
       <Box className={classes.flexColumn} mt={5}>
         <Box className={classes.flexColumn}>
           <Typography className={classes.h1Fontsize} variant="h1">
-            {title}
+            {titleToShow}
           </Typography>
           <Box className={classes.width60}>
             <Typography variant="h6">{subTitle}</Typography>

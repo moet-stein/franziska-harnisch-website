@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import LayVideo from '../LayVideo/LayVideo';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
 import Content, { HTMLContent } from '../Content';
 
@@ -71,7 +72,9 @@ export default function Layout1({ workdetailsData }) {
     layoutType,
     hashtags,
     images,
+    youtubeVideos,
     featuredimage,
+    titleToShow,
     content,
     contentComponent,
   } = workdetailsData;
@@ -92,7 +95,7 @@ export default function Layout1({ workdetailsData }) {
       <Box className={classes.flexColumn}>
         <Box className={classes.flexColumn} mt={5}>
           <Typography className={classes.h1Fontsize} variant="h1">
-            {title}
+            {titleToShow}
           </Typography>
           <Typography variant="h6">{subTitle}</Typography>
           {hashtags.length > 0 && (
@@ -130,6 +133,16 @@ export default function Layout1({ workdetailsData }) {
                 ))}
             </Box>
           </Box>
+        </Box>
+
+      
+        <Box className={classes.flexWrap}>
+          {youtubeVideos.length > 0 &&
+            youtubeVideos.map((v, index) => (
+              <Box key={`video-${index}`} >
+                <LayVideo video={v} />
+              </Box>
+            ))}
         </Box>
 
         <Box className={classes.flexWrap} mt={4}>
