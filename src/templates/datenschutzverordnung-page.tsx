@@ -14,8 +14,8 @@ export const DatenschutzPageTemplate = ({
  
   return (
     
-     <PageContainer style={{margin:"50px 40px 30px 80px" }} >
-      <div>
+     <PageContainer  >
+      <div style={{margin:"50px 40px 30px 80px" }}>
     
      <HTMLContent content={html}  />
       </div>

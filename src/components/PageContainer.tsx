@@ -8,7 +8,11 @@ const useStyles = makeStyles((theme) => ({
      zIndex:-10,
      [theme.breakpoints.up("lg")]: {
         marginLeft:"230px",
+       },
+       [theme.breakpoints.only('lg')]:{
+         width:"80%",
        }
+
     }
   
     
