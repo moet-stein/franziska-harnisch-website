@@ -6,6 +6,7 @@ hashtags:
   - hashtag: test
   - hashtag: hello
 title: test1
+titleToShow: Erster Test
 subTitle: test test test
 links:
   - linkName: Link1

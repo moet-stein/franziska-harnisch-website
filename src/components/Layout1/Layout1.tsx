@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import LayVideo from '../LayVideo/LayVideo';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
 import Content, { HTMLContent } from '../Content';
 
@@ -12,6 +13,12 @@ const useStyles = makeStyles((theme) => ({
   flexColumn: {
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  hashFlex: {
+    display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -65,7 +72,9 @@ export default function Layout1({ workdetailsData }) {
     layoutType,
     hashtags,
     images,
+    youtubeVideos,
     featuredimage,
+    titleToShow,
     content,
     contentComponent,
   } = workdetailsData;
@@ -86,11 +95,11 @@ export default function Layout1({ workdetailsData }) {
       <Box className={classes.flexColumn}>
         <Box className={classes.flexColumn} mt={5}>
           <Typography className={classes.h1Fontsize} variant="h1">
-            {title}
+            {titleToShow}
           </Typography>
           <Typography variant="h6">{subTitle}</Typography>
           {hashtags.length > 0 && (
-            <Box className={classes.flexWrap}>
+            <Box className={classes.hashFlex}>
               {hashtags.map((h, index) => (
                 <Box key={`${h}-${index}`} ml={2}>
                   <Typography className={classes.hashColor}>
@@ -105,11 +114,9 @@ export default function Layout1({ workdetailsData }) {
           <Box>
             <Box>
               <LayImg img={ftImg} />
-              
             </Box>
           </Box>
           <Box className={classes.flexColumn}>
-            
             {content && (
               <Box className={classes.descWidth} ml={8}>
                 <PostContent content={content} />
@@ -126,6 +133,16 @@ export default function Layout1({ workdetailsData }) {
                 ))}
             </Box>
           </Box>
+        </Box>
+
+      
+        <Box className={classes.flexWrap}>
+          {youtubeVideos.length > 0 &&
+            youtubeVideos.map((v, index) => (
+              <Box key={`video-${index}`} >
+                <LayVideo video={v} />
+              </Box>
+            ))}
         </Box>
 
         <Box className={classes.flexWrap} mt={4}>

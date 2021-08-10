@@ -62,6 +62,7 @@ export default function Layout3({ workdetailsData }) {
   const classes = useStyles();
   const {
     title,
+    titleToShow,
     subTitle,
     links,
     hashtags,
@@ -79,7 +80,7 @@ export default function Layout3({ workdetailsData }) {
       <Box className={classes.flexColumn} mt={5}>
         <Box className={classes.flexColumn}>
           <Typography className={classes.h1Fontsize} variant="h1">
-            {title}
+            {titleToShow}
           </Typography>
           <Box className={classes.width60}>
             <Typography variant="h6">{subTitle}</Typography>

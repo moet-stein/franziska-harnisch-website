@@ -37,10 +37,11 @@ collections:
       - {label: "Layout Type", name: "layoutType", widget: "select", options: ["Layout1", "Layout2", "Layout3"], align: "center"}
       - {label: "Hashtags", name: "hashtags", widget: "list", fields: [{label: "Hashtag", name: "hashtag", widget: "string"}]}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title to Show", name: "titleToShow", widget: "string"}
       - {label: "SubTitle", name: "subTitle", widget: "string", required: false, default: ""}
       - {label: "Links", name: "links", widget: "list", required: false, default: [], fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
       - {label: "Description", name: "body", widget: "markdown", required: false, default: ""}
-      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
+      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image", required: false, default: ""}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
       - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
       - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
@@ -59,10 +60,11 @@ collections:
       - {label: "Layout Type", name: "layoutType", widget: "select", options: ["Layout1", "Layout2", "Layout3"], align: "center"}
       - {label: "Hashtags", name: "hashtags", widget: "list", fields: [{label: "Hashtag", name: "hashtag", widget: "string"}]}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title to Show", name: "titleToShow", widget: "string"}
       - {label: "SubTitle", name: "subTitle", widget: "string", required: false, default: ""}
       - {label: "Links", name: "links", widget: "list", required: false, default: [], fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
       - {label: "Description", name: "body", widget: "markdown", required: false, default: ""}
-      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
+      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image", required: false, default: ""}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
       - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
       - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}

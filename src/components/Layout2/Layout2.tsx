@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import LayVideo from '../LayVideo/LayVideo';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
 import Content, { HTMLContent } from '../Content';
 
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '3px',
   },
   width60: {
-    width: '60%',
+    width: '90%',
   },
   links: {
     display: 'flex',
@@ -69,10 +70,13 @@ export default function Layout2({ workdetailsData }) {
     links,
     hashtags,
     images,
+    youtubeVideos,
     content,
     contentComponent,
+    titleToShow,
   } = workdetailsData;
 
+  console.log(youtubeVideos);
   const PostContent = contentComponent || Content;
 
   return (
@@ -80,7 +84,7 @@ export default function Layout2({ workdetailsData }) {
       <Box className={classes.flexColumn} mt={5}>
         <Box className={classes.flexColumn}>
           <Typography className={classes.h1Fontsize} variant="h1">
-            {title}
+            {titleToShow}
           </Typography>
           <Box className={classes.width60}>
             <Typography variant="h6">{subTitle}</Typography>
@@ -98,11 +102,20 @@ export default function Layout2({ workdetailsData }) {
           )}
         </Box>
         <Box className={classes.flexWrap}>
-          {images.map((i, index) => (
-            <Box key={`image-${index}`} className={classes.marginPic}>
-              <LayImg img={i} />
-            </Box>
-          ))}
+          {images.length > 0 &&
+            images.map((i, index) => (
+              <Box key={`image-${index}`} className={classes.marginPic}>
+                <LayImg img={i} />
+              </Box>
+            ))}
+        </Box>
+        <Box className={classes.flexWrap}>
+          {youtubeVideos.length > 0 &&
+            youtubeVideos.map((v, index) => (
+              <Box key={`video-${index}`} className={classes.marginPic}>
+                <LayVideo video={v} />
+              </Box>
+            ))}
         </Box>
         <Box m={5} className={classes.flexColumn}>
           {/* <Typography className={classes.descWidth} variant="body2">
