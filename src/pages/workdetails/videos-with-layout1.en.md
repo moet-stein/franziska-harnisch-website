@@ -7,6 +7,7 @@ hashtags:
   - hashtag: test
   - hashtag: layout1
 title: videos with layout1
+titleToShow: Videos With Layout1
 subTitle: video pics
 links:
   - linkName: Link1
