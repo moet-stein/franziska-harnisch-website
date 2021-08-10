@@ -15,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  hashFlex: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   flexWrap: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -90,7 +96,7 @@ export default function Layout1({ workdetailsData }) {
           </Typography>
           <Typography variant="h6">{subTitle}</Typography>
           {hashtags.length > 0 && (
-            <Box className={classes.flexWrap}>
+            <Box className={classes.hashFlex}>
               {hashtags.map((h, index) => (
                 <Box key={`${h}-${index}`} ml={2}>
                   <Typography className={classes.hashColor}>
@@ -105,11 +111,9 @@ export default function Layout1({ workdetailsData }) {
           <Box>
             <Box>
               <LayImg img={ftImg} />
-              
             </Box>
           </Box>
           <Box className={classes.flexColumn}>
-            
             {content && (
               <Box className={classes.descWidth} ml={8}>
                 <PostContent content={content} />
