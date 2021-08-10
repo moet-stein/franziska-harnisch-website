@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import Works from '../Works/Works';
 import Chip from '@material-ui/core/Chip';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import { useLocation } from '@reach/router';
 import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 // let langKey;
@@ -29,18 +28,16 @@ export function WorkdetailsRoll({ data }) {
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
-  const { title, description, languages } = useSiteMetadata();
+  const { languages } = useSiteMetadata();
   const { langs, defaultLangKey } = languages;
   const url = location.pathname;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-  console.log(langKey);
 
   const filHash = () => {
     if (selectedHash.length == 0) {
       const filtered = shuffle(
         posts.filter((p) => p.node.frontmatter.language === langKey)
       );
-      console.log(posts.map((p) => p.node.frontmatter));
       setFilteredPosts(filtered);
 
       setLoading(false);

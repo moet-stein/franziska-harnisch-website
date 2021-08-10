@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import { useLocation } from '@reach/router';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import WorksImage from '../WorksImage/WorksImage';
+import useSiteMetadata from '../SiteMetadata';
+import { getCurrentLangKey } from 'ptz-i18n';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,11 +40,14 @@ export function RelatedImgs({ data }) {
   const theWork = allWorks.filter(
     (w) => w.fields.slug === decodeURI(useLocation().pathname)
   );
-  console.log(allWorks);
-  console.log(theWork);
+
   const hashtags = theWork[0].frontmatter.hashtags.map((h) => h.hashtag);
   const [matchedWorks, setMatchedWorks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { languages } = useSiteMetadata();
+  const { langs, defaultLangKey } = languages;
+  const url = location.pathname;
+  const langKey = getCurrentLangKey(langs, defaultLangKey, url);
 
   const matched = (arr1, arr2) => {
     for (let i = 0; i < arr1.length; i++) {
@@ -59,8 +64,11 @@ export function RelatedImgs({ data }) {
         matched(
           hashtags,
           w.frontmatter.hashtags.map((h) => h.hashtag)
-        ) && w !== theWork[0]
+        ) &&
+        w !== theWork[0] &&
+        w.frontmatter.language === langKey
     );
+
     setMatchedWorks(foundWorks);
     setLoading(false);
   }, []);
@@ -119,6 +127,7 @@ export default () => (
               }
               frontmatter {
                 title
+                language
                 hashtags {
                   hashtag
                 }
