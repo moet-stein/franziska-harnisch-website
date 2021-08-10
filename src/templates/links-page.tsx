@@ -28,7 +28,7 @@ export const LinksPageTemplate = ({ title, links }) => {
   const classes = useStyles();
 
   return (
-    <PageContainer>
+    <PageContainer title={title}>
       <div
         style={{
           display: 'flex',
