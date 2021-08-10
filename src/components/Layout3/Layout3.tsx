@@ -109,6 +109,7 @@ export default function Layout3({ workdetailsData }) {
               />
             ))}
         </Box>
+        {/* <Box>{pdfs.length > 0 && pdfs.map((p) => <iframe src={p.pdf} />)}</Box> */}
         <Box className={classes.flexWrap}>
           {images.map((i, index) => (
             <Box key={`image-${index}`} className={classes.marginPic}>
