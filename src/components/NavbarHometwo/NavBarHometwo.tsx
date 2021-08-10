@@ -10,26 +10,37 @@ import { FormattedMessage } from 'react-intl';
 import './NavBarHometwo.css';
 
 const useStyles = makeStyles((theme) => ({
-  test:{
-    color: "red",
-    [theme.breakpoints.up("sm")]: {
-     color:"blue",
+  navbarLarge:{
+    display:"none",
+    [theme.breakpoints.up("lg")]: {
+     display:"block",
     }},
+    navbarMob:{
+      display:"none",
+      [theme.breakpoints.down("lg")]: {
+        display:"block",
+       }},
     fontJos :{
       fontFamily: 'Josefin Sans',
       color: 'black',
     },
-    
+    nameHomeLink:{
+      textTransform:"capitalize", 
+      fontWeight:"bold", 
+      fontSize:30,
+      textAlign: "center",
+      marginBottom: 20,
+    },
     directionNavbar: {
       display: "flex",
       flexDirection: "column",
       padding: 15,
-      background: "#c5c4c4",
+      background: "#ededed",
       width: 200,
       height: "100vh",
       boxShadow: "0 1px 8px rgba(0, 0, 0, 0.3)",
       zIndex: 100,
-      paddingTop:50,
+      paddingTop:30,
     },
     navbarItem: {
       margin: 15,
@@ -39,7 +50,8 @@ const useStyles = makeStyles((theme) => ({
     },
   linkselected:{
       textDecoration:"underline",
-    }
+    },
+   
   
 }))
 
@@ -63,6 +75,7 @@ function NavbarHometwo({ langs, url, langKey }) {
     color: 'black',
    
   };
+ 
 
   
   const homeLink = langKey === 'en' ? `/${langKey}/` : '/';
@@ -70,9 +83,11 @@ function NavbarHometwo({ langs, url, langKey }) {
  const impressumText = langKey === 'en' ? "Imprint"  : "Impressum"
  const datenschutzLink = langKey === 'en' ? `/${langKey}/datenschutzverordnung`  : '/datenschutzverordnung'
  const datenschutzText = langKey === 'en' ? "Date protection regulation"  : "Datenschutzverordnung"
+ 
   return (
-    <div style={{ position: 'fixed', top: 15 }}>
-      <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
+    <div>
+    <div style={{ position: 'fixed', top: 15 }} className={classes.navbarMob}>
+      <MenuIcon style={{ display: 'inline-block'}} onClick={onClick} />
       <nav
         ref={dropdownRef}
         className={`menu ${isActive ? 'active' : 'inactive'}`}
@@ -80,13 +95,12 @@ function NavbarHometwo({ langs, url, langKey }) {
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="">
-          <div className="navbar-brand"></div>
-          <div id="">
+      
             <div className={classes.directionNavbar}>
-            <Button to={homeLink} component={Link} style={{textTransform:"capitalize", fontWeight:"bold", fontSize:20}}>
+            <Button to={homeLink} component={Link} className={classes.nameHomeLink}>
                       Franziska Harnisch
                     </Button>
+               
               {pages.map((page) => {
                 console.log(page);
                 return (
@@ -95,7 +109,7 @@ function NavbarHometwo({ langs, url, langKey }) {
                     <FormattedMessage id={page.to}>
                       {(txt) => (
                         <Button
-                        className={`${classes.fontJos} ${classes.navbarItem}}`}
+                        className={`${classes.fontJos}`}
                           id={page.to}
                           component={Link}
                           to={
@@ -123,10 +137,79 @@ function NavbarHometwo({ langs, url, langKey }) {
                <Button to={impressumLink} component={Link} style={{textTransform:"capitalize"}}>
               {impressumText}
             </Button>
-            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize"}}>
+            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize", marginBottom:20}}>
               {datenschutzText}
             </Button>
-              {/*  <Link to='/' className="navbar-item" style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</Link>
+              
+              <SelectLanguage langs={langs} />
+         </div>
+      </nav>
+    </div>
+  {/*   Normal menu*/}
+    <div style={{ position: 'fixed', top: 15 }}  className={classes.navbarLarge}>
+      
+      <nav
+       
+        style={positionNavbar}
+        role="navigation"
+        aria-label="main-navigation"
+      >
+      
+            <div className={classes.directionNavbar}>
+            <Button to={homeLink} component={Link} className={classes.nameHomeLink}>
+                      Franziska Harnisch
+                    </Button>
+              
+              {pages.map((page) => {
+                console.log(page);
+                return (
+                  <React.Fragment>
+                   
+                    <FormattedMessage id={page.to}>
+                      {(txt) => (
+                        <Button
+                        className={`${classes.fontJos}`}
+                          id={page.to}
+                          component={Link}
+                          to={
+                            langKey !== 'de'
+                              ? `/${langKey}/${page.to}`
+                              : `/${page.to}`
+                          }
+                       
+                        
+                        >
+                          {`/${langKey}/${page.to}` === url ? (
+                            <span className={classes.linkselected}>{txt}</span>
+                          ) : (
+                            txt
+                          )}
+                        </Button>
+                      )} 
+
+                    </FormattedMessage>
+                   
+                  </React.Fragment>
+                );
+              })}
+          
+               <Button to={impressumLink} component={Link} style={{textTransform:"capitalize"}}>
+              {impressumText}
+            </Button>
+            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize",marginBottom:20}}>
+              {datenschutzText}
+            </Button>
+              
+              <SelectLanguage langs={langs} />
+         </div>
+      </nav>
+    </div>
+    </div>
+  );
+}
+
+export default NavbarHometwo;
+{/*  <Link to='/' className="navbar-item" style={{ fontSize: 40, width: 200, marginLeft: 15 }}>Franziska Harnisch</Link>
                             <Link className="navbar-item" to="/about">
                                 About
                             </Link>
@@ -144,13 +227,3 @@ function NavbarHometwo({ langs, url, langKey }) {
                             </Link>
                             <Link className="smallLink " to="/">Impressum</Link>
                             <Link className="smallLink " to="/">Datenschutz</Link> */}
-              <SelectLanguage langs={langs} />
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
-}
-
-export default NavbarHometwo;

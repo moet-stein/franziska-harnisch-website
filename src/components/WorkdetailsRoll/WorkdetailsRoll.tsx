@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export function WorkdetailsRoll({ data }) {
+  console.log("data", data)
   // render() {
 
   const classes = useStyles();
