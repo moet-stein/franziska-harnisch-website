@@ -24,17 +24,23 @@ const useStyles = makeStyles((theme) => ({
       fontFamily: 'Josefin Sans',
       color: 'black',
     },
-    
+    nameHomeLink:{
+      textTransform:"capitalize", 
+      fontWeight:"bold", 
+      fontSize:30,
+      textAlign: "center",
+      marginBottom: 20,
+    },
     directionNavbar: {
       display: "flex",
       flexDirection: "column",
       padding: 15,
-      background: "#c5c4c4",
+      background: "#ededed",
       width: 200,
       height: "100vh",
       boxShadow: "0 1px 8px rgba(0, 0, 0, 0.3)",
       zIndex: 100,
-      paddingTop:50,
+      paddingTop:30,
     },
     navbarItem: {
       margin: 15,
@@ -91,7 +97,7 @@ function NavbarHometwo({ langs, url, langKey }) {
       >
       
             <div className={classes.directionNavbar}>
-            <Button to={homeLink} component={Link} style={{textTransform:"capitalize", fontWeight:"bold", fontSize:20}}>
+            <Button to={homeLink} component={Link} className={classes.nameHomeLink}>
                       Franziska Harnisch
                     </Button>
                
@@ -131,7 +137,7 @@ function NavbarHometwo({ langs, url, langKey }) {
                <Button to={impressumLink} component={Link} style={{textTransform:"capitalize"}}>
               {impressumText}
             </Button>
-            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize"}}>
+            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize", marginBottom:20}}>
               {datenschutzText}
             </Button>
               
@@ -150,7 +156,7 @@ function NavbarHometwo({ langs, url, langKey }) {
       >
       
             <div className={classes.directionNavbar}>
-            <Button to={homeLink} component={Link} style={{textTransform:"capitalize", fontWeight:"bold", fontSize:20}}>
+            <Button to={homeLink} component={Link} className={classes.nameHomeLink}>
                       Franziska Harnisch
                     </Button>
               
@@ -190,7 +196,7 @@ function NavbarHometwo({ langs, url, langKey }) {
                <Button to={impressumLink} component={Link} style={{textTransform:"capitalize"}}>
               {impressumText}
             </Button>
-            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize"}}>
+            <Button to={datenschutzLink} component={Link} style={{textTransform:"capitalize",marginBottom:20}}>
               {datenschutzText}
             </Button>
               
