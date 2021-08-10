@@ -21,7 +21,7 @@ export const HometwoTemplate = ({ image, title, event, intro }) => {
   return (
     <PageContainer>
     <div
-      style={{
+     /*  style={{
         position: 'relative',
         left: 300,
         display: 'flex',
@@ -30,7 +30,7 @@ export const HometwoTemplate = ({ image, title, event, intro }) => {
         justifyContent: 'space-around',
         alignItems: 'left',
         flexDirection: 'column',
-      }}
+      }} */
     >
       <EventsFrontPage events={event} />
 
