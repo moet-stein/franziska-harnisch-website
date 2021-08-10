@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
     display:"flex",
     justifyContent:"center",
     borderTop: "1px solid grey",
-    paddingTop:"10px"
-
+    paddingTop:"10px",
+   fontFamily:"Josefin Sans"
   }
 }))
 
