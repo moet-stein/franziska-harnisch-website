@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Document, Page } from 'react-pdf';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import LayPdf from '../LayPdf/LayPdf';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
 import Content, { HTMLContent } from '../Content';
 
@@ -74,6 +75,7 @@ export default function Layout3({ workdetailsData }) {
 
   const PostContent = contentComponent || Content;
 
+
   console.log(workdetailsData);
   return (
     <>
@@ -100,13 +102,14 @@ export default function Layout3({ workdetailsData }) {
         <Box>
           {pdfs.length > 0 &&
             pdfs.map((p) => (
-              <embed
-                key={p.pdf}
-                src={p.pdf}
-                width="500"
-                height="600"
-                type="application/pdf"
-              />
+            <LayPdf pdf={p} />
+              // <embed
+              //   key={p.pdf}
+              //   src={p.pdf}
+              //   width="500"
+              //   height="600"
+              //   type="application/pdf"
+              // />
             ))}
         </Box>
         {/* <Box>{pdfs.length > 0 && pdfs.map((p) => <iframe src={p.pdf} />)}</Box> */}

@@ -47,6 +47,7 @@
     "react-helmet": "^6.0.0",
     "react-intl": "^5.20.6",
     "react-player": "^2.9.0",
+    "react-responsive-carousel": "^3.2.20",
     "styled-components": "^5.3.0",
     "uuid": "^7.0.0"
   },
