@@ -4,7 +4,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { Link } from '@material-ui/core'
 import { makeStyles } from "@material-ui/core/styles";
-import addToMailchimp from 'gatsby-plugin-mailchimp'
+import addToMailchimp from 'gatsby-plugin-mailchimp';
+import PageContainer from "../components/PageContainer"
 
 const useStyles = makeStyles((theme) => ({
   container:{
@@ -74,7 +75,7 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
   }
 
   return (
-    <section >
+    <PageContainer title={title} >
           <div className={classes.container} >
             <div style={{alignItems:"center", textAlign:"right"}}>
         
@@ -95,7 +96,7 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
                   </div>
               </div>
               </div>
-    </section>
+    </PageContainer>
   )
 }
 ContactPageTemplate.propTypes = {
