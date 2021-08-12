@@ -6,7 +6,7 @@ hashtags:
   - hashtag: opencall
   - hashtag: instruction
   - hashtag: installation
-  - hashtag: parcipative
+  - hashtag: participative
 title: 2016_heimkern
 titleToShow: 2016_heimkern
 subTitle: ""
