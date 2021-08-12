@@ -14,4 +14,5 @@ input: für den Newsletter hier E-Mail eintragen
 button: anmelden
 confirmation: Vielen Dank für die Zusendung unseres Newsletters
 errorMessage: Bitte geben Sie eine gültige E-Mail-Adresse an
+agreeMessage: Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen 
 ---

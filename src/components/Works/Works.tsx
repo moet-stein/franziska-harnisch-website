@@ -22,8 +22,8 @@ console.log(posts)
           {posts
             .map((p) => p.node)
             .map((item) => (
-              <Box key={item.id} m={1}>
-                <div className="column is-6">
+               <Box key={item.id} m={1}> 
+                <div style={{margin:10,}} className="column is-6">
                   <section className="section">
                     <div className="has-text-centered">
                       <div
@@ -41,7 +41,7 @@ console.log(posts)
                     </div>
                   </section>
                 </div>
-              </Box>
+              </Box> 
             ))}
         </Box>
       )}

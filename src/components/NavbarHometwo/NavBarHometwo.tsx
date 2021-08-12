@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { pages } from '../../data/pages.json';
 import { FormattedMessage } from 'react-intl';
+
 import './NavBarHometwo.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -164,6 +165,7 @@ function NavbarHometwo({ langs, url, langKey }) {
               <SelectLanguage langs={langs} />
          </div>
       </nav>
+      
     </div>
   {/*   Normal menu*/}
     <div style={{ position: 'fixed', top: 15 }}  className={classes.navbarLarge}>

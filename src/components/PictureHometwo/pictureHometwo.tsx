@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 const textWidth = {
     position: "relative",
     maxWidth: 240,
-    alignText: "justify"
+    textAlign: "justify"
 }
 export default function PictureHometwo({ pic }) {
     console.log("pic", pic[0].image)

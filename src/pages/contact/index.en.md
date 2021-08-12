@@ -14,4 +14,5 @@ input: to join the newsletter enter your email here
 button: submit
 confirmation: Thank you for submitting our newsletter
 errorMessage: Please add a valid email address
+agreeMessage: Please accept our terms and conditions
 ---
