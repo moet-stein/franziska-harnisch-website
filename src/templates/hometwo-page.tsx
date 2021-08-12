@@ -56,7 +56,7 @@ const LauraTest: React.FC<any> = ({ data }) => {
 };
 export default LauraTest;
 HometwoTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  image: PropTypes.string,
   title: PropTypes.string,
   event: PropTypes.shape({
     comingTitle: PropTypes.string,
@@ -73,29 +73,16 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        image
         event {
           comingTitle
           futureEvent
           lastTitle
           lastEvent
         }
-
         intro {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            image
             text
           }
         }
