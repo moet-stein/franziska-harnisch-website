@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby';
 
 const useSiteMetadata = () => {
   const { site } = useStaticQuery(
@@ -7,7 +7,8 @@ const useSiteMetadata = () => {
         site {
           siteMetadata {
             title
-            description
+            author
+            keywords
             languages {
               defaultLangKey
               langs
@@ -16,8 +17,8 @@ const useSiteMetadata = () => {
         }
       }
     `
-  )
-  return site.siteMetadata
-}
+  );
+  return site.siteMetadata;
+};
 
-export default useSiteMetadata
+export default useSiteMetadata;
