@@ -3,9 +3,9 @@ templateKey: workdetails-post
 language: de
 layoutType: Layout1
 hashtags:
-  - hashtag: "#video"
-  - hashtag: "#translation"
-  - hashtag: "#installation"
+  - hashtag: video
+  - hashtag: translation
+  - hashtag: installation
   - hashtag: performance
 title: O-Ton
 titleToShow: O-Ton
