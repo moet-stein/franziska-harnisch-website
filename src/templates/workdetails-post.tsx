@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
@@ -38,7 +38,6 @@ export const WorkdetailsPostTemplate = ({
     content,
     contentComponent,
   };
-  console.log(workdetailsData);
 
   return (
     <PageContainer className="section">

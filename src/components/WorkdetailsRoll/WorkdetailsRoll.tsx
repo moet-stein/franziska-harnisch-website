@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
 export function WorkdetailsRoll({ data }) {
   console.log('data', data);
   // render() {
-  const { negZIndex, setNegZIndex } = useContext(NavBarContext);
+  const { negZIndex } = useContext(NavBarContext);
   const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
@@ -118,64 +118,181 @@ export function WorkdetailsRoll({ data }) {
     filHash();
   }, [selectedHash]);
 
-  return (
+  const rollContent = () => (
     <Box
       display="flex"
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
     >
-      <Box m={3}>
-        <TextField
-          id="standard-basic"
-          label="Find Work"
-          onChange={(e) => handleSearch(e)}
-        />
-      </Box>
+      {negZIndex ? (
+        <Box m={3} style={{ zIndex: '-1000' }}>
+          <TextField
+            id="standard-basic"
+            label="Find Work"
+            onChange={(e) => handleSearch(e)}
+          />
+        </Box>
+      ) : (
+        <Box m={3}>
+          <TextField
+            id="standard-basic"
+            label="Find Work"
+            onChange={(e) => handleSearch(e)}
+          />
+        </Box>
+      )}
       <Box
         display="flex"
         flexWrap="wrap"
         justifyContent="center"
         alignItems="center"
       >
-        <Box ml={1} mb={1}>
-          {allSelected ? (
-            <Chip
-              label={<Typography variant="body2"># ALL</Typography>}
-              onClick={handleAll}
-              clickable
-            />
-          ) : (
-            <Chip
-              label={<Typography variant="body2"># ALL</Typography>}
-              onClick={handleAll}
-              variant="outlined"
-            />
-          )}
-        </Box>
+        {negZIndex ? (
+          <Box ml={1} mb={1} style={{ zIndex: '-1000' }}>
+            {allSelected ? (
+              <Chip
+                label={<Typography variant="body2"># ALL</Typography>}
+                onClick={handleAll}
+                clickable
+              />
+            ) : (
+              <Chip
+                label={<Typography variant="body2"># ALL</Typography>}
+                onClick={handleAll}
+                variant="outlined"
+              />
+            )}
+          </Box>
+        ) : (
+          <Box ml={1} mb={1}>
+            {allSelected ? (
+              <Chip
+                label={<Typography variant="body2"># ALL</Typography>}
+                onClick={handleAll}
+                clickable
+              />
+            ) : (
+              <Chip
+                label={<Typography variant="body2"># ALL</Typography>}
+                onClick={handleAll}
+                variant="outlined"
+              />
+            )}
+          </Box>
+        )}
+
         {!loading &&
           hashtags.length > 0 &&
           hashtags.map((h) => (
             <Box ml={1} mb={1} key={`hashtag-${h}`}>
               {selectedHash.includes(h) ? (
-                <Chip
-                  label={<Typography variant="body2"># {h}</Typography>}
-                  onClick={() => handleClick(h)}
-                  clickable
-                />
+                <Box>
+                  {negZIndex ? (
+                    <Chip
+                      label={<Typography variant="body2"># {h}</Typography>}
+                      onClick={() => handleClick(h)}
+                      clickable
+                      style={{ zIndex: '-1000' }}
+                    />
+                  ) : (
+                    <Chip
+                      label={<Typography variant="body2"># {h}</Typography>}
+                      onClick={() => handleClick(h)}
+                      clickable
+                    />
+                  )}
+                </Box>
               ) : (
-                <Chip
-                  label={<Typography variant="body2"># {h}</Typography>}
-                  onClick={() => handleClick(h)}
-                  variant="outlined"
-                />
+                <Box>
+                  {negZIndex ? (
+                    <Chip
+                      label={<Typography variant="body2"># {h}</Typography>}
+                      onClick={() => handleClick(h)}
+                      variant="outlined"
+                      style={{ zIndex: '-1000' }}
+                    />
+                  ) : (
+                    <Chip
+                      label={<Typography variant="body2"># {h}</Typography>}
+                      onClick={() => handleClick(h)}
+                      variant="outlined"
+                    />
+                  )}
+                </Box>
               )}
             </Box>
           ))}
       </Box>
-      <Box>{!loading && filteredPosts && <Works posts={filteredPosts} />}</Box>
+      {negZIndex ? (
+        <Box style={{ zIndex: '-1000' }}>
+          {!loading && filteredPosts && <Works posts={filteredPosts} />}
+        </Box>
+      ) : (
+        <Box>
+          {!loading && filteredPosts && <Works posts={filteredPosts} />}
+        </Box>
+      )}
     </Box>
   );
+
+  return <React.Fragment>{rollContent()}</React.Fragment>;
+  // <Box
+  //   display="flex"
+  //   flexDirection="column"
+  //   justifyContent="center"
+  //   alignItems="center"
+  // >
+  //   <Box m={3}>
+  //     <TextField
+  //       id="standard-basic"
+  //       label="Find Work"
+  //       onChange={(e) => handleSearch(e)}
+  //     />
+  //   </Box>
+  //   <Box
+  //     display="flex"
+  //     flexWrap="wrap"
+  //     justifyContent="center"
+  //     alignItems="center"
+  //   >
+  //     <Box ml={1} mb={1}>
+  //       {allSelected ? (
+  //         <Chip
+  //           label={<Typography variant="body2"># ALL</Typography>}
+  //           onClick={handleAll}
+  //           clickable
+  //         />
+  //       ) : (
+  //         <Chip
+  //           label={<Typography variant="body2"># ALL</Typography>}
+  //           onClick={handleAll}
+  //           variant="outlined"
+  //         />
+  //       )}
+  //     </Box>
+  //     {!loading &&
+  //       hashtags.length > 0 &&
+  //       hashtags.map((h) => (
+  //         <Box ml={1} mb={1} key={`hashtag-${h}`}>
+  //           {selectedHash.includes(h) ? (
+  //             <Chip
+  //               label={<Typography variant="body2"># {h}</Typography>}
+  //               onClick={() => handleClick(h)}
+  //               clickable
+  //             />
+  //           ) : (
+  //             <Chip
+  //               label={<Typography variant="body2"># {h}</Typography>}
+  //               onClick={() => handleClick(h)}
+  //               variant="outlined"
+  //             />
+  //           )}
+  //         </Box>
+  //       ))}
+  //   </Box>
+  //   <Box>{!loading && filteredPosts && <Works posts={filteredPosts} />}</Box>
+  // </Box>
   // }
 }
 
