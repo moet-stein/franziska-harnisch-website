@@ -1,21 +1,5 @@
 ---
-templateKey: exhibitions-page
-path: /exhibitions
-title: Exhibitions List DE
-language: de
-upcomingExhibitions:
-  upcomings:
-    - startDate: 2021-08-08T22:00:00.000Z
-      endDate: 2021-08-16T22:00:00.000Z
-      place: Berlin Mitte
-      description: Contrary to popular belief, Lorem Ipsum is not simply random text.
-        It has roots in a piece of classical Latin literature from 45 BC, making
-        it over 2000 years old
-      links:
-        - linkURL: https://www.netlifycms.org/docs/cloudinary/
-          linkName: Netlify URL
-      name: Upcoming1
-      image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627998242/Franziska/51ca8d_4b85df2b81c344c2b91ce0120d842e9c_mv2_xjii7p.webp
+titleWebsite: Exhibitions List DE
 exhibitions:
   years:
     - year: "2021"
@@ -68,4 +52,23 @@ exhibitions:
               linkName: Zum Stream
           name: mkv x The Wrong TV  CLUSTERED MINDS
           workName: with the stream
+path: /exhibitions
+templateKey: exhibitions-page
+title: Exhibitions List DE
+description: All Exhibitions
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628759905/O-TON_im_blackegg_PollyFaber_Kulturnacht_HGW_14_09_2012_1_ceybfe.jpg
+upcomingExhibitions:
+  upcomings:
+    - startDate: 2021-08-08T22:00:00.000Z
+      endDate: 2021-08-16T22:00:00.000Z
+      place: Berlin Mitte
+      description: Contrary to popular belief, Lorem Ipsum is not simply random text.
+        It has roots in a piece of classical Latin literature from 45 BC, making
+        it over 2000 years old
+      links:
+        - linkURL: https://www.netlifycms.org/docs/cloudinary/
+          linkName: Netlify URL
+      name: Upcoming1
+      image: https://res.cloudinary.com/dcyfdwhvk/image/upload/q_100/c_scale,f_auto,w_300/v1627998242/Franziska/51ca8d_4b85df2b81c344c2b91ce0120d842e9c_mv2_xjii7p.webp
+language: de
 ---
