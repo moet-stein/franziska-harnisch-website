@@ -3,7 +3,7 @@ templateKey: workdetails-post
 language: en
 layoutType: Layout1
 hashtags:
-  - hashtag: video
+  - hashtag: videos
   - hashtag: performance
   - hashtag: installation
   - hashtag: translation
