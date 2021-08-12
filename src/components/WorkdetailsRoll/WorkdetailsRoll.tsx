@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { NavBarContext } from '../../context/NavbarContext';
+import PageContainer from "../PageContainer";
 
 // let langKey;
 
@@ -119,6 +120,7 @@ export function WorkdetailsRoll({ data }) {
   }, [selectedHash]);
 
   const rollContent = () => (
+    <PageContainer>
     <Box
       display="flex"
       flexDirection="column"
@@ -234,6 +236,7 @@ export function WorkdetailsRoll({ data }) {
         </Box>
       )}
     </Box>
+    </PageContainer>
   );
 
   return <React.Fragment>{rollContent()}</React.Fragment>;

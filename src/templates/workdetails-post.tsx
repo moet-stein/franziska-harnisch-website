@@ -41,9 +41,9 @@ export const WorkdetailsPostTemplate = ({
 
   return (
     <PageContainer className="section">
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
+      <div  >
+        <div >
+          <div >
             {/* {!layoutType && (
               <WorkDeTemplate workdetailsData={workdetailsData} />
             )} */}
