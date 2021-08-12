@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   greyColor: {
     color: grey[600],
   },
+  width300: { width: '300px' },
   flexColumn: {
     display: 'flex',
     flexDirection: 'column',
@@ -22,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  upWidth: {
+  upcoming: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    alignItems: 'center',
     marginTop: theme.spacing(2),
   },
   upWidth: {
@@ -57,10 +59,18 @@ const useStyles = makeStyles((theme) => ({
     color: grey[600],
     width: '350px',
   },
-  '@media only screen and (max-width: 800px)': {
-    upWidth: {
+  '@media only screen and (max-width: 700px)': {
+    upcoming: {
       width: '300px',
     },
+    upWidth: { width: '300px' },
+    boxEx: { width: '300px' },
+    flexColumnNoCenter: {
+      width: '100%',
+    },
+    width300: { width: '300px' },
+    greyFont2: { width: '280px' },
+    imgWidth: { marginLeft: '30px' },
   },
 }));
 
@@ -87,7 +97,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                 display="flex"
                 flexWrap="wrap"
                 key={u.name}
-                className={classes.upWidth}
+                className={classes.upcoming}
               >
                 <Box>
                   <Typography variant="h5">{u.name}</Typography>
@@ -138,8 +148,10 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
         )}
         {exhibitions.length > 0 &&
           exhibitions.map((e) => (
-            <Box key={e.year} alignSelf="flex-start" ml={7} mb={6}>
-              <Typography variant="h4">{e.year}</Typography>
+            <Box key={e.year} mb={6}>
+              <Typography align="left" variant="h4">
+                {e.year}
+              </Typography>
 
               <Box className={classes.flexColumn}>
                 {e.lOExhibitions.map((ex) => (
@@ -149,66 +161,65 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                     ml={10}
                     className={classes.boxEx}
                   >
-                    <Box m={2}>
-                      <Box className={classes.flexColumnNoCenter}>
-                        <Typography variant="h5">{ex.name}</Typography>
-                        <Box display="flex">
-                          {ex.startDate && ex.startDate.length > 0 && (
-                            <Typography variant="body1">
-                              {ex.startDate.slice(0, 10)}
-                            </Typography>
-                          )}{' '}
-                          {ex.endDate && ex.endDate.length > 0 && (
-                            <Typography variant="body1">
-                              - {ex.endDate.slice(0, 10)}
-                            </Typography>
-                          )}
-                        </Box>
-                        {ex.place && ex.place.length > 0 && (
-                          <Typography>{ex.place}</Typography>
-                        )}
-                        {ex.description && ex.description.length > 0 && (
-                          <Typography
-                            variant="body2"
-                            className={classes.greyFont2}
-                          >
-                            {ex.description}
+                    <Box className={classes.flexColumnNoCenter} m={2}>
+                      <Typography variant="h5">{ex.name}</Typography>
+                      <Box display="flex">
+                        {ex.startDate && ex.startDate.length > 0 && (
+                          <Typography variant="body1">
+                            {ex.startDate.slice(0, 10)}
+                          </Typography>
+                        )}{' '}
+                        {ex.endDate && ex.endDate.length > 0 && (
+                          <Typography variant="body1">
+                            - {ex.endDate.slice(0, 10)}
                           </Typography>
                         )}
-                        {ex.links &&
-                          ex.links.length > 0 &&
-                          ex.links.map((l) => (
-                            <Link key={l.linkURL} href={l.linkURL}>
-                              <Typography>{l.linkName}</Typography>
-                            </Link>
-                          ))}
-                        <Box m={2}>
-                          {ex.workName && ex.workName.length > 0 && (
-                            <Link
-                              to={`/workdetails/${toSlug(ex.workName)}/`}
-                              style={{ textDecoration: 'none' }}
-                            >
-                              {negZIndex ? (
-                                <Button
-                                  style={{ zIndex: '-1000' }}
-                                  variant="outlined"
-                                >
-                                  <Typography variant="body1">
-                                    See More
-                                  </Typography>
-                                </Button>
-                              ) : (
-                                <Button variant="outlined">
-                                  <Typography variant="body1">
-                                    See More
-                                  </Typography>
-                                </Button>
-                              )}
-                            </Link>
-                          )}
-                        </Box>
+                      </Box>
+                      {ex.place && ex.place.length > 0 && (
+                        <Typography>{ex.place}</Typography>
+                      )}
+                      {ex.description && ex.description.length > 0 && (
+                        <Typography
+                          variant="body2"
+                          className={classes.greyFont2}
+                        >
+                          {ex.description}
+                        </Typography>
+                      )}
+                      {ex.links &&
+                        ex.links.length > 0 &&
+                        ex.links.map((l) => (
+                          <Link key={l.linkURL} href={l.linkURL}>
+                            <Typography>{l.linkName}</Typography>
+                          </Link>
+                        ))}
+                      <Box m={2}>
+                        {ex.workName && ex.workName.length > 0 && (
+                          <Link
+                            to={`/workdetails/${toSlug(ex.workName)}/`}
+                            style={{ textDecoration: 'none' }}
+                          >
+                            {negZIndex ? (
+                              <Button
+                                style={{ zIndex: '-1000' }}
+                                variant="outlined"
+                              >
+                                <Typography variant="body1">
+                                  See More
+                                </Typography>
+                              </Button>
+                            ) : (
+                              <Button variant="outlined">
+                                <Typography variant="body1">
+                                  See More
+                                </Typography>
+                              </Button>
+                            )}
+                          </Link>
+                        )}
                       </Box>
                     </Box>
+
                     <Box m={4}>
                       {ex.image && (
                         <img className={classes.imgWidth} src={ex.image} />
