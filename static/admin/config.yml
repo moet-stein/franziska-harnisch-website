@@ -44,7 +44,7 @@ collections:
       - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image", required: false, default: ""}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
       - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
-      - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file" }, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
+      - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file" }, {label: "Page Numbers", name: "pageNumbers", widget: "number", default: 1}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
   
   - name: "workdetailsen"
     label: "Workdetails EN"
@@ -67,7 +67,7 @@ collections:
       - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image", required: false, default: ""}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
       - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
-      - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
+      - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "Page Numbers", name: "pageNumbers", widget: "number", default: 1}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
 
   - name: "pages"
     label: "Pages"

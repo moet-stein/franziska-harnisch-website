@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 // import { Document, Page } from 'react-pdf';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
@@ -6,8 +6,11 @@ import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import LayPdf from '../LayPdf/LayPdf';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
 import Content, { HTMLContent } from '../Content';
+import Button from '@material-ui/core/Button';
+import { NavBarContext } from '../../context/NavbarContext';
 
 const useStyles = makeStyles((theme) => ({
   flexColumn: {
@@ -71,10 +74,10 @@ export default function Layout3({ workdetailsData }) {
     content,
     contentComponent,
   } = workdetailsData;
+  const { negZIndex, setNegZIndex } = useContext(NavBarContext);
 
   const PostContent = contentComponent || Content;
 
-  console.log(workdetailsData);
   return (
     <>
       <Box className={classes.flexColumn} mt={5}>
@@ -83,7 +86,9 @@ export default function Layout3({ workdetailsData }) {
             {titleToShow}
           </Typography>
           <Box className={classes.width60}>
-            <Typography variant="h6">{subTitle}</Typography>
+            <Typography variant="h6" align="center">
+              {subTitle}
+            </Typography>
           </Box>
           {hashtags.length > 0 && (
             <Box className={classes.flexWrap} m={3}>
@@ -97,18 +102,14 @@ export default function Layout3({ workdetailsData }) {
             </Box>
           )}
         </Box>
-        <Box>
-          {pdfs.length > 0 &&
-            pdfs.map((p) => (
-              <embed
-                key={p.pdf}
-                src={p.pdf}
-                width="500"
-                height="600"
-                type="application/pdf"
-              />
-            ))}
-        </Box>
+        {negZIndex ? (
+          <div style={{ zIndex: '-1000' }}>
+            {pdfs.length > 0 && pdfs.map((p) => <LayPdf pdf={p} />)}
+          </div>
+        ) : (
+          <div>{pdfs.length > 0 && pdfs.map((p) => <LayPdf pdf={p} />)}</div>
+        )}
+
         {/* <Box>{pdfs.length > 0 && pdfs.map((p) => <iframe src={p.pdf} />)}</Box> */}
         <Box className={classes.flexWrap}>
           {images.map((i, index) => (
@@ -137,9 +138,15 @@ export default function Layout3({ workdetailsData }) {
               ))}
           </Box>
         </Box>
-        <Box>
-          <RelatedImgs />
-        </Box>
+        {negZIndex ? (
+          <Box style={{ zIndex: '-1000' }}>
+            <RelatedImgs />
+          </Box>
+        ) : (
+          <Box>
+            <RelatedImgs />
+          </Box>
+        )}
       </Box>
     </>
   );

@@ -6,7 +6,7 @@ import Layout1 from '../components/Layout1/Layout1';
 import Layout2 from '../components/Layout2/Layout2';
 import Layout3 from '../components/Layout3/Layout3';
 import Content, { HTMLContent } from '../components/Content';
-import PageContainer from "../components/PageContainer"
+import PageContainer from '../components/PageContainer';
 
 export const WorkdetailsPostTemplate = ({
   title,
@@ -48,7 +48,6 @@ export const WorkdetailsPostTemplate = ({
             {/* {!layoutType && (
               <WorkDeTemplate workdetailsData={workdetailsData} />
             )} */}
-
             {layoutType === 'Layout1' && (
               <Layout1 workdetailsData={workdetailsData} />
             )}
@@ -142,6 +141,7 @@ export const pageQuery = graphql`
         featuredimage
         pdfs {
           pdf
+          pageNumbers
           pdfTitle
         }
       }
