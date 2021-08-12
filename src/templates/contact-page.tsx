@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer:{
     fontFamily:"Josefin Sans", 
-    background: "linear-gradient(90deg, rgba(250,248,245,1) 2%, rgba(251,250,249,1) 44%, rgba(142,142,143,1) 100%)",
+  
      padding:60,
-     borderRadius:10,
+    
   },
   websiteLink:{
     display:"block", 
@@ -96,14 +96,14 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
           })}
      
            <form > 
-           <div style={{display:"flex", flexDirection:"column"}}>
-              <p>{emailError}</p>
+           
+              <p style={{display:"block"}}>{emailError}</p>
               <input style={{width:300, height:30, paddingLeft:5}} type="email" id="email" name="email" value={userEmail} onChange={handleChange} placeholder={input} />
-           <div style={{display:"flex", justifyContent:"flex-end"}}>
-             <input type="checkbox" id="agree" name="agree" checked={checkbox} onChange={handleCheckbox} ></input>
+              <div style={{display:"flex", justifyContent:"flex-end", margin:"10px auto"}}>
+             <input   type="checkbox" id="agree" name="agree" checked={checkbox} onChange={handleCheckbox} ></input>
              <label htmlFor="agree">I agree to the <Link to="/dat">terms of service</Link></label>
              </div>
-             </div>
+             
               <button  onClick={handleSubmit} className={classes.submitButton} >{button}</button>
                   </form>
                   </div>
