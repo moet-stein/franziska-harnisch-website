@@ -36,11 +36,13 @@ collections:
       - {label: "Language", name: "language", widget: "hidden", default: "de" }
       - {label: "Layout Type", name: "layoutType", widget: "select", options: ["Layout1", "Layout2", "Layout3"], align: "center"}
       - {label: "Hashtags", name: "hashtags", widget: "list", fields: [{label: "Hashtag", name: "hashtag", widget: "string"}]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Title to Show", name: "titleToShow", widget: "string"}
+      - {label: "Title SEO", name: "title", widget: "string"}
+      - {label: "Title Website", name: "titleToShow", widget: "string"}
+      - {label: "Desc. SEO", name: "description", widget: "text"}
+      - {label: "image SEO", name: "image", widget: "image"}
       - {label: "SubTitle", name: "subTitle", widget: "string", required: false, default: ""}
       - {label: "Links", name: "links", widget: "list", required: false, default: [], fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
-      - {label: "Description", name: "body", widget: "markdown", required: false, default: ""}
+      - {label: "Description Website", name: "body", widget: "markdown", required: false, default: ""}
       - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image", required: false, default: ""}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
       - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
@@ -59,11 +61,13 @@ collections:
       - {label: "Language", name: "language", widget: "hidden", default: "en" }
       - {label: "Layout Type", name: "layoutType", widget: "select", options: ["Layout1", "Layout2", "Layout3"], align: "center"}
       - {label: "Hashtags", name: "hashtags", widget: "list", fields: [{label: "Hashtag", name: "hashtag", widget: "string"}]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Title to Show", name: "titleToShow", widget: "string"}
+      - {label: "Title SEO", name: "title", widget: "string"}
+      - {label: "Title Website", name: "titleToShow", widget: "string"}
+      - {label: "Desc. SEO", name: "description", widget: "text"}
+      - {label: "image SEO", name: "image", widget: "image"}
       - {label: "SubTitle", name: "subTitle", widget: "string", required: false, default: ""}
       - {label: "Links", name: "links", widget: "list", required: false, default: [], fields: [{label: "Link Name", name: "linkName", widget: "string"}, {label: "Link URL", name: "linkURL", widget: "string"}]}
-      - {label: "Description", name: "body", widget: "markdown", required: false, default: ""}
+      - {label: "Description Website", name: "body", widget: "markdown", required: false, default: ""}
       - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: "image", widget: "image", required: false, default: ""}, {label: "Image Title", name: "imageTitle", widget: "string", required: false, default: ""}]}
       - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
@@ -77,7 +81,10 @@ collections:
         name: "aboutde"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: generalInfo, name: generalInfo, widget: object, fields: [{label: Name, name: name, widget: string}, {label: Address, name: address, widget: string}, {label: website, name: website, widget: string}]}
           - {label: "Ausbildung", name: "ausbildung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
           - {label: "Preise", name: "preise", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
@@ -89,7 +96,10 @@ collections:
         name: "abouten"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: generalInfo, name: generalInfo, widget: object, fields: [{label: Name, name: name, widget: string}, {label: Address, name: address, widget: string}, {label: website, name: website, widget: string}]}
           - {label: "Ausbildung", name: "ausbildung", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
           - {label: "Preise", name: "preise", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Text, name: texts, widget: list, fields: [{label: Text, name: text, widget: string}]}]}
@@ -102,7 +112,10 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "exhibitions-page"}
           - {label: "featured image", name: "featuredimage", widget: "hidden", default: "featuredimage"}
-          - {label: Title, name: title, widget: string}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: Upcoming Exhibitions, name: upcomingExhibitions, widget: object, fields: [{label: Upcomings, name: upcomings, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Start Date, name: startDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: End Date, name: endDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""} ,{label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: linkURL, widget: string, required: false}, {label: LinkName, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: image, required: false}]}]}
           - {label: Exhibitions, name: exhibitions, widget: object, fields: [{label: Years, name: years, widget: list, fields: [{label: Year, name: year, widget: string}, {label: List of exhibitions, name: lOExhibitions, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Start Date, name: startDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: End Date, name: endDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""} ,{label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: linkURL, widget: string, required: false}, {label: Link Name, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: image, required: false}, {label: Realted Work Name, name: workName, widget: string, required: false}]}]}]}
       - file: "src/pages/exhibitions/index.en.md"
@@ -111,7 +124,10 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "exhibitions-page"}
           - {label: "featured image", name: "featuredimage", widget: "hidden", default: "featuredimage"}
-          - {label: Title, name: title, widget: string}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: Upcoming Exhibitions, name: upcomingExhibitions, widget: object, fields: [{label: Upcomings, name: upcomings, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Start Date, name: startDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: End Date, name: endDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""} ,{label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: linkURL, widget: string, required: false}, {label: LinkName, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: image, required: false}]}]}
           - {label: Exhibitions, name: exhibitions, widget: object, fields: [{label: Years, name: years, widget: list, fields: [{label: Year, name: year, widget: string}, {label: List of exhibitions, name: lOExhibitions, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Start Date, name: startDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""}, {label: End Date, name: endDate, widget: datetime, date_format: DD.MM.YYYY, required: false, default: ""} ,{label: Place, name: place, widget: string, required: false, default: ""}, {label: Description, name: description, widget: text, required: false, default: ""}, {label: Links, name: links, widget: list, required: false, default: [], fields: [{label: Link URL, name: linkURL, widget: string, required: false}, {label: Link Name, name: linkName, widget: string, required: false}]}, {label: Image, name: image, widget: image, required: false}, {label: Realted Work Name, name: workName, widget: string, required: false}]}]}]}
       - file: 'src/pages/hometwo/index.de.md'
@@ -119,7 +135,10 @@ collections:
         name: 'hometwode'
         fields:
           - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'testMoe-page'}
-          - {label: 'Title', name: 'title', widget: 'string' }
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: Events, name: event, widget: object, fields: [{label: Coming Event Label, name: comingTitle, widget: string}, {label: Future Event, name: futureEvent, widget: text}, {label: Last Event Label, name: lastTitle, widget: text}, {label: LastEvent, name: lastEvent, widget: text}]}
           - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
       - file: 'src/pages/hometwo/index.en.md'
@@ -127,7 +146,10 @@ collections:
         name: 'hometwoen'
         fields:
           - {label: 'Template Key', name: 'templateKey',widget: 'hidden',default: 'testMoe-page'}
-          - {label: 'Title', name: 'title', widget: 'string' }
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: Events, name: event, widget: object, fields: [{label: Coming Event Label, name: comingTitle, widget: string}, {label: Future Event, name: futureEvent, widget: text}, {label: Last Event Label, name: lastTitle, widget: text}, {label: LastEvent, name: lastEvent, widget: text}]}
           - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
       - file: "src/pages/contact/index.de.md"
@@ -135,7 +157,10 @@ collections:
         name: "contactPagede"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
-          - {label: Title, name: title, widget: string}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: Name, name: name, widget: string}
           - {label: Address, name: address, widget: string}
           - {label: Website, name: website, widget: string}
@@ -149,7 +174,10 @@ collections:
         name: "contactPageen"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
-          - {label: Title, name: title, widget: string}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: Name, name: name, widget: string}
           - {label: Address, name: address, widget: string}
           - {label: Website, name: website, widget: string}
@@ -163,12 +191,18 @@ collections:
         name: "linksde"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "links-page"}
-          - {label: Title, name: title, widget: string}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: "Links", name: "links", widget: list, fields: [{label: Url, name: url, widget: string, required: false, default: ""}, {label: Text, name: text, widget: string}]}
       - file: "src/pages/links/index.en.md"
         label: "Links Page EN"
         name: "linksen"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "links-page"}
-          - {label: Title, name: title, widget: string}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
           - {label: "Links", name: "links", widget: list, fields: [{label: Url, name: url, widget: string, required: false, default: ""}, {label: Text, name: text, widget: string}]}  
