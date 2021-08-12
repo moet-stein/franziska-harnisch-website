@@ -13,6 +13,8 @@ links: []
 images:
   - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770242/Spontane_Oase_Ausschnit_tdum6v.jpg
     imageTitle: Spontanee
+  - image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770242/Spontane_Oase_Ausschnitt2_ivqmnt.jpg
+    imageTitle: ""
 featuredimage: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770242/Spontane_Oase_Ausschnitt2_ivqmnt.jpg
 youtubeVideos: []
 pdfs: []
