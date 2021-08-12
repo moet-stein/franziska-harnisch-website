@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer:{
     fontFamily:"Josefin Sans", 
-    background: "linear-gradient(90deg, rgba(250,248,245,1) 2%, rgba(251,250,249,1) 44%, rgba(142,142,143,1) 100%)",
+  
      padding:60,
-     borderRadius:10,
+    
   },
   websiteLink:{
     display:"block", 
@@ -41,11 +41,16 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export const ContactPageTemplate = ({title, name, address,email, website, instagram, input, button, confirmation, errorMessage}) => {
+export const ContactPageTemplate = ({title, name, address,email, website, instagram, input, button, confirmation, errorMessage, agreeMessage}) => {
   const [userEmail, setUserEmail] = useState("")
   const [emailError, setEmailError] = useState("")
+  const [checkbox, setCheckbox] =useState(false)
+  console.log("checkbox", checkbox)
   console.log("insta", instagram)
  const classes = useStyles();
+ const handleCheckbox = (e)=>{
+   setCheckbox(prev => !prev)
+ }
   const handleChange = (e) => {
     e.preventDefault();
     setUserEmail(e.target.value)
@@ -54,8 +59,10 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
     
     // don't remember from where i copied this code, but this works.
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if ( re.test(userEmail) ) {
+   if (checkbox === false){
+     setEmailError(`${agreeMessage}`)
+   }
+   else if ( re.test(userEmail) && checkbox===true ) {
         // this is a valid email address
        addToMailchimp(userEmail)
      setEmailError(`${confirmation}`)
@@ -88,12 +95,19 @@ export const ContactPageTemplate = ({title, name, address,email, website, instag
             return  <a className={classes.instagramLink} href={link.link}>{link.text}</a>
           })}
      
-           <form> 
-              <p>{emailError}</p>
+           <form > 
+           
+              <p style={{display:"block"}}>{emailError}</p>
               <input style={{width:300, height:30, paddingLeft:5}} type="email" id="email" name="email" value={userEmail} onChange={handleChange} placeholder={input} />
+              <div style={{display:"flex", justifyContent:"flex-end", margin:"10px auto"}}>
+             <input   type="checkbox" id="agree" name="agree" checked={checkbox} onChange={handleCheckbox} ></input>
+             <label htmlFor="agree">I agree to the <Link to="/dat">terms of service</Link></label>
+             </div>
+             
               <button  onClick={handleSubmit} className={classes.submitButton} >{button}</button>
                   </form>
                   </div>
+                  
               </div>
               </div>
     </PageContainer>
@@ -112,6 +126,7 @@ ContactPageTemplate.propTypes = {
      button: PropTypes.string,
      confirmation: PropTypes.string,
      errorMessage: PropTypes.string,
+     agreeMessage: PropTypes.string,
 }
 
 const ContactPage = ({ data }) => {
@@ -131,6 +146,7 @@ const ContactPage = ({ data }) => {
        input={frontmatter.input}
        confirmation={frontmatter.confirmation}
        errorMessage={frontmatter.errorMessage}
+        agreeMessage={frontmatter.agreeMessage}
       
       />
     </Layout>
@@ -160,7 +176,7 @@ export const contactPageQuery = graphql`
         button
         confirmation
         errorMessage
-       
+       agreeMessage
       }
     }
   }

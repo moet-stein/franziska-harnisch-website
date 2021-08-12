@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { pages } from '../../data/pages.json';
 import { FormattedMessage } from 'react-intl';
+
 import './NavBarHometwo.css';
 import { NavBarContext } from '../../context/NavbarContext';
 

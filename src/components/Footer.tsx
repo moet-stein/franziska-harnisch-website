@@ -11,17 +11,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems:"center"
   },
   footerContainer:{
-    marginTop:50,
+  
     background: "white",
     width:"100%",
-    height:"10vh", 
+    height:"7vh", 
     position:"fixed",
    bottom:0,
     display:"flex",
     justifyContent:"center",
     borderTop: "1px solid grey",
-    paddingTop:"10px",
-   fontFamily:"Josefin Sans"
+    paddingTop:"5px",
+   fontFamily:"Josefin Sans",
+   fontSize:11
+
   }
 }))
 
@@ -47,7 +49,7 @@ export default function Footer() {
               
               </div>
               <div className={classes.instagramLink}>
-                <p>| Copyrights - Franziska Harnisch |</p>
+                <p>| Copyrights © - Franziska Harnisch 2021 |</p>
               </div>
             </div>
           

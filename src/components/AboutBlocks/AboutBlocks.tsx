@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         padding: 25,
          marginBottom: 35,
          fontFamily:'Josefin Sans',
-         color:"#686868",
+         color:"#505050",
         
     },
     titleBlocks :{
