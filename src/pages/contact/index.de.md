@@ -1,18 +1,21 @@
 ---
-templateKey: contact-page
+titleWebsite: Contact
 path: /contact
+templateKey: contact-page
 title: Contact
-language: de
+description: Hier is Kontakte Page
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628764116/ILK_06_slamfv.jpg
 name: Franziska Harnisch
 address: Atelier 2OG, Am Krögel 2, 10179 Berlin
 website: www.franziskaharnisch.de
-email: Email
-instagram: 
-    - text: Instagram
-      link: https://www.instagram.com/franziska.harnisch/
-input: für den Newsletter hier E-Mail eintragen
+instagram:
+  - text: Instagram
+    link: https://www.instagram.com/franziska.harnisch/
 button: anmelden
+input: für den Newsletter hier E-Mail eintragen
 confirmation: Vielen Dank für die Zusendung unseres Newsletters
+language: de
+agreeMessage: Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen
+email: Email
 errorMessage: Bitte geben Sie eine gültige E-Mail-Adresse an
-agreeMessage: Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen 
 ---
