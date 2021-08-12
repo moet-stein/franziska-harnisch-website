@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -6,6 +6,7 @@ import grey from '@material-ui/core/colors/grey';
 import { makeStyles } from '@material-ui/core/styles';
 import Link1 from '@material-ui/core/Link';
 import { Link } from 'gatsby';
+import { NavBarContext } from '../../context/NavbarContext';
 
 const useStyles = makeStyles((theme) => ({
   greyColor: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  flexWrap: {
+  upWidth: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -45,6 +46,8 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 50px',
     marginBottom: theme.spacing(3),
     borderRadius: '3px',
+    display: 'flex',
+    flexWrap: 'wrap',
   },
   greyFont: {
     color: grey[600],
@@ -54,11 +57,16 @@ const useStyles = makeStyles((theme) => ({
     color: grey[600],
     width: '350px',
   },
+  '@media only screen and (max-width: 800px)': {
+    upWidth: {
+      width: '300px',
+    },
+  },
 }));
 
 export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
   const classes = useStyles();
-  console.log(upcomingExhibitions, exhibitions);
+  const { negZIndex } = useContext(NavBarContext);
 
   const toSlug = (str) => {
     return decodeURI(str).split(' ').join('-');
@@ -72,10 +80,15 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
             Upcomings
           </Typography>
         )}
-        <Box className={classes.flexWrap}>
+        <Box className={classes.upWidth}>
           {upcomingExhibitions.length > 0 &&
             upcomingExhibitions.map((u) => (
-              <Box key={u.name} className={classes.upWidth}>
+              <Box
+                display="flex"
+                flexWrap="wrap"
+                key={u.name}
+                className={classes.upWidth}
+              >
                 <Box>
                   <Typography variant="h5">{u.name}</Typography>
                   <Box display="flex">
@@ -111,15 +124,12 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                     <img className={classes.imgWidth} src={u.image} />
                   </Box>
                 )}
-                {/* {!u.image && (
-                  <Box m={2}>
-                    <Paper className={classes.imgWidth} />
-                  </Box>
-                )} */}
               </Box>
             ))}
         </Box>
       </Box>
+
+      {/* Past exhibitions */}
       <Box className={classes.flexColumn} mt={5}>
         {exhibitions.length > 0 && (
           <Typography variant="h3" className={classes.greyColor}>
@@ -178,11 +188,22 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                               to={`/workdetails/${toSlug(ex.workName)}/`}
                               style={{ textDecoration: 'none' }}
                             >
-                              <Button variant="outlined">
-                                <Typography variant="body1">
-                                  See More
-                                </Typography>
-                              </Button>
+                              {negZIndex ? (
+                                <Button
+                                  style={{ zIndex: '-1000' }}
+                                  variant="outlined"
+                                >
+                                  <Typography variant="body1">
+                                    See More
+                                  </Typography>
+                                </Button>
+                              ) : (
+                                <Button variant="outlined">
+                                  <Typography variant="body1">
+                                    See More
+                                  </Typography>
+                                </Button>
+                              )}
                             </Link>
                           )}
                         </Box>
