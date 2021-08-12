@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   hashColor: {
     color: blueGrey[600],
   },
-  '@media only screen and (max-width: 600px)': {
+  '@media only screen and (max-width: 800px)': {
     topPart: {
       flexDirection: 'column',
     },

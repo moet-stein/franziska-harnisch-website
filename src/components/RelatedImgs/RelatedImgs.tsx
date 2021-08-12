@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     scrollX: {
       width: '500px',
     },
+    root: {
+      marginLeft: '100px',
+    },
   },
 }));
 
@@ -89,7 +92,7 @@ export function RelatedImgs({ data }) {
             className={classes.scrollX}
           >
             {matchedWorks.map((w) => (
-              <Box m={2} key={w.frontmatter.title}>
+              <Box m={1} key={w.frontmatter.title}>
                 <WorksImage
                   imageInfo={w.frontmatter.featuredimage}
                   title={w.frontmatter.title}
