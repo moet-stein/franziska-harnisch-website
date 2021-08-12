@@ -1,8 +1,11 @@
 ---
 templateKey: links-page
 path: /links
-title: Artists and cultural istituitions
+titleWebsite: Artists and cultural istituitions
+title: Links
 language: de
+description: Das ist Links Page
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628771030/Spontane_Oase_Diplom_Franziska_Harnisch_46_znvbc1.jpg
 links:
   - url: https://www.medienkunstverein.com/
     text: medienkunstverein
