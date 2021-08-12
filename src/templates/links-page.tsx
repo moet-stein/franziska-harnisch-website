@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const LinksPageTemplate = ({ title, links }) => {
+export const LinksPageTemplate = ({ titleWebsite, links }) => {
   console.log('links', links);
   const classes = useStyles();
 
   return (
-    <PageContainer title={title}>
+    <PageContainer title={titleWebsite}>
       <div
         style={{
           display: 'flex',
@@ -45,7 +45,7 @@ export const LinksPageTemplate = ({ title, links }) => {
           marginTop: 70,
         }}
       >
-        <Typography variant="h3">{title}</Typography>
+        <Typography variant="h3">{titleWebsite}</Typography>
         <div style={{display:"flex", flexWrap:"wrap", justifyContent: "center", marginTop:20}}
          /*  display="flex"
           flexWrap="wrap"
@@ -86,6 +86,7 @@ export const LinksPageTemplate = ({ title, links }) => {
 
 LinksPageTemplate.propTypes = {
   title: PropTypes.string,
+  titleWebsite: PropTypes.string,
   links: PropTypes.array,
 };
 
@@ -94,7 +95,7 @@ const LinksPage = ({ data }) => {
 
   return (
     <Layout>
-      <LinksPageTemplate title={frontmatter.title} links={frontmatter.links} />
+      <LinksPageTemplate titleWebsite={frontmatter.titleWebsite} links={frontmatter.links} />
     </Layout>
   );
 };
@@ -110,6 +111,7 @@ export const linksPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        titleWebsite
         links {
           url
           text
