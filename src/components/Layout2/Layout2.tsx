@@ -88,7 +88,7 @@ export default function Layout2({ workdetailsData }) {
           <Box className={classes.width60}>
             <Typography variant="h6">{subTitle}</Typography>
           </Box>
-          {hashtags.length > 0 && (
+          {hashtags && hashtags.length > 0 && (
             <Box className={classes.flexWrap} m={3}>
               {hashtags.map((h, index) => (
                 <Box ml={2} key={`${h}-${index}`}>
@@ -101,7 +101,8 @@ export default function Layout2({ workdetailsData }) {
           )}
         </Box>
         <Box className={classes.flexWrap}>
-          {images.length > 0 &&
+          {images &&
+            images.length > 0 &&
             images.map((i, index) => (
               <Box key={`image-${index}`} className={classes.marginPic}>
                 <LayImg img={i} />
@@ -109,7 +110,8 @@ export default function Layout2({ workdetailsData }) {
             ))}
         </Box>
         <Box className={classes.flexWrap}>
-          {youtubeVideos.length > 0 &&
+          {youtubeVideos &&
+            youtubeVideos.length > 0 &&
             youtubeVideos.map((v, index) => (
               <Box key={`video-${index}`} className={classes.marginPic}>
                 <LayVideo video={v} />
@@ -126,7 +128,8 @@ export default function Layout2({ workdetailsData }) {
             </Box>
           )}
           <Box className={classes.links}>
-            {links.length > 0 &&
+            {links &&
+              links.length > 0 &&
               links.map((l, index) => (
                 <Box ml={2} key={`${l.linkName}-${index}`}>
                   <Link href={l.linkURL}>
