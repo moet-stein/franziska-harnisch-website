@@ -3,7 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   carSize: {
     width: '800px',
   },
@@ -16,7 +16,6 @@ const useStyles = makeStyles(() => ({
 
 export default function LayPdf({ pdf }) {
   const classes = useStyles();
-  const [maxPage, setMaxPage] = useState(31);
   const [urlArr, setUrlArr] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,10 +27,8 @@ export default function LayPdf({ pdf }) {
   useEffect(() => {
     const getUrls = () => {
       setUrlArr((oldArray) => [...oldArray, pdf.pdf]);
-      for (let i = 2; i <= maxPage; i++) {
-        console.log(urlArr);
+      for (let i = 2; i <= pdf.pageNumbers; i++) {
         const url = makeUrl(pdf.pdf, i);
-        console.log(url);
         setUrlArr((oldArray) => [...oldArray, url]);
       }
     };

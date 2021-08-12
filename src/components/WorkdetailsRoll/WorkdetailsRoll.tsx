@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import Works from '../Works/Works';
@@ -9,6 +9,8 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import { NavBarContext } from '../../context/NavbarContext';
+
 // let langKey;
 
 const useStyles = makeStyles(() => ({
@@ -18,9 +20,9 @@ const useStyles = makeStyles(() => ({
 }));
 
 export function WorkdetailsRoll({ data }) {
-  console.log("data", data)
+  console.log('data', data);
   // render() {
-
+  const { negZIndex, setNegZIndex } = useContext(NavBarContext);
   const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
