@@ -18,18 +18,18 @@ export default function Works({ posts }) {
             .map((p) => p.node)
             .map((item) => (
               <Box key={item.id} m={1}>
-                <div
+                {/* <div
                   style={{
                     width: '240px',
                     display: 'inline-block',
                   }}
-                >
-                  <WorksImage
-                    imageInfo={item.frontmatter.featuredimage}
-                    title={item.frontmatter.title}
-                    slug={item.fields.slug}
-                  />
-                </div>
+                > */}
+                <WorksImage
+                  imageInfo={item.frontmatter.featuredimage}
+                  title={item.frontmatter.title}
+                  slug={item.fields.slug}
+                />
+                {/* </div> */}
               </Box>
             ))}
         </Box>

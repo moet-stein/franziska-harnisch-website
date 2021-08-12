@@ -59,7 +59,12 @@ const WorksImage = ({ imageInfo, title, slug }) => {
   const location = useLocation().pathname;
 
   return (
-    <div>
+    <div
+      style={{
+        width: '240px',
+        display: 'inline-block',
+      }}
+    >
       {!!imageInfo && (
         <Link className="title has-text-primary is-size-4" to={slug}>
           {location === '/workdetails' && (
