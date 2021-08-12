@@ -1,9 +1,10 @@
 ---
 templateKey: hometwo-page
 path: /en/
-title: Franziska Harnisch
+title: 
 language: en
-image: /img/jumbotron.jpg
+description:
+image: 
 event:
   comingTitle: Coming soon
   futureEvent: Contemporary Opportunities Part IV 2. - 4.7.2021 Alte Münze

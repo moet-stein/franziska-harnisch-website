@@ -1,10 +1,9 @@
 ---
 path: /about
 templateKey: about-page
-​      - text: 2019  A Place to be - 50 Jahre Verein Symposium Lindabrunn 114
-  über Marzahn, Berlin International Festival of the Arts The Walls We Built,
-  Kampala (UGA), Hildesheim, Berlin
-title: About DE
+​title: 
+description:
+image:
 language: de
 generalInfo:
   name: Franziska Harnisch (1986 in Berlin, De)
