@@ -17,6 +17,8 @@ hashtags:
   - hashtag: auction
 title: 2020_Stand
 titleToShow: STAND
+description: STAND WORK PAGE
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770606/Flyer_02-Stand-A6-2_ys3dja.jpg
 subTitle: "with Mijin Hyun und Joongyong Kim  Design flyer: Jinwook Yun"
 links: []
 images:
