@@ -37,6 +37,11 @@ const useStyles = makeStyles(theme => ({
             opacity: 0,
 
         }
+    },
+    gridItemLay:{
+        display:"flex", 
+        flexDirection:"column", 
+        alignItems:"center"
     }
 }));
 const textWidth = {
@@ -82,17 +87,17 @@ useEffect(()=>{
 console.log("pic", newArray)
 if(newArray.length >0){
 return(
-   <Grid container style={{ width: "100%" }} >
-     <Grid item xs={12} sm={4} style={{ paddingLeft: 30}}  >
+   <Grid container style={{ width: "95%", margin:"0 auto" }} >
+     <Grid item xs={12} sm={4} className={classes.gridItemLay}  >
           
             <img style={{ borderRadius: 5, width:240 }} onMouseOver={() => setExit(prev => !prev)} className={exit ? classes.imageMask : classes.imageNoMask} src={ newArray[0].image} />
             <p className={exit ? classes.animatedItem : classes.animatedItemExiting}
                 style={textWidth} >{newArray[0].text}</p>
         </Grid>
-        <Grid item xs={12} sm={4} > 
+        <Grid item xs={12} sm={4} className={classes.gridItemLay}  > 
             <img style={{ borderRadius: 5, width:240 }} onMouseOver={() => setVisible(prev => !prev)} className={visible ? classes.imageMask : classes.imageNoMask} src={ newArray[1].image } />
             <p style={textWidth} className={visible ? classes.animatedItem : classes.animatedItemExiting}>{newArray[1].text}</p></Grid>
-        <Grid item xs={12} sm={4}  >
+        <Grid item xs={12} sm={4} className={classes.gridItemLay}  >
         
             <img style={{ borderRadius: 5, width:240 }} onMouseOver={() => setThirdPic(prev => !prev)} className={thirdPic ? classes.imageMask : classes.imageNoMask} src={ newArray[2].image } />
             <p style={textWidth} className={thirdPic ? classes.animatedItem : classes.animatedItemExiting}>{newArray[2].text}</p>
