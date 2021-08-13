@@ -19,7 +19,7 @@ function SEO({ description, lang, meta, image, title, location }) {
     `
   );
 
-  const url = 'https://www.codeacademyberlin.com';
+  const url = 'https://wizardly-shockley-75542d.netlify.app';
   // const metaDescription = description || site.siteMetadata.description
   // const metaImage =
   //     image ? `${url}/img/${image}`
