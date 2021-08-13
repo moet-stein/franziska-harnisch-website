@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function RelatedImgs({ data, location }) {
+  console.log('location', location);
   const classes = useStyles();
   const allWorks = data.allMarkdownRemark.edges.map((w) => w.node);
   const theWork = allWorks.filter(
@@ -141,6 +142,6 @@ export default () => (
         }
       }
     `}
-    render={(data) => <RelatedImgs data={data} />}
+    render={(data) => <RelatedImgs data={data} location={location} />}
   />
 );

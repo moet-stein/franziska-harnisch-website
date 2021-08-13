@@ -51,13 +51,13 @@ export const WorkdetailsPostTemplate = ({
               <WorkDeTemplate workdetailsData={workdetailsData} />
             )} */}
             {layoutType === 'Layout1' && (
-              <Layout1 workdetailsData={workdetailsData} />
+              <Layout1 workdetailsData={workdetailsData} location={location} />
             )}
             {layoutType === 'Layout2' && (
-              <Layout2 workdetailsData={workdetailsData} />
+              <Layout2 workdetailsData={workdetailsData} location={location} />
             )}
             {layoutType === 'Layout3' && (
-              <Layout3 workdetailsData={workdetailsData} />
+              <Layout3 workdetailsData={workdetailsData} location={location} />
             )}
           </div>
         </div>

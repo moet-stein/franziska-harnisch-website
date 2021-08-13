@@ -62,8 +62,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout1({ workdetailsData }) {
+export default function Layout1({ workdetailsData, location }) {
   const classes = useStyles();
+  console.log('layout1 location', location);
   const [ftImg, setFtImg] = useState({});
   const {
     title,
@@ -151,7 +152,7 @@ export default function Layout1({ workdetailsData }) {
         </Box>
 
         <Box>
-          <RelatedImgs />
+          <RelatedImgs location={location} />
         </Box>
       </Box>
     </>

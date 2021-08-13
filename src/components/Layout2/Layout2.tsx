@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout2({ workdetailsData }) {
+export default function Layout2({ workdetailsData, location }) {
   const classes = useStyles();
   const {
     title,
@@ -140,7 +140,7 @@ export default function Layout2({ workdetailsData }) {
           </Box>
         </Box>
         <Box>
-          <RelatedImgs />
+          <RelatedImgs location={location} />
         </Box>
       </Box>
     </>
