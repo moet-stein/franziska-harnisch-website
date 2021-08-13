@@ -13,10 +13,16 @@ const useStyles = makeStyles(() => ({
       boxShadow: '0 0 20px rgba(5,5,5,.5)',
     },
   },
+  player: {
+    height: 'auto',
+  },
   '@media only screen and (max-width: 600px)': {
     imgWidth: {
       width: '300px',
       height: 'auto',
+    },
+    player: {
+      height: '100%',
     },
   },
 }));
@@ -28,7 +34,12 @@ export default function LayImg({ video }) {
     <React.Fragment>
       {video && (
         <Box className={classes.imgWidth} m={3}>
-          <ReactPlayer controls="true" width="100%" url={video.videoURL} />
+          <ReactPlayer
+            className={classes.player}
+            controls="true"
+            width="100%"
+            url={video.videoURL}
+          />
         </Box>
       )}
     </React.Fragment>

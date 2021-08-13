@@ -29,12 +29,25 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     width: '80%',
   },
+  flexWrap2: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '90%',
+  },
+  vWidth: {
+    width: '400px',
+    marginLeft: '20px',
+    marginRight: '20px',
+  },
   h1Fontsize: {
     fontSize: '60px',
     color: blueGrey[700],
   },
   descWidth: {
     width: '500px',
+    marginLeft: '40px',
   },
   topPart: {
     display: 'flex',
@@ -52,19 +65,20 @@ const useStyles = makeStyles((theme) => ({
   hashColor: {
     color: blueGrey[600],
   },
-  '@media only screen and (max-width: 800px)': {
+  '@media only screen and (max-width: 840px)': {
     topPart: {
       flexDirection: 'column',
     },
     descWidth: {
       width: '300px',
+      marginLeft: '0px',
     },
   },
 }));
 
 export default function Layout1({ workdetailsData, location }) {
   const classes = useStyles();
-  console.log('layout1 location', location);
+
   const [ftImg, setFtImg] = useState({});
   const {
     title,
@@ -79,7 +93,7 @@ export default function Layout1({ workdetailsData, location }) {
     content,
     contentComponent,
   } = workdetailsData;
-  console.log(images, featuredimage);
+
   const PostContent = contentComponent || Content;
 
   useEffect(() => {
@@ -87,7 +101,7 @@ export default function Layout1({ workdetailsData, location }) {
       imageTitle: title,
       image: featuredimage,
     };
-    console.log(ftObj);
+
     setFtImg(ftObj);
   }, []);
 
@@ -95,11 +109,15 @@ export default function Layout1({ workdetailsData, location }) {
     <>
       <Box className={classes.flexColumn}>
         <Box className={classes.flexColumn} mt={5}>
-          <Typography className={classes.h1Fontsize} variant="h1">
+          <Typography
+            className={classes.h1Fontsize}
+            align="center"
+            variant="h1"
+          >
             {titleToShow}
           </Typography>
           <Typography variant="h6">{subTitle}</Typography>
-          {hashtags && hashtags.length > 0 && (
+          {/* {hashtags && hashtags.length > 0 && (
             <Box className={classes.hashFlex}>
               {hashtags.map((h, index) => (
                 <Box key={`${h}-${index}`} ml={2}>
@@ -109,7 +127,7 @@ export default function Layout1({ workdetailsData, location }) {
                 </Box>
               ))}
             </Box>
-          )}
+          )} */}
         </Box>
         <Box className={classes.topPart} m={4}>
           <Box>
@@ -119,7 +137,7 @@ export default function Layout1({ workdetailsData, location }) {
           </Box>
           <Box className={classes.flexColumn}>
             {content && (
-              <Box className={classes.descWidth} ml={8}>
+              <Box className={classes.descWidth}>
                 <PostContent content={content} />
               </Box>
             )}
@@ -137,11 +155,11 @@ export default function Layout1({ workdetailsData, location }) {
           </Box>
         </Box>
 
-        <Box className={classes.flexWrap}>
+        <Box className={classes.flexWrap2}>
           {youtubeVideos &&
             youtubeVideos.length > 0 &&
             youtubeVideos.map((v, index) => (
-              <Box key={`video-${index}`}>
+              <Box key={`video-${index}`} className={classes.vWidth}>
                 <LayVideo video={v} />
               </Box>
             ))}
