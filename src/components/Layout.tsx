@@ -106,7 +106,7 @@ const TemplateWrapper = ({ children }) => {
 
             <NavbarHometwo langs={langsMenu} langKey={langKey} url={url} />
             <div>{children}</div>
-            <Footer />
+            <Footer langs={langsMenu} langKey={langKey} url={url} />
           </ThemeProvider>
         </IntlProvider>
       </NavBarProvider>
