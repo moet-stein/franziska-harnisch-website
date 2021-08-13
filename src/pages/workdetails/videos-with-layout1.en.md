@@ -8,6 +8,8 @@ hashtags:
   - hashtag: layout1
 title: videos with layout1
 titleToShow: Videos With Layout1
+description: VIDEOS WITH LAYOUT1
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1627987472/Franziska/51ca8d_b393a63225e1431db9cebd0f3268acb3_mv2_w9axbl.webp
 subTitle: video pics
 links:
   - linkName: Link1
