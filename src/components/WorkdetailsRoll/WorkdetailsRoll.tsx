@@ -20,10 +20,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export function WorkdetailsRoll({ data }) {
-  console.log('data', data);
-  console.log(location);
-  // render() {
+export function WorkdetailsRoll({ data, location }) {
   const { negZIndex } = useContext(NavBarContext);
   const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
@@ -308,7 +305,7 @@ WorkdetailsRoll.propTypes = {
   }),
 };
 
-export default () => (
+export default ({ location }) => (
   <StaticQuery
     query={graphql`
       query WorkdetailsRollQuery {
@@ -346,6 +343,8 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <WorkdetailsRoll data={data} count={count} />}
+    render={(data, count) => (
+      <WorkdetailsRoll data={data} count={count} location={location} />
+    )}
   />
 );
