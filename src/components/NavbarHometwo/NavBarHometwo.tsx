@@ -26,12 +26,26 @@ const useStyles = makeStyles((theme) => ({
   },
   nameMob: {
     display: 'none',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.only('md')]: {
       display: 'block',
       position: 'absolute',
       width: 300,
       top: 10,
       left: '60%',
+      marginLeft: 70,
+      marginTop: 0,
+      color: 'grey',
+      fontFamily: 'Josefin Sans',
+      fontWeight: 700,
+      fontSize: 25,
+      padding: 2,
+    },
+    [theme.breakpoints.down('sm')]:{
+      display: 'block',
+      position: 'absolute',
+      width: 300,
+      top: 10,
+      left: '0%',
       marginLeft: 70,
       marginTop: 0,
       color: 'grey',
