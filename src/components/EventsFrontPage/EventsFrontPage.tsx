@@ -1,8 +1,9 @@
 import React from "react"
 import styled, { css, keyframes } from 'styled-components';
 import { fadeInRight } from 'react-animations';
+import { Grid } from '@material-ui/core'
 import "./EventsFrontPage.css"
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
 
@@ -33,14 +34,36 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "flex-end",
     marginTop: 30,
     marginBottom: 30,
-    width: "fit-content",
+    width: "100%",
     marginRight: "auto",
 
+  },
+  fontSizeEvent : {
+    fontSize: 25,
+    fontWeight: 400,
+    fontFamily: "'Josefin Sans', sans-serif",
+  
+  },
+  fontSizeTitle : {
+    fontSize: 30,
+    fontFamily: "'Josefin Sans', sans-serif",
   },
   columnDir: {
     display: "flex",
     flexDirection: "column"
+  },
+  textEvent: {
+    position: "relative",
+    left: "60%",
+    display: "inline-block",
+    [theme.breakpoints.down('md')]:{
+      left:"0%",
+    },
+  
+    margin: 0,
+    maxWidth: 500,
   }
+
 }));
 
 
@@ -49,15 +72,15 @@ const useStyles = makeStyles(theme => ({
 export default function EventsFrontPage({ events }) {
   const classes = useStyles();
 
-  return (<div className={classes.displayflexCont}>
-    <div className={classes.columnDir}>
-      <h3 className="textEvent fontSizeTitle">{events.comingTitle}</h3>
+  return (<Grid container className={classes.displayflexCont}>
+    <Grid item xs={12} md={6}  className={classes.columnDir}>
+      <h3 className={`${classes.textEvent} ${classes.fontSizeTitle}`}>{events.comingTitle}</h3>
       <p className={classes.animatedText}>{events.futureEvent}</p>
-    </div>
-    <div className={classes.columnDir}>
-      <h3 className="textEvent fontSizeTitle">{events.lastTitle}</h3>
+    </Grid>
+    <Grid item xs={12} md={6} className={classes.columnDir}>
+      <h3 className={`${classes.textEvent} ${classes.fontSizeTitle}`}>{events.lastTitle}</h3>
       <p className={classes.animatedText}>{events.lastEvent}</p>
-    </div>
+    </Grid>
 
-  </div>)
+  </Grid>)
 }
