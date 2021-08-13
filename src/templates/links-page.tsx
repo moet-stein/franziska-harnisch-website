@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
-import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
-import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PageContainer from '../components/PageContainer';
 
@@ -61,28 +57,16 @@ export const LinksPageTemplate = ({ titleWebsite, links }) => {
             justifyContent: 'center',
             marginTop: 20,
           }}
-          /*  display="flex"
-          flexWrap="wrap"
-          
-          justifyContent="center"
-          alignItems="center"
-          mt={5} */
         >
           {links.map((l) => {
             return (
-              <div
-                key={l.text}
-                className={classes.linkWidth}
-                /*    mb={5}
-                display="flex"
-                justifyContent="center" */
-              >
+              <div key={l.text} className={classes.linkWidth}>
                 <button className={classes.linkButton}>
                   <a target="_blank" href={l.url} className={classes.noDec}>
                     {l.text.length > 30 ? (
-                      <p /* variant="body1" */>{l.text.slice(0, 30)}. . .</p>
+                      <p>{l.text.slice(0, 30)}. . .</p>
                     ) : (
-                      <p /* variant="body1" */>{l.text}</p>
+                      <p>{l.text}</p>
                     )}
                   </a>
                 </button>
