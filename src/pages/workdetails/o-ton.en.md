@@ -9,6 +9,8 @@ hashtags:
   - hashtag: translation
 title: O-Ton
 titleToShow: O-Ton
+description: O-TON WORK PAGE
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628759905/O-TON_im_blackegg_PollyFaber_Kulturnacht_HGW_14_09_2012_1_ceybfe.jpg
 subTitle: ""
 links: []
 images:
