@@ -6,7 +6,7 @@ import Layout from '../../components/Layout';
 export default function WorkdetailsIndexPage() {
   return (
     <Layout location={location}>
-      <WorkdetailsRoll location={location} />
+      <WorkdetailsRoll />
     </Layout>
   );
 }

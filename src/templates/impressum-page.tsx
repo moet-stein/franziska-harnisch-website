@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { HTMLContent } from '../components/Content';
 import PageContainer from '../components/PageContainer';
 
-export const ImpressumPageTemplate = ({ title, html }) => {
+export const ImpressumPageTemplate = ({ title, html, location }) => {
   return (
     <PageContainer>
       <div style={{ margin: '50px 40px 30px 80px' }}>
@@ -21,12 +21,17 @@ ImpressumPageTemplate.propTypes = {
   title: PropTypes.string,
 };
 
-const ImpressumPage = ({ data }) => {
+const ImpressumPage = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   console.log('data', data);
+
   return (
     <Layout location={location}>
-      <ImpressumPageTemplate title={frontmatter.title} html={html} />
+      <ImpressumPageTemplate
+        location={location}
+        title={frontmatter.title}
+        html={html}
+      />
     </Layout>
   );
 };

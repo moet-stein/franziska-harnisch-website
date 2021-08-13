@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export function WorkdetailsRoll({ data, location }) {
+export function WorkdetailsRoll({ data }) {
   console.log('data', data);
   console.log(location);
   // render() {

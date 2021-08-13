@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { HTMLContent } from '../components/Content';
 import PageContainer from '../components/PageContainer';
 
-export const DatenschutzPageTemplate = ({ title, html }) => {
+export const DatenschutzPageTemplate = ({ title, html, location }) => {
   return (
     <PageContainer>
       <div style={{ margin: '50px 40px 30px 80px' }}>
@@ -21,12 +21,17 @@ DatenschutzPageTemplate.propTypes = {
   title: PropTypes.string,
 };
 
-const DatenschutzPage = ({ data }) => {
+const DatenschutzPage = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   console.log('info', frontmatter.generalInfo);
+  console.log('location', location);
   return (
     <Layout location={location}>
-      <DatenschutzPageTemplate title={frontmatter.title} html={html} />
+      <DatenschutzPageTemplate
+        location={location}
+        title={frontmatter.title}
+        html={html}
+      />
     </Layout>
   );
 };

@@ -26,9 +26,8 @@ export const ExhibitionsPageTemplate = ({
   title,
   upcomingExhibitions,
   exhibitions,
+  location,
 }) => {
-  console.log(upcomingExhibitions);
-  console.log(title);
   const classes = useStyles();
   return (
     <PageContainer>
@@ -53,13 +52,14 @@ ExhibitionsPageTemplate.propTypes = {
   exhibitions: PropTypes.object,
 };
 
-const ExhibitionsPage = ({ data }) => {
+const ExhibitionsPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
   console.log(frontmatter);
 
   return (
     <Layout location={location}>
       <ExhibitionsPageTemplate
+        location={location}
         title={frontmatter.title}
         upcomingExhibitions={frontmatter.upcomingExhibitions}
         exhibitions={frontmatter.exhibitions}

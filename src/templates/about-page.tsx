@@ -16,8 +16,10 @@ export const AboutPageTemplate = ({
   einzelaustellung,
   gruppenaustellung,
   projekte,
+  location,
 }) => {
   console.log(title);
+  console.log(location);
   return (
     <PageContainer title={title}>
       <div>
@@ -90,6 +92,7 @@ const AboutPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <AboutPageTemplate
+        location={location}
         title={frontmatter.title}
         generalInfo={frontmatter.generalInfo}
         ausbildung={frontmatter.ausbildung}

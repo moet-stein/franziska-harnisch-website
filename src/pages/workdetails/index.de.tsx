@@ -7,7 +7,7 @@ export default function WorkdetailsIndexPage() {
   console.log(location);
   return (
     <Layout location={location}>
-      <WorkdetailsRoll location={location} />
+      <WorkdetailsRoll />
     </Layout>
   );
 }

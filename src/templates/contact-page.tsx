@@ -52,12 +52,14 @@ export const ContactPageTemplate = ({
   confirmation,
   errorMessage,
   agreeMessage,
+  location,
 }) => {
   const [userEmail, setUserEmail] = useState('');
   const [emailError, setEmailError] = useState('');
   const [checkbox, setCheckbox] = useState(false);
   console.log('checkbox', checkbox);
   console.log('insta', instagram);
+
   const classes = useStyles();
   const handleCheckbox = (e) => {
     setCheckbox((prev) => !prev);
@@ -173,12 +175,13 @@ ContactPageTemplate.propTypes = {
   agreeMessage: PropTypes.string,
 };
 
-const ContactPage = ({ data }) => {
+const ContactPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout location={location}>
       <ContactPageTemplate
+        location={location}
         title={frontmatter.title}
         name={frontmatter.name}
         address={frontmatter.address}

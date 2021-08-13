@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const HometwoTemplate = ({ image, title, event, intro }) => {
+export const HometwoTemplate = ({ image, title, event, intro, location }) => {
   console.log(intro.blurbs);
   return (
     <PageContainer>
@@ -39,13 +39,14 @@ export const HometwoTemplate = ({ image, title, event, intro }) => {
     </PageContainer>
   );
 };
-const LauraTest: React.FC<any> = ({ data }) => {
+const LauraTest: React.FC<any> = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
   const classes = useStyles();
 
   return (
     <Layout location={location}>
       <HometwoTemplate
+        location={location}
         image={frontmatter.image}
         title={frontmatter.title}
         event={frontmatter.event}

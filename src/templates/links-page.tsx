@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const LinksPageTemplate = ({ titleWebsite, links }) => {
-  console.log('links', links);
+export const LinksPageTemplate = ({ titleWebsite, links, location }) => {
+  console.log('location', location);
   const classes = useStyles();
 
   return (
@@ -85,12 +85,13 @@ LinksPageTemplate.propTypes = {
   links: PropTypes.array,
 };
 
-const LinksPage = ({ data }) => {
+const LinksPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout location={location}>
       <LinksPageTemplate
+        location={location}
         titleWebsite={frontmatter.titleWebsite}
         links={frontmatter.links}
       />
