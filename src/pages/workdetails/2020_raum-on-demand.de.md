@@ -7,6 +7,8 @@ hashtags:
   - hashtag: site specific
 title: 2020_Raum on demand
 titleToShow: 2020_Raum on demand
+description: RAUM ON DEMAND
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628765451/IMG_20200327_181400_lmows8.png
 subTitle: ""
 links: []
 images:
