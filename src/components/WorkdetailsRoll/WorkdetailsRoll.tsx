@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { NavBarContext } from '../../context/NavbarContext';
-import PageContainer from "../PageContainer";
+import PageContainer from '../PageContainer';
 
 // let langKey;
 
@@ -20,8 +20,9 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export function WorkdetailsRoll({ data }) {
+export function WorkdetailsRoll({ data, location }) {
   console.log('data', data);
+  console.log(location);
   // render() {
   const { negZIndex } = useContext(NavBarContext);
   const classes = useStyles();
@@ -121,121 +122,121 @@ export function WorkdetailsRoll({ data }) {
 
   const rollContent = () => (
     <PageContainer>
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {negZIndex ? (
-        <Box m={3} style={{ zIndex: '-1000' }}>
-          <TextField
-            id="standard-basic"
-            label="Find Work"
-            onChange={(e) => handleSearch(e)}
-          />
-        </Box>
-      ) : (
-        <Box m={3}>
-          <TextField
-            id="standard-basic"
-            label="Find Work"
-            onChange={(e) => handleSearch(e)}
-          />
-        </Box>
-      )}
       <Box
         display="flex"
-        flexWrap="wrap"
+        flexDirection="column"
         justifyContent="center"
         alignItems="center"
       >
         {negZIndex ? (
-          <Box ml={1} mb={1} style={{ zIndex: '-1000' }}>
-            {allSelected ? (
-              <Chip
-                label={<Typography variant="body2"># ALL</Typography>}
-                onClick={handleAll}
-                clickable
-              />
-            ) : (
-              <Chip
-                label={<Typography variant="body2"># ALL</Typography>}
-                onClick={handleAll}
-                variant="outlined"
-              />
-            )}
+          <Box m={3} style={{ zIndex: '-1000' }}>
+            <TextField
+              id="standard-basic"
+              label="Find Work"
+              onChange={(e) => handleSearch(e)}
+            />
           </Box>
         ) : (
-          <Box ml={1} mb={1}>
-            {allSelected ? (
-              <Chip
-                label={<Typography variant="body2"># ALL</Typography>}
-                onClick={handleAll}
-                clickable
-              />
-            ) : (
-              <Chip
-                label={<Typography variant="body2"># ALL</Typography>}
-                onClick={handleAll}
-                variant="outlined"
-              />
-            )}
+          <Box m={3}>
+            <TextField
+              id="standard-basic"
+              label="Find Work"
+              onChange={(e) => handleSearch(e)}
+            />
           </Box>
         )}
-
-        {!loading &&
-          hashtags.length > 0 &&
-          hashtags.map((h) => (
-            <Box ml={1} mb={1} key={`hashtag-${h}`}>
-              {selectedHash.includes(h) ? (
-                <Box>
-                  {negZIndex ? (
-                    <Chip
-                      label={<Typography variant="body2"># {h}</Typography>}
-                      onClick={() => handleClick(h)}
-                      clickable
-                      style={{ zIndex: '-1000' }}
-                    />
-                  ) : (
-                    <Chip
-                      label={<Typography variant="body2"># {h}</Typography>}
-                      onClick={() => handleClick(h)}
-                      clickable
-                    />
-                  )}
-                </Box>
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="center"
+          alignItems="center"
+        >
+          {negZIndex ? (
+            <Box ml={1} mb={1} style={{ zIndex: '-1000' }}>
+              {allSelected ? (
+                <Chip
+                  label={<Typography variant="body2"># ALL</Typography>}
+                  onClick={handleAll}
+                  clickable
+                />
               ) : (
-                <Box>
-                  {negZIndex ? (
-                    <Chip
-                      label={<Typography variant="body2"># {h}</Typography>}
-                      onClick={() => handleClick(h)}
-                      variant="outlined"
-                      style={{ zIndex: '-1000' }}
-                    />
-                  ) : (
-                    <Chip
-                      label={<Typography variant="body2"># {h}</Typography>}
-                      onClick={() => handleClick(h)}
-                      variant="outlined"
-                    />
-                  )}
-                </Box>
+                <Chip
+                  label={<Typography variant="body2"># ALL</Typography>}
+                  onClick={handleAll}
+                  variant="outlined"
+                />
               )}
             </Box>
-          ))}
+          ) : (
+            <Box ml={1} mb={1}>
+              {allSelected ? (
+                <Chip
+                  label={<Typography variant="body2"># ALL</Typography>}
+                  onClick={handleAll}
+                  clickable
+                />
+              ) : (
+                <Chip
+                  label={<Typography variant="body2"># ALL</Typography>}
+                  onClick={handleAll}
+                  variant="outlined"
+                />
+              )}
+            </Box>
+          )}
+
+          {!loading &&
+            hashtags.length > 0 &&
+            hashtags.map((h) => (
+              <Box ml={1} mb={1} key={`hashtag-${h}`}>
+                {selectedHash.includes(h) ? (
+                  <Box>
+                    {negZIndex ? (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        clickable
+                        style={{ zIndex: '-1000' }}
+                      />
+                    ) : (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        clickable
+                      />
+                    )}
+                  </Box>
+                ) : (
+                  <Box>
+                    {negZIndex ? (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        variant="outlined"
+                        style={{ zIndex: '-1000' }}
+                      />
+                    ) : (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        variant="outlined"
+                      />
+                    )}
+                  </Box>
+                )}
+              </Box>
+            ))}
+        </Box>
+        {negZIndex ? (
+          <Box style={{ zIndex: '-1000' }}>
+            {!loading && filteredPosts && <Works posts={filteredPosts} />}
+          </Box>
+        ) : (
+          <Box>
+            {!loading && filteredPosts && <Works posts={filteredPosts} />}
+          </Box>
+        )}
       </Box>
-      {negZIndex ? (
-        <Box style={{ zIndex: '-1000' }}>
-          {!loading && filteredPosts && <Works posts={filteredPosts} />}
-        </Box>
-      ) : (
-        <Box>
-          {!loading && filteredPosts && <Works posts={filteredPosts} />}
-        </Box>
-      )}
-    </Box>
     </PageContainer>
   );
 

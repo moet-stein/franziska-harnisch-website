@@ -5,8 +5,8 @@ import Layout from '../../components/Layout';
 
 export default function WorkdetailsIndexPage() {
   return (
-    <Layout>
-      <WorkdetailsRoll />
+    <Layout location={location}>
+      <WorkdetailsRoll location={location} />
     </Layout>
   );
 }

@@ -5,20 +5,13 @@ import Layout from '../components/Layout';
 import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { HTMLContent } from '../components/Content';
-import PageContainer from "../components/PageContainer"
+import PageContainer from '../components/PageContainer';
 
-
-
-export const ImpressumPageTemplate = ({
-  title,
-   html,
-}) => {
-    
+export const ImpressumPageTemplate = ({ title, html }) => {
   return (
-    <PageContainer  >
-      <div style={{margin:"50px 40px 30px 80px" }}> 
-    
-     <HTMLContent content={html}  />
+    <PageContainer>
+      <div style={{ margin: '50px 40px 30px 80px' }}>
+        <HTMLContent content={html} />
       </div>
     </PageContainer>
   );
@@ -26,22 +19,14 @@ export const ImpressumPageTemplate = ({
 
 ImpressumPageTemplate.propTypes = {
   title: PropTypes.string,
- 
-
 };
 
 const ImpressumPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
-console.log("data", data)
+  console.log('data', data);
   return (
-    <Layout>
-      <ImpressumPageTemplate
-        title={frontmatter.title}
-
-       html={html}
-
-       
-      />
+    <Layout location={location}>
+      <ImpressumPageTemplate title={frontmatter.title} html={html} />
     </Layout>
   );
 };
@@ -57,8 +42,6 @@ export const impressumPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-          
-        
       }
       html
     }

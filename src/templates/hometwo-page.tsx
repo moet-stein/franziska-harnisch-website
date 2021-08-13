@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
 import EventsFrontPage from '../components/EventsFrontPage/EventsFrontPage';
 import PictureHometwo from '../components/PictureHometwo/pictureHometwo';
-import PageContainer from "../components/PageContainer"
+import PageContainer from '../components/PageContainer';
 
 const useStyles = makeStyles((theme) => ({
   mediaNav: {
@@ -20,8 +20,8 @@ export const HometwoTemplate = ({ image, title, event, intro }) => {
   console.log(intro.blurbs);
   return (
     <PageContainer>
-    <div
-     /*  style={{
+      <div
+      /*  style={{
         position: 'relative',
         left: 300,
         display: 'flex',
@@ -31,11 +31,11 @@ export const HometwoTemplate = ({ image, title, event, intro }) => {
         alignItems: 'left',
         flexDirection: 'column',
       }} */
-    >
-      <EventsFrontPage events={event} />
+      >
+        <EventsFrontPage events={event} />
 
-      <PictureHometwo pic={intro.blurbs} />
-    </div>
+        <PictureHometwo pic={intro.blurbs} />
+      </div>
     </PageContainer>
   );
 };
@@ -44,7 +44,7 @@ const LauraTest: React.FC<any> = ({ data }) => {
   const classes = useStyles();
 
   return (
-    <Layout>
+    <Layout location={location}>
       <HometwoTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -69,7 +69,7 @@ HometwoTemplate.propTypes = {
   }),
 };
 export const pageQuery = graphql`
-  query HometwoTemplate ($id: String!)  {
+  query HometwoTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title

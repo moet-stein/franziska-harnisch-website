@@ -4,9 +4,10 @@ import WorkdetailsRoll from '../../components/WorkdetailsRoll/WorkdetailsRoll';
 import Layout from '../../components/Layout';
 
 export default function WorkdetailsIndexPage() {
+  console.log(location);
   return (
-    <Layout>
-      <WorkdetailsRoll />
+    <Layout location={location}>
+      <WorkdetailsRoll location={location} />
     </Layout>
   );
 }

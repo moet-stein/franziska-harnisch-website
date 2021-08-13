@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Exhibitions from '../components/Exhibitions/Exhibitions';
-import PageContainer from "../components/PageContainer"
+import PageContainer from '../components/PageContainer';
 
 const useStyles = makeStyles(() => ({
   flexColumn: {
@@ -32,17 +32,17 @@ export const ExhibitionsPageTemplate = ({
   const classes = useStyles();
   return (
     <PageContainer>
-    <Box className={classes.flexColumn}>
-      <Box mt={3}>
-        <Typography variant="h1">Exhibitions</Typography>
+      <Box className={classes.flexColumn}>
+        <Box mt={3}>
+          <Typography variant="h1">Exhibitions</Typography>
+        </Box>
+        <Box>
+          <Exhibitions
+            upcomingExhibitions={upcomingExhibitions.upcomings}
+            exhibitions={exhibitions.years}
+          />
+        </Box>
       </Box>
-      <Box>
-        <Exhibitions
-          upcomingExhibitions={upcomingExhibitions.upcomings}
-          exhibitions={exhibitions.years}
-        />
-      </Box>
-    </Box>
     </PageContainer>
   );
 };
@@ -58,7 +58,7 @@ const ExhibitionsPage = ({ data }) => {
   console.log(frontmatter);
 
   return (
-    <Layout>
+    <Layout location={location}>
       <ExhibitionsPageTemplate
         title={frontmatter.title}
         upcomingExhibitions={frontmatter.upcomingExhibitions}
@@ -112,10 +112,10 @@ export const exhibitionsPageQuery = graphql`
               name
               workName
               image
-              }
             }
           }
         }
       }
     }
+  }
 `;

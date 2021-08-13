@@ -89,7 +89,7 @@ const LinksPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout location={location}>
       <LinksPageTemplate
         titleWebsite={frontmatter.titleWebsite}
         links={frontmatter.links}
