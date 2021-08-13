@@ -8,6 +8,8 @@ hashtags:
   - hashtag: work in progress
 title: 2016_temporäre Rahmen
 titleToShow: 2016_temporäre Rahmen
+description: Work TEMPORÄRER RAHMEN
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770242/Spontane_Oase_Ausschnitt2_ivqmnt.jpg
 subTitle: ""
 links: []
 images:

@@ -7,6 +7,8 @@ hashtags:
   - hashtag: test
 title: Videos
 titleToShow: the Video
+description: VIDEOS WORK PAGE
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1627987224/Franziska/stream6_gi2dwi.png
 subTitle: video video video
 links:
   - linkName: CodeAcademy

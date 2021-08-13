@@ -15,6 +15,8 @@ hashtags:
   - hashtag: translation
 title: 2021_Inpulsive Likekultur
 titleToShow: 2021_Inpulsive Likekultur
+description: INPULSIVE LIKEKULUR WORK PAGE
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628764112/ILK_05_1_rectz2.jpg
 subTitle: ""
 links: []
 images:

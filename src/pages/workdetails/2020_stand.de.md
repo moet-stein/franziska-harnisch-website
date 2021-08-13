@@ -17,6 +17,8 @@ hashtags:
   - hashtag: auction
 title: 2020_Stand
 titleToShow: STAND - Kunstauflösung
+description: STAND kunstauflösung PAGE
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770606/Flyer_01-Stand-A6-1_tb86je.jpg
 subTitle: "mit Mijin Hyun und Joongyong Kim  Design Broschüre: Jinwook Yun"
 links: []
 images:
