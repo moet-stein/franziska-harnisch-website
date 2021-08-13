@@ -8,6 +8,8 @@ hashtags:
   - hashtag: work in progress
 title: 2016_temporäre Rahmen
 titleToShow: 2016_temporäre Rahmen
+description: TEMPORÄRE RAHMEN
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770606/DSCF0736_uedij9.jpg
 subTitle: ""
 links: []
 images:
