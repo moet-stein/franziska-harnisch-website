@@ -6,7 +6,7 @@ import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import AboutBlocks from '../components/AboutBlocks/AboutBlocks';
-import PageContainer from "../components/PageContainer"
+import PageContainer from '../components/PageContainer';
 
 export const AboutPageTemplate = ({
   title,
@@ -16,8 +16,10 @@ export const AboutPageTemplate = ({
   einzelaustellung,
   gruppenaustellung,
   projekte,
+  location,
 }) => {
   console.log(title);
+  console.log(location);
   return (
     <PageContainer title={title}>
       <div>
@@ -88,8 +90,9 @@ const AboutPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
   console.log('info', frontmatter.generalInfo);
   return (
-    <Layout>
+    <Layout location={location}>
       <AboutPageTemplate
+        location={location}
         title={frontmatter.title}
         generalInfo={frontmatter.generalInfo}
         ausbildung={frontmatter.ausbildung}

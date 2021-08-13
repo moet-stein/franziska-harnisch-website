@@ -42,7 +42,7 @@ let theme = createTheme({
 });
 theme = responsiveFontSizes(theme);
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, location }) => {
   const { title, description, languages } = useSiteMetadata();
   const url = location.pathname;
   console.log('url', url);

@@ -22,6 +22,7 @@ export const WorkdetailsPostTemplate = ({
   excerpt,
   content,
   contentComponent,
+  location,
 }) => {
   const workdetailsData = {
     title,
@@ -37,13 +38,15 @@ export const WorkdetailsPostTemplate = ({
     youtubeVideos,
     content,
     contentComponent,
+    location,
   };
+  console.log(location);
 
   return (
     <PageContainer className="section">
-      <div  >
-        <div >
-          <div >
+      <div>
+        <div>
+          <div>
             {/* {!layoutType && (
               <WorkDeTemplate workdetailsData={workdetailsData} />
             )} */}
@@ -79,12 +82,13 @@ WorkdetailsPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
 };
 
-const WorkdetailsPost = ({ data }) => {
+const WorkdetailsPost = ({ data, location }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout location={location}>
       <WorkdetailsPostTemplate
+        location={location}
         title={post.frontmatter.title}
         subTitle={post.frontmatter.subTitle}
         layoutType={post.frontmatter.layoutType}
