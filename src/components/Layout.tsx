@@ -92,11 +92,11 @@ const TemplateWrapper = ({ children, location }) => {
               <title>{title}</title>
               <meta name="description" content={description} />
 
-              <link
+               <link
                 rel="apple-touch-icon"
                 sizes="180x180"
-                href={`${withPrefix('/')}img/apple-touch-icon.png`}
-              />
+                href={`${withPrefix('/')}img/fh.png`}
+              /> 
               <link
                 rel="icon"
                 type="image/png"

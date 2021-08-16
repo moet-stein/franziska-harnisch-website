@@ -27,7 +27,16 @@ const useStyles = makeStyles(theme => ({
          color:"#505050",
         [theme.breakpoints.up('md')]: {
            width:"70%",
-             }
+
+             },
+             [theme.breakpoints.only('md')]: {
+                width:"70%",
+                fontSize:15,
+                  },
+                  [theme.breakpoints.down('sm')]: {
+                    fontSize:12,
+                     },
+
     },
     borderBlock: {
         boxShadow: "7px 10px 5px 2px rgba(169,164,164,0.75)",
@@ -38,9 +47,13 @@ const useStyles = makeStyles(theme => ({
          marginBottom: 35,
          fontFamily:'Josefin Sans',
          color:"#505050",
-         [theme.breakpoints.down('md')]: {
+         [theme.breakpoints.only('md')]: {
             width:"70%",
+            fontSize:15,
              },
+             [theme.breakpoints.down('sm')]: {
+                fontSize:12,
+                 },
         
     },
     titleBlocks :{
