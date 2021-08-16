@@ -1,21 +1,46 @@
 import React from 'react'
 import { Grid } from '@material-ui/core';
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { SkipPreviousRounded } from '@material-ui/icons';
 const useStyles = makeStyles(theme => ({
     displayFlexCenter: {
         display: "flex",
         justifyContent: "center",
     },
-    borderBlock: {
+    containerBlocks:{
+        marginTop:50,
+        marginLeft:20,
+        [theme.breakpoints.down('md')]: {
+         marginLeft:0,
+         flexBasis:"0%",
+          },
+    },
+    firstBlock:{
         boxShadow: "7px 10px 5px 2px rgba(169,164,164,0.75)",
-       maxWidth:"40%",
+        width:"80%",
+        flexBasis:"50%",
        margin:"0 auto",
         textAlign: "justify",
         padding: 25,
          marginBottom: 35,
          fontFamily:'Josefin Sans',
          color:"#505050",
+        [theme.breakpoints.up('md')]: {
+           width:"70%",
+             }
+    },
+    borderBlock: {
+        boxShadow: "7px 10px 5px 2px rgba(169,164,164,0.75)",
+        width:"80%",
+       margin:"0 auto",
+        textAlign: "justify",
+        padding: 25,
+         marginBottom: 35,
+         fontFamily:'Josefin Sans',
+         color:"#505050",
+         [theme.breakpoints.down('md')]: {
+            width:"70%",
+             },
         
     },
     titleBlocks :{
@@ -55,8 +80,8 @@ const useStyles = makeStyles(theme => ({
 export default function AboutBlocks({ generalInfo, ausbildung, preise, einzelaustellung, gruppenaustellung, projekte }) {
     const classes = useStyles();
 
-    return (<Grid container spacing={1} style={{marginTop:50}} >
-        <Grid item xs={12} spacing={3} style={{textAlign: "center"}} className={`${classes.borderBlock} ${classes.animatedItem}`}>
+    return (<Grid container spacing={1} className={classes.containerBlocks} >
+        <Grid item xs={12} spacing={3} style={{textAlign: "center"}} className={` ${classes.animatedItem} ${classes.firstBlock}`}>
             <h3>{generalInfo.name}</h3>
             <h4>{generalInfo.address}</h4>
             <h4>{generalInfo.website}</h4>
@@ -65,13 +90,13 @@ export default function AboutBlocks({ generalInfo, ausbildung, preise, einzelaus
 
         <Grid container className={classes.animatedItem2}>
             <Grid container className={classes.displayStructCouple}>
-            <Grid item xs={12} sm={6} spacing={1}  className={classes.borderBlock}>
+            <Grid item xs={12} md={6} spacing={1}  className={classes.borderBlock}>
                 <h3 className={classes.titleBlocks}>{ausbildung.title}</h3>
                 {ausbildung.texts.map(a => {
                     return <p className={classes.lineText}>{a.text}</p>
                 })}
             </Grid>
-            <Grid xs={12} sm={6} item className={classes.borderBlock}>
+            <Grid xs={12} md={6} item className={classes.borderBlock}>
                 <h3 className={classes.titleBlocks}>{preise.title}</h3>
                 {preise.texts.map(a => {
                     return <p className={classes.lineText}>{a.text}</p>
@@ -92,7 +117,7 @@ export default function AboutBlocks({ generalInfo, ausbildung, preise, einzelaus
                 })}
             </Grid>
             </Grid>
-            <Grid xs={12} sm={6} item style={{textAlign:"center"}} className={classes.borderBlock}>
+            <Grid xs={12} md={6} item style={{textAlign:"center"}} className={classes.borderBlock}>
                 <h3 className={classes.titleBlocks}>{projekte.title}</h3>
                 {projekte.texts.map(a => {
                     return <p  className={classes.lineText}>{a.text}</p>
