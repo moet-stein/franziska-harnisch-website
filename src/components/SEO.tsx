@@ -24,18 +24,19 @@ function SEO({ description, lang, meta, image, title, location }) {
   const metaImage = image
     ? image
     : `https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628759905/O-TON_im_blackegg_PollyFaber_Kulturnacht_HGW_14_09_2012_1_ceybfe.jpg`;
-
+const metaTitle = title ? title : "Works";
+const metaDescription = description ? description : "";
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`${title} | ${site.siteMetadata.title}`}
+      title={metaTitle}
+      titleTemplate={`${metaTitle} | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
-          content: description,
+          content: metaDescription,
         },
         {
           name: 'keywords',
@@ -43,7 +44,7 @@ function SEO({ description, lang, meta, image, title, location }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:url`,
@@ -51,7 +52,7 @@ function SEO({ description, lang, meta, image, title, location }) {
         },
         {
           property: `og:description`,
-          content: description,
+          content: metaDescription,
         },
         {
           property: `og:type`,
@@ -67,11 +68,11 @@ function SEO({ description, lang, meta, image, title, location }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
-          content: description,
+          content: metaDescription,
         },
         {
           name: `twitter:image`,
