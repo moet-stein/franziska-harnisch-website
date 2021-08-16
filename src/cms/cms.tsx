@@ -8,6 +8,7 @@ import WorkdetailsPostPreview from './preview-templates/WorkdetailsPostPreview';
 import ExhibitionsPagePreview from './preview-templates/ExhibitionsPagePreview';
 import ContactPagePreview from './preview-templates/ContactPagePreview';
 import LinksPagePreview from './preview-templates/LinksPagePreview'
+import FooterDataPreview from './preview-templates/FooterDataPreview'
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -24,4 +25,6 @@ CMS.registerPreviewTemplate('contactPagede', ContactPagePreview);
 CMS.registerPreviewTemplate('contactPageen', ContactPagePreview);
 CMS.registerPreviewTemplate('linksde', LinksPagePreview);
 CMS.registerPreviewTemplate('linksen', LinksPagePreview);
+CMS.registerPreviewTemplate('footerData', FooterDataPreview);
+
 

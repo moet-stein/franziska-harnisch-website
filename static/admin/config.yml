@@ -73,6 +73,15 @@ collections:
       - {label: "Youtube Videos", name: "youtubeVideos", widget: "list", required: false, default: [], fields: [{label: "Video URL", name: "videoURL", widget: "string"}, {label: "Video Title", name: "videoTitle", widget: "string"}]}
       - {label: "PDFs", name: "pdfs", widget: "list", required: false, default: [], fields: [{label: "PDF", name: "pdf", widget: "file"}, {label: "Page Numbers", name: "pageNumbers", widget: "number", default: 1}, {label: "PDF Title", name: "pdfTitle", widget: "string"}]}
 
+  - name: "footerData"
+    label: "Footer Data"
+    files:
+      - file: "src/data/footerData.md"
+        label: "Footer Data"
+        name: "footerData"
+        fields:
+          - {label: "Copyright", name: "copyright", widget: "string"}
+
   - name: "pages"
     label: "Pages"
     files:
