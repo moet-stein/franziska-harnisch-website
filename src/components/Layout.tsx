@@ -13,10 +13,13 @@ import {
 } from '@material-ui/core/styles';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import { Link } from 'gatsby';
 import NavbarHometwo from './NavbarHometwo/NavBarHometwo';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import { NavBarProvider } from '../context/NavbarContext';
+import MUICookieConsent from 'material-ui-cookie-consent';
+import Button from '@material-ui/core/Button';
 
 const messages = {
   de: messages_de,
@@ -53,6 +56,11 @@ const TemplateWrapper = ({ children, location }) => {
   const homeLink = `/${langKey}/`;
   console.log('homeLink', homeLink);
 
+  const datenschutzLink =
+    langKey === 'en'
+      ? `/${langKey}/datenschutzverordnung`
+      : '/datenschutzverordnung';
+
   const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(
     (item) => ({
       ...item,
@@ -64,6 +72,20 @@ const TemplateWrapper = ({ children, location }) => {
     <div>
       <NavBarProvider>
         <IntlProvider locale={langKey} messages={messages[langKey]}>
+          <MUICookieConsent
+            actions={
+              <Button
+                component={Link}
+                to={datenschutzLink}
+                color="primary"
+                size="small"
+              >
+                <FormattedMessage id="readMore" />
+              </Button>
+            }
+            cookieName="FranziskaHarnisch_Cookies_Consent"
+            message={<FormattedMessage id="cookiesMsg" />}
+          ></MUICookieConsent>
           <ThemeProvider theme={theme}>
             <Helmet>
               <html lang="en" />
