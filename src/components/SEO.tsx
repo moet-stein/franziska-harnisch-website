@@ -24,8 +24,9 @@ function SEO({ description, lang, meta, image, title, location }) {
   const metaImage = image
     ? image
     : `https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628759905/O-TON_im_blackegg_PollyFaber_Kulturnacht_HGW_14_09_2012_1_ceybfe.jpg`;
-const metaTitle = title ? title : "Works";
-const metaDescription = description ? description : "";
+  const metaTitle = title ? title : 'Works';
+  console.log(metaTitle);
+  const metaDescription = description ? description : '';
   return (
     <Helmet
       htmlAttributes={{
@@ -99,28 +100,24 @@ const metaDescription = description ? description : "";
         ])
         .concat(meta)}
     >
-       <link
-                rel="fh"
-                sizes="180x180"
-                href={`${withPrefix("/")}img/logo.png`}
-            />
-            <link
-                rel="icon"
-                type="image/png"
-                href={`${withPrefix("/")}img/favicon-32x32.png`}
-                sizes="32x32"
-            />
-            <link
-                rel="icon"
-                type="image/png"
-                href={`${withPrefix("/")}img/favicon-16x16.png`}
-                sizes="16x16"
-            />
-            <link
-                rel="mask-icon"
-                href={`${withPrefix("/")}img/logo.svg`}
-                color="#ff4400"
-            /> 
+      <link rel="fh" sizes="180x180" href={`${withPrefix('/')}img/logo.png`} />
+      <link
+        rel="icon"
+        type="image/png"
+        href={`${withPrefix('/')}img/favicon-32x32.png`}
+        sizes="32x32"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        href={`${withPrefix('/')}img/favicon-16x16.png`}
+        sizes="16x16"
+      />
+      <link
+        rel="mask-icon"
+        href={`${withPrefix('/')}img/logo.svg`}
+        color="#ff4400"
+      />
     </Helmet>
   );
 }
