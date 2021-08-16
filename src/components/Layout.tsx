@@ -87,7 +87,7 @@ const TemplateWrapper = ({ children, location }) => {
             message={<FormattedMessage id="cookiesMsg" />}
           ></MUICookieConsent>
           <ThemeProvider theme={theme}>
-            <Helmet>
+            {/* <Helmet>
               <html lang="en" />
               <title>{title}</title>
               <meta name="description" content={description} />
@@ -125,7 +125,7 @@ const TemplateWrapper = ({ children, location }) => {
                 content={`${withPrefix('/')}img/og-image.jpg`}
               />
             </Helmet>
-
+ */}
             <NavbarHometwo langs={langsMenu} langKey={langKey} url={url} />
             <div>{children}</div>
             <Footer langs={langsMenu} langKey={langKey} url={url} />

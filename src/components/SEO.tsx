@@ -98,8 +98,8 @@ function SEO({ description, lang, meta, image, title, location }) {
         ])
         .concat(meta)}
     >
-      {/* <link
-                rel="apple-touch-icon"
+       <link
+                rel="fh"
                 sizes="180x180"
                 href={`${withPrefix("/")}img/logo.png`}
             />
@@ -119,7 +119,7 @@ function SEO({ description, lang, meta, image, title, location }) {
                 rel="mask-icon"
                 href={`${withPrefix("/")}img/logo.svg`}
                 color="#ff4400"
-            /> */}
+            /> 
     </Helmet>
   );
 }
