@@ -6,6 +6,7 @@ import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import PageContainer from '../components/PageContainer';
+import SEO from '../components/SEO';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -180,6 +181,12 @@ const ContactPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO
+        title={frontmatter.title}
+        location={location}
+        description={frontmatter.description}
+        image={frontmatter.image}
+      />
       <ContactPageTemplate
         location={location}
         title={frontmatter.title}
@@ -209,6 +216,8 @@ export const contactPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        description
+        image
         name
         address
         email

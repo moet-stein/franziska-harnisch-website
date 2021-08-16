@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Exhibitions from '../components/Exhibitions/Exhibitions';
 import PageContainer from '../components/PageContainer';
+import SEO from '../components/SEO';
 
 const useStyles = makeStyles(() => ({
   flexColumn: {
@@ -58,6 +59,12 @@ const ExhibitionsPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO
+        title={frontmatter.title}
+        location={location}
+        description={frontmatter.description}
+        image={frontmatter.image}
+      />
       <ExhibitionsPageTemplate
         location={location}
         title={frontmatter.title}
@@ -83,6 +90,8 @@ export const exhibitionsPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        description
+        image
         upcomingExhibitions {
           upcomings {
             name

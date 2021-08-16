@@ -7,6 +7,7 @@ import Layout2 from '../components/Layout2/Layout2';
 import Layout3 from '../components/Layout3/Layout3';
 import Content, { HTMLContent } from '../components/Content';
 import PageContainer from '../components/PageContainer';
+import SEO from '../components/SEO';
 
 export const WorkdetailsPostTemplate = ({
   title,
@@ -87,6 +88,12 @@ const WorkdetailsPost = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO
+        title={frontmatter.title}
+        location={location}
+        description={frontmatter.description}
+        image={frontmatter.image}
+      />
       <WorkdetailsPostTemplate
         location={location}
         title={post.frontmatter.title}
@@ -123,6 +130,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         titleToShow
+        description
+        image
         subTitle
         links {
           linkName

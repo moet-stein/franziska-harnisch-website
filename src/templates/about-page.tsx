@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import AboutBlocks from '../components/AboutBlocks/AboutBlocks';
 import PageContainer from '../components/PageContainer';
+import SEO from '../components/SEO';
 
 export const AboutPageTemplate = ({
   title,
@@ -91,6 +92,12 @@ const AboutPage = ({ data, location }) => {
   console.log('info', frontmatter.generalInfo);
   return (
     <Layout location={location}>
+      <SEO
+        title={frontmatter.title}
+        location={location}
+        description={frontmatter.description}
+        image={frontmatter.image}
+      />
       <AboutPageTemplate
         location={location}
         title={frontmatter.title}
@@ -117,6 +124,8 @@ export const aboutPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        description
+        image
         generalInfo {
           name
           address

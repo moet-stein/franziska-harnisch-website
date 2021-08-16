@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import EventsFrontPage from '../components/EventsFrontPage/EventsFrontPage';
 import PictureHometwo from '../components/PictureHometwo/pictureHometwo';
 import PageContainer from '../components/PageContainer';
+import SEO from '../components/SEO';
 
 const useStyles = makeStyles((theme) => ({
   mediaNav: {
@@ -45,6 +46,12 @@ const LauraTest: React.FC<any> = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO
+        title={frontmatter.title}
+        location={location}
+        description={frontmatter.description}
+        image={frontmatter.image}
+      />
       <HometwoTemplate
         location={location}
         image={frontmatter.image}
@@ -75,6 +82,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         image
+        description
         event {
           comingTitle
           futureEvent
