@@ -173,20 +173,7 @@ function NavbarHometwo({ langs, url, langKey }) {
               );
             })}
 
-            <Button
-              to={impressumLink}
-              component={Link}
-              style={{ textTransform: 'capitalize' }}
-            >
-              {impressumText}
-            </Button>
-            <Button
-              to={datenschutzLink}
-              component={Link}
-              style={{ textTransform: 'capitalize', marginBottom: 20 }}
-            >
-              {datenschutzText}
-            </Button>
+            
 
             <SelectLanguage langs={langs} />
           </div>
@@ -239,20 +226,7 @@ function NavbarHometwo({ langs, url, langKey }) {
               );
             })}
 
-            <Button
-              to={impressumLink}
-              component={Link}
-              style={{ textTransform: 'capitalize' }}
-            >
-              {impressumText}
-            </Button>
-            <Button
-              to={datenschutzLink}
-              component={Link}
-              style={{ textTransform: 'capitalize', marginBottom: 20 }}
-            >
-              {datenschutzText}
-            </Button>
+            
 
             <SelectLanguage langs={langs} />
           </div>
