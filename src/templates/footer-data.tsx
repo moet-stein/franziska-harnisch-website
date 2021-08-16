@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql, StaticQuery} from 'gatsby'
 import Layout from '../components/Layout';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
@@ -42,6 +42,7 @@ const FooterData = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   console.log(frontmatter);
 
+
   return (
       <FooterDataTemplate
         copyright={frontmatter.copyright}
@@ -57,14 +58,25 @@ FooterData.propTypes = {
   }),
 };
 
-export default FooterData;
+// export default FooterData;
 
-export const footerDataQuery = graphql`
-  query FooterData($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        copyright
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query FooterDataQuery {
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "footer-data" } } }
+        ) {
+          edges {
+            node {
+              id
+            }
+          }
+        }
       }
-    }
-  }
-`;
+    `}
+    render={(data) => (
+      <FooterData data={data}  />
+    )}
+  />
+);

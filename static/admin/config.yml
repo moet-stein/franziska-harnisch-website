@@ -80,6 +80,7 @@ collections:
         label: "Footer Data"
         name: "footerData"
         fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "footer-data"}
           - {label: "Copyright", name: "copyright", widget: "string"}
 
   - name: "pages"

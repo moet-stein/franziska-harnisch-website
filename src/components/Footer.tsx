@@ -1,5 +1,5 @@
 import React, { useRef, useState,} from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, StaticQuery} from 'gatsby'
 import ListIcon from '@material-ui/icons/List';;
 import SelectLanguage from '../SelectLanguage.tsx';
 import Button from '@material-ui/core/Button';
@@ -52,10 +52,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Footer({ langs, url, langKey }) {
+export default function Footer({ langs, url, langKey, }) {
   const classes = useStyles();
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
+  // const { edges: posts } = data.allMarkdownRemark;
+
 
   const onClick = () => {
     setIsActive(!isActive);
@@ -116,7 +118,29 @@ const datenschutzText =
           </div>
       </footer>
     )
-  
 }
 
+// export default () => (
+//   <StaticQuery
+//     query={graphql`
+//       query FooterDataQuery {
+//         allMarkdownRemark(
+//           filter: { frontmatter: { templateKey: { eq: "footer-data" } } }
+//         ) {
+//           edges {
+//             node {
+//               id
+//               frontmatter {
+//                 copyright
+//               }
+//             }
+//           }
+//         }
+//       }
+//     `}
+//     render={(data, count) => (
+//       <Footer data={data} count={count} />
+//     )}
+//   />
+// );
 
