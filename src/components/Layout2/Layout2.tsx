@@ -26,6 +26,13 @@ const useStyles = makeStyles((theme) => ({
       width: '80%',
     },
   },
+  flexWrap2: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '90%',
+  },
   h1Fontsize: {
     fontSize: '60px',
     color: blueGrey[700],
@@ -49,15 +56,13 @@ const useStyles = makeStyles((theme) => ({
     color: blueGrey[600],
   },
   marginPic: {
-    marginLeft: theme.spacing(4),
+    // marginLeft: theme.spacing(4),
+    width: '400px',
+    marginLeft: '20px',
+    marginRight: '20px',
   },
   descWidth: {
     width: '70%',
-  },
-  '@media only screen and (max-width: 600px)': {
-    marginPic: {
-      marginLeft: theme.spacing(1),
-    },
   },
 }));
 
@@ -75,20 +80,25 @@ export default function Layout2({ workdetailsData, location }) {
     titleToShow,
   } = workdetailsData;
 
-  console.log(youtubeVideos);
   const PostContent = contentComponent || Content;
 
   return (
     <>
       <Box className={classes.flexColumn} mt={5}>
         <Box className={classes.flexColumn}>
-          <Typography className={classes.h1Fontsize} variant="h1">
+          <Typography
+            align="center"
+            className={classes.h1Fontsize}
+            variant="h1"
+          >
             {titleToShow}
           </Typography>
           <Box className={classes.width60}>
-            <Typography variant="h6">{subTitle}</Typography>
+            <Typography align="center" variant="h6">
+              {subTitle}
+            </Typography>
           </Box>
-          {hashtags && hashtags.length > 0 && (
+          {/* {hashtags && hashtags.length > 0 && (
             <Box className={classes.flexWrap} m={3}>
               {hashtags.map((h, index) => (
                 <Box ml={2} key={`${h}-${index}`}>
@@ -98,7 +108,7 @@ export default function Layout2({ workdetailsData, location }) {
                 </Box>
               ))}
             </Box>
-          )}
+          )} */}
         </Box>
         <Box className={classes.flexWrap}>
           {images &&
@@ -109,7 +119,7 @@ export default function Layout2({ workdetailsData, location }) {
               </Box>
             ))}
         </Box>
-        <Box className={classes.flexWrap}>
+        <Box className={classes.flexWrap2}>
           {youtubeVideos &&
             youtubeVideos.length > 0 &&
             youtubeVideos.map((v, index) => (
@@ -119,9 +129,6 @@ export default function Layout2({ workdetailsData, location }) {
             ))}
         </Box>
         <Box m={5} className={classes.flexColumn}>
-          {/* <Typography className={classes.descWidth} variant="body2">
-            {excerpt && excerpt}
-          </Typography> */}
           {content && (
             <Box className={classes.descWidth}>
               <PostContent content={content} />

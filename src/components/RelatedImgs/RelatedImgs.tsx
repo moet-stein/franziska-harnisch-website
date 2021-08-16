@@ -116,7 +116,7 @@ RelatedImgs.propTypes = {
   }),
 };
 
-export default () => (
+export default ({ location }) => (
   <StaticQuery
     query={graphql`
       query RelatedImQuery {

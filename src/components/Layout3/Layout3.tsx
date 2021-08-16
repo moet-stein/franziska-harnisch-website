@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react';
-// import { Document, Page } from 'react-pdf';
+import React, { useContext } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import LayImg from '../LayImg/LayImg';
+import LayVideo from '../LayVideo/LayVideo';
 import LayPdf from '../LayPdf/LayPdf';
 import RelatedImgs from '../RelatedImgs/RelatedImgs';
-import Content, { HTMLContent } from '../Content';
-import Button from '@material-ui/core/Button';
+import Content from '../Content';
 import { NavBarContext } from '../../context/NavbarContext';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,6 +24,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     width: '80%',
+  },
+  flexWrap2: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '90%',
+  },
+  vWidth: {
+    width: '400px',
+    marginLeft: '20px',
+    marginRight: '20px',
   },
   h1Fontsize: {
     fontSize: '60px',
@@ -64,17 +75,17 @@ const useStyles = makeStyles((theme) => ({
 export default function Layout3({ workdetailsData, location }) {
   const classes = useStyles();
   const {
-    title,
     titleToShow,
     subTitle,
     links,
     hashtags,
     images,
     pdfs,
+    youtubeVideos,
     content,
     contentComponent,
   } = workdetailsData;
-  const { negZIndex, setNegZIndex } = useContext(NavBarContext);
+  const { negZIndex } = useContext(NavBarContext);
 
   const PostContent = contentComponent || Content;
 
@@ -90,7 +101,7 @@ export default function Layout3({ workdetailsData, location }) {
               {subTitle}
             </Typography>
           </Box>
-          {hashtags.length > 0 && (
+          {/* {hashtags.length > 0 && (
             <Box className={classes.flexWrap} m={3}>
               {hashtags.map((h, index) => (
                 <Box ml={2} key={`${h}-${index}`}>
@@ -100,7 +111,7 @@ export default function Layout3({ workdetailsData, location }) {
                 </Box>
               ))}
             </Box>
-          )}
+          )} */}
         </Box>
         {negZIndex ? (
           <div style={{ zIndex: '-1000' }}>
@@ -112,12 +123,24 @@ export default function Layout3({ workdetailsData, location }) {
 
         {/* <Box>{pdfs.length > 0 && pdfs.map((p) => <iframe src={p.pdf} />)}</Box> */}
         <Box className={classes.flexWrap}>
-          {images.map((i, index) => (
-            <Box key={`image-${index}`} className={classes.marginPic}>
-              <LayImg img={i} />
-            </Box>
-          ))}
+          {images &&
+            images.map((i, index) => (
+              <Box key={`image-${index}`} className={classes.marginPic}>
+                <LayImg img={i} />
+              </Box>
+            ))}
         </Box>
+
+        <Box className={classes.flexWrap2}>
+          {youtubeVideos &&
+            youtubeVideos.length > 0 &&
+            youtubeVideos.map((v, index) => (
+              <Box key={`video-${index}`} className={classes.vWidth}>
+                <LayVideo video={v} />
+              </Box>
+            ))}
+        </Box>
+
         <Box m={5} className={classes.flexColumn}>
           {/* <Typography className={classes.descWidth} variant="body2">
             {description}
@@ -140,7 +163,7 @@ export default function Layout3({ workdetailsData, location }) {
         </Box>
         {negZIndex ? (
           <Box style={{ zIndex: '-1000' }}>
-            <RelatedImgs />
+            <RelatedImgs location={location} />
           </Box>
         ) : (
           <Box>
