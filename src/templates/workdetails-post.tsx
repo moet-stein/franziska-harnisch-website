@@ -89,10 +89,10 @@ const WorkdetailsPost = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO
-        title={frontmatter.title}
+        title={post.frontmatter.title}
         location={location}
-        description={frontmatter.description}
-        image={frontmatter.image}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image}
       />
       <WorkdetailsPostTemplate
         location={location}
