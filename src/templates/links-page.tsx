@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import PageContainer from '../components/PageContainer';
+import SEO from '../components/SEO';
 
 const useStyles = makeStyles((theme) => ({
   linkWidth: {
@@ -34,8 +35,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const LinksPageTemplate = ({ titleWebsite, links, location }) => {
+export const LinksPageTemplate = ({
+  titleWebsite,
+  links,
+  location,
+  description,
+  image,
+}) => {
   console.log('location', location);
+  console.log('desc', description);
+  console.log('image', image);
   const classes = useStyles();
 
   return (
@@ -81,6 +90,8 @@ export const LinksPageTemplate = ({ titleWebsite, links, location }) => {
 
 LinksPageTemplate.propTypes = {
   title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
   titleWebsite: PropTypes.string,
   links: PropTypes.array,
 };
@@ -90,10 +101,18 @@ const LinksPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO
+        title={frontmatter.title}
+        location={location}
+        description={frontmatter.description}
+        image={frontmatter.image}
+      />
       <LinksPageTemplate
         location={location}
         titleWebsite={frontmatter.titleWebsite}
         links={frontmatter.links}
+        description={frontmatter.description}
+        image={frontmatter.image}
       />
     </Layout>
   );
@@ -110,6 +129,8 @@ export const linksPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        description
+        image
         titleWebsite
         links {
           url
