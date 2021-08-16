@@ -58,8 +58,11 @@ const useStyles = makeStyles((theme) => ({
   marginPic: {
     // marginLeft: theme.spacing(4),
     width: '400px',
-    marginLeft: '20px',
-    marginRight: '20px',
+  },
+  marginV: {
+    // marginLeft: theme.spacing(4),
+    margin: '30px',
+    width: '400px',
   },
   descWidth: {
     width: '70%',
@@ -123,7 +126,7 @@ export default function Layout2({ workdetailsData, location }) {
           {youtubeVideos &&
             youtubeVideos.length > 0 &&
             youtubeVideos.map((v, index) => (
-              <Box key={`video-${index}`} className={classes.marginPic}>
+              <Box key={`video-${index}`} className={classes.marginV}>
                 <LayVideo video={v} />
               </Box>
             ))}

@@ -41,6 +41,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '20px',
     marginRight: '20px',
   },
+  iWidth: {
+    width: '300px',
+    marginLeft: '30px',
+    marginRight: '30px',
+  },
   h1Fontsize: {
     fontSize: '60px',
     color: blueGrey[700],
@@ -131,10 +136,9 @@ export default function Layout1({ workdetailsData, location }) {
         </Box>
         <Box className={classes.topPart} m={4}>
           <Box>
-            <Box>
-              <LayImg img={ftImg} />
-            </Box>
+            <LayImg img={ftImg} />
           </Box>
+
           <Box className={classes.flexColumn}>
             {content && (
               <Box className={classes.descWidth}>
@@ -166,7 +170,13 @@ export default function Layout1({ workdetailsData, location }) {
         </Box>
 
         <Box className={classes.flexWrap} mt={4}>
-          {images && images.map((i, index) => <LayImg key={index} img={i} />)}
+          {images &&
+            images.map((i, index) => (
+              <Box className={classes.iWidth}>
+                {' '}
+                <LayImg key={index} img={i} />
+              </Box>
+            ))}
         </Box>
 
         <Box>
