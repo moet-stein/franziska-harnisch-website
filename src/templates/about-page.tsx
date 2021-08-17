@@ -49,9 +49,9 @@ export const AboutPageTemplate = ({
               >
                 <a
                   target="_blank"
-                  href={cv.link}
+                  href={c.link}
                 >
-                  {cv.text} <ArrowDownwardIcon />
+                  {c.text} <ArrowDownwardIcon />
                 </a>
               </div>
               ))}
