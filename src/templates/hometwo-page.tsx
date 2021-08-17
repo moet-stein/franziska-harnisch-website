@@ -34,7 +34,6 @@ export const HometwoTemplate = ({ image, title, event, intro, location }) => {
       }} */
       >
         <EventsFrontPage events={event} />
-
         <PictureHometwo pic={intro.blurbs} />
       </div>
     </PageContainer>
