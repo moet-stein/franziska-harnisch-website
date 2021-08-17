@@ -148,18 +148,21 @@ export const aboutPageQuery = graphql`
           title
           texts {
             text
+            link
           }
         }
         gruppenaustellung {
           title
           texts {
             text
+            link
           }
         }
         projekte {
           title
           texts {
             text
+            link
           }
         }
       }

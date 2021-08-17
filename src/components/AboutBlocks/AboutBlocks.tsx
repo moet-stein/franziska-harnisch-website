@@ -120,7 +120,8 @@ export default function AboutBlocks({ generalInfo, ausbildung, preise, einzelaus
             <Grid xs={12} sm={6} item className={classes.borderBlock}>
                 <h3 className={classes.titleBlocks}>{einzelaustellung.title}</h3>
                 {einzelaustellung.texts.map(a => {
-                    return <p className={classes.lineText}>{a.text}</p>
+                    return <> <p className={classes.lineText}>{a.text}</p> 
+                    <a target="_block" href={a.link}>{a.link}</a> </>
                 })}
             </Grid>
             <Grid xs={12} sm={6} item className={classes.borderBlock}>
