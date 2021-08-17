@@ -82,6 +82,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "footer-data"}
           - {label: "Copyright", name: "copyright", widget: "string"}
+          - {label: "Social Medias", name: "snsList", widget: "list", fields: [{label: "Social Media", name: "sns", widget: "select", options: ["YouTube", "Twitter", "Instagram", "LinkedIn", "Pinterest", "Facebook", "Reddit", "Other"], align: "center" }, {label: "Link to SNS", name: "snsLink", widget: "string"}]}
 
   - name: "pages"
     label: "Pages"
