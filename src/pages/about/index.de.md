@@ -60,5 +60,7 @@ projekte:
 cv:
   - text: CV DE
     link: https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit
+  - text: CV EN
+    link: https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit
 language: de
 ---
