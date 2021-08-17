@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { Link } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import PageContainer from '../components/PageContainer';
 import SEO from '../components/SEO';
@@ -12,15 +12,38 @@ const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: 50,
     display: 'flex',
-    flexDirection: 'column',
-    height: '100vh',
+     height: '100vh',
     marginRight: 50,
-    alignItems: 'flex-end',
+    justifyContent:"flex-end",
+      [theme.breakpoints.down("sm")]: {
+     margin:"0 auto",
+     width:"fit-content",
+     justifyContent:"center",
+    },
+    [theme.breakpoints.down(300)]: {
+      maxWidth:300,
+      margin:"auto 0",
+     },
+  },
+  internalDiv:{
+    display:"flex", 
+    flexDirection:"column", 
+    alignItems: 'flex-end', 
+    textAlign: 'right' 
   },
   textContainer: {
     fontFamily: 'Josefin Sans',
 
     padding: 60,
+
+    [theme.breakpoints.down("sm")]: {
+      padding:0,
+     },
+     [theme.breakpoints.down(300)]: {
+      maxWidth:250,
+      margin: 0,
+      fontSize:"0.75rem"
+     },
   },
   websiteLink: {
     display: 'block',
@@ -39,6 +62,14 @@ const useStyles = makeStyles((theme) => ({
     color: 'black',
     marginTop: 5,
   },
+  inputEmail:{
+    width: 300,
+    height: 30, 
+    paddingLeft: 5 ,
+    [theme.breakpoints.down(300)]:{
+      width: 250
+    },
+  }
 }));
 
 export const ContactPageTemplate = ({
@@ -95,7 +126,7 @@ export const ContactPageTemplate = ({
   return (
     <PageContainer title={title}>
       <div className={classes.container}>
-        <div style={{ alignItems: 'center', textAlign: 'right' }}>
+        <div className={classes.internalDiv}>
           <div className={classes.textContainer}>
             <h3>{name}</h3>
             <p> {address}</p>
@@ -122,7 +153,7 @@ export const ContactPageTemplate = ({
             <form>
               <p style={{ display: 'block' }}>{emailError}</p>
               <input
-                style={{ width: 300, height: 30, paddingLeft: 5 }}
+                className={classes.inputEmail}
                 type="email"
                 id="email"
                 name="email"
@@ -138,6 +169,7 @@ export const ContactPageTemplate = ({
                 }}
               >
                 <input
+               
                   type="checkbox"
                   id="agree"
                   name="agree"

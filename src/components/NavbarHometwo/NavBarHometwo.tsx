@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]:{
       display: 'block',
       position: 'absolute',
-      width: 300,
+      width: 200,
       top: 10,
       left: '0%',
       marginLeft: 70,
