@@ -14,14 +14,17 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 350,
     margin: 10,
     paddingLeft: 50,
-    [theme.breakpoints.only("md")]:{
-    fontSize:20,
-    },
-    [theme.breakpoints.down("sm")]:{
-      fontSize:12,
+    [theme.breakpoints.down(960)]:{
+      fontSize:20,
       paddingLeft:5,
       maxWidth:250
       },
+  
+      [theme.breakpoints.down("sm")]:{
+        fontSize:18,
+        paddingLeft:5,
+        maxWidth:250
+        },
   },
 
   '@keyframes textAppear': {
@@ -66,12 +69,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     [theme.breakpoints.down('md')]: {
       left: '0%',
-      
+     
     },
     [theme.breakpoints.down('sm')]: {
       left: '0%',
       width:300,
-      fontSize:15
+ 
     },
 
     margin: 0,

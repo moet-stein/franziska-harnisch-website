@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Card } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PreviewCompatibleImage from '../DisplayPictureAdapter/DisplayPictureAdapter';
 import { NavBarContext } from '../../context/NavbarContext';
+
 
 const useStyles = makeStyles((theme) => ({
   imageMask: {
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   width: '95%',
    margin: '0 auto',
   
-   [theme.breakpoints.down("sm")]:{
+   [theme.breakpoints.down("md")]:{
     display:"flex",
     flexWrap: "wrap",
      justifyContent:"center",
@@ -51,7 +52,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    [theme.breakpoints.down("sm")]:{
+    margin:"10px 15px 15px 10px",
+    [theme.breakpoints.down("md")]:{
       width:"80%",
      flexBasis:"0%"
     }
@@ -62,11 +64,13 @@ const textWidth = {
   position: 'relative',
   maxWidth: 240,
   textAlign: 'justify',
+  padding:5,
 };
 
 const negTextWidth = {
   position: 'relative',
   maxWidth: 240,
+  padding:5,
   textAlign: 'justify',
   zIndex: '-1000',
 };
@@ -111,17 +115,18 @@ export default function PictureHometwo({ pic }) {
   if (newArray.length > 0) {
     return (
       <Grid container className={classes.externalContainer}>
-      <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+      <Grid item xs={12} sm={6} md={4} className={classes.gridItemLay}>
+        
         {negZIndex ? (
           <img
-            style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
+            style={{ borderRadius: 5, width: 240, height:200, zIndex: '-1000' }}
             onMouseOver={() => setExit((prev) => !prev)}
             className={exit ? classes.imageMask : classes.imageNoMask}
             src={newArray[0].image}
           />
         ) : (
           <img
-            style={{ borderRadius: 5, width: 240 }}
+            style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setExit((prev) => !prev)}
             className={exit ? classes.imageMask : classes.imageNoMask}
             src={newArray[0].image}
@@ -146,23 +151,29 @@ export default function PictureHometwo({ pic }) {
             {newArray[0].text}
           </p>
         )}
+       
       </Grid>
 
-      <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+      <Grid item xs={12} sm={6} md={4} className={classes.gridItemLay}>
+        
         {negZIndex ? (
-          <img
-            style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
+                    <img
+            style={{ borderRadius: 5, width: 240, height:200, zIndex: '-1000' }}
             onMouseOver={() => setVisible((prev) => !prev)}
             className={visible ? classes.imageMask : classes.imageNoMask}
             src={newArray[1].image}
+            
           />
+         
         ) : (
+          
           <img
-            style={{ borderRadius: 5, width: 240 }}
+            style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setVisible((prev) => !prev)}
             className={visible ? classes.imageMask : classes.imageNoMask}
             src={newArray[1].image}
           />
+          
         )}
         {negZIndex ? (
           <p
@@ -183,24 +194,31 @@ export default function PictureHometwo({ pic }) {
             {newArray[1].text}
           </p>
         )}
+      
       </Grid>
-      <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+      <Grid item xs={12} sm={6} md={4} className={classes.gridItemLay}>
+        
         {negZIndex ? (
+         
           <img
-            style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
+            style={{ borderRadius: 5, width: 240, height:200, zIndex: '-1000' }}
             onMouseOver={() => setThirdPic((prev) => !prev)}
             className={thirdPic ? classes.imageMask : classes.imageNoMask}
             src={newArray[2].image}
           />
+        
         ) : (
+          
           <img
-            style={{ borderRadius: 5, width: 240 }}
+            style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setThirdPic((prev) => !prev)}
             className={thirdPic ? classes.imageMask : classes.imageNoMask}
             src={newArray[2].image}
           />
+         
         )}
         {negZIndex ? (
+       
           <p
             style={negTextWidth}
             className={
@@ -209,7 +227,9 @@ export default function PictureHometwo({ pic }) {
           >
             {newArray[2].text}
           </p>
+          
         ) : (
+         
           <p
             style={textWidth}
             className={
@@ -218,7 +238,9 @@ export default function PictureHometwo({ pic }) {
           >
             {newArray[2].text}
           </p>
+          
         )}
+      
       </Grid>
     </Grid>
   );
