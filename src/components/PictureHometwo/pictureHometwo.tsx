@@ -110,119 +110,119 @@ export default function PictureHometwo({ pic }) {
   console.log('pic', newArray);
   if (newArray.length > 0) {
     return (
-      <div className={classes.externalContainer}>
-        <div className={classes.gridItemLay}>
-          {negZIndex ? (
-            <img
-              style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
-              onMouseOver={() => setExit((prev) => !prev)}
-              className={exit ? classes.imageMask : classes.imageNoMask}
-              src={newArray[0].image}
-            />
-          ) : (
-            <img
-              style={{ borderRadius: 5, width: 240 }}
-              onMouseOver={() => setExit((prev) => !prev)}
-              className={exit ? classes.imageMask : classes.imageNoMask}
-              src={newArray[0].image}
-            />
-          )}
-          {negZIndex ? (
-            <p
-              className={
-                exit ? classes.animatedItem : classes.animatedItemExiting
-              }
-              style={negTextWidth}
-            >
-              {newArray[0].text}
-            </p>
-          ) : (
-            <p
-              className={
-                exit ? classes.animatedItem : classes.animatedItemExiting
-              }
-              style={textWidth}
-            >
-              {newArray[0].text}
-            </p>
-          )}
-        </div>
+      <Grid container className={classes.externalContainer}>
+      <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+        {negZIndex ? (
+          <img
+            style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
+            onMouseOver={() => setExit((prev) => !prev)}
+            className={exit ? classes.imageMask : classes.imageNoMask}
+            src={newArray[0].image}
+          />
+        ) : (
+          <img
+            style={{ borderRadius: 5, width: 240 }}
+            onMouseOver={() => setExit((prev) => !prev)}
+            className={exit ? classes.imageMask : classes.imageNoMask}
+            src={newArray[0].image}
+          />
+        )}
+        {negZIndex ? (
+          <p
+            className={
+              exit ? classes.animatedItem : classes.animatedItemExiting
+            }
+            style={negTextWidth}
+          >
+            {newArray[0].text}
+          </p>
+        ) : (
+          <p
+            className={
+              exit ? classes.animatedItem : classes.animatedItemExiting
+            }
+            style={textWidth}
+          >
+            {newArray[0].text}
+          </p>
+        )}
+      </Grid>
 
-        <div className={classes.gridItemLay}>
-          {negZIndex ? (
-            <img
-              style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
-              onMouseOver={() => setVisible((prev) => !prev)}
-              className={visible ? classes.imageMask : classes.imageNoMask}
-              src={newArray[1].image}
-            />
-          ) : (
-            <img
-              style={{ borderRadius: 5, width: 240 }}
-              onMouseOver={() => setVisible((prev) => !prev)}
-              className={visible ? classes.imageMask : classes.imageNoMask}
-              src={newArray[1].image}
-            />
-          )}
-          {negZIndex ? (
-            <p
-              style={negTextWidth}
-              className={
-                visible ? classes.animatedItem : classes.animatedItemExiting
-              }
-            >
-              {newArray[1].text}
-            </p>
-          ) : (
-            <p
-              style={textWidth}
-              className={
-                visible ? classes.animatedItem : classes.animatedItemExiting
-              }
-            >
-              {newArray[1].text}
-            </p>
-          )}
-        </div>
-        <div className={classes.gridItemLay}>
-          {negZIndex ? (
-            <img
-              style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
-              onMouseOver={() => setThirdPic((prev) => !prev)}
-              className={thirdPic ? classes.imageMask : classes.imageNoMask}
-              src={newArray[2].image}
-            />
-          ) : (
-            <img
-              style={{ borderRadius: 5, width: 240 }}
-              onMouseOver={() => setThirdPic((prev) => !prev)}
-              className={thirdPic ? classes.imageMask : classes.imageNoMask}
-              src={newArray[2].image}
-            />
-          )}
-          {negZIndex ? (
-            <p
-              style={negTextWidth}
-              className={
-                thirdPic ? classes.animatedItem : classes.animatedItemExiting
-              }
-            >
-              {newArray[2].text}
-            </p>
-          ) : (
-            <p
-              style={textWidth}
-              className={
-                thirdPic ? classes.animatedItem : classes.animatedItemExiting
-              }
-            >
-              {newArray[2].text}
-            </p>
-          )}
-        </div>
-      </div>
-    );
-            } else {
-    return <p></p>;
-  } 
+      <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+        {negZIndex ? (
+          <img
+            style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
+            onMouseOver={() => setVisible((prev) => !prev)}
+            className={visible ? classes.imageMask : classes.imageNoMask}
+            src={newArray[1].image}
+          />
+        ) : (
+          <img
+            style={{ borderRadius: 5, width: 240 }}
+            onMouseOver={() => setVisible((prev) => !prev)}
+            className={visible ? classes.imageMask : classes.imageNoMask}
+            src={newArray[1].image}
+          />
+        )}
+        {negZIndex ? (
+          <p
+            style={negTextWidth}
+            className={
+              visible ? classes.animatedItem : classes.animatedItemExiting
+            }
+          >
+            {newArray[1].text}
+          </p>
+        ) : (
+          <p
+            style={textWidth}
+            className={
+              visible ? classes.animatedItem : classes.animatedItemExiting
+            }
+          >
+            {newArray[1].text}
+          </p>
+        )}
+      </Grid>
+      <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+        {negZIndex ? (
+          <img
+            style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
+            onMouseOver={() => setThirdPic((prev) => !prev)}
+            className={thirdPic ? classes.imageMask : classes.imageNoMask}
+            src={newArray[2].image}
+          />
+        ) : (
+          <img
+            style={{ borderRadius: 5, width: 240 }}
+            onMouseOver={() => setThirdPic((prev) => !prev)}
+            className={thirdPic ? classes.imageMask : classes.imageNoMask}
+            src={newArray[2].image}
+          />
+        )}
+        {negZIndex ? (
+          <p
+            style={negTextWidth}
+            className={
+              thirdPic ? classes.animatedItem : classes.animatedItemExiting
+            }
+          >
+            {newArray[2].text}
+          </p>
+        ) : (
+          <p
+            style={textWidth}
+            className={
+              thirdPic ? classes.animatedItem : classes.animatedItemExiting
+            }
+          >
+            {newArray[2].text}
+          </p>
+        )}
+      </Grid>
+    </Grid>
+  );
+} else {
+  return <p></p>;
+}
 }
