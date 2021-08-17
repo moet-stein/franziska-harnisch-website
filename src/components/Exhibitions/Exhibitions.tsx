@@ -9,7 +9,6 @@ import { Link } from 'gatsby';
 import { NavBarContext } from '../../context/NavbarContext';
 import { FormattedMessage } from 'react-intl';
 
-
 const useStyles = makeStyles((theme) => ({
   greyColor: {
     color: grey[600],
@@ -145,7 +144,7 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
       <Box className={classes.flexColumn} mt={5}>
         {exhibitions.length > 0 && (
           <Typography variant="h4" className={classes.greyColor}>
-             <FormattedMessage id="pastEx" />
+            <FormattedMessage id="pastEx" />
           </Typography>
         )}
         {exhibitions.length > 0 &&
@@ -207,13 +206,13 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                                 variant="outlined"
                               >
                                 <Typography variant="body1">
-                                  See More
+                                  <FormattedMessage id="seeMore" />
                                 </Typography>
                               </Button>
                             ) : (
                               <Button variant="outlined">
                                 <Typography variant="body1">
-                                  See More
+                                  <FormattedMessage id="seeMore" />
                                 </Typography>
                               </Button>
                             )}

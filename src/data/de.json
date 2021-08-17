@@ -3,7 +3,7 @@
   "siteName": "Franziska Harnisch Website",
   "home": "Franziska Harnisch",
   "about": "Über",
-  "exhibitions": "Austellungen",
+  "exhibitions": "Ausstellungen",
   "workdetails": "Arbeiten",
   "links": "Links",
   "datenschutz": "Datenschutzverordnung",
@@ -11,9 +11,10 @@
   "contact": "Kontakte",
   "readMore": "Mehr Lesen",
   "cookiesMsg": "Ich verwende Cookies auf meiner Website. Bitte unsere Datenschutzerklärung weiterlesen",
-  "findWork" : "Kunstwerke Finden",
+  "findWork": "Kunstwerke Finden",
   "linksTitle": "Künstler und Kultureinrichtungen",
   "upcoming": "Upcoming",
   "pastEx": "Beendete Ausstellungen",
-  "relatedWorks": "Ähnliche Kunstwerke"
+  "relatedWorks": "Ähnliche Kunstwerke",
+  "seeMore": "Mehr Sehen"
 }
