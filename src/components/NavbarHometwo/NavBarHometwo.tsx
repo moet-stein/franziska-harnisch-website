@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]:{
       display: 'block',
       position: 'absolute',
-      width: 200,
+      width: 300,
       top: 10,
       left: '0%',
       marginLeft: 70,
@@ -51,9 +51,13 @@ const useStyles = makeStyles((theme) => ({
       color: 'grey',
       fontFamily: 'Josefin Sans',
       fontWeight: 700,
-      fontSize: 25,
+      fontSize: 18,
       padding: 2,
     },
+    [theme.breakpoints.down(360)]:{
+      width:250,
+      fontSize:18,
+    }
   },
   fontJos: {
     fontFamily: 'Josefin Sans',
@@ -125,7 +129,7 @@ function NavbarHometwo({ langs, url, langKey }) {
 
   return (
     <div>
-      <p className={classes.nameMob}>Franziska Harnisch</p>
+       <p className={classes.nameMob}>Franziska Harnisch</p> 
       <div style={{ position: 'fixed', top: 15 }} className={classes.navbarMob}>
         <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
 

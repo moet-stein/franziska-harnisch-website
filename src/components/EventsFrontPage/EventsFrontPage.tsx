@@ -14,6 +14,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 350,
     margin: 10,
     paddingLeft: 50,
+    [theme.breakpoints.only("md")]:{
+    fontSize:20,
+    },
+    [theme.breakpoints.down("sm")]:{
+      fontSize:12,
+      paddingLeft:5,
+      maxWidth:250
+      },
   },
 
   '@keyframes textAppear': {
@@ -34,18 +42,23 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     marginRight: 'auto',
   },
-  fontSizeEvent: {
-    fontSize: 25,
-    fontWeight: 400,
-    fontFamily: "'Josefin Sans', sans-serif",
-  },
+
   fontSizeTitle: {
     fontSize: 30,
     fontFamily: "'Josefin Sans', sans-serif",
+    [theme.breakpoints.only("md")]:{
+      fontSize:23,
+      },
+      [theme.breakpoints.down("sm")]:{
+        fontSize:15,
+        },
   },
   columnDir: {
     display: 'flex',
     flexDirection: 'column',
+    [theme.breakpoints.down('sm')]: {
+    width:"80%",
+    },
   },
   textEvent: {
     position: 'relative',
@@ -53,6 +66,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     [theme.breakpoints.down('md')]: {
       left: '0%',
+      
+    },
+    [theme.breakpoints.down('sm')]: {
+      left: '0%',
+      width:300,
+      fontSize:15
     },
 
     margin: 0,
@@ -65,7 +84,7 @@ export default function EventsFrontPage({ events }) {
   const { negZIndex } = useContext(NavBarContext);
 
   return (
-    <Grid container className={classes.displayflexCont}>
+ <Grid container className={classes.displayflexCont}>
       <Grid item xs={12} md={6} className={classes.columnDir}>
         {negZIndex ? (
           <h3
@@ -98,6 +117,6 @@ export default function EventsFrontPage({ events }) {
 
         <p className={classes.animatedText}>{events.lastEvent}</p>
       </Grid>
-    </Grid>
+    </Grid>  
   );
 }

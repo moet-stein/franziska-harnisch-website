@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PreviewCompatibleImage from '../DisplayPictureAdapter/DisplayPictureAdapter';
 import { NavBarContext } from '../../context/NavbarContext';
 
@@ -34,10 +34,27 @@ const useStyles = makeStyles((theme) => ({
       opacity: 0,
     },
   },
+ externalContainer:{
+  width: '95%',
+   margin: '0 auto',
+  
+   [theme.breakpoints.down("sm")]:{
+    display:"flex",
+    flexWrap: "wrap",
+     justifyContent:"center",
+     width:"70%",
+     margin:"0 auto"
+    
+   },
+ },
   gridItemLay: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    [theme.breakpoints.down("sm")]:{
+      width:"80%",
+     flexBasis:"0%"
+    }
   },
 }));
 
@@ -93,8 +110,8 @@ export default function PictureHometwo({ pic }) {
   console.log('pic', newArray);
   if (newArray.length > 0) {
     return (
-      <Grid container style={{ width: '95%', margin: '0 auto' }}>
-        <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+      <div className={classes.externalContainer}>
+        <div className={classes.gridItemLay}>
           {negZIndex ? (
             <img
               style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
@@ -129,9 +146,9 @@ export default function PictureHometwo({ pic }) {
               {newArray[0].text}
             </p>
           )}
-        </Grid>
+        </div>
 
-        <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+        <div className={classes.gridItemLay}>
           {negZIndex ? (
             <img
               style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
@@ -166,8 +183,8 @@ export default function PictureHometwo({ pic }) {
               {newArray[1].text}
             </p>
           )}
-        </Grid>
-        <Grid item xs={12} sm={4} className={classes.gridItemLay}>
+        </div>
+        <div className={classes.gridItemLay}>
           {negZIndex ? (
             <img
               style={{ borderRadius: 5, width: 240, zIndex: '-1000' }}
@@ -202,10 +219,10 @@ export default function PictureHometwo({ pic }) {
               {newArray[2].text}
             </p>
           )}
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     );
-  } else {
+            } else {
     return <p></p>;
-  }
+  } 
 }
