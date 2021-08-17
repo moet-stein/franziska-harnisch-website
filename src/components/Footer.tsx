@@ -3,7 +3,10 @@ import { Link, graphql, StaticQuery } from 'gatsby';
 import ListIcon from '@material-ui/icons/List';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import grey from '@material-ui/core/colors/grey';
 import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
 import instagram from '../img/social/instagram.svg';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -19,11 +22,17 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: '0px',
+  },
+  sns: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
   footerContainer: {
     background: 'white',
     width: '100%',
-    height: '7vh',
+    height: '8vh',
     position: 'fixed',
     bottom: 0,
     display: 'flex',
@@ -63,12 +72,13 @@ export function Footer({ langKey, data }) {
   const [isActive, setIsActive] = useState(false);
   // const { edges: posts } = data.allMarkdownRemark;
   const { edges: posts } = data.allMarkdownRemark;
+  const frontmatter = posts[0].node.frontmatter;
   console.log('footerData in footer', posts[0].node.frontmatter);
 
   const onClick = () => {
     setIsActive(!isActive);
   };
-  console.log('active', isActive);
+
   const impressumLink =
     langKey === 'en' ? `/${langKey}/impressum` : '/impressum';
   const impressumText = langKey === 'en' ? 'Imprint' : 'Impressum';
@@ -81,7 +91,7 @@ export function Footer({ langKey, data }) {
   return (
     <footer className={classes.footerContainer}>
       <div style={{ maxWidth: '100vw' }} className="columns">
-        <div className={classes.instagramLink}>
+        {/* <div className={classes.instagramLink}>
           <a title="instagram" href="https://instagram.com">
             <img
               src={instagram}
@@ -89,10 +99,32 @@ export function Footer({ langKey, data }) {
               style={{ width: '1em', height: '1em' }}
             />
           </a>
+        </div> */}
+        <div className={classes.sns}>
+          {frontmatter.snsList &&
+            frontmatter.snsList.map((s) => (
+              <IconButton
+                size="small"
+                style={{ color: grey[600] }}
+                href={s.snsLink}
+              >
+                {s.sns === 'Instagram' && <InstagramIcon />}
+                {s.sns === 'YouTube' && <YouTubeIcon />}
+                {s.sns === 'Twitter' && <TwitterIcon />}
+                {s.sns === 'LinkedIn' && <LinkedInIcon />}
+                {s.sns === 'Pinterest' && <PinterestIcon />}
+                {s.sns === 'Facebook' && <FacebookIcon />}
+                {s.sns === 'Reddit' && <RedditIcon />}
+                {s.sns === 'Other' && <LinkIcon />}
+              </IconButton>
+            ))}
         </div>
-        <div className={classes.instagramLink}>
+        {/* <div className={classes.instagramLink}>
           <p>| Copyrights © - Franziska Harnisch 2021 |</p>
-        </div>
+        </div> */}
+        <Typography align="center" style={{ color: grey[500] }} variant="body2">
+          {frontmatter.copyright}
+        </Typography>
       </div>
       <div
         style={{
@@ -161,6 +193,10 @@ export default () => (
               id
               frontmatter {
                 copyright
+                snsList {
+                  sns
+                  snsLink
+                }
               }
             }
           }
