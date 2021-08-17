@@ -84,13 +84,6 @@ export default function PictureHometwo({ pic }) {
     }
     return array;
   };
-  const setNegZ = (content) => {
-    negZIndex ? (
-      <div style={{ zIndex: '-1000' }}>{content}</div>
-    ) : (
-      <React.Fragment>{content}</React.Fragment>
-    );
-  };
 
   useEffect(() => {
     setNewArray(shuffle(pic));
