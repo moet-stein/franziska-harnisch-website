@@ -7,6 +7,8 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import PageContainer from '../components/PageContainer';
 import SEO from '../components/SEO';
+import { FormattedMessage } from 'react-intl';
+
 
 const useStyles = makeStyles((theme) => ({
   linkWidth: {
@@ -58,7 +60,7 @@ export const LinksPageTemplate = ({
           marginTop: 70,
         }}
       >
-        <Typography variant="h3">{titleWebsite}</Typography>
+        <Typography variant="h3"><FormattedMessage id="linksTitle" /></Typography>
         <div
           style={{
             display: 'flex',

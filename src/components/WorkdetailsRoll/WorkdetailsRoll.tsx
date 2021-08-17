@@ -6,7 +6,6 @@ import Chip from '@material-ui/core/Chip';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { NavBarContext } from '../../context/NavbarContext';
@@ -15,15 +14,9 @@ import { FormattedMessage } from 'react-intl';
 
 // let langKey;
 
-const useStyles = makeStyles(() => ({
-  goBack: {
-    zIndex: -10,
-  },
-}));
 
 export function WorkdetailsRoll({ data, location }) {
   const { negZIndex } = useContext(NavBarContext);
-  const classes = useStyles();
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
   const [selectedHash, setSelectedHash] = useState([]);

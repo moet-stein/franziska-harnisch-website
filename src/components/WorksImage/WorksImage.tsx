@@ -11,12 +11,10 @@ const useStyles = makeStyles(() => ({
     width: '240px',
     display: 'inline-block',
   },
-  width: {
+  widthImg: {
     width: '180px',
   },
-  widthWorks: {
-    width: '350px',
-  },
+
   image: {
     opacity: '1',
     display: 'block',
@@ -62,6 +60,9 @@ const useStyles = makeStyles(() => ({
     root: {
       width: '150px',
     },
+    widthImg: {
+      width: '150px'
+    }
   },
 }));
 
@@ -89,7 +90,7 @@ const WorksImage = ({ imageInfo, title, slug }) => {
             </div>
           )}
           {location !== '/workdetails' && (
-            <Box className={classes.width}>
+            <Box className={classes.widthImg}>
               <div className={classes.container}>
                 <img src={imageInfo} className={classes.image} />
                 <div className={classes.middle}>

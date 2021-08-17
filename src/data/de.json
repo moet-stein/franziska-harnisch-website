@@ -2,7 +2,7 @@
   "selectLanguage": "German",
   "siteName": "Franziska Harnisch Website",
   "home": "Franziska Harnisch",
-  "about": "Uber",
+  "about": "Über",
   "exhibitions": "Austellungen",
   "workdetails": "Arbeiten",
   "links": "Links",
@@ -10,6 +10,10 @@
   "impressum": "Impressum",
   "contact": "Kontakte",
   "readMore": "Mehr Lesen",
-  "cookiesMsg": "Ich verwende Cookies auf meiner Website. Bitte unsere Datenschutzerklärung weiter lesen",
-  "findWork" : "Arbeit Finden"
+  "cookiesMsg": "Ich verwende Cookies auf meiner Website. Bitte unsere Datenschutzerklärung weiterlesen",
+  "findWork" : "Kunstwerke Finden",
+  "linksTitle": "Künstler und Kultureinrichtungen",
+  "upcoming": "Upcoming",
+  "pastEx": "Beendete Ausstellungen",
+  "relatedWorks": "Ähnliche Kunstwerke"
 }

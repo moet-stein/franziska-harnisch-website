@@ -9,6 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import WorksImage from '../WorksImage/WorksImage';
 import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey } from 'ptz-i18n';
+import { FormattedMessage } from 'react-intl';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,7 +85,7 @@ export function RelatedImgs({ data, location }) {
         <>
           <Box>
             <Typography className={classes.grey} variant="h4">
-              Related Works
+            <FormattedMessage id="relatedWorks" />
             </Typography>{' '}
           </Box>
           <Box
