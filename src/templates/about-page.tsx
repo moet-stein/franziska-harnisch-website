@@ -18,6 +18,7 @@ export const AboutPageTemplate = ({
   gruppenaustellung,
   projekte,
   location,
+  cv,
 }) => {
   console.log(title);
   console.log(location);
@@ -34,7 +35,11 @@ export const AboutPageTemplate = ({
                 einzelaustellung={einzelaustellung}
                 gruppenaustellung={gruppenaustellung}
                 projekte={projekte}
+                cv={cv}
               />
+              {cv && cv.map(c=>(
+
+              
               <div
                 style={{
                   display: 'flex',
@@ -44,11 +49,12 @@ export const AboutPageTemplate = ({
               >
                 <a
                   target="_blank"
-                  href="https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit"
+                  href={cv.link}
                 >
-                  CV DE <ArrowDownwardIcon />
+                  {cv.text} <ArrowDownwardIcon />
                 </a>
               </div>
+              ))}
             </div>
           </div>
         </div>
@@ -85,6 +91,7 @@ AboutPageTemplate.propTypes = {
     title: PropTypes.string,
     texts: PropTypes.array,
   }),
+   cv: PropTypes.array,
 };
 
 const AboutPage = ({ data, location }) => {
@@ -108,6 +115,7 @@ const AboutPage = ({ data, location }) => {
         einzelaustellung={frontmatter.einzelaustellung}
         gruppenaustellung={frontmatter.gruppenaustellung}
         projekte={frontmatter.projekte}
+        cv={frontmatter.cv}
       />
     </Layout>
   );
@@ -164,6 +172,10 @@ export const aboutPageQuery = graphql`
             text
             link
           }
+        }
+        cv{
+          text
+          link
         }
       }
     }

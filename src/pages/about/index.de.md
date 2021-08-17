@@ -58,4 +58,9 @@ projekte:
     - text: Vitrine01
     - text: KUNSTRAUM 53
 language: de
+cv:
+  - textDe: CV DE
+    link:
+  - textEn: CV EN
+    link:
 ---
