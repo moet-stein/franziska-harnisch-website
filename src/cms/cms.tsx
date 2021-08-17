@@ -9,6 +9,7 @@ import ExhibitionsPagePreview from './preview-templates/ExhibitionsPagePreview';
 import ContactPagePreview from './preview-templates/ContactPagePreview';
 import LinksPagePreview from './preview-templates/LinksPagePreview'
 import FooterDataPreview from './preview-templates/FooterDataPreview'
+import DatenschutzPagePreview from './preview-templates/DatenschutzverordnungPagePreview'
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -26,5 +27,7 @@ CMS.registerPreviewTemplate('contactPageen', ContactPagePreview);
 CMS.registerPreviewTemplate('linksde', LinksPagePreview);
 CMS.registerPreviewTemplate('linksen', LinksPagePreview);
 CMS.registerPreviewTemplate('footerData', FooterDataPreview);
+CMS.registerPreviewTemplate('datenschutzverordnungde', DatenschutzPagePreview);
+CMS.registerPreviewTemplate('datenschutzverordnungen', DatenschutzPagePreview);
 
 

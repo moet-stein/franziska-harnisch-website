@@ -216,3 +216,23 @@ collections:
           - {label: "Desc. SEO", name: "description", widget: "text"}
           - {label: "image SEO", name: "image", widget: "image"}
           - {label: "Links", name: "links", widget: list, fields: [{label: Url, name: url, widget: string, required: false, default: ""}, {label: Text, name: text, widget: string}]}  
+      - file: "src/pages/datenschutzverordnung/index.en.md"
+        label: "Datenschutzverordnung Page EN"
+        name: "datenschutzverordnungen"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "datenschutzverordnung-page"}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
+          - {label: "Text", name: body, widget: markdown}      
+      - file: "src/pages/datenschutzverordnung/index.de.md"
+        label: "Datenschutzverordnung Page DE"
+        name: "datenschutzverordnungde"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "datenschutzverordnung-page"}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
+          - {label: "Text", name: body, widget: markdown} 
