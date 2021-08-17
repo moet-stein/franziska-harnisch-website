@@ -83,9 +83,7 @@ export function Footer({ langKey, data }) {
     langKey === 'en' ? `/${langKey}/impressum` : '/impressum';
   const impressumText = langKey === 'en' ? 'Imprint' : 'Impressum';
   const datenschutzLink =
-    langKey === 'en'
-      ? `/${langKey}/datenschutzverordnung`
-      : '/datenschutzverordnung';
+    langKey === 'en' ? `/${langKey}/datenschutzverordnung` : '/datenschutzverordnung';
   const datenschutzText =
     langKey === 'en' ? 'Date protection regulation' : 'Datenschutzverordnung';
   return (

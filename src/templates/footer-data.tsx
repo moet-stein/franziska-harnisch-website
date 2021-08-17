@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
 
 export const FooterDataTemplate = ({ copyright }) => {
   const classes = useStyles();
+  console.log("copy", copyright)
   return (
     <PageContainer>
       <h2>{copyright}</h2>
@@ -38,7 +39,7 @@ FooterDataTemplate.propTypes = {
 
 const FooterData = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log(frontmatter);
+  console.log("footer-data", frontmatter);
 
   return <FooterDataTemplate copyright={frontmatter.copyright} />;
 };
