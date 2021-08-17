@@ -2,6 +2,9 @@
 templateKey: impressum-page
 path: /impressum
 title: Impressum
+titleWebsite:
+image:
+description:
 language: de
 
 ---

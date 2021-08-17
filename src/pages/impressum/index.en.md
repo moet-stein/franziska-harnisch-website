@@ -3,7 +3,9 @@ templateKey: impressum-page
 path: /en/impressum
 title: Impressum
 language: en
-
+titleWebsite:
+image:
+description:
 ---
 ###Angaben gemäß § 5 TMG:
 

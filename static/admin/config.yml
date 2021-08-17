@@ -236,3 +236,23 @@ collections:
           - {label: "Desc. SEO", name: "description", widget: "text"}
           - {label: "image SEO", name: "image", widget: "image"}
           - {label: "Text", name: body, widget: markdown} 
+      - file: "src/pages/impressum/index.de.md"
+        label: "Impressum Page DE"
+        name: "impressumde"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "impressum-page"}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
+          - {label: "Text", name: body, widget: markdown} 
+      - file: "src/pages/impressum/index.en.md"
+        label: "Impressum Page EN"
+        name: "impressumen"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "impressum-page"}
+          - {label: "Title Website", name: "titleWebsite", widget: "string"}
+          - {label: "Title SEO", name: "title", widget: "string"}
+          - {label: "Desc. SEO", name: "description", widget: "text"}
+          - {label: "image SEO", name: "image", widget: "image"}
+          - {label: "Text", name: body, widget: markdown} 

@@ -56,7 +56,7 @@ const TemplateWrapper = ({ children, location }) => {
   const homeLink = `/${langKey}/`;
   console.log('homeLink', homeLink);
 
-  const datenschutzLink =
+  const datenschutzLink2 =
     langKey === 'en'
       ? `/${langKey}/datenschutzverordnung`
       : '/datenschutzverordnung';
@@ -76,7 +76,7 @@ const TemplateWrapper = ({ children, location }) => {
             actions={
               <Button
                 component={Link}
-                to={datenschutzLink}
+                to={datenschutzLink2}
                 color="primary"
                 size="small"
               >

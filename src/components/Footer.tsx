@@ -66,12 +66,8 @@ export default function Footer({ langs, url, langKey, }) {
   const impressumLink =
   langKey === 'en' ? `/${langKey}/impressum` : '/impressum';
 const impressumText = langKey === 'en' ? 'Imprint' : 'Impressum';
-const datenschutzLink =
-  langKey === 'en'
-    ? `/${langKey}/datenschutzverordnung`
-    : '/datenschutzverordnung';
-const datenschutzText =
-  langKey === 'en' ? 'Date protection regulation' : 'Datenschutzverordnung';
+const datenschutzLink = langKey === 'en' ? `/${langKey}/datenschutzverordnung`: '/datenschutzverordnung';
+const datenschutzText = langKey === 'en' ? 'Date protection regulation' : 'Datenschutzverordnung';
     return (
       <footer className={classes.footerContainer}>
       
