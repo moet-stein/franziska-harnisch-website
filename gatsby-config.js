@@ -4,7 +4,7 @@ module.exports = {
     title: 'Franziska Harnisch',
     author: 'Franziska Harnisch',
     keywords: ['Franziska', 'Harnisch', 'art'],
-    languages
+    languages,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -24,6 +24,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data`,
+        name: 'data',
       },
     },
     {

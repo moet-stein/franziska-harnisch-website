@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery} from 'gatsby'
+import { Link, graphql, StaticQuery } from 'gatsby';
 import Layout from '../components/Layout';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
@@ -23,9 +23,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const FooterDataTemplate = ({
-    copyright
-}) => {
+export const FooterDataTemplate = ({ copyright }) => {
   const classes = useStyles();
   return (
     <PageContainer>
@@ -42,12 +40,7 @@ const FooterData = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   console.log(frontmatter);
 
-
-  return (
-      <FooterDataTemplate
-        copyright={frontmatter.copyright}
-      />
-  );
+  return <FooterDataTemplate copyright={frontmatter.copyright} />;
 };
 
 FooterData.propTypes = {
@@ -70,13 +63,14 @@ export default () => (
           edges {
             node {
               id
+              frontmatter {
+                copyright
+              }
             }
           }
         }
       }
     `}
-    render={(data) => (
-      <FooterData data={data}  />
-    )}
+    render={(data) => <FooterData data={data} />}
   />
 );
