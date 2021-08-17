@@ -11,6 +11,7 @@ import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { NavBarContext } from '../../context/NavbarContext';
 import PageContainer from '../PageContainer';
+import { FormattedMessage } from 'react-intl';
 
 // let langKey;
 
@@ -129,7 +130,7 @@ export function WorkdetailsRoll({ data, location }) {
           <Box m={3} style={{ zIndex: '-1000' }}>
             <TextField
               id="standard-basic"
-              label="Find Work"
+              label={<FormattedMessage id="findWork" />}
               onChange={(e) => handleSearch(e)}
             />
           </Box>
@@ -137,7 +138,7 @@ export function WorkdetailsRoll({ data, location }) {
           <Box m={3}>
             <TextField
               id="standard-basic"
-              label="Find Work"
+              label={<FormattedMessage id="findWork" />}
               onChange={(e) => handleSearch(e)}
             />
           </Box>
