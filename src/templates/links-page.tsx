@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -7,6 +7,8 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 import { makeStyles } from '@material-ui/core/styles';
 import PageContainer from '../components/PageContainer';
 import SEO from '../components/SEO';
+import { FormattedMessage } from 'react-intl';
+import { NavBarContext } from '../context/NavbarContext';
 
 const useStyles = makeStyles((theme) => ({
   linkWidth: {
@@ -42,9 +44,7 @@ export const LinksPageTemplate = ({
   description,
   image,
 }) => {
-  console.log('location', location);
-  console.log('desc', description);
-  console.log('image', image);
+  const { negZIndex } = useContext(NavBarContext);
   const classes = useStyles();
 
   return (
@@ -58,7 +58,9 @@ export const LinksPageTemplate = ({
           marginTop: 70,
         }}
       >
-        <Typography variant="h3">{titleWebsite}</Typography>
+        <Typography variant="h3">
+          <FormattedMessage id="linksTitle" />
+        </Typography>
         <div
           style={{
             display: 'flex',
@@ -70,15 +72,30 @@ export const LinksPageTemplate = ({
           {links.map((l) => {
             return (
               <div key={l.text} className={classes.linkWidth}>
-                <button className={classes.linkButton}>
-                  <a target="_blank" href={l.url} className={classes.noDec}>
-                    {l.text.length > 30 ? (
-                      <p>{l.text.slice(0, 30)}. . .</p>
-                    ) : (
-                      <p>{l.text}</p>
-                    )}
-                  </a>
-                </button>
+                {negZIndex ? (
+                  <button
+                    className={classes.linkButton}
+                    style={{ zIndex: '-1000' }}
+                  >
+                    <a target="_blank" href={l.url} className={classes.noDec}>
+                      {l.text.length > 30 ? (
+                        <p>{l.text.slice(0, 30)}. . .</p>
+                      ) : (
+                        <p>{l.text}</p>
+                      )}
+                    </a>
+                  </button>
+                ) : (
+                  <button className={classes.linkButton}>
+                    <a target="_blank" href={l.url} className={classes.noDec}>
+                      {l.text.length > 30 ? (
+                        <p>{l.text.slice(0, 30)}. . .</p>
+                      ) : (
+                        <p>{l.text}</p>
+                      )}
+                    </a>
+                  </button>
+                )}
               </div>
             );
           })}

@@ -1,32 +1,50 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-const useStyles = makeStyles((theme) => ({
-    marginContainer:{
-     marginTop:80,
-     marginBottom:"15vh",
-     width:"100%",
-     zIndex:-10,
-     [theme.breakpoints.up("lg")]: {
-        marginLeft:"230px",
-       },
-       [theme.breakpoints.only('lg')]:{
-         width:"80%",
-       }
+import { NavBarContext } from '../context/NavbarContext';
 
-    }
-  
-    
-  }))
+const useStyles = makeStyles((theme) => ({
+  marginContainer: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    marginTop: 80,
+    marginBottom: '15vh',
+    width: '100%',
+    zIndex: -10,
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: '230px',
+    },
+    [theme.breakpoints.only('lg')]: {
+      width: '80%',
+    },
+  },
+  marginContainer2: {
+    marginTop: 80,
+    marginBottom: '15vh',
+    width: '100%',
+    zIndex: -10,
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: '230px',
+    },
+    [theme.breakpoints.only('lg')]: {
+      width: '80%',
+    },
+  },
+}));
 
 function PageContainer(props) {
-    const classes = useStyles();
+  const classes = useStyles();
+  const { negZIndex } = useContext(NavBarContext);
+
   useEffect(() => {
     document.title = `${props.title}`;
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
-      <div className={classes.marginContainer}>{props.children}</div>
+      {negZIndex ? (
+        <div className={classes.marginContainer}>{props.children}</div>
+      ) : (
+        <div className={classes.marginContainer2}>{props.children}</div>
+      )}
     </>
   );
 }

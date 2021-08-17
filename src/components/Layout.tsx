@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './NavbarHometwo/NavBarHometwo.css';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
@@ -10,6 +10,7 @@ import {
   createTheme,
   ThemeProvider,
   responsiveFontSizes,
+  makeStyles,
 } from '@material-ui/core/styles';
 import Footer from './Footer';
 import Navbar from './Navbar';
@@ -20,21 +21,23 @@ import { withPrefix } from 'gatsby';
 import { NavBarProvider } from '../context/NavbarContext';
 import MUICookieConsent from 'material-ui-cookie-consent';
 import Button from '@material-ui/core/Button';
+import { NavBarContext } from '../context/NavbarContext';
 
-// const useStyles = makeStyles(() => ({
-//   transBackground: {
-//     position: 'fixed',
-//     display: 'none',
-//     width: '100%',
-//     height: '100%',
-//     top: '0',
-//     left: '0',
-//     right: '0',
-//     bottom: '0',
-//     backgroundColor: 'rgba(0,0,0,0.5)',
-//     cursor: 'pointer',
-//   },
-// }));
+const useStyles = makeStyles(() => ({
+  transBackground: {
+    // position: 'fixed',
+    // display: 'none',
+    // width: '100%',
+    // height: '100%',
+    // top: '0',
+    // left: '0',
+    // right: '0',
+    // bottom: '0',
+    // backgroundColor: 'rgba(0,0,0,0.5)',
+    // cursor: 'pointer',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+}));
 
 const messages = {
   de: messages_de,
@@ -61,12 +64,13 @@ let theme = createTheme({
 theme = responsiveFontSizes(theme);
 
 const TemplateWrapper = ({ children, location }) => {
+  const classes = useStyles();
+  const { negZIndex } = useContext(NavBarContext);
   const { languages } = useSiteMetadata();
   const url = location.pathname;
   const { langs, defaultLangKey } = languages;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   const homeLink = `/${langKey}/`;
-  console.log('homeLink', homeLink);
 
   const datenschutzLink2 =
     langKey === 'en'
@@ -79,7 +83,7 @@ const TemplateWrapper = ({ children, location }) => {
       link: item.link.replace(`/${defaultLangKey}/`, '/'),
     })
   );
-  console.log('langsmenu', langsMenu);
+
   return (
     <div>
       <NavBarProvider>
@@ -139,7 +143,11 @@ const TemplateWrapper = ({ children, location }) => {
             </Helmet>
  */}
             <NavbarHometwo langs={langsMenu} langKey={langKey} url={url} />
-
+            {/* {negZIndex ? (
+              <div className={classes.transBackground}>{children}</div>
+            ) : (
+              <div>{children}</div>
+            )} */}
             <div>{children}</div>
 
             <Footer langs={langsMenu} langKey={langKey} url={url} />

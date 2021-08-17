@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Exhibitions from '../components/Exhibitions/Exhibitions';
 import PageContainer from '../components/PageContainer';
 import SEO from '../components/SEO';
+import { FormattedMessage } from 'react-intl';
+
 
 const useStyles = makeStyles(() => ({
   flexColumn: {
@@ -33,8 +34,8 @@ export const ExhibitionsPageTemplate = ({
   return (
     <PageContainer>
       <Box className={classes.flexColumn}>
-        <Box mt={3}>
-          <Typography variant="h1">Exhibitions</Typography>
+        <Box>
+          <Typography variant="h2"><FormattedMessage id="exhibitions" /></Typography>
         </Box>
         <Box>
           <Exhibitions

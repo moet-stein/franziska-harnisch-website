@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Link1 from '@material-ui/core/Link';
 import { Link } from 'gatsby';
 import { NavBarContext } from '../../context/NavbarContext';
+import { FormattedMessage } from 'react-intl';
 
 const useStyles = makeStyles((theme) => ({
   greyColor: {
@@ -86,8 +87,8 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
     <>
       <Box className={classes.flexColumn} mt={3}>
         {upcomingExhibitions.length > 0 && (
-          <Typography variant="h3" className={classes.greyColor}>
-            Upcomings
+          <Typography variant="h4" className={classes.greyColor}>
+            <FormattedMessage id="upcoming" />
           </Typography>
         )}
         <Box className={classes.upWidth}>
@@ -142,8 +143,8 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
       {/* Past exhibitions */}
       <Box className={classes.flexColumn} mt={5}>
         {exhibitions.length > 0 && (
-          <Typography variant="h3" className={classes.greyColor}>
-            Past Exhibitions
+          <Typography variant="h4" className={classes.greyColor}>
+            <FormattedMessage id="pastEx" />
           </Typography>
         )}
         {exhibitions.length > 0 &&
@@ -205,13 +206,13 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
                                 variant="outlined"
                               >
                                 <Typography variant="body1">
-                                  See More
+                                  <FormattedMessage id="seeMore" />
                                 </Typography>
                               </Button>
                             ) : (
                               <Button variant="outlined">
                                 <Typography variant="body1">
-                                  See More
+                                  <FormattedMessage id="seeMore" />
                                 </Typography>
                               </Button>
                             )}

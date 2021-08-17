@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 25,
       padding: 2,
     },
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('sm')]: {
       display: 'block',
       position: 'absolute',
       width: 300,
@@ -97,13 +97,12 @@ function NavbarHometwo({ langs, url, langKey }) {
 
   const [isActive, setIsActive] = useState(false);
   const { negZIndex, setNegZIndex } = useContext(NavBarContext);
-  console.log(negZIndex);
+
   const onClick = () => {
     setIsActive(!isActive);
     negZIndex ? setNegZIndex(false) : setNegZIndex(true);
+    console.log(negZIndex);
   };
-  console.log('pages', pages);
-  console.log(langKey);
 
   //style
 
@@ -150,7 +149,6 @@ function NavbarHometwo({ langs, url, langKey }) {
             </Button>
 
             {pages.map((page) => {
-              console.log(page);
               return (
                 <React.Fragment>
                   <FormattedMessage id={page.to}>
@@ -176,8 +174,6 @@ function NavbarHometwo({ langs, url, langKey }) {
                 </React.Fragment>
               );
             })}
-
-            
 
             <SelectLanguage langs={langs} />
           </div>
@@ -203,7 +199,6 @@ function NavbarHometwo({ langs, url, langKey }) {
             </Button>
 
             {pages.map((page) => {
-              console.log(page);
               return (
                 <React.Fragment>
                   <FormattedMessage id={page.to}>
@@ -229,8 +224,6 @@ function NavbarHometwo({ langs, url, langKey }) {
                 </React.Fragment>
               );
             })}
-
-            
 
             <SelectLanguage langs={langs} />
           </div>
