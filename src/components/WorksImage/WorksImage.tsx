@@ -7,6 +7,10 @@ import grey from '@material-ui/core/colors/grey';
 import { useLocation } from '@reach/router';
 
 const useStyles = makeStyles(() => ({
+  root: {
+    width: '240px',
+    display: 'inline-block',
+  },
   width: {
     width: '180px',
   },
@@ -35,6 +39,9 @@ const useStyles = makeStyles(() => ({
     position: 'relative',
     '&:hover $image': { opacity: '0.3' },
     '&:hover $middle': { opacity: '1' },
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   content: {
     backgroundColor: grey[600],
@@ -51,6 +58,11 @@ const useStyles = makeStyles(() => ({
     borderRadius: '5px',
     width: '200px',
   },
+  '@media only screen and (max-width: 600px)': {
+    root: {
+      width: '150px',
+    },
+  },
 }));
 
 const WorksImage = ({ imageInfo, title, slug }) => {
@@ -60,10 +72,11 @@ const WorksImage = ({ imageInfo, title, slug }) => {
 
   return (
     <div
-      style={{
-        width: '240px',
-        display: 'inline-block',
-      }}
+      className={classes.root}
+      // style={{
+      //   width: '240px',
+      //   display: 'inline-block',
+      // }}
     >
       {!!imageInfo && (
         <Link className="title has-text-primary is-size-4" to={slug}>

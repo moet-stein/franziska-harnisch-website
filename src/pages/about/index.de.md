@@ -57,6 +57,9 @@ projekte:
     - text: raum on demand
     - text: Vitrine01
     - text: KUNSTRAUM 53
+cv:
+  - text: CV DE
+    link: https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit
 language: de
 cv:
   - textDe: CV DE
