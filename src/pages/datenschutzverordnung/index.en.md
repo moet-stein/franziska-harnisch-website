@@ -2,19 +2,16 @@
 templateKey: datenschutzverordnung-page
 path: /en/datenschutzverordnung
 title: Datenschutz
-titleWebsite:
-image:
-description:
 language: en
 titleWebsite: DatenschutzErklärung
 description: DatenschutzErklärung
 image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770242/Spontane_Oase_Ausschnitt2_ivqmnt.jpg
 ---
-\###Datenschutzerklärung test
+###Datenschutzerklärung test
 
 Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten (nachfolgend kurz „Daten“) innerhalb unseres Onlineangebotes und der mit ihm verbundenen Webseiten, Funktionen und Inhalte sowie externen Onlinepräsenzen, wie z.B. unser Social Media Profile auf (nachfolgend gemeinsam bezeichnet als „Onlineangebot“). Im Hinblick auf die verwendeten Begrifflichkeiten, wie z.B. „Verarbeitung“ oder „Verantwortlicher“ verweisen wir auf die Definitionen im Art. 4 der Datenschutzgrundverordnung (DSGVO).
 
-\###Verantwortlicher
+###Verantwortlicher
 
 Franziska Harnisch
 Quitzowstr. 136
@@ -24,7 +21,7 @@ https://www.f-harnisch.de/impressum
 
 ​
 
-\###Arten der verarbeiteten Daten:
+###Arten der verarbeiteten Daten:
 
 * Bestandsdaten (z.B., Namen, Adressen).
 * Kontaktdaten (z.B., E-Mail, Telefonnummern).
