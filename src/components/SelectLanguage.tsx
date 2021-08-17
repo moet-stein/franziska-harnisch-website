@@ -17,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
 const SelectLanguage = ({ langs }) => {
   const classes = useStyles();
   const pathName = useLocation().pathname;
-  console.log(langs);
-  console.log(pathName);
 
   return (
     <List component="ul" aria-label="languages" style={{ display: 'flex' }}>

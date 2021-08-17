@@ -84,7 +84,7 @@ export function RelatedImgs({ data, location }) {
       {!loading && matchedWorks.length > 0 && (
         <>
           <Box>
-            <Typography className={classes.grey} variant="h4">
+            <Typography className={classes.blueGrey} variant="h4">
             <FormattedMessage id="relatedWorks" />
             </Typography>{' '}
           </Box>

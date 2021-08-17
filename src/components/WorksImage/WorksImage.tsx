@@ -61,13 +61,12 @@ const useStyles = makeStyles(() => ({
       width: '150px',
     },
     widthImg: {
-      width: '150px'
-    }
+      width: '150px',
+    },
   },
 }));
 
 const WorksImage = ({ imageInfo, title, slug }) => {
-  console.log(slug);
   const classes = useStyles();
   const location = useLocation().pathname;
 

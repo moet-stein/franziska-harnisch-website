@@ -11,11 +11,26 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { NavBarContext } from '../../context/NavbarContext';
 import PageContainer from '../PageContainer';
 import { FormattedMessage } from 'react-intl';
+import { makeStyles } from '@material-ui/core/styles';
 
 // let langKey;
-
+const useStyles = makeStyles(() => ({
+  transBackground: {
+    position: 'fixed',
+    display: 'none',
+    width: '100%',
+    height: '100%',
+    top: '0',
+    left: '0',
+    right: '0',
+    bottom: '0',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    cursor: 'pointer',
+  },
+}));
 
 export function WorkdetailsRoll({ data, location }) {
+  const classes = useStyles();
   const { negZIndex } = useContext(NavBarContext);
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
