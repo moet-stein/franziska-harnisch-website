@@ -46,14 +46,14 @@ gruppenaustellung:
   texts:
     - text: 2021   Light Year, New York (USA) mkv @ thewrong.tv - CLUSTERED MINDS
         EMBARK, 129 gallery Berlin HOT MESS, Neuzeit Ost
-      link: https://www.facebook.com
+      link: ""
     - text: 2020  Auf der Laube, Online-Ausstellung, Studio Huette INTERWEAVING
         SPHERES, 8. Videokunstnacht, Kunstverein Kleinmachnow
 projekte:
   title: Projekte und Projekträume
   texts:
     - text: Kunstauflösung / STAND
-      link: https://www.facebook.com
+      link: ""
     - text: raum on demand
     - text: Vitrine01
     - text: KUNSTRAUM 53
