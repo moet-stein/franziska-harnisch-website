@@ -2,12 +2,18 @@ import React, { useRef, useState } from 'react';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import ListIcon from '@material-ui/icons/List';
 import PropTypes from 'prop-types';
-import SelectLanguage from '../SelectLanguage.tsx';
 import Button from '@material-ui/core/Button';
-
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-
+import { makeStyles } from '@material-ui/core/styles';
 import instagram from '../img/social/instagram.svg';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import PinterestIcon from '@material-ui/icons/Pinterest';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import RedditIcon from '@material-ui/icons/Reddit';
+import LinkIcon from '@material-ui/icons/Link';
+
 const useStyles = makeStyles(() => ({
   instagramLink: {
     display: 'flex',
