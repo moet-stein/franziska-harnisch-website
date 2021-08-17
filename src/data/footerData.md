@@ -1,6 +1,6 @@
 ---
 templateKey: footer-data
-copyright: Copyrights 2021
+copyright: Copyrights © - Franziska Harnisch 2021
 snsList:
   - sns: Instagram
     snsLink: https://www.instagram.com/franziska.harnisch/
