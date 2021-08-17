@@ -3,9 +3,9 @@ templateKey: impressum-page
 path: /en/impressum
 title: Impressum
 language: en
-titleWebsite:
-image:
-description:
+titleWebsite: Impressum
+description: Impressum
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628770242/Spontane_Oase_Ausschnit_tdum6v.jpg
 ---
 ###Angaben gemäß § 5 TMG:
 
