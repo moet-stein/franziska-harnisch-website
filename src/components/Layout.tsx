@@ -21,6 +21,21 @@ import { NavBarProvider } from '../context/NavbarContext';
 import MUICookieConsent from 'material-ui-cookie-consent';
 import Button from '@material-ui/core/Button';
 
+// const useStyles = makeStyles(() => ({
+//   transBackground: {
+//     position: 'fixed',
+//     display: 'none',
+//     width: '100%',
+//     height: '100%',
+//     top: '0',
+//     left: '0',
+//     right: '0',
+//     bottom: '0',
+//     backgroundColor: 'rgba(0,0,0,0.5)',
+//     cursor: 'pointer',
+//   },
+// }));
+
 const messages = {
   de: messages_de,
   en: messages_en,
@@ -46,13 +61,10 @@ let theme = createTheme({
 theme = responsiveFontSizes(theme);
 
 const TemplateWrapper = ({ children, location }) => {
-  const { title, description, languages } = useSiteMetadata();
+  const { languages } = useSiteMetadata();
   const url = location.pathname;
-  console.log('url', url);
   const { langs, defaultLangKey } = languages;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-  console.log('langKey', langKey);
-  console.log('langs', langs);
   const homeLink = `/${langKey}/`;
   console.log('homeLink', homeLink);
 
@@ -127,7 +139,9 @@ const TemplateWrapper = ({ children, location }) => {
             </Helmet>
  */}
             <NavbarHometwo langs={langsMenu} langKey={langKey} url={url} />
+
             <div>{children}</div>
+
             <Footer langs={langsMenu} langKey={langKey} url={url} />
           </ThemeProvider>
         </IntlProvider>

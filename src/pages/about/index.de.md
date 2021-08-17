@@ -53,7 +53,7 @@ projekte:
   title: Projekte und Projekträume
   texts:
     - text: Kunstauflösung / STAND
-      link: ""
+      link: /workdetails/2020_stand/
     - text: raum on demand
     - text: Vitrine01
     - text: KUNSTRAUM 53
