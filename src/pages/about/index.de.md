@@ -35,10 +35,12 @@ einzelaustellung:
   texts:
     - text: 2020   was kann ich für sie tun, Online-Ausstellung, Circle1, Berlin (mit
         Dan   Allon)
+      link:
     - text: 2019   with the stream, Circle1, Berlin Erst wenn es weg ist,  A TRANS c/o
         Vitrine im U-Bahnhof Kleistpark, Berlin Arbeitstitel, 2OG, Alte Münze,
         Berlin (mit Philipp Valenta) f.a.r. - former analogue realities, The
         Balcony / Den Haag (NL)
+      link:
 gruppenaustellung:
   title: Gruppenausstellungen + Festivals (Auswahl)
   texts:
@@ -57,6 +59,8 @@ projekte:
     - text: KUNSTRAUM 53
 cv:
   - text: CV DE
+    link: https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit
+  - text: CV EN
     link: https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit
 language: de
 ---
