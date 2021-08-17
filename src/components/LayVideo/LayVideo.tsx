@@ -31,7 +31,6 @@ const useStyles = makeStyles(() => ({
 
 export default function LayImg({ video }) {
   const classes = useStyles();
-  console.log(video);
 
   return (
     <React.Fragment>
