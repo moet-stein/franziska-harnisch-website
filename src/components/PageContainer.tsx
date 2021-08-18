@@ -4,7 +4,7 @@ import { NavBarContext } from '../context/NavbarContext';
 
 const useStyles = makeStyles((theme) => ({
   marginContainer: {
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(255,255,255,0.7)',
     marginTop: 80,
     marginBottom: '15vh',
     width: '100%',
@@ -34,10 +34,10 @@ function PageContainer(props) {
   const classes = useStyles();
   const { negZIndex } = useContext(NavBarContext);
 
-  useEffect(() => {
-    document.title = `${props.title}`;
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   document.title = `${props.title}`;
+  //   window.scrollTo(0, 0);
+  // }, []);
   return (
     <>
       {negZIndex ? (
