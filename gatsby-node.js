@@ -41,17 +41,19 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((edge) => {
-      const id = edge.node.id;
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      });
+      if (edge.node.id !== '496614fb-afa1-5c2d-86f5-dc00eb3efc98') {
+        const id = edge.node.id;
+        createPage({
+          path: edge.node.fields.slug,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+          },
+        });
+      }
     });
 
     // Tag pages:
@@ -107,30 +109,32 @@ exports.onCreateNode = async ({
 
   if (
     node.internal.type === `MarkdownRemark` &&
-    node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n'
+    node.internal.fieldOwners !== undefined
   ) {
-    const value = createFilePath({ node, getNode });
+    if (node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n') {
+      const value = createFilePath({ node, getNode });
 
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
-
-    if (node.frontmatter.featuredimage !== null) {
-      let fileNode = await createRemoteFileNode({
-        url: node.frontmatter.featuredimage, // string that points to the URL of the image
-        parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
-        createNode, // helper function in gatsby-node to generate the node
-        createNodeId, // helper function in gatsby-node to generate the node id
-        cache, // Gatsby's cache
-        store, // Gatsby's Redux store
+      createNodeField({
+        name: `slug`,
+        node,
+        value,
       });
-    }
 
-    // if the file was created, attach the new node to the parent node
-    if (fileNode) {
-      node.featuredimage___NODE = fileNode.id;
+      if (node.frontmatter.featuredimage !== null) {
+        let fileNode = await createRemoteFileNode({
+          url: node.frontmatter.featuredimage, // string that points to the URL of the image
+          parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+          createNode, // helper function in gatsby-node to generate the node
+          createNodeId, // helper function in gatsby-node to generate the node id
+          cache, // Gatsby's cache
+          store, // Gatsby's Redux store
+        });
+      }
+
+      // if the file was created, attach the new node to the parent node
+      if (fileNode) {
+        node.featuredimage___NODE = fileNode.id;
+      }
     }
   }
 };
