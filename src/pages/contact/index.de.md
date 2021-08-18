@@ -16,6 +16,7 @@ button: anmelden
 input: für den Newsletter hier E-Mail eintragen
 confirmation: Vielen Dank für die Zusendung unseres Newsletters
 language: de
+agreeText: Ich akzeptiere die Nutzungsbedingungen
 agreeMessage: Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen
 email: Email
 errorMessage: Bitte geben Sie eine gültige E-Mail-Adresse an
