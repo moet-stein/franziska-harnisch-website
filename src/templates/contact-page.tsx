@@ -138,7 +138,7 @@ export const ContactPageTemplate = ({
             </a>
             <a
               style={{ coursor: 'pointer' }}
-              href="mailto:lauratronchin@hotmail.it?body=My custom mail body"
+              href="mailto:franziska.harnisch@gmail.com?body=My custom mail body"
             >
               {email}
             </a>
@@ -177,7 +177,7 @@ export const ContactPageTemplate = ({
                   onChange={handleCheckbox}
                 ></input>
                 <label htmlFor="agree">
-                  I agree to the <Link to="/dat">terms of service</Link>
+                  I agree to the <Link to="/datenschutzverordnung">terms of service</Link>
                 </label>
               </div>
 
