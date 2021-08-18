@@ -78,6 +78,7 @@ export const ContactPageTemplate = ({
   address,
   email,
   website,
+  websiteLink,
   instagram,
   input,
   button,
@@ -132,7 +133,7 @@ export const ContactPageTemplate = ({
             <p> {address}</p>
             <a
               className={classes.websiteLink}
-              href="https://www.franziskaharnisch.de/"
+              href={websiteLink}
             >
               {website}
             </a>
@@ -196,6 +197,7 @@ ContactPageTemplate.propTypes = {
   name: PropTypes.string,
   address: PropTypes.string,
   website: PropTypes.string,
+  websiteLink: PropTypes.string,
   email: PropTypes.string,
   instagram: PropTypes.shape({
     text: PropTypes.string,
@@ -226,6 +228,7 @@ const ContactPage = ({ data, location }) => {
         address={frontmatter.address}
         email={frontmatter.email}
         website={frontmatter.website}
+        websiteLink={frontmatter.websiteLink}
         instagram={frontmatter.instagram}
         button={frontmatter.button}
         input={frontmatter.input}
@@ -254,6 +257,7 @@ export const contactPageQuery = graphql`
         address
         email
         website
+        websiteLink
         instagram {
           text
           link

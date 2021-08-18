@@ -8,6 +8,7 @@ image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_
 name: Franziska Harnisch
 address: Atelier 2OG, Am Krögel 2, 10179 Berlin
 website: www.franziskaharnisch.de
+websiteLink: https://www.franziskaharnisch.de/
 instagram:
   - text: Instagram
     link: https://www.instagram.com/franziska.harnisch/
