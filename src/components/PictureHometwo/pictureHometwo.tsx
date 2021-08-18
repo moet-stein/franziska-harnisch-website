@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     display:"flex",
     flexWrap: "wrap",
      justifyContent:"center",
-     width:"70%",
+     width:"90%",
      margin:"0 auto"
     
    },
@@ -53,8 +53,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     margin:"10px 15px 15px 10px",
+    maxWidth: "30%",
     [theme.breakpoints.down("md")]:{
-      width:"80%",
+      maxWidth:"50%",
+    
      flexBasis:"0%"
     }
   },

@@ -177,6 +177,7 @@ collections:
           - {label: Name, name: name, widget: string}
           - {label: Address, name: address, widget: string}
           - {label: Website, name: website, widget: string}
+          - {label: Website Link, name: websiteLink, widget: string}
           - {label: Instagram, name: instagram, widget: list, fields: [{label: Text, name: text, widget: string, required: false}, {label: Link, name: link, widget: string, required: false}]}
           - {label: Knopf, name: button, widget: string}  
           - {label: Input, name: input, widget: string}
@@ -194,6 +195,7 @@ collections:
           - {label: Name, name: name, widget: string}
           - {label: Address, name: address, widget: string}
           - {label: Website, name: website, widget: string}
+          - {label: Website Link, name: websiteLink, widget: string}
           - {label: Instagram, name: instagram, widget: list, fields: [{label: Text, name: text, widget: string, required: false}, {label: Link, name: link, widget: string, required: false}]}
           - {label: Knopf, name: button, widget: string}  
           - {label: Input, name: input, widget: string}
