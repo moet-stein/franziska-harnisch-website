@@ -41,7 +41,7 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((edge) => {
-      if (edge.node.id !== '496614fb-afa1-5c2d-86f5-dc00eb3efc98') {
+      if (edge.node.fields !== null) {
         const id = edge.node.id;
         createPage({
           path: edge.node.fields.slug,
