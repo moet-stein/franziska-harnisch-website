@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import { useLocation } from '@reach/router';
@@ -10,7 +10,7 @@ import WorksImage from '../WorksImage/WorksImage';
 import useSiteMetadata from '../SiteMetadata';
 import { getCurrentLangKey } from 'ptz-i18n';
 import { FormattedMessage } from 'react-intl';
-
+import { NavBarContext } from '../../context/NavbarContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function RelatedImgs({ data, location }) {
   const classes = useStyles();
+  const { negZIndex } = useContext(NavBarContext);
   const allWorks = data.allMarkdownRemark.edges.map((w) => w.node);
   const theWork = allWorks.filter(
     (w) => w.fields.slug === decodeURI(useLocation().pathname)
@@ -84,7 +85,7 @@ export function RelatedImgs({ data, location }) {
         <>
           <Box>
             <Typography className={classes.blueGrey} variant="h4">
-            <FormattedMessage id="relatedWorks" />
+              <FormattedMessage id="relatedWorks" />
             </Typography>{' '}
           </Box>
           <Box
@@ -94,13 +95,29 @@ export function RelatedImgs({ data, location }) {
             className={classes.scrollX}
           >
             {matchedWorks.map((w) => (
-              <Box m={1} key={w.frontmatter.title}>
-                <WorksImage
-                  imageInfo={w.frontmatter.featuredimage}
-                  title={w.frontmatter.title}
-                  slug={w.fields.slug}
-                />
-              </Box>
+              <>
+                {negZIndex ? (
+                  <Box
+                    m={1}
+                    key={w.frontmatter.title}
+                    style={{ zIndex: '-1000' }}
+                  >
+                    <WorksImage
+                      imageInfo={w.frontmatter.featuredimage}
+                      title={w.frontmatter.title}
+                      slug={w.fields.slug}
+                    />
+                  </Box>
+                ) : (
+                  <Box m={1} key={w.frontmatter.title}>
+                    <WorksImage
+                      imageInfo={w.frontmatter.featuredimage}
+                      title={w.frontmatter.title}
+                      slug={w.fields.slug}
+                    />
+                  </Box>
+                )}
+              </>
             ))}
           </Box>
         </>
