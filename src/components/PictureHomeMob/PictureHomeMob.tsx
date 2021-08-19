@@ -72,7 +72,7 @@ const negTextWidth = {
   zIndex: '-1000',
 };
 
-export default function PictureHometwo({ pic }) {
+export default function PictureHomeMob({ pic }) {
   console.log('pic', pic[0].image);
   const [newArray, setNewArray] = useState([]);
   useEffect(() => {
