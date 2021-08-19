@@ -56,9 +56,10 @@ export const LinksPageTemplate = ({
           justifyContent: 'center',
           alignItems: 'center',
           marginTop: 70,
+          marginBottom: 70,
         }}
       >
-        <Typography variant="h3">
+        <Typography variant="h3" align="center">
           <FormattedMessage id="linksTitle" />
         </Typography>
         <div
@@ -86,7 +87,10 @@ export const LinksPageTemplate = ({
                     </a>
                   </button>
                 ) : (
-                  <button className={classes.linkButton}>
+                  <button
+                    className={classes.linkButton}
+                    style={{ zIndex: '10' }}
+                  >
                     <a target="_blank" href={l.url} className={classes.noDec}>
                       {l.text.length > 30 ? (
                         <p>{l.text.slice(0, 30)}. . .</p>

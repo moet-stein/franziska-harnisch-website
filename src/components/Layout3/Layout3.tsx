@@ -69,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     marginPic: {
       marginLeft: theme.spacing(1),
     },
+    h1Fontsize: {
+      fontSize: '40px',
+    },
   },
 }));
 
@@ -93,7 +96,11 @@ export default function Layout3({ workdetailsData, location }) {
     <>
       <Box className={classes.flexColumn} mt={5}>
         <Box className={classes.flexColumn}>
-          <Typography className={classes.h1Fontsize} variant="h1">
+          <Typography
+            className={classes.h1Fontsize}
+            align="center"
+            variant="h1"
+          >
             {titleToShow}
           </Typography>
           <Box className={classes.width60}>

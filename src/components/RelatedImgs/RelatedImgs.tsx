@@ -14,7 +14,7 @@ import { NavBarContext } from '../../context/NavbarContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100vw',
+    width: '800px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -31,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
   },
   '@media only screen and (max-width: 800px)': {
     scrollX: {
-      width: '500px',
+      width: '300px',
     },
     root: {
-      marginLeft: '100px',
+      width: '300px',
     },
   },
 }));
