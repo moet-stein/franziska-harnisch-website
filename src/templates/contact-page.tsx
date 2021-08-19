@@ -182,11 +182,12 @@ const datenschutzText =
                 style={{
                   display: 'flex',
                   justifyContent: 'flex-end',
+                  alignItems: "flex-end",
                   margin: '10px auto',
                 }}
               >
                 <input
-               
+               style={{marginRight:10}}
                   type="checkbox"
                   id="agree"
                   name="agree"
