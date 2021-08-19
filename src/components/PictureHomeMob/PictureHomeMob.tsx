@@ -6,12 +6,7 @@ import { NavBarContext } from '../../context/NavbarContext';
 
 
 const useStyles = makeStyles((theme) => ({
-  imageMask: {
-    opacity: 0.5,
-  },
-  imageNoMask: {
-    opacity: 1,
-  },
+
   animatedItem: {
     animation: `$myEffect 2000ms ${theme.transitions.easing.easeInOut}`,
   },
@@ -64,14 +59,14 @@ const useStyles = makeStyles((theme) => ({
 
 const textWidth = {
   position: 'relative',
-  maxWidth: 240,
+ width: 240,
   textAlign: 'justify',
   padding:5,
 };
 
 const negTextWidth = {
   position: 'relative',
-  maxWidth: 240,
+  width: 240,
   padding:5,
   textAlign: 'justify',
   zIndex: '-1000',
@@ -81,7 +76,11 @@ export default function PictureHometwo({ pic }) {
   console.log('pic', pic[0].image);
   const [newArray, setNewArray] = useState([]);
   useEffect(() => {
-    setExit(false);
+    window.onscroll = () => {
+        setExit(true);
+        setVisible(true);
+        setThirdPic(true);
+      }
   }, []);
   const classes = useStyles();
   const [visible, setVisible] = useState(false);
@@ -123,7 +122,7 @@ export default function PictureHometwo({ pic }) {
           <img
             style={{ borderRadius: 5, width: 240, height:200, zIndex: '-1000' }}
             onMouseOver={() => setExit((prev) => !prev)}
-            className={exit ? classes.imageMask : classes.imageNoMask}
+         
             src={newArray[0].image}
           />
         ) : (
@@ -131,7 +130,7 @@ export default function PictureHometwo({ pic }) {
           <img
             style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setExit((prev) => !prev)}
-            className={exit ? classes.imageMask : classes.imageNoMask}
+         
             src={newArray[0].image}
           />
           </Link>
@@ -164,7 +163,7 @@ export default function PictureHometwo({ pic }) {
                     <img
             style={{ borderRadius: 5, width: 240, height:200, zIndex: '-1000' }}
             onMouseOver={() => setVisible((prev) => !prev)}
-            className={visible ? classes.imageMask : classes.imageNoMask}
+            
             src={newArray[1].image}
             
           />
@@ -174,7 +173,7 @@ export default function PictureHometwo({ pic }) {
           <img
             style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setVisible((prev) => !prev)}
-            className={visible ? classes.imageMask : classes.imageNoMask}
+            
             src={newArray[1].image}
           />
           </Link>
@@ -207,7 +206,7 @@ export default function PictureHometwo({ pic }) {
           <img
             style={{ borderRadius: 5, width: 240, height:200, zIndex: '-1000' }}
             onMouseOver={() => setThirdPic((prev) => !prev)}
-            className={thirdPic ? classes.imageMask : classes.imageNoMask}
+            
             src={newArray[2].image}
           />
         
@@ -216,7 +215,7 @@ export default function PictureHometwo({ pic }) {
           <img
             style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setThirdPic((prev) => !prev)}
-            className={thirdPic ? classes.imageMask : classes.imageNoMask}
+           
             src={newArray[2].image}
           />
          </Link>

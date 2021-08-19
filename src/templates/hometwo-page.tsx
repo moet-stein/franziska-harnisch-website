@@ -2,16 +2,24 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import styled, { css, keyframes } from 'styled-components';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
 import EventsFrontPage from '../components/EventsFrontPage/EventsFrontPage';
 import PictureHometwo from '../components/PictureHometwo/pictureHometwo';
+import PictureHomeMob from '../components/PictureHomeMob/pictureHomeMob';
 import PageContainer from '../components/PageContainer';
 import SEO from '../components/SEO';
 
 const useStyles = makeStyles((theme) => ({
-  mediaNav: {
-    [theme.breakpoints.up(780)]: {
+  largeScreen: {
+    display:"block",
+    [theme.breakpoints.down(900)]: {
+      display: 'none',
+    },
+  },
+  mobScreen: {
+display:"block",
+    [theme.breakpoints.up(900)]: {
       display: 'none',
     },
   },
@@ -19,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const HometwoTemplate = ({ image, title, event, intro, location }) => {
   console.log(intro.blurbs);
+  const classes = useStyles();
   return (
     <PageContainer>
       <div
@@ -34,7 +43,9 @@ export const HometwoTemplate = ({ image, title, event, intro, location }) => {
       }} */
       >
         <EventsFrontPage events={event} />
-        <PictureHometwo pic={intro.blurbs} />
+        <div className={classes.largeScreen}><PictureHometwo pic={intro.blurbs} /></div>
+        <div className={classes.mobScreen}><PictureHomeMob pic={intro.blurbs} /></div>
+   
       </div>
     </PageContainer>
   );
@@ -92,6 +103,7 @@ export const pageQuery = graphql`
           blurbs {
             image
             text
+            link
           }
         }
       }

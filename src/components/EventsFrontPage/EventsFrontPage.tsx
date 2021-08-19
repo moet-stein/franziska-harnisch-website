@@ -68,11 +68,11 @@ const useStyles = makeStyles((theme) => ({
     left: '60%',
     display: 'inline-block',
     [theme.breakpoints.down('md')]: {
-      left: '0%',
+      left: '10%',
      
     },
     [theme.breakpoints.down('sm')]: {
-      left: '0%',
+      left: '10%',
       width:300,
  
     },

@@ -99,6 +99,7 @@ export default function AboutBlocks({ generalInfo, ausbildung, preise, einzelaus
             <h4>{generalInfo.address}</h4>
             <h4>{generalInfo.website}</h4>
             <h4>{generalInfo.email}</h4>
+           
         </Grid>
 
         <Grid container className={classes.animatedItem2}>
