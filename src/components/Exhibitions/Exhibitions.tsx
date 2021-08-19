@@ -87,9 +87,11 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
     <>
       <Box className={classes.flexColumn} mt={3}>
         {upcomingExhibitions.length > 0 && (
-          <Typography variant="h4" className={classes.greyColor}>
-            <FormattedMessage id="upcoming" />
-          </Typography>
+          <Box m={4}>
+            <Typography variant="h4" className={classes.greyColor}>
+              <FormattedMessage id="upcoming" />
+            </Typography>
+          </Box>
         )}
         <Box className={classes.upWidth}>
           {upcomingExhibitions.length > 0 &&
@@ -143,25 +145,24 @@ export default function Exhibitions({ upcomingExhibitions, exhibitions }) {
       {/* Past exhibitions */}
       <Box className={classes.flexColumn} mt={5}>
         {exhibitions.length > 0 && (
-          <Typography variant="h4" className={classes.greyColor}>
-            <FormattedMessage id="pastEx" />
-          </Typography>
+          <Box m={4}>
+            <Typography variant="h4" className={classes.greyColor}>
+              <FormattedMessage id="pastEx" />
+            </Typography>
+          </Box>
         )}
         {exhibitions.length > 0 &&
           exhibitions.map((e) => (
             <Box key={e.year} mb={6}>
-              <Typography align="left" variant="h4">
-                {e.year}
-              </Typography>
+              <Box mb={3}>
+                <Typography align="center" variant="h4">
+                  {e.year}
+                </Typography>
+              </Box>
 
               <Box className={classes.flexColumn}>
                 {e.lOExhibitions.map((ex) => (
-                  <Box
-                    key={ex.name}
-                    display="flex"
-                    ml={10}
-                    className={classes.boxEx}
-                  >
+                  <Box key={ex.name} display="flex" className={classes.boxEx}>
                     <Box className={classes.flexColumnNoCenter} m={2}>
                       <Typography variant="h5">{ex.name}</Typography>
                       <Box display="flex">

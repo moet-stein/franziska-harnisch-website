@@ -75,8 +75,11 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
     },
     descWidth: {
-      width: '300px',
-      marginLeft: '0px',
+      width: '400px',
+      margin: '0px',
+    },
+    h1Fontsize: {
+      fontSize: '40px',
     },
   },
 }));
@@ -122,17 +125,6 @@ export default function Layout1({ workdetailsData, location }) {
             {titleToShow}
           </Typography>
           <Typography variant="h6">{subTitle}</Typography>
-          {/* {hashtags && hashtags.length > 0 && (
-            <Box className={classes.hashFlex}>
-              {hashtags.map((h, index) => (
-                <Box key={`${h}-${index}`} ml={2}>
-                  <Typography className={classes.hashColor}>
-                    #{h.hashtag}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-          )} */}
         </Box>
         <Box className={classes.topPart} m={4}>
           <Box>
@@ -140,11 +132,7 @@ export default function Layout1({ workdetailsData, location }) {
           </Box>
 
           <Box className={classes.flexColumn}>
-            {content && (
-              <Box className={classes.descWidth}>
-                <PostContent content={content} />
-              </Box>
-            )}
+            {content && <PostContent content={content} />}
             <Box className={classes.links}>
               {links &&
                 links.length > 0 &&

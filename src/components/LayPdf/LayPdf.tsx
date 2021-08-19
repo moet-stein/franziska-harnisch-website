@@ -3,13 +3,13 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   carSize: {
     width: '800px',
   },
   '@media only screen and (max-width: 850px)': {
     carSize: {
-      width: '500px',
+      width: '300px',
     },
   },
 }));

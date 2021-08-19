@@ -67,6 +67,15 @@ const useStyles = makeStyles((theme) => ({
   descWidth: {
     width: '70%',
   },
+  '@media only screen and (max-width: 650px)': {
+    descWidth: {
+      width: '350px',
+      margin: '5px',
+    },
+    h1Fontsize: {
+      fontSize: '40px',
+    },
+  },
 }));
 
 export default function Layout2({ workdetailsData, location }) {
