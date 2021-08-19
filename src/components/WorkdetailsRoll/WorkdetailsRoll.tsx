@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import Works from '../Works/Works';
@@ -11,30 +12,16 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { NavBarContext } from '../../context/NavbarContext';
 import PageContainer from '../PageContainer';
 import { FormattedMessage } from 'react-intl';
-import { makeStyles } from '@material-ui/core/styles';
-
-// let langKey;
-const useStyles = makeStyles(() => ({
-  transBackground: {
-    position: 'fixed',
-    display: 'none',
-    width: '100%',
-    height: '100%',
-    top: '0',
-    left: '0',
-    right: '0',
-    bottom: '0',
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    cursor: 'pointer',
-  },
-}));
+import IconButton from '@material-ui/core/IconButton';
+import DetailsIcon from '@material-ui/icons/Details';
+import ChangeHistoryIcon from '@material-ui/icons/ChangeHistory';
 
 export function WorkdetailsRoll({ data, location }) {
-  const classes = useStyles();
   const { negZIndex } = useContext(NavBarContext);
   const { edges: posts } = data.allMarkdownRemark;
   const [hashtags, setHashtags] = useState([]);
   const [selectedHash, setSelectedHash] = useState([]);
+  const [showHash, setShowHash] = useState(false);
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -42,6 +29,20 @@ export function WorkdetailsRoll({ data, location }) {
   const { langs, defaultLangKey } = languages;
   const url = location.pathname;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+
+  // const isDesktopOrLaptop = useMediaQuery({
+  //   query: '(min-width: 1224px)',
+  // });
+  // const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 800px)' });
+  // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+
+  const showMoreHash = () => {
+    showHash ? setShowHash(false) : setShowHash(true);
+    console.log('hashclicked');
+    console.log(showHash);
+  };
 
   const filHash = () => {
     if (selectedHash.length == 0) {
@@ -69,7 +70,6 @@ export function WorkdetailsRoll({ data, location }) {
   const handleClick = (h) => {
     if (selectedHash.includes(h)) {
       const newArr = selectedHash.filter((i) => i !== h);
-
       setSelectedHash(newArr);
       console.log(newArr);
     } else {
@@ -118,13 +118,23 @@ export function WorkdetailsRoll({ data, location }) {
   };
 
   useEffect(() => {
-    const allHash = posts
-      .map((p) => p.node.frontmatter.hashtags.map((h) => h.hashtag))
-      .flat();
-    setHashtags([...new Set(allHash)]);
+    let allHash;
+    if (isTabletOrMobile && !showHash) {
+      allHash = posts
+        .map((p) => p.node.frontmatter.hashtags.map((h) => h.hashtag))
+        .flat();
+    } else {
+      allHash = shuffle(
+        posts
+          .map((p) => p.node.frontmatter.hashtags.map((h) => h.hashtag))
+          .flat()
+      );
+    }
 
+    setHashtags([...new Set(allHash)]);
+    console.log('useeffect');
     filHash();
-  }, [selectedHash]);
+  }, [selectedHash, showHash]);
 
   const rollContent = () => (
     <PageContainer>
@@ -190,8 +200,8 @@ export function WorkdetailsRoll({ data, location }) {
               )}
             </Box>
           )}
-
           {!loading &&
+            !isTabletOrMobile &&
             hashtags.length > 0 &&
             hashtags.map((h) => (
               <Box ml={1} mb={1} key={`hashtag-${h}`}>
@@ -232,6 +242,103 @@ export function WorkdetailsRoll({ data, location }) {
                 )}
               </Box>
             ))}
+          {/* Phone size Hashtags */}
+          {isTabletOrMobile &&
+            !showHash &&
+            hashtags.length > 0 &&
+            hashtags.slice(0, 5).map((h) => (
+              <Box ml={1} mb={1} key={`hashtag-${h}`}>
+                {selectedHash.includes(h) ? (
+                  <Box>
+                    {negZIndex ? (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        clickable
+                        style={{ zIndex: '-1000' }}
+                      />
+                    ) : (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        clickable
+                      />
+                    )}
+                  </Box>
+                ) : (
+                  <Box>
+                    {negZIndex ? (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        variant="outlined"
+                        style={{ zIndex: '-1000' }}
+                      />
+                    ) : (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        variant="outlined"
+                      />
+                    )}
+                  </Box>
+                )}
+              </Box>
+            ))}
+          {isTabletOrMobile &&
+            showHash &&
+            hashtags.length > 0 &&
+            hashtags.map((h) => (
+              <Box ml={1} mb={1} key={`hashtag-${h}`}>
+                {selectedHash.includes(h) ? (
+                  <Box>
+                    {negZIndex ? (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        clickable
+                        style={{ zIndex: '-1000' }}
+                      />
+                    ) : (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        clickable
+                      />
+                    )}
+                  </Box>
+                ) : (
+                  <Box>
+                    {negZIndex ? (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        variant="outlined"
+                        style={{ zIndex: '-1000' }}
+                      />
+                    ) : (
+                      <Chip
+                        label={<Typography variant="body2"># {h}</Typography>}
+                        onClick={() => handleClick(h)}
+                        variant="outlined"
+                      />
+                    )}
+                  </Box>
+                )}
+              </Box>
+            ))}
+          {isTabletOrMobile && !showHash && (
+            <IconButton onClick={showMoreHash}>
+              <DetailsIcon />
+            </IconButton>
+          )}
+          {isTabletOrMobile && showHash && (
+            <IconButton onClick={showMoreHash}>
+              <ChangeHistoryIcon />
+            </IconButton>
+          )}
+
+          {/* Phone size hash done */}
         </Box>
         {negZIndex ? (
           <Box style={{ zIndex: '-1000' }}>
@@ -247,63 +354,6 @@ export function WorkdetailsRoll({ data, location }) {
   );
 
   return <React.Fragment>{rollContent()}</React.Fragment>;
-  // <Box
-  //   display="flex"
-  //   flexDirection="column"
-  //   justifyContent="center"
-  //   alignItems="center"
-  // >
-  //   <Box m={3}>
-  //     <TextField
-  //       id="standard-basic"
-  //       label="Find Work"
-  //       onChange={(e) => handleSearch(e)}
-  //     />
-  //   </Box>
-  //   <Box
-  //     display="flex"
-  //     flexWrap="wrap"
-  //     justifyContent="center"
-  //     alignItems="center"
-  //   >
-  //     <Box ml={1} mb={1}>
-  //       {allSelected ? (
-  //         <Chip
-  //           label={<Typography variant="body2"># ALL</Typography>}
-  //           onClick={handleAll}
-  //           clickable
-  //         />
-  //       ) : (
-  //         <Chip
-  //           label={<Typography variant="body2"># ALL</Typography>}
-  //           onClick={handleAll}
-  //           variant="outlined"
-  //         />
-  //       )}
-  //     </Box>
-  //     {!loading &&
-  //       hashtags.length > 0 &&
-  //       hashtags.map((h) => (
-  //         <Box ml={1} mb={1} key={`hashtag-${h}`}>
-  //           {selectedHash.includes(h) ? (
-  //             <Chip
-  //               label={<Typography variant="body2"># {h}</Typography>}
-  //               onClick={() => handleClick(h)}
-  //               clickable
-  //             />
-  //           ) : (
-  //             <Chip
-  //               label={<Typography variant="body2"># {h}</Typography>}
-  //               onClick={() => handleClick(h)}
-  //               variant="outlined"
-  //             />
-  //           )}
-  //         </Box>
-  //       ))}
-  //   </Box>
-  //   <Box>{!loading && filteredPosts && <Works posts={filteredPosts} />}</Box>
-  // </Box>
-  // }
 }
 
 WorkdetailsRoll.propTypes = {
