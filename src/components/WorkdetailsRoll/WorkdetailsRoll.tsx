@@ -25,6 +25,7 @@ export function WorkdetailsRoll({ data, location }) {
   const [loading, setLoading] = useState(true);
   const [allSelected, setAllSelected] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [first, setFirst] = useState(true);
   const { languages } = useSiteMetadata();
   const { langs, defaultLangKey } = languages;
   const url = location.pathname;
@@ -68,6 +69,7 @@ export function WorkdetailsRoll({ data, location }) {
   };
 
   const handleClick = (h) => {
+    console.log(first);
     if (selectedHash.includes(h)) {
       const newArr = selectedHash.filter((i) => i !== h);
       setSelectedHash(newArr);
@@ -119,20 +121,20 @@ export function WorkdetailsRoll({ data, location }) {
 
   useEffect(() => {
     let allHash;
-    if (isTabletOrMobile && !showHash) {
-      allHash = posts
-        .map((p) => p.node.frontmatter.hashtags.map((h) => h.hashtag))
-        .flat();
+    setFirst(false);
+    console.log(first);
+    if (!first) {
+      setHashtags(hashtags);
     } else {
+      console.log('true first');
       allHash = shuffle(
         posts
           .map((p) => p.node.frontmatter.hashtags.map((h) => h.hashtag))
           .flat()
       );
+      setHashtags([...new Set(allHash)]);
     }
 
-    setHashtags([...new Set(allHash)]);
-    console.log('useeffect');
     filHash();
   }, [selectedHash, showHash]);
 
