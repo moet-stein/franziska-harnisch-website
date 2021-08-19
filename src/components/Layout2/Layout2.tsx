@@ -70,7 +70,6 @@ const useStyles = makeStyles((theme) => ({
   '@media only screen and (max-width: 650px)': {
     descWidth: {
       width: '350px',
-      margin: '5px',
     },
     h1Fontsize: {
       fontSize: '40px',

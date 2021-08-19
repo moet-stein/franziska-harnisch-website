@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 export const HTMLContent = ({ content, className }) => (
-  <Typography
-    className={className}
-    dangerouslySetInnerHTML={{ __html: content }}
-  />
+  <Box ml={3} mr={3}>
+    <Typography
+      className={className}
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  </Box>
 );
 
 const Content = ({ content, className }) => (
-  <Typography className={className}>{content}</Typography>
+  <Box ml={3} mr={3}>
+    <Typography className={className}>{content}</Typography>
+  </Box>
 );
 
 Content.propTypes = {

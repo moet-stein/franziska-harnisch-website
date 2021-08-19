@@ -331,12 +331,20 @@ export function WorkdetailsRoll({ data, location }) {
             ))}
           {isTabletOrMobile && !showHash && (
             <IconButton onClick={showMoreHash}>
-              <DetailsIcon />
+              {negZIndex ? (
+                <DetailsIcon style={{ zIndex: '-1000' }} />
+              ) : (
+                <DetailsIcon />
+              )}
             </IconButton>
           )}
           {isTabletOrMobile && showHash && (
             <IconButton onClick={showMoreHash}>
-              <ChangeHistoryIcon />
+              {negZIndex ? (
+                <ChangeHistoryIcon style={{ zIndex: '-1000' }} />
+              ) : (
+                <ChangeHistoryIcon />
+              )}
             </IconButton>
           )}
 
