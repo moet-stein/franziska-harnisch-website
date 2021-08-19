@@ -128,7 +128,7 @@ export default function PictureHometwo({ pic }) {
         ) : (
           <Link href={newArray[0].link}>
           <img
-            style={{ borderRadius: 5, width: 240, height:200, }}
+            style={{ borderRadius: 5, width: 240, height:200, boxShadow: "5px 5px 12px 2px #828282" }}
             onMouseOver={() => setExit((prev) => !prev)}
          
             src={newArray[0].image}
@@ -171,7 +171,7 @@ export default function PictureHometwo({ pic }) {
         ) : (
           <Link href={newArray[1].link}>
           <img
-            style={{ borderRadius: 5, width: 240, height:200, }}
+            style={{ borderRadius: 5, width: 240, height:200, boxShadow: "5px 5px 12px 2px #828282" }}
             onMouseOver={() => setVisible((prev) => !prev)}
             
             src={newArray[1].image}
@@ -213,7 +213,7 @@ export default function PictureHometwo({ pic }) {
         ) : (
           <Link href={newArray[1].link}>
           <img
-            style={{ borderRadius: 5, width: 240, height:200, }}
+            style={{ borderRadius: 5, width: 240, height:200, boxShadow: "5px 5px 12px 2px #828282"}}
             onMouseOver={() => setThirdPic((prev) => !prev)}
            
             src={newArray[2].image}
