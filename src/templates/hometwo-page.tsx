@@ -92,6 +92,7 @@ export const pageQuery = graphql`
           blurbs {
             image
             text
+            link
           }
         }
       }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Grid, Card } from '@material-ui/core';
+import { Grid, Card, Link } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PreviewCompatibleImage from '../DisplayPictureAdapter/DisplayPictureAdapter';
 import { NavBarContext } from '../../context/NavbarContext';
@@ -127,12 +127,14 @@ export default function PictureHometwo({ pic }) {
             src={newArray[0].image}
           />
         ) : (
+          <Link href={newArray[0].link}>
           <img
             style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setExit((prev) => !prev)}
             className={exit ? classes.imageMask : classes.imageNoMask}
             src={newArray[0].image}
           />
+          </Link>
         )}
         {negZIndex ? (
           <p
@@ -168,14 +170,14 @@ export default function PictureHometwo({ pic }) {
           />
          
         ) : (
-          
+          <Link href={newArray[1].link}>
           <img
             style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setVisible((prev) => !prev)}
             className={visible ? classes.imageMask : classes.imageNoMask}
             src={newArray[1].image}
           />
-          
+          </Link>
         )}
         {negZIndex ? (
           <p
@@ -210,14 +212,14 @@ export default function PictureHometwo({ pic }) {
           />
         
         ) : (
-          
+          <Link href={newArray[1].link}>
           <img
             style={{ borderRadius: 5, width: 240, height:200, }}
             onMouseOver={() => setThirdPic((prev) => !prev)}
             className={thirdPic ? classes.imageMask : classes.imageNoMask}
             src={newArray[2].image}
           />
-         
+         </Link>
         )}
         {negZIndex ? (
        

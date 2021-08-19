@@ -153,7 +153,7 @@ collections:
           - {label: "Desc. SEO", name: "description", widget: "text"}
           - {label: "image SEO", name: "image", widget: "image"}
           - {label: Events, name: event, widget: object, fields: [{label: Coming Event Label, name: comingTitle, widget: string}, {label: Future Event, name: futureEvent, widget: text}, {label: Last Event Label, name: lastTitle, widget: text}, {label: LastEvent, name: lastEvent, widget: text}]}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Link to project, name: link, widget: string}]}]}
       - file: 'src/pages/index.en.md'
         label: 'Hometwo Page EN'
         name: 'hometwoen'
@@ -164,7 +164,7 @@ collections:
           - {label: "Desc. SEO", name: "description", widget: "text"}
           - {label: "image SEO", name: "image", widget: "image"}
           - {label: Events, name: event, widget: object, fields: [{label: Coming Event Label, name: comingTitle, widget: string}, {label: Future Event, name: futureEvent, widget: text}, {label: Last Event Label, name: lastTitle, widget: text}, {label: LastEvent, name: lastEvent, widget: text}]}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}, {label: Link to project, name: link, widget: string}]}]}
       - file: "src/pages/contact/index.de.md"
         label: "Contact Page DE"
         name: "contactPagede"
