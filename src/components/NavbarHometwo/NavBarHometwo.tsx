@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       position: 'absolute',
       width: 300,
       top: 10,
-      left: '60%',
+      left: '50%',
       marginLeft: 70,
       marginTop: 0,
       color: 'grey',
@@ -128,7 +128,13 @@ function NavbarHometwo({ langs, url, langKey }) {
 
   return (
     <div>
-       <p className={classes.nameMob}>Franziska Harnisch</p> 
+         <Button
+              to={homeLink}
+              component={Link}
+              className={classes.nameMob}
+            >
+              Franziska Harnisch
+            </Button>
       <div style={{ position: 'fixed', top: 15 }} className={classes.navbarMob}>
         <MenuIcon style={{ display: 'inline-block' }} onClick={onClick} />
 
