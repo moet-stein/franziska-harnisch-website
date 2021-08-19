@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
   fontSizeTitle: {
     fontSize: 30,
+    width:"fit-content",
     fontFamily: "'Josefin Sans', sans-serif",
     [theme.breakpoints.only("md")]:{
       fontSize:23,

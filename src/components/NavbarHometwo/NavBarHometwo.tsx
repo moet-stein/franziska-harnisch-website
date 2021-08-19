@@ -169,14 +169,21 @@ function NavbarHometwo({ langs, url, langKey }) {
                             : `/${page.to}`
                         }
                       >
-                        {`/${langKey}/${page.to}` === url ? (
+                        {`/${langKey}/${page.to}` === url || `/${page.to}`=== url ? (
                           <span className={classes.linkselected}>{txt}</span>
+                        
                         ) : (
+                       
                           txt
+                        
                         )}
                       </Button>
+                       
+                       
+                       
                     )}
                   </FormattedMessage>
+                  
                 </React.Fragment>
               );
             })}
@@ -219,7 +226,7 @@ function NavbarHometwo({ langs, url, langKey }) {
                             : `/${page.to}`
                         }
                       >
-                        {`/${langKey}/${page.to}` === url ? (
+                        {`/${langKey}/${page.to}` === url ||  `/${page.to}` === url ? (
                           <span className={classes.linkselected}>{txt}</span>
                         ) : (
                           txt
@@ -227,6 +234,7 @@ function NavbarHometwo({ langs, url, langKey }) {
                       </Button>
                     )}
                   </FormattedMessage>
+        
                 </React.Fragment>
               );
             })}
