@@ -6,7 +6,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
 import EventsFrontPage from '../components/EventsFrontPage/EventsFrontPage';
 import PictureHometwo from '../components/PictureHometwo/pictureHometwo';
-import PictureHomeMob from '../components/PictureHomeMob/pictureHomeMob';
+import PictureHomeMob from '../components/PictureHomeMob/PictureHomeMob';
 import PageContainer from '../components/PageContainer';
 import SEO from '../components/SEO';
 
