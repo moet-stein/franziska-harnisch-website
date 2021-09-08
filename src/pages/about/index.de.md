@@ -2,12 +2,16 @@
 titleWebsite: About
 path: /about
 templateKey: about-page
-​      - text: 2019  A Place to be - 50 Jahre Verein Symposium Lindabrunn 114
-  über Marzahn, Berlin International Festival of the Arts The Walls We Built,
-  Kampala (UGA), Hildesheim, Berlin
 title: About me
 description: This is my portfolio
 image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628771030/Spontane_Oase_Diplom_Franziska_Harnisch_46_znvbc1.jpg
+button: anmelden
+input: für den Newsletter hier E-Mail eintragen
+​      - text: 2019  A Place to be - 50 Jahre Verein Symposium Lindabrunn 114
+  über Marzahn, Berlin International Festival of the Arts The Walls We Built,
+  Kampala (UGA), Hildesheim, Berlin
+confirmation: Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen
+errorMessage: Bitte geben Sie eine gültige E-Mail-Adresse an
 generalInfo:
   name: Franziska Harnisch (1986 in Berlin, De)
   address: Atelier 2OG / Alte Münze, Am Krögel 2, 10179 Berlin
@@ -35,12 +39,10 @@ einzelaustellung:
   texts:
     - text: 2020   was kann ich für sie tun, Online-Ausstellung, Circle1, Berlin (mit
         Dan   Allon)
-      link:
-    - text: 2019   with the stream, Circle1, Berlin Erst wenn es weg ist,  A TRANS c/o
-        Vitrine im U-Bahnhof Kleistpark, Berlin Arbeitstitel, 2OG, Alte Münze,
-        Berlin (mit Philipp Valenta) f.a.r. - former analogue realities, The
-        Balcony / Den Haag (NL)
-      link:
+      link: null
+    - text: "2019   with the stream, Circle1, Berlin "
+      link: null
+    - text: Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark, Berlin
 gruppenaustellung:
   title: Gruppenausstellungen + Festivals (Auswahl)
   texts:
