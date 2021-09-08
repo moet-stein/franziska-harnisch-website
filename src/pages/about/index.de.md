@@ -41,11 +41,14 @@ einzelaustellung:
         Dan   Allon)"
       link: null
       Year: "2020"
+      year: "2020"
     - text: "  with the stream, Circle1, Berlin "
       link: null
       Year: "2019  "
+      year: "2019"
     - text: " Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark,
         Berlin"
+      year: "2018"
 gruppenaustellung:
   title: Gruppenausstellungen + Festivals (Auswahl)
   texts:
