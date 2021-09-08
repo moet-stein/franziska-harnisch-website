@@ -37,14 +37,15 @@ preise:
 einzelaustellung:
   title: Einzelausstellungen (Auswahl)
   texts:
-    - text: "   was kann ich für sie tun, Online-Ausstellung, Circle1, Berlin (mit
+    - text: "    was kann ich für sie tun, Online-Ausstellung, Circle1, Berlin (mit
         Dan   Allon)"
       link: null
       Year: "2020"
-    - text: " with the stream, Circle1, Berlin "
+    - text: "  with the stream, Circle1, Berlin "
       link: null
       Year: "2019  "
-    - text: Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark, Berlin
+    - text: " Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark,
+        Berlin"
 gruppenaustellung:
   title: Gruppenausstellungen + Festivals (Auswahl)
   texts:
