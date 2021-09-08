@@ -54,6 +54,7 @@ gruppenaustellung:
       link: ""
     - text: 2020  Auf der Laube, Online-Ausstellung, Studio Huette INTERWEAVING
         SPHERES, 8. Videokunstnacht, Kunstverein Kleinmachnow
+    - text: " m          kv @ thewrong.tv : CLUSTERED MINDS"
 projekte:
   title: Projekte und Projekträume
   texts:
