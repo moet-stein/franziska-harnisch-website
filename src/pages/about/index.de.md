@@ -39,7 +39,7 @@ einzelaustellung:
   texts:
     - text: "    was kann ich für sie tun, Online-Ausstellung, Circle1, Berlin (mit
         Dan   Allon)"
-      link: null
+      link: /about
       Year: "2020"
       year: "2020"
     - text: "  with the stream, Circle1, Berlin "
