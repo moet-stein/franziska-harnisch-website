@@ -2,16 +2,13 @@
 titleWebsite: About
 path: /about
 templateKey: about-page
-title: About me
-description: This is my portfolio
-image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628771030/Spontane_Oase_Diplom_Franziska_Harnisch_46_znvbc1.jpg
-button: anmelden
 input: für den Newsletter hier E-Mail eintragen
 ​      - text: 2019  A Place to be - 50 Jahre Verein Symposium Lindabrunn 114
   über Marzahn, Berlin International Festival of the Arts The Walls We Built,
   Kampala (UGA), Hildesheim, Berlin
-confirmation: Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen
-errorMessage: Bitte geben Sie eine gültige E-Mail-Adresse an
+title: About me
+description: This is my portfolio
+image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628771030/Spontane_Oase_Diplom_Franziska_Harnisch_46_znvbc1.jpg
 generalInfo:
   name: Franziska Harnisch (1986 in Berlin, De)
   address: Atelier 2OG / Alte Münze, Am Krögel 2, 10179 Berlin
@@ -26,6 +23,18 @@ ausbildung:
         Kunst,  Universität Hildesheim
     - text: 2012   1. Staatsexamen Kunst und Gestaltung u. Geschichte, Universität
         Greifswald
+gruppenaustellung:
+  title: Gruppenausstellungen + Festivals (Auswahl)
+  texts:
+    - text: "2021   Light Year, New York (USA) "
+      link: ""
+    - text: 2020  Auf der Laube, Online-Ausstellung, Studio Huette INTERWEAVING
+        SPHERES, 8. Videokunstnacht, Kunstverein Kleinmachnow
+    - text: "           mkv @ thewrong.tv : CLUSTERED MINDS"
+      link: " www.facebook.com"
+    - text: mkv @ thewrong.tv - CLUSTERED MINDS EMBARK, 1    29 gallery Berlin HOT
+        MESS, Neuzeit Ost
+button: anmelden
 preise:
   title: Preise und Förderungen
   texts:
@@ -39,7 +48,7 @@ einzelaustellung:
   texts:
     - text: "    was kann ich für sie tun, Online-Ausstellung, Circle1, Berlin (mit
         Dan   Allon)"
-      link: /about
+      link: /works
       Year: "2020"
       year: "2020"
     - text: "  with the stream, Circle1, Berlin "
@@ -49,17 +58,6 @@ einzelaustellung:
     - text: " Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark,
         Berlin"
       year: "2018"
-gruppenaustellung:
-  title: Gruppenausstellungen + Festivals (Auswahl)
-  texts:
-    - text: "2021   Light Year, New York (USA) "
-      link: ""
-    - text: 2020  Auf der Laube, Online-Ausstellung, Studio Huette INTERWEAVING
-        SPHERES, 8. Videokunstnacht, Kunstverein Kleinmachnow
-    - text: "           mkv @ thewrong.tv : CLUSTERED MINDS"
-      link: " www.facebook.com"
-    - text: mkv @ thewrong.tv - CLUSTERED MINDS EMBARK, 1    29 gallery Berlin HOT
-        MESS, Neuzeit Ost
 projekte:
   title: Projekte und Projekträume
   texts:
@@ -73,5 +71,7 @@ cv:
     link: https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit
   - text: CV EN
     link: https://docs.google.com/document/d/1Rfq8Q5tycG3a5fA3da9N_vAzIPZxuO7IGvXukBZJ30I/edit
+confirmation: Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen
 language: de
+errorMessage: Bitte geben Sie eine gültige E-Mail-Adresse an
 ---
