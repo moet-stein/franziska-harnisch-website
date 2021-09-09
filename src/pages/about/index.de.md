@@ -55,9 +55,10 @@ einzelaustellung:
       link: null
       Year: "2019  "
       year: "2019"
-    - text: " Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark,
-        Berlin"
-      year: "2018"
+    - text: Erst wenn es weg ist,  A TRANS c/o Vitrine im U-Bahnhof Kleistpark, Berlin
+      year: ""
+    - text: Arbeitstitel, 2OG, Alte Münze, Berlin (mit Philipp Valenta)
+    - text: " f.a.r. - former analogue realities, The Balcony / Den Haag (NL)"
 projekte:
   title: Projekte und Projekträume
   texts:
