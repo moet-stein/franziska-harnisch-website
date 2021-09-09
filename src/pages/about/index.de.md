@@ -8,7 +8,7 @@ input: für den Newsletter hier E-Mail eintragen
   Kampala (UGA), Hildesheim, Berlin
 title: About me
 description: This is my portfolio
-image: https://res.cloudinary.com/dcyfdwhvk/image/upload/c_scale,f_auto,q_100,w_2400/v1628771030/Spontane_Oase_Diplom_Franziska_Harnisch_46_znvbc1.jpg
+image: https://res.cloudinary.com/devwexnow/image/upload/c_scale,f_auto,q_100,w_2400/v1631181304/pre6_geuemk.jpg
 generalInfo:
   name: Franziska Harnisch (1986 in Berlin, De)
   address: Atelier 2OG / Alte Münze, Am Krögel 2, 10179 Berlin
