@@ -26,8 +26,9 @@ ausbildung:
 gruppenaustellung:
   title: Gruppenausstellungen + Festivals (Auswahl)
   texts:
-    - text: "2021   Light Year, New York (USA) "
+    - text: "   Light Year, New York (USA) "
       link: ""
+      year: "2020"
     - text: 2020  Auf der Laube, Online-Ausstellung, Studio Huette INTERWEAVING
         SPHERES, 8. Videokunstnacht, Kunstverein Kleinmachnow
     - text: "           mkv @ thewrong.tv : CLUSTERED MINDS"
