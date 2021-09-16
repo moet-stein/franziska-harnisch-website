@@ -92,7 +92,8 @@ export const ContactPageTemplate = ({
   agreeMessage,
   location,
 }) => {
-  const [userEmail, setUserEmail] = useState('');
+  if (location !== undefined) {
+    const [userEmail, setUserEmail] = useState('');
   const [emailError, setEmailError] = useState('');
   const [checkbox, setCheckbox] = useState(false);
   console.log('checkbox', checkbox);
@@ -231,35 +232,36 @@ ContactPageTemplate.propTypes = {
   agreeMessage: PropTypes.string,
 };
 
-const ContactPage = ({ data, location }) => {
-  const { frontmatter } = data.markdownRemark;
+  const ContactPage = ({ data, location }) => {
+    const { frontmatter } = data.markdownRemark;
 
-  return (
-    <Layout location={location}>
-      <SEO
-        title={frontmatter.title}
-        location={location}
-        description={frontmatter.description}
-        image={frontmatter.image}
-      />
-      <ContactPageTemplate
-        location={location}
-        title={frontmatter.title}
-        name={frontmatter.name}
-        address={frontmatter.address}
-        email={frontmatter.email}
-        website={frontmatter.website}
-        websiteLink={frontmatter.websiteLink}
-        instagram={frontmatter.instagram}
-        button={frontmatter.button}
-        input={frontmatter.input}
-        agreeText={frontmatter.agreeText}
-        confirmation={frontmatter.confirmation}
-        errorMessage={frontmatter.errorMessage}
-        agreeMessage={frontmatter.agreeMessage}
-      />
-    </Layout>
-  );
+    return (
+      <Layout location={location}>
+        <SEO
+          title={frontmatter.title}
+          location={location}
+          description={frontmatter.description}
+          image={frontmatter.image}
+        />
+        <ContactPageTemplate
+          location={location}
+          title={frontmatter.title}
+          name={frontmatter.name}
+          address={frontmatter.address}
+          email={frontmatter.email}
+          website={frontmatter.website}
+          websiteLink={frontmatter.websiteLink}
+          instagram={frontmatter.instagram}
+          button={frontmatter.button}
+          input={frontmatter.input}
+          agreeText={frontmatter.agreeText}
+          confirmation={frontmatter.confirmation}
+          errorMessage={frontmatter.errorMessage}
+          agreeMessage={frontmatter.agreeMessage}
+        />
+      </Layout>
+    );
+  }
 };
 
 ContactPage.propTypes = {
