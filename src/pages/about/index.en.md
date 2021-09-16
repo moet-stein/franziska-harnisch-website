@@ -36,11 +36,13 @@ einzelaustellung:
     - text: 2020   was kann ich für sie tun, Online-Ausstellung, Circle1, Berlin (mit
         Dan   Allon)
       link: https://www.danallon.com/
+      year: "2020"
     - text: 2019   with the stream, Circle1, Berlin Erst wenn es weg ist,  A TRANS c/o
         Vitrine im U-Bahnhof Kleistpark, Berlin Arbeitstitel, 2OG, Alte Münze,
         Berlin (mit Philipp Valenta) f.a.r. - former analogue realities, The
         Balcony / Den Haag (NL)
-      link:
+      link: null
+      year: "2019"
 gruppenaustellung:
   title: Gruppenausstellungen + Festivals (Auswahl)
   texts:
